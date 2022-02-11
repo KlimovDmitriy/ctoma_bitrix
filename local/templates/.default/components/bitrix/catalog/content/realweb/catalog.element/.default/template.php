@@ -41,7 +41,7 @@ $name = !empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'])
 
                         <li class="menuNormPage__element">
                             <a
-                                    class="menuNormPage__linck <? if ($el['CODE'] == $arResult['VARIABLES']['ELEMENT_CODE']) {
+                                    class="menuNormPage__linck <? if ($el['CODE'] == $arResult['CODE']) {
                                         ?>is-active<? }else{ ?>" href="/<?= $el['CODE'] ?>/"<? } ?>"
                             ><?= $el['NAME'] ?></a>
                         </li>
