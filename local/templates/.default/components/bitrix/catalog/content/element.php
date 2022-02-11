@@ -21,37 +21,7 @@ $this->setFrameMode(true);
         "SITE_ID" => "s1"
     )
 ); ?>
-<div class="normPage__container ">
-    <div class="normPage__center width width_norm width_paddingStandart">
-        <div class="normPage__leftSidebar">
 
-            <div class="menuNormPage">
-                <?
-                $elements = \Realweb\Site\Site::getIBlockElements(['IBLOCK_ID' => \Realweb\Site\Site::getIblockId('content'), 'PROPERTY_SHOW_MENU_VALUE' => "да"]);
-                ?>
-
-                <ul class="menuNormPage__list">
-                    <?
-                    foreach ($elements as $el) {
-
-                        ?>
-
-                        <li class="menuNormPage__element">
-                            <a
-                                    class="menuNormPage__linck <? if ($el['CODE'] == $arResult['VARIABLES']['ELEMENT_CODE']) {
-                                        ?>is-active<? }else{ ?>" href="/<?= $el['CODE'] ?>/"<? } ?>"
-                            ><?= $el['NAME'] ?></a>
-                        </li>
-                    <? } ?>
-
-                </ul>
-
-
-            </div>
-
-            <?php \Realweb\Site\Site::showIncludeText('LEFT_BANNER_STATIC'); ?>
-
-        </div>
 
         <?
         $ElementID = $APPLICATION->IncludeComponent(
@@ -168,8 +138,7 @@ $this->setFrameMode(true);
         ), $component
         );
         ?>
-    </div>
-</div>
+
 <?php
 
 $COMPONENTS = $APPLICATION->GetPageProperty('COMPONENTS');
