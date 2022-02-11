@@ -19,7 +19,11 @@ $name = !empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'])
 
 ?>
 
-
+<h1 class="normPage__title title_grey width width_norm width_paddingStandart">
+    <span class="title__br"></span><span class="title__text">
+        <?=$name;?>
+    </span><span class="title__br"></span>
+</h1>
 
         <div class="normPage__content">
             <div class="block-region-main">
