@@ -66,19 +66,8 @@ $APPLICATION->SetTitle("Главная");
     <!-- / slider -->
 
     <div class="content_norm width width_light">
-        <?php
-        $APPLICATION->IncludeComponent(
-            "realweb:base.include",
-            ".default",
-            array(
-                "CODE" => "MAIN_PAGE",
-                "COMPONENT_TEMPLATE" => ".default",
-                "EDIT_TEMPLATE" => ""
-            ),
-            false,
-            array(
-                "SHOW_ICON" => $isHideChange ? "Y" : 'N',
-            )
-        ); ?>
+
+        <?php \Realweb\Site\Site::showIncludeText('MAIN_PAGE'); ?>
+
     </div>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

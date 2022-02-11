@@ -205,7 +205,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
                 <div class="header__info width_paddingStandart">
                     <div class="views-row">
                         <div class="views-field views-field-field-phones">
-                            <div class="field field-content call_phone_top"><a href="tel:+78125614086">+7 (812) 561-40-86</a></div>
+                            <div class="field field-content call_phone_top"><?php \Realweb\Site\Site::showIncludeText('PHONE'); ?></div>
                             <div class="grafik">Часы работы call-центра: 09:00-21:00</div>
                         </div>
                     </div>
