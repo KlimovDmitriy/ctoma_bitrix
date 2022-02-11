@@ -18,12 +18,19 @@ $name = !empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'])
     : $arResult['NAME'];
 
 ?>
-<? //if ($arResult['PROPERTIES']['IS_CONTAINER']['VALUE'] == 'Y'): ?>
-    <div class="width width_norm width_paddingStandart">
-        <div class="content_norm">
-            <?php echo $arResult['DETAIL_TEXT']; ?>
+
+
+
+        <div class="normPage__content">
+            <div class="block-region-main">
+                <div class="block">
+
+
+                    <div class="normPageDefault content_norm">
+                        <?php echo $arResult['DETAIL_TEXT']; ?>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-<? //else: ?>
-    <?php// echo $arResult['DETAIL_TEXT']; ?>
-<?// endif; ?>
+
+
