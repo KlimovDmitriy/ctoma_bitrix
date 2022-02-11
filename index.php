@@ -6,37 +6,65 @@ $APPLICATION->SetTitle("Главная");
 ?>
 
     <!-- slider -->
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="slide__1" style="cursor:pointer;background-image: url('/local/templates/main/images/222.jpg')" onclick="window.location.href='/lechenie-v-kredit'">
-                    <div class="slide__wrap">
-                        <div class="slide__wrapList">
-                            <span class="slide__text" style="font-size: 50px;">Лечите зубы сегодня – платите потом! Лечение в рассрочку и кредит в клиниках «СТОМА»</span>
-                            <span class="osnovnoi_tekst_slaida" style="font-size: 25px;"></span>
-                        </div>
-                        <div class="slide__link"><a href="https://ctoma.ru/lechenie-v-kredit">Узнать подробности</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="slide__1" style="cursor:pointer;background-image: url('/local/templates/main/images/1.jpg')" onclick="window.location.href='/lechenie-v-kredit'">
-                    <div class="slide__wrap">
-                        <div class="slide__wrapList">
-                            <span class="slide__text" style="font-size: 50px;">Успейте пролечиться до повышения цен! Дарим скидку 10%  на терапевтическое лечение до конца февраля!</span>
-                            <span class="osnovnoi_tekst_slaida" style="font-size: 25px;"></span>
-                        </div>
-                        <div class="slide__link"><a href="https://ctoma.ru/akciya/prazdnichnaya-skidka-10-na-terapevticheskoe-lechenie">Узнать подробности</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Add Arrows -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
-    </div>
+<? $APPLICATION->IncludeComponent(
+    "bitrix:news.list",
+    "slider",
+    array(
+        "ACTIVE_DATE_FORMAT" => "d.m.Y",
+        "ADD_SECTIONS_CHAIN" => "N",
+        "AJAX_MODE" => "N",
+        "AJAX_OPTION_ADDITIONAL" => "",
+        "AJAX_OPTION_HISTORY" => "N",
+        "AJAX_OPTION_JUMP" => "N",
+        "AJAX_OPTION_STYLE" => "Y",
+        "CACHE_FILTER" => "N",
+        "CACHE_GROUPS" => "Y",
+        "CACHE_TIME" => "36000000",
+        "CACHE_TYPE" => "A",
+        "CHECK_DATES" => "Y",
+        "DETAIL_URL" => "",
+        "DISPLAY_BOTTOM_PAGER" => "N",
+        "DISPLAY_DATE" => "N",
+        "DISPLAY_NAME" => "Y",
+        "DISPLAY_PICTURE" => "Y",
+        "DISPLAY_PREVIEW_TEXT" => "Y",
+        "DISPLAY_TOP_PAGER" => "N",
+        "FIELD_CODE" => array(0 => "NAME", 1 => "PREVIEW_TEXT", 2 => "PREVIEW_PICTURE", 3 => "",),
+        "FILTER_NAME" => "",
+        "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+        "IBLOCK_ID" => "12",
+        "IBLOCK_TYPE" => "content",
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+        "INCLUDE_SUBSECTIONS" => "N",
+        "MESSAGE_404" => "",
+        "NEWS_COUNT" => "20",
+        "PAGER_BASE_LINK_ENABLE" => "N",
+        "PAGER_DESC_NUMBERING" => "N",
+        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+        "PAGER_SHOW_ALL" => "N",
+        "PAGER_SHOW_ALWAYS" => "N",
+        "PAGER_TEMPLATE" => ".default",
+        "PAGER_TITLE" => "Новости",
+        "PARENT_SECTION" => "",
+        "PARENT_SECTION_CODE" => "",
+        "PREVIEW_TRUNCATE_LEN" => "",
+        "PROPERTY_CODE" => array(0 => "url", 1 => "",),
+        "SET_BROWSER_TITLE" => "N",
+        "SET_LAST_MODIFIED" => "N",
+        "SET_META_DESCRIPTION" => "N",
+        "SET_META_KEYWORDS" => "N",
+        "SET_STATUS_404" => "N",
+        "SET_TITLE" => "N",
+        "SHOW_404" => "N",
+        "SORT_BY1" => "SORT",
+        "SORT_BY2" => "TIMESTAMP_X",
+        "SORT_ORDER1" => "ASC",
+        "SORT_ORDER2" => "DESC",
+        "STRICT_SECTION_CHECK" => "N"
+    )
+); ?>
     <!-- / slider -->
+
     <div class="content_norm width width_light">
         <?php
         $APPLICATION->IncludeComponent(
