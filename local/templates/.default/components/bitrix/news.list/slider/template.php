@@ -37,7 +37,7 @@ $this->setFrameMode(true);
         <? endforeach; ?>
     </div>
     <!-- Add Arrows -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+    <div class="swipe__ButtonNext swiper-button-next"></div>
+    <div class="swipe__ButtonPrev swiper-button-prev"></div>
     <div class="swiper-pagination"></div>
 </div>
