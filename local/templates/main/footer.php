@@ -139,14 +139,11 @@
             </div>
 
             <div class="footer__agreement width_paddingLeftRight">
-                <a href="https://ctoma.ru/agreement">Политика конфиденциальности</a>
+                <a href="/agreement/">Политика конфиденциальности</a>
             </div>
 
             <div class="footer__c width_paddingLeftRight">
-                <p>© 2022, Группа компаний СТОМА™ - Стоматология в Санкт-Петербурге для детей и взрослых</p>
-                <p>Свидетельство на товарный знак (знак обслуживания) №250906 действует до 30.07.2022г.</p>
-                <p>Все права защищены. При перепечатке материалов ссылка на сайт обязательна.</p>
-                <p>Информация на сайте не является публичной офертой</p>
+                <?php \Realweb\Site\Site::showIncludeText('COPYRIGHT'); ?>
             </div>
 
             <div class="footer__payment width_paddingStandart">
@@ -158,13 +155,13 @@
             <div class="footerKlinic width_paddingLeftRight">
                 <div class="views-row">
                     <div class="views-field views-field-field-phones">
-                        <div class="field field-content call_phone_bottom"><a href="tel:+78125614086">+7 (812) 561-40-86</a></div>
+                        <div class="field field-content call_phone_bottom"><?php \Realweb\Site\Site::showIncludeText('PHONE'); ?></div>
                     </div>
                 </div>
                 <div class="views-row">
                     <div class="views-field views-field-field-phones">
                         <div class="field field-content">
-                            <a href="mailto:office@stoma-spb.ru">office@stoma-spb.ru</a>
+                            <?php \Realweb\Site\Site::showIncludeText('MAIL'); ?>
                         </div>
                     </div>
                 </div>
@@ -173,17 +170,13 @@
             <div class="socialsMenu_footer width_paddingStandart">
                 <span class="socialsMenu__label">Присоединяйтесь</span>
                 <div class="socialsMenu__content">
-                    <ul class="menu">
-                        <li><a href="https://vk.com/ctoma" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
-                        <li><a href="https://www.youtube.com/channel/UCrn6EzRAQQBhKACykwme69g" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                        <li><a href="https://www.instagram.com/ctoma_group/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    </ul>
+                    <?php \Realweb\Site\Site::showIncludeText('SOCIAL'); ?>
                 </div>
             </div>
             <div class="footerLicense width_paddingLeftRight">
-                <span class="footerLicense__label"><a href="https://ctoma.ru/licenses">Лицензии</a></span><br>
-                <span class="footerLicense__label"><a href="https://ctoma.ru/sout">Сводные данные о результатах проведения СОУТ</a></span><br>
-                <span class="footerLicense__label"><a href="https://ctoma.ru/covid-19">О мерах, принятых нашей организацией для осуществления деятельности в условиях пандемии COVID-19</a></span>
+                <span class="footerLicense__label"><a href="/licenses/">Лицензии</a></span><br>
+                <span class="footerLicense__label"><a href="/sout/">Сводные данные о результатах проведения СОУТ</a></span><br>
+                <span class="footerLicense__label"><a href="/covid-19/">О мерах, принятых нашей организацией для осуществления деятельности в условиях пандемии COVID-19</a></span>
             </div>
         </div>
         <span class="footer__copy width_paddingStandart">18+, ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА</span>
