@@ -39,7 +39,7 @@ $this->setFrameMode(true);
                         <li class="menuNormPage__element">
                             <a
                                     class="menuNormPage__linck <? if ($el['CODE'] == $arResult['VARIABLES']['ELEMENT_CODE']) {
-                                        ?>is-active<? }else{ ?>href="/<?= $el['CODE'] ?>/"<? } ?>"
+                                        ?>is-active<? }else{ ?>" href="/<?= $el['CODE'] ?>/"<? } ?>"
                             data-drupal-link-system-path="sitemap"><?= $el['NAME'] ?></a>
                         </li>
                     <? } ?>
