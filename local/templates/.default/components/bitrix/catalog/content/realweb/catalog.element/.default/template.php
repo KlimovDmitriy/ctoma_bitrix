@@ -19,8 +19,8 @@ $name = !empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'])
 
 ?>
 <? //if ($arResult['PROPERTIES']['IS_CONTAINER']['VALUE'] == 'Y'): ?>
-    <div class="text container">
-        <div class="wide">
+    <div class="width width_norm width_paddingStandart">
+        <div class="content_norm">
             <?php echo $arResult['DETAIL_TEXT']; ?>
         </div>
     </div>
