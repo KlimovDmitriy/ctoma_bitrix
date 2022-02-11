@@ -1,4 +1,7 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<?
+use \Bitrix\Main\Page\Asset,
+    \Realweb\Site\Site;
+if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <!DOCTYPE html>
 <html>
 <head>
