@@ -563,3 +563,26 @@
 .menuNormPage__linck.is-active {
     color: #d82043;
 }
+.button_red {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    background-color: #d82043;
+    -moz-box-shadow: 2px 3.464px 2.88px 0.12px rgba(0,0,0,0.09);
+    -webkit-box-shadow: 2px 3.464px 2.88px 0.12px rgb(0 0 0 / 9%);
+    box-shadow: 2px 3.464px 2.88px 0.12px rgb(0 0 0 / 9%);
+    padding: 10px 20px;
+    margin:auto;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    border: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    outline: none;
+    cursor: pointer;
+}
