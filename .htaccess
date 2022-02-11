@@ -11,7 +11,7 @@ ErrorDocument 404 /404.php
 </IfModule>
 
 <IfModule mod_rewrite.c>
-	Options +FollowSymLinks
+
 	RewriteEngine On
 	#Добавляем слеш в конце урл
 	RewriteBase /
@@ -19,6 +19,7 @@ ErrorDocument 404 /404.php
     RewriteCond %{REQUEST_URI} !(.*)/$
     RewriteRule ^(.*[^/])$ $1/ [L,R=301]
     #Добавляем слеш в конце урл
+    Options +FollowSymLinks
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-l
 	RewriteCond %{REQUEST_FILENAME} !-d
