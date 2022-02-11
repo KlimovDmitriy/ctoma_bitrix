@@ -40,7 +40,7 @@ $this->setFrameMode(true);
                             <a
                                     class="menuNormPage__linck <? if ($el['CODE'] == $arResult['VARIABLES']['ELEMENT_CODE']) {
                                         ?>is-active<? }else{ ?>" href="/<?= $el['CODE'] ?>/"<? } ?>"
-                            data-drupal-link-system-path="sitemap"><?= $el['NAME'] ?></a>
+                            ><?= $el['NAME'] ?></a>
                         </li>
                     <? } ?>
 
@@ -49,18 +49,8 @@ $this->setFrameMode(true);
 
             </div>
 
+            <?php \Realweb\Site\Site::showIncludeText('LEFT_BANNER_STATIC'); ?>
 
-            <div class="makeImg">
-                <div class="makeImg__text">
-                    <!--noindex-->
-                    <span class="makeImg__text1">Мы перезвоним – для Вас звонок бесплатный!</span>
-                    <span class="makeImg__text2">Напишите свои имя и номер телефона, чтобы мы могли связаться с Вами.<br> Будем рады помочь Вам!</span>
-                    <!--/noindex-->
-                </div>
-                <div class="makeImg__actions">
-                    <a class="makeImg__button button_red" href="/make-an-appointment">Записаться</a>
-                </div>
-            </div>
         </div>
 
         <?
