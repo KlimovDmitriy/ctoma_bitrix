@@ -5299,7 +5299,7 @@
 }
 
 .content_norm ul {
-    list-style-image: url('/themes/my_theme/bem/blocks/content/img/li.png');
+    list-style-image: url('/local/templates/main/images/li.png');
 }
 
 .insteadh1 {
@@ -5656,7 +5656,7 @@
 .articlesPage__content ul {
     padding-left: 24px;
     margin: 0 0 20px;
-    list-style-image: url("/themes/my_theme/bem/blocks/content/img/li.png");
+    list-style-image: url("/local/templates/main/images/li.png");
 }
 
 .articlesPage__content a {
@@ -15019,7 +15019,7 @@ button.swiper-pagination-bullet {
 .content_norm ul {
     padding-left: 24px;
     margin: 0 0 20px;
-    list-style-image: url("/themes/my_theme/bem/blocks/content/img/li.png");
+    list-style-image: url("/local/templates/main/images/li.png");
 }
 
 .content_norm ol {
