@@ -40,7 +40,7 @@ $APPLICATION->SetTitle("Главная");
     <div class="content_norm width width_light">
         <?php
         $APPLICATION->IncludeComponent(
-            "racurs:base.include",
+            "realweb:base.include",
             ".default",
             array(
                 "CODE" => "MAIN_PAGE",
