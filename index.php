@@ -4,7 +4,7 @@ $APPLICATION->SetPageProperty("title", "Стома");
 $APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");
 $APPLICATION->SetTitle("Главная");
 ?>
-
+<div class="home">
     <!-- slider -->
 <? $APPLICATION->IncludeComponent(
     "bitrix:news.list",
@@ -64,10 +64,41 @@ $APPLICATION->SetTitle("Главная");
     )
 ); ?>
     <!-- / slider -->
+<div class="zHome width_norm width_paddingStandart"><h1>Стоматологическая клиника «СТОМА»</h1></div>
+    <div class="uslugi width width_full width_paddingStandart">
+    <h2 class="uslugi__title title_homeWhite width width_norm width_paddingStandart">
+        <span class="title__br"></span><span class="title__text">Услуги</span><span class="title__br"></span>
+    </h2>
+
+<?$APPLICATION->IncludeComponent("bitrix:catalog.section.list","stomatology_main",
+    Array(
+        "VIEW_MODE" => "TEXT",
+        "SHOW_PARENT_NAME" => "Y",
+        "IBLOCK_TYPE" => "",
+        "IBLOCK_ID" => \Realweb\Site\Site::getIblockId('stomatology'),
+        "SECTION_ID" => $_REQUEST["SECTION_ID"],
+        "SECTION_CODE" => "",
+        "SECTION_URL" => "",
+        "COUNT_ELEMENTS" => "N",
+        "TOP_DEPTH" => "2",
+        "SECTION_FIELDS" => "",
+        "SECTION_USER_FIELDS" => "",
+        "ADD_SECTIONS_CHAIN" => "Y",
+        "CACHE_TYPE" => "A",
+        "CACHE_TIME" => "36000000",
+        "CACHE_NOTES" => "",
+        "CACHE_GROUPS" => "Y"
+    )
+);?>
+    </div>
 
     <div class="content_norm width width_light">
 
         <?php \Realweb\Site\Site::showIncludeText('MAIN_PAGE'); ?>
 
     </div>
+
+
+</div>
+
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
