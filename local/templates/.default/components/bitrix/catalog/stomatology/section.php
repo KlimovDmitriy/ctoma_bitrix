@@ -16,7 +16,12 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
 $this->setFrameMode(true);
-
+$APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
+        "START_FROM" => "0",
+        "PATH" => "",
+        "SITE_ID" => "s1"
+    )
+);
 ?>
 <?php if (intval($arResult['VARIABLES']['SECTION_ID']) == 0): ?>
     <?php
