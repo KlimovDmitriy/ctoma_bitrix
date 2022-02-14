@@ -6206,14 +6206,14 @@
 
 .stomatology__swiperButtonNext.swiper-button-next.swiper-button-white {
     right: 20%;
-    background-image: url('/sites/default/files/btn_right_o.png');
+    background-image: url('/local/templates/main/images/btn_right_o.png');
     width: 65px;
     height: 65px;
 }
 
 .stomatology__swiperButtonPrev.swiper-button-prev.swiper-button-white {
     left: 20%;
-    background-image: url('/sites/default/files/btn_left_o.png');
+    background-image: url('/local/templates/main/images/btn_left_o.png');
     width: 65px;
     height: 65px;
 }
