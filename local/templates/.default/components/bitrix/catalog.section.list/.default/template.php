@@ -15,7 +15,9 @@ $this->setFrameMode(true);
 
 ?>
 
-
+<h1 class="services__title title_grey width width_norm width_paddingStandart">
+    <span class="title__br"></span><span class="services__titleText title__text">Услуги</span><span class="title__br"></span>
+</h1>
 <div class="uslugi_all width width_full width_paddingStandart">
     <nav class="uslugi__content width width width_norm width_paddingStandart">
         <div class="views-element-container">
