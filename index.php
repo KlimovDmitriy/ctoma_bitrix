@@ -64,7 +64,7 @@ $APPLICATION->SetTitle("Главная");
     )
 ); ?>
     <!-- / slider -->
-<div class="zHome width_norm width_paddingStandart"><h1>Стоматологическая клиника «СТОМА»</h1></div>
+<div class="zHome width_norm width_paddingStandart"><h1><?php \Realweb\Site\Site::showIncludeText('H1_MAIN'); ?></h1></div>
     <div class="uslugi width width_full width_paddingStandart">
     <h2 class="uslugi__title title_homeWhite width width_norm width_paddingStandart">
         <span class="title__br"></span><span class="title__text">Услуги</span><span class="title__br"></span>

@@ -51,29 +51,27 @@ $this->setFrameMode(true);
       <div class="stomatology__swiperButtonPrev swiper-button-prev swiper-button-white"></div>
     </div>  <!-- /end first slider -->
 
-     <div class="stomatology__sliderThumb width width_full">
+    </div><!-- /stomatology__content -->
+
+  <div class="stomatology__sliderThumb width width_full">
       <div class="stomatology__swiperThumbs swiper-container">
-        <div class="stomatology__swiperThumbsWrap swiper-container-horizontal">
-          <div class="swiper-wrapper">
-          <? foreach ($arResult["ITEMS"] as $arItem): ?>
-            <div class="swiper-slide">
-              <a href="<? echo $arItem["DETAIL_PAGE_URL"] ?>" class="stomatology__thumlink">
-                <div class="stomatology__Thumbimg">
-                  <img src="<? echo $arItem["DETAIL_PICTURE"]["SRC"]; ?>" alt="" style="width:170px; height:170px;">
-                </div>
-                <div class="stomatology__thumname"><? echo $arItem["NAME"]; ?></div>
-                <div class="stomatology__thumdolznost"><? echo $arItem["PROPERTIES"]["POSITION"]["VALUE"]; ?></div>
-              </a>
-            </div><!-- / end swiper-slide -->
-          <? endforeach; ?>
+          <div class="stomatology__swiperThumbsWrap swiper-container-horizontal">
+              <div class="swiper-wrapper">
+                  <? foreach ($arResult["ITEMS"] as $arItem): ?>
+                      <div class="swiper-slide">
+
+                              <div class="stomatology__Thumbimg">
+                                  <img src="<? echo $arItem["DETAIL_PICTURE"]["SRC"]; ?>" alt="">
+                              </div>
+                              <div class="stomatology__thumname"><? echo $arItem["NAME"]; ?></div>
+                              <div class="stomatology__thumdolznost"><? echo $arItem["PROPERTIES"]["POSITION"]["VALUE"]; ?></div>
+
+                      </div><!-- / end swiper-slide -->
+                  <? endforeach; ?>
+              </div>
+
           </div>
-
-
-        </div>
-        <div class="stomatology__swiperThumbButtonPrev swiper-button-prev swiper-button-white"></div>
-        <div class="stomatology__swiperThumbButtonNext swiper-button-next swiper-button-white"></div>
+          <div class="stomatology__swiperThumbButtonPrev swiper-button-prev swiper-button-white"></div>
+          <div class="stomatology__swiperThumbButtonNext swiper-button-next swiper-button-white"></div>
       </div>
-    </div><!-- /end slider thumbs -->
-
-
-  </div><!-- /stomatology__content -->
+  </div><!-- /end slider thumbs -->
