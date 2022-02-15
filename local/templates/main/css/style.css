@@ -4351,7 +4351,7 @@
 }
 
 .service__container {
-    background: url("/themes/my_theme/bem/blocks/service/img/bg.jpg");
+    background: url("/local/templates/main/images/bg.jpg");
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
@@ -6264,13 +6264,69 @@
     font-weight: bold !important;
     color: #d82043 !important;
 }
+.serviceMenu {
+    background: white;
+    border: 1px solid #dde2e7;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    box-shadow: 4px 6.928px 23.04px 0.96px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 325px;
+}
 
 .serviceMenu__list>li>.serviceMenu__list {
     display: none;
 }
+.serviceMenu__list {
+    padding-left: 10px;
+}
+.serviceMenu__element {
+    display: block;
+}
 
 .serviceMenu__list>li.menu-item--active-trail>.serviceMenu__list {
     display: block;
+}
+.makeImg {
+    width: 325px;
+    height: 325px;
+    background: url('/local/templates/main/images/zapis_img.jpg') no-repeat center center;
+    box-shadow: 2px 3.464px 36px 4px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+}
+.makeImg__text {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 120px 20px 30px;
+}
+.makeImg__text1 {
+    display: block;
+    font-size: 15px;
+    font-family: "ralewayregular",sans-serif;
+    color: #d82043;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin-bottom: 6px;
+}
+.makeImg__text2 {
+    display: block;
+    font-size: 11px;
+    font-family: "ralewayregular",sans-serif;
+    color: #777777;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+.makeImg__actions {
+    text-align: center;
+    flex-basis: 100px;
+    display: flex;
+}
+.makeImg__button {
+    margin: auto;
 }
 
 .menu_ml {
@@ -6294,6 +6350,14 @@
 
 .serviceMenu__linck {
     display: inline-block !important;
+    padding: 8px 25px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    color: #727272;
+    font-weight: bold;
+    font-family: "ralewayregular",sans-serif;
+    transition: all 0.3s ease;
 }
 
 #myBtn {
