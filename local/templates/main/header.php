@@ -22,14 +22,9 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
             <div class="header__fixedWrap">
                 <div class="header__fixed width width_norm">
                     <div class="header__choosingClinic width_paddingLeftRight">
-                            <div id="choosingClinic" xmlns:v-on="http://www.w3.org/1999/xhtml" class="choosingClinic">
-                                <span class="choosingClinic__select">
-                                    <div class="choosingClinic__info">
-                                        <span class="choosingClinic__name">Клиника на Кораблестроителей (м. Приморская)</span>
-                                        <span class="choosingClinic__adress">Кораблестроителей ул., д.32, корпус 3, литер А, 2 этаж</span>
-                                    </div> <span class="choosingClinic__strl"></span>
-                                </span>
-                            </div>
+                        <? $APPLICATION->IncludeComponent("realweb:blank", "clinics", array(), false, array('HIDE_ICONS' => 'Y')); ?>
+
+
                     </div>
                     <noindex>
                         <div class="header__links width_paddingLeftRight">

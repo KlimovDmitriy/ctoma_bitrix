@@ -9,3 +9,6 @@
     color: #ccc;
     content: "/\00a0";
 }
+.choosingClinic__list{
+    display:none;
+}

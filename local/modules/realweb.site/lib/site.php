@@ -2,12 +2,23 @@
 
 namespace Realweb\Site;
 
+use Bitrix\Main\Application;
 use Bitrix\Main\Loader;
 use Bitrix\Main\Data\Cache;
 use Bitrix\Main\UserFieldTable;
 
 class Site
 {
+    protected static $instance;
+
+    public static function getInstance()
+    {
+        if (is_null(self::$instance)) {
+            self::$instance = new self();
+        }
+
+        return self::$instance;
+    }
 
     public static function definders()
     {
@@ -312,7 +323,7 @@ class Site
     {
 
 
-        $iblockId = \Bitrix\Iblock\IblockTable::getList(['filter'=>['CODE'=>$code]])->Fetch()["ID"];
+        $iblockId = \Bitrix\Iblock\IblockTable::getList(['filter' => ['CODE' => $code]])->Fetch()["ID"];
 
         return $iblockId;
 
@@ -326,5 +337,28 @@ class Site
         if ($n > 1 && $n < 5) return $f2;
         if ($n == 1) return $f1;
         return $f5;
+    }
+
+    public function getClinic()
+    {
+        if ($clinicId = Application::getInstance()->getContext()->getRequest()->getCookie('clinic')) {
+            $this->_city = $this->_getClinic(array('ID' => $clinicId));
+        }else{
+
+            $this->_city = $this->_getClinic(array('ID' => 335));
+        }
+
+        return $this->_city;
+    }
+
+    private function _getClinic($filter = array())
+    {
+        if (Loader::includeModule('iblock')) {
+            $res = \CIBlockElement::GetByID($filter['ID']);
+            if ($ar_res = $res->GetNext()) {
+
+                return $ar_res;
+            }
+        }
     }
 }
