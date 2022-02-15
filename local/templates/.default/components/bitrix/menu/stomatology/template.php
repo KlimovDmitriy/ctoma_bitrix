@@ -1,7 +1,7 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 
 <?if (!empty($arResult)):?>
-<ul id="vertical-multilevel-menu">
+<ul class="serviceMenu__list">
 
 <?
 $previousLevel = 0;
@@ -14,10 +14,13 @@ foreach($arResult as $arItem):?>
 	<?if ($arItem["IS_PARENT"]):?>
 
 		<?if ($arItem["DEPTH_LEVEL"] == 1):?>
-			<li><a href="<?=$arItem["LINK"]?>" class="<?if ($arItem["SELECTED"]):?>root-item-selected<?else:?>root-item<?endif?>"><?=$arItem["TEXT"]?></a>
-				<ul class="root-item">
+			<li class="serviceMenu__element menu-item--expanded<?if ($arItem["SELECTED"]):?> menu-item--active-trail<?endif?>">
+                <a href="<?=$arItem["LINK"]?>" class="serviceMenu__linck"><?=$arItem["TEXT"]?></a>
+            <span class="menu_ml<?if ($arItem["SELECTED"]):?> sub_open<?else:?> sub_close<?endif?>"></span>
+            <ul class="serviceMenu__list">
 		<?else:?>
-			<li><a href="<?=$arItem["LINK"]?>" class="parent<?if ($arItem["SELECTED"]):?> item-selected<?endif?>"><?=$arItem["TEXT"]?></a>
+			<li class="serviceMenu__element <?if ($arItem["SELECTED"]):?> menu-item--active-trail<?endif?>">
+                <a href="<?=$arItem["LINK"]?>" class="serviceMenu__linck"><?=$arItem["TEXT"]?></a>
 				<ul>
 		<?endif?>
 
@@ -26,17 +29,25 @@ foreach($arResult as $arItem):?>
 		<?if ($arItem["PERMISSION"] > "D"):?>
 
 			<?if ($arItem["DEPTH_LEVEL"] == 1):?>
-				<li><a href="<?=$arItem["LINK"]?>" class="<?if ($arItem["SELECTED"]):?>root-item-selected<?else:?>root-item<?endif?>"><?=$arItem["TEXT"]?></a></li>
+				<li class="serviceMenu__element menu-item--expanded<?if ($arItem["SELECTED"]):?> menu-item--active-trail<?endif?>">
+                    <a href="<?=$arItem["LINK"]?>" class="serviceMenu__linck"><?=$arItem["TEXT"]?></a>
+                </li>
 			<?else:?>
-				<li><a href="<?=$arItem["LINK"]?>" <?if ($arItem["SELECTED"]):?> class="item-selected"<?endif?>><?=$arItem["TEXT"]?></a></li>
+				<li class="serviceMenu__element menu-item--expanded<?if ($arItem["SELECTED"]):?> menu-item--active-trail<?endif?>">
+                    <a href="<?=$arItem["LINK"]?>" class="serviceMenu__linck"><?=$arItem["TEXT"]?></a>
+                </li>
 			<?endif?>
 
 		<?else:?>
 
 			<?if ($arItem["DEPTH_LEVEL"] == 1):?>
-				<li><a href="" class="<?if ($arItem["SELECTED"]):?>root-item-selected<?else:?>root-item<?endif?>" title="<?=GetMessage("MENU_ITEM_ACCESS_DENIED")?>"><?=$arItem["TEXT"]?></a></li>
+				<li class="serviceMenu__element menu-item--expanded<?if ($arItem["SELECTED"]):?> menu-item--active-trail<?endif?>">
+                    <a href="" class="serviceMenu__linck" title="<?=GetMessage("MENU_ITEM_ACCESS_DENIED")?>"><?=$arItem["TEXT"]?></a>
+                </li>
 			<?else:?>
-				<li><a href="" class="denied" title="<?=GetMessage("MENU_ITEM_ACCESS_DENIED")?>"><?=$arItem["TEXT"]?></a></li>
+				<li class="serviceMenu__element menu-item--expanded<?if ($arItem["SELECTED"]):?> menu-item--active-trail<?endif?>">
+                    <a href="" class="denied" title="<?=GetMessage("MENU_ITEM_ACCESS_DENIED")?>"><?=$arItem["TEXT"]?></a>
+                </li>
 			<?endif?>
 
 		<?endif?>

@@ -6360,6 +6360,10 @@
     transition: all 0.3s ease;
 }
 
+.serviceMenu__linck:hover {
+    color: #ca1e3e;
+}
+
 #myBtn {
     display: none;
     position: fixed;

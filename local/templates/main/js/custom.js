@@ -74,3 +74,9 @@ $(document).on('click', '.choosingClinic__clinic', function (e) {
         }
     });
 });
+$('.menu_ml').on('click',function(){
+    var elem= $(this);
+    elem.toggleClass('sub_open');
+    elem.toggleClass('sub_close');
+    elem.parent().find(".serviceMenu__list").toggle();
+});
