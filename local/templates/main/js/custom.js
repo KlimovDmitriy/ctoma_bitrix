@@ -49,3 +49,28 @@ var galleryTop = new Swiper('.stomatology__swiper', {
         }
     }
 });
+
+$('.choosingClinic__info').on('click',function(){
+    $('.choosingClinic__list').toggle();
+})
+$(document).on('click', '.choosingClinic__clinic', function (e) {
+    e.preventDefault();
+    $('.choosingClinic__list').hide();
+    $.ajax({
+        type: "POST",
+        dataType: 'json',
+        url: "/ajax/",
+        data: {
+            "ID": $(this).data('id'),
+            "URL":$(this).data('url'),
+            "action": 'Action_confirmClinic'
+        },
+        beforeSend: function () {
+        },
+        success: function (response) {
+            if (response.url){
+                location.replace(response.url);
+            }
+        }
+    });
+});
