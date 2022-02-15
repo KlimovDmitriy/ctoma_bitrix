@@ -49,3 +49,10 @@ var galleryTop = new Swiper('.stomatology__swiper', {
         }
     }
 });
+
+$('.menu_ml').on('click',function(){
+    var elem= $(this);
+    elem.toggleClass('sub_open');
+    elem.toggleClass('sub_close');
+    elem.parent().find(".serviceMenu__list").toggle();
+});
