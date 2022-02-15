@@ -36,6 +36,58 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
     }
     ?>
 <?php else: ?>
+<div class="service__container ">
+
+
+    <div class="service__center width width_norm width_paddingStandart">
+        <div class="service__leftSidebar">
+
+            <div class="serviceMenu">
+
+                <?php
+                $APPLICATION->IncludeComponent(
+                    "bitrix:menu",
+                    "stomatology",
+                    array(
+                        "ALLOW_MULTI_SELECT" => "Y",
+                        "CHILD_MENU_TYPE" => "left",
+                        "COMPONENT_TEMPLATE" => ".default",
+                        "DELAY" => "N",
+                        "MAX_LEVEL" => "2",
+                        "MENU_CACHE_GET_VARS" => array(),
+                        "MENU_CACHE_TIME" => "3600",
+                        "MENU_CACHE_TYPE" => "A",
+                        "MENU_CACHE_USE_GROUPS" => "N",
+                        "MENU_THEME" => "site",
+                        "ROOT_MENU_TYPE" => "service",
+                        "USE_EXT" => "Y"
+                    ),
+                    false
+                ); ?>
+
+
+            </div>
+
+
+            <?php \Realweb\Site\Site::showIncludeText('LEFT_BANNER_STATIC'); ?>
+
+
+        </div>
+
+        <div class="service__bottomMobile">
+            <p class="toggleH2"><a class="content_toggle" href="#">Услуги</a></p>
+            <div class="content_block_service" style="display: none;">
+                <div class="serviceMenu">
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="service__content">
+            <div class="block-region-main">
+                <div class="block">
+
         <?php
         $intSectionID = $APPLICATION->IncludeComponent(
                 "bitrix:catalog.section", "", array(
@@ -129,4 +181,12 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
                 ), $component
         );
         ?>
-<?php endif; ?>
+
+    </div>
+</div>
+
+
+    </div>
+    </div>
+
+    <?php endif; ?>

@@ -19,10 +19,10 @@ for($index = 0; $index < $itemSize; $index++){
         $strReturn.= '  <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">';
 	$title = htmlspecialcharsex($arResult[$index]["TITLE"]);
 	if($arResult[$index]["LINK"] <> "" && $index != $itemSize-1){
-		$strReturn .= '<a itemprop="item" href="'.$arResult[$index]["LINK"].'"><span itemprop="name">'.$title.'</span></a>';
+		$strReturn .= '<a itemprop="item" href="'.$arResult[$index]["LINK"].'" class="breadcrumb__link"><span itemprop="name">'.$title.'</span></a>';
 	}else{
                 $strReturn .= '<link itemprop="item" href="'.$APPLICATION->GetCurPage(false).'" />';
-		$strReturn .= '<span itemprop="name">'.$title.'</span>';
+		$strReturn .= '<span class="breadcrumb__text" itemprop="name">'.$title.'</span>';
 	}
         $strReturn .= '   <meta itemprop="position" content="'.($index + 2).'" />';
         $strReturn.= '  </li>';
