@@ -20,6 +20,13 @@ foreach ($arResult["ITEMS"] as $key => $arElement) {
 
     }
 
+    $dbEl = CIBlockElement::GetByID($arElement['ID']);
+    if ($obEl = $dbEl->GetNextElement()) {
+        $arProps[$arElement['ID']] = $obEl->GetProperties();
+        $arResult["ITEMS"][$key]['ADDRESS'] = $arProps[$arElement['ID']]["ADDRESS"]["VALUE"];
+        $arResult["ITEMS"][$key]['SCHEDULE'] = $arProps[$arElement['ID']]["SCHEDULE"]["VALUE"];
+        $arResult["ITEMS"][$key]['CALLTOUCH'] = $arProps[$arElement['ID']]["CALLTOUCH"]["VALUE"];
+        $arResult["ITEMS"][$key]['PHONES'] = $arProps[$arElement['ID']]["PHONES"]["VALUE"];
+    }
 }
-
 
