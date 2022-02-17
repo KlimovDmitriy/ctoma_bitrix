@@ -82,7 +82,7 @@ $this->setFrameMode(true);
                                             <label>ОТ:</label>
                                             <span class="otzyvDefault__otName"><?= $item['NAME']; ?></span>
                                             <span class="otzyvDefault__otDate"><?
-                                                echo FormatDateFromDB($item["DATE_CREATE"], 'SHORT');
+                                                echo FormatDateFromDB($item["DATE_ACTIVE_FROM"], 'SHORT');
                                                 ?></span>
                                         </div>
                                         <div class="otzyvDefault__body">
