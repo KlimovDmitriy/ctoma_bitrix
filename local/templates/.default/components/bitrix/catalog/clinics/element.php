@@ -15,7 +15,14 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-
+<?php
+$APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
+        "START_FROM" => "0",
+        "PATH" => "",
+        "SITE_ID" => "s1"
+    )
+);
+?>
 <?
 $ElementID = $APPLICATION->IncludeComponent(
     "realweb:catalog.element", "", array(
