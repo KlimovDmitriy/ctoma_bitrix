@@ -1,32 +1,28 @@
-<? foreach ($arResult['ITEMS'] as $key=>$item) {
-echo '<pre>';
-
-$doctor=\Realweb\Site\Site::getPropValue('DOCTOR',$arParams["IBLOCK_ID"],$item['ID']);
-
-if (!empty($doctor[0]['VALUE'])){
+<? foreach ($arResult['ITEMS'] as $key => $item) {
 
 
+    $doctor = \Realweb\Site\Site::getPropValue('DOCTOR', $arParams["IBLOCK_ID"], $item['ID']);
 
-    $res = CIBlockElement::GetByID($doctor[0]['VALUE']);
-    if($ar_res = $res->GetNext()){
+    if (!empty($doctor[0]['VALUE'])) {
 
-        $doctor=['ID'=>$ar_res['ID'],'NAME'=>$ar_res['NAME'],'CODE'=>$ar_res['CODE'],'PICTURE'=>$ar_res['DETAIL_PICTURE']];
-        $doctors_iblock=$ar_res['IBLOCK_ID'];
-        $doctor['POSITION']=\Realweb\Site\Site::getPropValue('POSITION',$doctors_iblock,$ar_res['ID'])[0]['VALUE'];
 
-        $wp=\Realweb\Site\Site::getPropValue('WORK_PLACE',$doctors_iblock,$ar_res['ID']);
+        $res = CIBlockElement::GetByID($doctor[0]['VALUE']);
+        if ($ar_res = $res->GetNext()) {
 
-        $arResult['ITEMS'][$key]['DOCTOR']=$doctor;
+            $doctor = ['ID' => $ar_res['ID'], 'NAME' => $ar_res['NAME'], 'CODE' => $ar_res['CODE'], 'PICTURE' => $ar_res['DETAIL_PICTURE']];
+            $doctors_iblock = $ar_res['IBLOCK_ID'];
+            $doctor['POSITION'] = \Realweb\Site\Site::getPropValue('POSITION', $doctors_iblock, $ar_res['ID'])[0]['VALUE'];
+
+            $wp = \Realweb\Site\Site::getPropValue('WORK_PLACE', $doctors_iblock, $ar_res['ID']);
+
+            $arResult['ITEMS'][$key]['DOCTOR'] = $doctor;
+
+
+        }
 
 
     }
 
 
 }
-
-
-print_r($arResult['ITEMS'][$key]['DOCTOR']);
-    echo '</pre>';
-//exit;
-}
-    ?>
+?>

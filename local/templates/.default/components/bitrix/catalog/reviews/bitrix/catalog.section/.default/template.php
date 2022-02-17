@@ -41,7 +41,7 @@ $this->setFrameMode(true);
                                                 <div><a href="/vrac/<?= $item['DOCTOR']['CODE'] ?>/'"><img
                                                                 src="<?= $file['src'] ?>"
                                                                 width="320" height="320"
-                                                                alt="<?= $item['DOCTOR']['NAME'] ?>"
+                                                                alt="Отзыв о враче <?= $item['DOCTOR']['NAME'] ?>"
                                                                 typeof="foaf:Image"></a></div>
 
 
