@@ -1,5 +1,4 @@
 <?php
-print_r($arParams['ELEMENT_SORT_FIELD']);
 $APPLICATION->IncludeComponent(
     "bitrix:catalog.section",
     "",
