@@ -43,7 +43,7 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
 <?php
 $APPLICATION->IncludeComponent(
     "bitrix:catalog.section",
-    "clinics",
+    "",
     Array(
         "ADD_SECTIONS_CHAIN" => "Y",
         "CACHE_FILTER" => "N",
