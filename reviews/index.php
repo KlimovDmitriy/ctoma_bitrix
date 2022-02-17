@@ -1,10 +1,9 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 $APPLICATION->SetTitle("");
-
 ?><?$APPLICATION->IncludeComponent(
     "bitrix:catalog",
-    "clinics",
+    "reviews",
     Array(
         "ACTION_VARIABLE" => "action",
         "ADD_ELEMENT_CHAIN" => "Y",
@@ -131,7 +130,7 @@ $APPLICATION->SetTitle("");
         "SECTION_TOP_DEPTH" => "2",
         "SEF_FOLDER" => "/reviews/",
         "SEF_MODE" => "Y",
-        "SEF_URL_TEMPLATES" => Array("compare"=>"","element"=>"#SECTION_CODE_PATH#/#ELEMENT_CODE#/","section"=>"#SECTION_CODE_PATH#/","sections"=>"","smart_filter"=>""),
+        "SEF_URL_TEMPLATES" => Array("compare"=>"","element"=>"#SECTION_CODE_PATH#/#ELEMENT_CODE#/","section"=>"#SECTION_CODE_PATH#/","sections"=>"/reviews/","smart_filter"=>""),
         "SET_LAST_MODIFIED" => "N",
         "SET_STATUS_404" => "N",
         "SET_TITLE" => "Y",
