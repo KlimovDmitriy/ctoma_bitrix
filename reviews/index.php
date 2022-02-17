@@ -1,10 +1,12 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 $APPLICATION->SetTitle("");
-?><?$APPLICATION->IncludeComponent(
+?>
+
+<? $APPLICATION->IncludeComponent(
     "bitrix:catalog",
     "reviews",
-    Array(
+    array(
         "ACTION_VARIABLE" => "action",
         "ADD_ELEMENT_CHAIN" => "Y",
         "ADD_PICT_PROP" => "-",
@@ -26,7 +28,7 @@ $APPLICATION->SetTitle("");
         "COMPATIBLE_MODE" => "Y",
         "CONVERT_CURRENCY" => "N",
         "DETAIL_ADD_DETAIL_TO_SLIDER" => "N",
-        "DETAIL_ADD_TO_BASKET_ACTION" => array(0=>"BUY",),
+        "DETAIL_ADD_TO_BASKET_ACTION" => array(0 => "BUY",),
         "DETAIL_BACKGROUND_IMAGE" => "-",
         "DETAIL_BRAND_USE" => "N",
         "DETAIL_BROWSER_TITLE" => "-",
@@ -39,7 +41,7 @@ $APPLICATION->SetTitle("");
         "DETAIL_META_KEYWORDS" => "-",
         "DETAIL_PRODUCT_INFO_BLOCK_ORDER" => "sku,props",
         "DETAIL_PRODUCT_PAY_BLOCK_ORDER" => "rating,price,priceRanges,quantityLimit,quantity,buttons",
-        "DETAIL_PROPERTY_CODE" => array(0=>"NOTE",),
+        "DETAIL_PROPERTY_CODE" => array(0 => "DOCTOR",),
         "DETAIL_SET_CANONICAL_URL" => "N",
         "DETAIL_SET_VIEWED_IN_COMPONENT" => "N",
         "DETAIL_SHOW_MAX_QUANTITY" => "N",
@@ -52,9 +54,9 @@ $APPLICATION->SetTitle("");
         "DISABLE_INIT_JS_IN_COMPONENT" => "N",
         "DISPLAY_BOTTOM_PAGER" => "Y",
         "DISPLAY_TOP_PAGER" => "N",
-        "ELEMENT_SORT_FIELD" => "sort",
+        "ELEMENT_SORT_FIELD" => "DATE_ACTIVE_FROM",
         "ELEMENT_SORT_FIELD2" => "id",
-        "ELEMENT_SORT_ORDER" => "asc",
+        "ELEMENT_SORT_ORDER" => "desc",
         "ELEMENT_SORT_ORDER2" => "desc",
         "FILTER_HIDE_ON_MOBILE" => "N",
         "FILTER_VIEW_MODE" => "VERTICAL",
@@ -89,7 +91,7 @@ $APPLICATION->SetTitle("");
         "LIST_BROWSER_TITLE" => "-",
         "LIST_META_DESCRIPTION" => "-",
         "LIST_META_KEYWORDS" => "-",
-        "LIST_PROPERTY_CODE" => array(0=>"PAGE_TYPE",1=>"",2=>"",),
+        "LIST_PROPERTY_CODE" => ['DOCTOR'],
         "LOAD_ON_SCROLL" => "N",
         "MESSAGE_404" => "",
         "MESS_BTN_ADD_TO_BASKET" => "",
@@ -130,7 +132,7 @@ $APPLICATION->SetTitle("");
         "SECTION_TOP_DEPTH" => "2",
         "SEF_FOLDER" => "/reviews/",
         "SEF_MODE" => "Y",
-        "SEF_URL_TEMPLATES" => Array("compare"=>"","element"=>"#SECTION_CODE_PATH#/#ELEMENT_CODE#/","section"=>"#SECTION_CODE_PATH#/","sections"=>"/reviews/","smart_filter"=>""),
+        "SEF_URL_TEMPLATES" => array("compare" => "", "element" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/", "section" => "#SECTION_CODE_PATH#/", "sections" => "/reviews/", "smart_filter" => ""),
         "SET_LAST_MODIFIED" => "N",
         "SET_STATUS_404" => "N",
         "SET_TITLE" => "Y",
@@ -155,7 +157,7 @@ $APPLICATION->SetTitle("");
         "TOP_LINE_ELEMENT_COUNT" => "3",
         "TOP_PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
         "TOP_PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false}]",
-        "TOP_PROPERTY_CODE" => array(0=>"",1=>"",),
+        "TOP_PROPERTY_CODE" => array(0 => "", 1 => "",),
         "TOP_PROPERTY_CODE_MOBILE" => array(),
         "TOP_SHOW_SLIDER" => "Y",
         "TOP_SLIDER_INTERVAL" => "3000",
@@ -182,7 +184,9 @@ $APPLICATION->SetTitle("");
         "USE_STORE" => "N"
     ),
     false,
-    Array(
+    array(
         'HIDE_ICONS' => 'Y'
     )
-);?><?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+); ?>
+
+<?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
