@@ -20,7 +20,7 @@
                 $res = CIBlockElement::GetByID($ob['VALUE']);
                 if ($ar_res = $res->GetNext()) {
 
-                    $VALUES[] = [$ar_res['CODE'] => $ar_res['NAME']];
+                    $VALUES[$ar_res['CODE']] = $ar_res['NAME'];
                 }
 
             }

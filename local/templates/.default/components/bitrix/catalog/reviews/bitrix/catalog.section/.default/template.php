@@ -50,8 +50,6 @@ $this->setFrameMode(true);
                                                 </div>
                                                 <div class="otzyvDefault__mestaRaboty">
                                                     <label>Место работы:</label>
-
-
                                                     <div>
                                                         <ul>
                                                             <? foreach ($item['DOCTOR']['WP'] as $key => $clinic) { ?>
