@@ -54,7 +54,7 @@ $APPLICATION->SetTitle("");
         "DISABLE_INIT_JS_IN_COMPONENT" => "N",
         "DISPLAY_BOTTOM_PAGER" => "Y",
         "DISPLAY_TOP_PAGER" => "N",
-        "ELEMENT_SORT_FIELD" => "date_active_from",
+        "ELEMENT_SORT_FIELD" => "DATE_ACTIVE_FROM",
         "ELEMENT_SORT_FIELD2" => "sort",
         "ELEMENT_SORT_ORDER" => "desc",
         "ELEMENT_SORT_ORDER2" => "desc",

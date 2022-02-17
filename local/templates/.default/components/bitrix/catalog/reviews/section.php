@@ -1,4 +1,5 @@
 <?php
+print_r($arParams['ELEMENT_SORT_FIELD']);
 $APPLICATION->IncludeComponent(
     "bitrix:catalog.section",
     "",
@@ -19,7 +20,9 @@ $APPLICATION->IncludeComponent(
         "SECTION_USER_FIELDS" => array("", ""),
         "SHOW_PARENT_NAME" => "Y",
         "TOP_DEPTH" => "2",
-        "VIEW_MODE" => "LINE"
+        "VIEW_MODE" => "LINE",
+        "ELEMENT_SORT_FIELD" => $arParams['ELEMENT_SORT_FIELD'],
+        "ELEMENT_SORT_ORDER" => $arParams['ELEMENT_SORT_ORDER']
     ),
     $component
 );
