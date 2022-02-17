@@ -132,7 +132,7 @@ $APPLICATION->SetPageProperty("description", "Стоматологические
         "SECTION_TOP_DEPTH" => "2",
         "SEF_FOLDER" => "/clinics/",
         "SEF_MODE" => "Y",
-        "SEF_URL_TEMPLATES" => Array("compare"=>"","element"=>"#SECTION_CODE_PATH#/#ELEMENT_CODE#/","section"=>"#SECTION_CODE_PATH#/","sections"=>"","smart_filter"=>""),
+        "SEF_URL_TEMPLATES" => Array("compare"=>"","element"=>"#SECTION_CODE_PATH#/#ELEMENT_CODE#/","section"=>"#SECTION_CODE_PATH#/","sections"=>"/clinics/","smart_filter"=>""),
         "SET_LAST_MODIFIED" => "N",
         "SET_STATUS_404" => "N",
         "SET_TITLE" => "Y",
