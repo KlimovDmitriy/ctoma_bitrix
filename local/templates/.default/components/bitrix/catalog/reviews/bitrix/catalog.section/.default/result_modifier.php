@@ -13,7 +13,19 @@
             $doctors_iblock = $ar_res['IBLOCK_ID'];
             $doctor['POSITION'] = \Realweb\Site\Site::getPropValue('POSITION', $doctors_iblock, $ar_res['ID'])[0]['VALUE'];
 
-            $wp = \Realweb\Site\Site::getPropValue('WORK_PLACE', $doctors_iblock, $ar_res['ID']);
+            $res = CIBlockElement::GetProperty($doctors_iblock, $ar_res['ID'], "sort", "asc", array("CODE" => "WORK_PLACE"));
+            while ($ob = $res->GetNext()) {
+
+
+                $res = CIBlockElement::GetByID($ob['VALUE']);
+                if ($ar_res = $res->GetNext()) {
+
+                    $VALUES[] = [$ar_res['CODE'] => $ar_res['NAME']];
+                }
+
+            }
+            $doctor['WP'] = $VALUES;
+
 
             $arResult['ITEMS'][$key]['DOCTOR'] = $doctor;
 

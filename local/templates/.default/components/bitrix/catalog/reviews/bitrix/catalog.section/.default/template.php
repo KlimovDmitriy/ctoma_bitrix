@@ -25,7 +25,6 @@ $this->setFrameMode(true);
     <div class="otzyvy__content width width_norm width_paddingStandart">
         <div class="views-element-container">
             <div>
-
                 <? foreach ($arResult['ITEMS'] as $item) { ?>
                     <div class="views-row">
                         <div class="otzyvDefault width width_light">
@@ -36,38 +35,30 @@ $this->setFrameMode(true);
                                     <? if (is_array($item['DOCTOR']) && !empty($item['DOCTOR'])) { ?>
                                         <div>
                                             <div class="otzyvDefault__vrach width_paddingStandart">
-
                                                 <? $file = CFile::ResizeImageGet($item['DOCTOR']['PICTURE'], array('width' => 320, 'height' => 320), BX_RESIZE_IMAGE_PROPORTIONAL, true); ?>
                                                 <div><a href="/vrac/<?= $item['DOCTOR']['CODE'] ?>/'"><img
                                                                 src="<?= $file['src'] ?>"
                                                                 width="320" height="320"
                                                                 alt="Отзыв о враче <?= $item['DOCTOR']['NAME'] ?>"
                                                                 typeof="foaf:Image"></a></div>
-
-
                                                 <div class="otzyvDefault__name">
                                                     <a href="/vrac/<?= $item['DOCTOR']['CODE'] ?>/"><span><?= $item['DOCTOR']['NAME'] ?></span>
                                                     </a>
                                                 </div>
                                                 <div class="otzyvDefault__dolznost">
-
-
                                                     <div><?= $item['DOCTOR']['POSITION'] ?></div>
-
                                                 </div>
-
                                                 <div class="otzyvDefault__mestaRaboty">
                                                     <label>Место работы:</label>
 
 
                                                     <div>
                                                         <ul>
-                                                            <li><a href="/clinics/klinika-na-sikejrosa" hreflang="ru">Клиника
-                                                                    на Сикейроса (м. Озерки)</a></li>
-                                                            <li><a href="/clinics/klinika-na-kolomyazhskom-prospekte"
-                                                                   hreflang="ru">Клиника на Коломяжском
-                                                                    (м.Пионерская)</a>
-                                                            </li>
+                                                            <? foreach ($item['DOCTOR']['WP'] as $key => $clinic) { ?>
+                                                                <li><a href="/clinics/<?= $key ?>/"
+                                                                       hreflang="ru"><?= $clinic ?></a></li>
+                                                            <? } ?>
+
                                                         </ul>
                                                     </div>
 
@@ -102,9 +93,7 @@ $this->setFrameMode(true);
                         </div>
                     </div>
                 <? } ?>
-
                 <?= $arResult['NAV_STRING'] ?>
-
             </div>
         </div>
     </div>
