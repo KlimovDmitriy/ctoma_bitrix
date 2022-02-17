@@ -33,47 +33,49 @@ $this->setFrameMode(true);
                             <div class="otzyvDefault__content">
 
                                 <div class="otzyvDefault__top">
-                                    <div>
-                                        <div class="otzyvDefault__vrach width_paddingStandart">
+                                    <? if (is_array($item['DOCTOR']) && !empty($item['DOCTOR'])) { ?>
+                                        <div>
+                                            <div class="otzyvDefault__vrach width_paddingStandart">
+
+                                                <? $file = CFile::ResizeImageGet($item['DOCTOR']['PICTURE'], array('width' => 320, 'height' => 320), BX_RESIZE_IMAGE_PROPORTIONAL, true); ?>
+                                                <div><a href="/vrac/<?= $item['DOCTOR']['CODE'] ?>/'"><img
+                                                                src="<?= $file['src'] ?>"
+                                                                width="320" height="320"
+                                                                alt="<?= $item['DOCTOR']['NAME'] ?>"
+                                                                typeof="foaf:Image"></a></div>
 
 
-                                            <div><a href="/vrac/sokolov-artem-aleksandrovic"><img
-                                                            src="/sites/default/files/2021-02/%D0%A1%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%D0%B2%20%D0%90c.jpg"
-                                                            width="320" height="320"
-                                                            alt="Отзыв о враче Соколов Артём Александрович"
-                                                            typeof="foaf:Image"></a></div>
+                                                <div class="otzyvDefault__name">
+                                                    <a href="/vrac/<?= $item['DOCTOR']['CODE'] ?>/"><span><?= $item['DOCTOR']['NAME'] ?></span>
+                                                    </a>
+                                                </div>
+                                                <div class="otzyvDefault__dolznost">
 
 
-                                            <div class="otzyvDefault__name">
-                                                <a href="/vrac/sokolov-artem-aleksandrovic"><span>Соколов Артём Александрович</span>
-                                                </a>
-                                            </div>
-                                            <div class="otzyvDefault__dolznost">
+                                                    <div><?= $item['DOCTOR']['POSITION'] ?></div>
+
+                                                </div>
+
+                                                <div class="otzyvDefault__mestaRaboty">
+                                                    <label>Место работы:</label>
 
 
-                                                <div>Стоматолог-терапевт</div>
+                                                    <div>
+                                                        <ul>
+                                                            <li><a href="/clinics/klinika-na-sikejrosa" hreflang="ru">Клиника
+                                                                    на Сикейроса (м. Озерки)</a></li>
+                                                            <li><a href="/clinics/klinika-na-kolomyazhskom-prospekte"
+                                                                   hreflang="ru">Клиника на Коломяжском
+                                                                    (м.Пионерская)</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
 
-                                            </div>
-
-                                            <div class="otzyvDefault__mestaRaboty">
-                                                <label>Место работы:</label>
-
-
-                                                <div>
-                                                    <ul>
-                                                        <li><a href="/clinics/klinika-na-sikejrosa" hreflang="ru">Клиника
-                                                                на Сикейроса (м. Озерки)</a></li>
-                                                        <li><a href="/clinics/klinika-na-kolomyazhskom-prospekte"
-                                                               hreflang="ru">Клиника на Коломяжском (м.Пионерская)</a>
-                                                        </li>
-                                                    </ul>
                                                 </div>
 
                                             </div>
-
                                         </div>
-                                    </div>
-
+                                    <? } ?>
 
                                     <div class="otzyvDefault__info width_paddingStandart">
                                         <div class="otzyvDefault__ot">
@@ -92,7 +94,8 @@ $this->setFrameMode(true);
                                     </div>
                                 </div>
 
-                                <div class="otzyvDefault__more"><a class="button_red" href="/otzyvy/<?= $item['CODE']; ?>/">Подробнее</a>
+                                <div class="otzyvDefault__more"><a class="button_red"
+                                                                   href="/otzyvy/<?= $item['CODE']; ?>/">Подробнее</a>
                                 </div>
 
                             </div>
@@ -100,7 +103,7 @@ $this->setFrameMode(true);
                     </div>
                 <? } ?>
 
-                <?=$arResult['NAV_STRING']?>
+                <?= $arResult['NAV_STRING'] ?>
 
             </div>
         </div>
