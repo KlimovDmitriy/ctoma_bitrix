@@ -100,78 +100,7 @@ $this->setFrameMode(true);
                     </div>
                 <? } ?>
 
-
-                <nav class="pager" role="navigation" aria-labelledby="pagination-heading">
-                    <ul class="pager__items js-pager__items">
-                        <li class="pager__item is-active">
-                            <a href="?page=0" title="Текущая страница">
-            <span class="visually-hidden">
-              Текущая страница
-            </span>1</a>
-                        </li>
-                        <li class="pager__item">
-                            <a href="?page=1" title="Go to page 2">
-            <span class="visually-hidden">
-              Page
-            </span>2</a>
-                        </li>
-                        <li class="pager__item">
-                            <a href="?page=2" title="Go to page 3">
-            <span class="visually-hidden">
-              Page
-            </span>3</a>
-                        </li>
-                        <li class="pager__item">
-                            <a href="?page=3" title="Go to page 4">
-            <span class="visually-hidden">
-              Page
-            </span>4</a>
-                        </li>
-                        <li class="pager__item">
-                            <a href="?page=4" title="Go to page 5">
-            <span class="visually-hidden">
-              Page
-            </span>5</a>
-                        </li>
-                        <li class="pager__item">
-                            <a href="?page=5" title="Go to page 6">
-            <span class="visually-hidden">
-              Page
-            </span>6</a>
-                        </li>
-                        <li class="pager__item">
-                            <a href="?page=6" title="Go to page 7">
-            <span class="visually-hidden">
-              Page
-            </span>7</a>
-                        </li>
-                        <li class="pager__item">
-                            <a href="?page=7" title="Go to page 8">
-            <span class="visually-hidden">
-              Page
-            </span>8</a>
-                        </li>
-                        <li class="pager__item">
-                            <a href="?page=8" title="Go to page 9">
-            <span class="visually-hidden">
-              Page
-            </span>9</a>
-                        </li>
-                        <li class="pager__item pager__item--ellipsis" role="presentation">…</li>
-                        <li class="pager__item pager__item--next">
-                            <a href="?page=1" title="На следующую страницу" rel="next">
-                                <span class="visually-hidden">Следующая страница</span>
-                                <span aria-hidden="true">Следующий ›</span>
-                            </a>
-                        </li>
-                        <li class="pager__item pager__item--last">
-                            <a href="?page=279" title="На последнюю страницу">
-                                <span class="visually-hidden">Последняя страница</span>
-                                <span aria-hidden="true">Последняя »</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                <?=$arResult['NAV_STRING']?>
 
             </div>
         </div>
