@@ -131,19 +131,3 @@ $ElementID = $APPLICATION->IncludeComponent(
 ), $component
 );
 ?>
-
-
-<?php
-
-$COMPONENTS = $APPLICATION->GetPageProperty('COMPONENTS');
-?>
-<?php foreach ($COMPONENTS as $PAGE_TYPE): ?>
-    <?php if ($PAGE_TYPE['TYPE'] == 'COMPONENT'): ?>
-        <?
-
-        $APPLICATION->IncludeComponent(
-            $PAGE_TYPE['COMPONENT_NAME'], $PAGE_TYPE['TEMPLATE'], \Realweb\Site\Property\PageType::ProcessParams($PAGE_TYPE['arParams']), false, array('HIDE_ICONS' => 'Y')
-        );
-        ?>
-    <?php endif; ?>
-<?php endforeach; ?>
