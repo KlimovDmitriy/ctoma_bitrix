@@ -22,11 +22,13 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
         "SITE_ID" => "s1"
     )
 );
+
 ?>
 <?php if (intval($arResult['VARIABLES']['SECTION_ID']) == 0): ?>
     <?php
     $arVariables = array();
     $isElement = \Realweb\Site\Property\PageType::isElement($arParams["SEF_FOLDER"], $arParams['IBLOCK_ID'], $arVariables);
+
     if ($isElement) {
         $componentPage = 'element';
         $arResult['VARIABLES'] = $arVariables;
