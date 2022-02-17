@@ -1,7 +1,8 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
-$APPLICATION->SetTitle("");
-
+$APPLICATION->SetPageProperty("title", "Стоматологические клиники СПБ: адреса, телефоны, время работы | «СТОМА»");
+$APPLICATION->SetPageProperty("keywords", "");
+$APPLICATION->SetPageProperty("description", "Стоматологические клиники «Стома» в Санкт-Петербурге – перечень клиник с адресами, телефонами и графиками работы.");
 ?><?$APPLICATION->IncludeComponent(
     "bitrix:catalog",
     "clinics",

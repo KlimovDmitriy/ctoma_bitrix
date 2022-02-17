@@ -9,8 +9,8 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <meta name="MobileOptimized" content="width" />
 <meta name="HandheldFriendly" content="true" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title><? $APPLICATION->ShowTitle(); ?></title>
 <?$APPLICATION->ShowHead()?>
-<title>Стома</title>
 <link rel="stylesheet" media="all" href="/local/templates/main/css/style.css">
 </head>
 
