@@ -37,4 +37,11 @@
 
 
 }
+global $APPLICATION;
+$cp = $this->__component;
+if (is_object($cp)){
+    $cp->arResult['DESC'] = implode(' ', array_slice(explode(' ', strip_tags($arResult["PREVIEW_TEXT"])), 0, 20));
+    $cp->SetResultCacheKeys(array('DESC'));
+    $arResult['DESC'] = $cp->arResult['DESC'];
+}
 ?>

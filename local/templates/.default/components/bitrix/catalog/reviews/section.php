@@ -1,4 +1,20 @@
 <?php
+global $APPLICATION;
+
+$title = 'Отзывы | Группа компаний «СТОМА»';
+$desc = 'Сеть стоматологических клиник «Стома» оказывает полный спектр услуг стоматологии: детская стоматология и для взрослых. 17 клиник в Санкт-Петербурге рядом с метро, телефон для справок: +7 (812) 321-02-01';
+if ($_REQUEST['PAGEN_1'] > 0) {
+
+    $title .= ' - страница ' . (int)$_REQUEST['PAGEN_1'];
+    $desc .= ' - страница ' . (int)$_REQUEST['PAGEN_1'];
+}
+
+
+$APPLICATION->SetTitle($title);
+
+$APPLICATION->SetPageProperty("description", $desc);
+
+
 $APPLICATION->IncludeComponent(
     "bitrix:catalog.section",
     "",

@@ -26,6 +26,7 @@ $this->setFrameMode(true);
         <div class="views-element-container">
             <div>
                 <? foreach ($arResult['ITEMS'] as $item) { ?>
+
                     <div class="views-row">
                         <div class="otzyvDefault width width_light">
                             <span class="otzyvDefault__podlojka"></span>
@@ -84,7 +85,7 @@ $this->setFrameMode(true);
                                 </div>
 
                                 <div class="otzyvDefault__more"><a class="button_red"
-                                                                   href="/otzyvy/<?= $item['CODE']; ?>/">Подробнее</a>
+                                                                   href="<?= $item['DETAIL_PAGE_URL']; ?>/">Подробнее</a>
                                 </div>
 
                             </div>
