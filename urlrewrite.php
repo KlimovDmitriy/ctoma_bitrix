@@ -1,6 +1,14 @@
 <?php
 $arUrlRewrite=array (
-  4 => 
+  5 =>
+    array (
+        'CONDITION' => '#^/clinics/#',
+        'RULE' => '',
+        'ID' => 'bitrix:catalog',
+        'PATH' => '/clinics/index.php',
+        'SORT' => 100,
+    ),
+  4 =>
   array (
     'CONDITION' => '#^/stomatology/#',
     'RULE' => '',
@@ -8,7 +16,7 @@ $arUrlRewrite=array (
     'PATH' => '/stomatology/index.php',
     'SORT' => 100,
   ),
-  3 => 
+  3 =>
   array (
     'CONDITION' => '#^/#',
     'RULE' => '',
