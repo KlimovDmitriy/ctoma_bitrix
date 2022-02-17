@@ -15,11 +15,7 @@ if ($arResult['PROPERTIES']['HIDE_H1']['VALUE'] == "Y") {
 }
 
 $COMPONENTS = array();
-foreach ($arResult['PROPERTIES']['PAGE_TYPE']['VALUE'] as $PAGE_TYPE) {
-    if ($PAGE_TYPE['TYPE'] == 'COMPONENT') {
-        $COMPONENTS[] = $PAGE_TYPE;
-    }
-}
+
 $APPLICATION->SetPageProperty('COMPONENTS', $COMPONENTS);
 if (intval($arResult['IBLOCK_SECTION_ID']) > 0 && strlen($arParams['SECTION_CODE']) == 0 && intval($arParams['SECTION_ID']) == 0) {
     define('ERROR_404', 'Y');
