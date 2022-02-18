@@ -5,7 +5,7 @@ $APPLICATION->SetPageProperty("keywords", "");
 $APPLICATION->SetPageProperty("description", "В данном разделе представлены результаты работы наших специалистов.");
 ?><?/*$APPLICATION->IncludeComponent(
     "bitrix:catalog",
-    "clinics",
+    "portfolio",
     Array(
         "ACTION_VARIABLE" => "action",
         "ADD_ELEMENT_CHAIN" => "Y",
