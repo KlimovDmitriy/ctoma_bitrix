@@ -3,7 +3,10 @@ require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 $APPLICATION->SetPageProperty("title", "Стоматологические клиники СПБ: адреса, телефоны, время работы | «СТОМА»");
 $APPLICATION->SetPageProperty("keywords", "");
 $APPLICATION->SetPageProperty("description", "Стоматологические клиники «Стома» в Санкт-Петербурге – перечень клиник с адресами, телефонами и графиками работы.");
-?><?$APPLICATION->IncludeComponent(
+?><?
+
+
+$APPLICATION->IncludeComponent(
     "bitrix:catalog",
     "clinics",
     Array(
@@ -132,7 +135,7 @@ $APPLICATION->SetPageProperty("description", "Стоматологические
         "SECTION_TOP_DEPTH" => "2",
         "SEF_FOLDER" => "/clinics/",
         "SEF_MODE" => "Y",
-        "SEF_URL_TEMPLATES" => Array("compare"=>"","element"=>"#SECTION_CODE_PATH#/#ELEMENT_CODE#/","section"=>"#SECTION_CODE_PATH#/","sections"=>"/clinics/","smart_filter"=>""),
+        "SEF_URL_TEMPLATES" => Array("compare"=>"","element"=>"#ELEMENT_CODE#/","section"=>"#SECTION_CODE_PATH#/","sections"=>"/clinics/","smart_filter"=>""),
         "SET_LAST_MODIFIED" => "N",
         "SET_STATUS_404" => "N",
         "SET_TITLE" => "Y",

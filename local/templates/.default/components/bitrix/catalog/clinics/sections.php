@@ -29,17 +29,29 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
     </h1>
 
 <div class="kliniki__content width width_norm width_paddingStandart">
-    <div class="rayon_buttons">
-        <a href="/clinics/vasileostrovskij-rajon">Василеостровский район</a>
-        <a href="/clinics/vyborgskij-rajon">Выборгский район</a>
-        <a href="/clinics/kalininskij-rajon">Калининский район</a>
-        <a href="/clinics/moskovskij-rajon">Московский район</a>
-        <a href="/clinics/petrogradskij-rajon">Петроградский район</a>
-        <a href="/clinics/primorskij-rajon">Приморский район</a>
-        <a href="/clinics/centralnyj-rajon">Центральный район</a>
-    </div>
-    <div class="views-element-container">
-        <div class="klinikiView">
+
+
+    <?$APPLICATION->IncludeComponent("bitrix:catalog.section.list","clinics",
+        Array(
+            "VIEW_MODE" => "TEXT",
+            "SHOW_PARENT_NAME" => "Y",
+            "IBLOCK_TYPE" => "content",
+            "IBLOCK_ID" => $arParams['IBLOCK_ID'],
+            "SECTION_ID" => 0,
+            "SECTION_CODE" => "",
+            "SECTION_URL" => "",
+            "COUNT_ELEMENTS" => "Y",
+            "TOP_DEPTH" => "1",
+            "SECTION_FIELDS" => "",
+            "SECTION_USER_FIELDS" => "",
+            "ADD_SECTIONS_CHAIN" => "Y",
+            "CACHE_TYPE" => "A",
+            "CACHE_TIME" => "36000000",
+            "CACHE_NOTES" => "",
+            "CACHE_GROUPS" => "Y"
+        )
+    );?>
+
             <?php
             $APPLICATION->IncludeComponent(
                 "bitrix:catalog.section",
@@ -66,8 +78,7 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
                 $component
             );
             ?>
-        </div>
-    </div>
+
 </div>
 </div>
 </div>
