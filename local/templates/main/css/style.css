@@ -11888,7 +11888,7 @@ button.swiper-pagination-bullet {
     margin: auto;
     display: block;
     height: 14px;
-    background: url("/themes/my_theme/bem/blocks/searchMap/img/icons.png") no-repeat 0 0;
+    background: url("/local/templates/main/images/icons.png") no-repeat 0 0;
 }
 
 .searchMap__podR {
@@ -12170,7 +12170,7 @@ button.swiper-pagination-bullet {
     top: 10px;
     height: 14px;
     background: green;
-    background: url("/themes/my_theme/bem/blocks/searchMap/img/icons.png") no-repeat 0 -14px;
+    background: url("/local/templates/main/images/icons.png") no-repeat 0 -14px;
 }
 
 .searchMap__rezim_raboty {
@@ -12201,7 +12201,7 @@ button.swiper-pagination-bullet {
     top: 10px;
     height: 17px;
     background: green;
-    background: url("/themes/my_theme/bem/blocks/searchMap/img/icons.png") no-repeat 0 -30px;
+    background: url("/local/templates/main/images/icons.png") no-repeat 0 -30px;
 }
 
 .searchMap__phones {
@@ -12233,7 +12233,7 @@ button.swiper-pagination-bullet {
     top: 10px;
     height: 17px;
     background: green;
-    background: url("/themes/my_theme/bem/blocks/searchMap/img/icons.png") no-repeat 0 -48px;
+    background: url("/local/templates/main/images/icons.png") no-repeat 0 -48px;
 }
 
 .searchMap__email {
@@ -12264,7 +12264,7 @@ button.swiper-pagination-bullet {
     top: 10px;
     height: 17px;
     background: green;
-    background: url("/themes/my_theme/bem/blocks/searchMap/img/icons.png") no-repeat 0 -64px;
+    background: url("/local/templates/main/images/icons.png") no-repeat 0 -64px;
 }
 
 .searchMap__active {

@@ -11,6 +11,18 @@ $name = !empty($arResult['IPROPERTY_VALUES']['SECTION_PAGE_TITLE'])
     <span class="title__text" style="font-size:32px"><?=$name;?></span>
     <span class="title__br"></span>
 </h1>
+<?php
+if ($arResult["SECTION_ID"]==0){
+    ?>
+
+    <? $APPLICATION->IncludeComponent("realweb:blank", "clinics_map", array(), false, array('HIDE_ICONS' => 'Y')); ?>
+
+    <div class="content_norm width width_norm">
+        <?=$arResult['DESCRIPTION'];?>
+    </div>
+    <?
+}
+?>
 <div class="kliniki__content width width_norm width_paddingStandart">
     <div class="views-element-container">
         <div class="klinikiView">
@@ -56,7 +68,19 @@ $name = !empty($arResult['IPROPERTY_VALUES']['SECTION_PAGE_TITLE'])
         </div>
     </div>
 </div>
+<?php
+if ($arResult["SECTION_ID"]>0){
+?>
+<h2 class="kliniki__title title_grey width width_norm width_paddingStandart">
+    <span class="title__br"></span>
+    <span class="title__text" style="font-size:32px">Клиники в других районах</span>
+    <span class="title__br"></span>
+</h2>
+<? $APPLICATION->IncludeComponent("realweb:blank", "clinics_map", array(), false, array('HIDE_ICONS' => 'Y')); ?>
 
 <div class="content_norm width width_norm">
  <?=$arResult['DESCRIPTION'];?>
 </div>
+<?
+}
+?>

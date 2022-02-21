@@ -12,6 +12,13 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <title><? $APPLICATION->ShowTitle(); ?></title>
 <?$APPLICATION->ShowHead()?>
 <link rel="stylesheet" media="all" href="/local/templates/main/css/style.css">
+<?
+Asset::getInstance()->addJs('https://code.jquery.com/jquery-3.6.0.min.js');
+Asset::getInstance()->addJs('https://use.fontawesome.com/9031eecf23.js');
+Asset::getInstance()->addJs('https://unpkg.com/swiper@8/swiper-bundle.min.js');
+Asset::getInstance()->addJs('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js');
+?>
+
 </head>
 
 <body class="html__body path-frontpage">
