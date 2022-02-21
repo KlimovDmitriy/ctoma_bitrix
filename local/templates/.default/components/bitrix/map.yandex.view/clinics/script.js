@@ -38,36 +38,60 @@ if (!window.BX_YMapAddPlacemark) {
     }
 }
 
-if (!window.BX_YMapAddPolyline) {
-    window.BX_YMapAddPolyline = function (map, arPolyline) {
-        if (null == map)
-            return false;
-
-        if (null != arPolyline.POINTS && arPolyline.POINTS.length > 1) {
-            var arPoints = [];
-            for (var i = 0, len = arPolyline.POINTS.length; i < len; i++) {
-                arPoints.push([arPolyline.POINTS[i].LAT, arPolyline.POINTS[i].LON]);
-            }
-        } else {
-            return false;
-        }
-
-        var obParams = {clickable: true};
-        if (null != arPolyline.STYLE) {
-            obParams.strokeColor = arPolyline.STYLE.strokeColor;
-            obParams.strokeWidth = arPolyline.STYLE.strokeWidth;
-        }
-        var obPolyline = new ymaps.Polyline(
-            arPoints, {balloonContent: arPolyline.TITLE}, obParams
-        );
-
-        map.geoObjects.add(obPolyline);
-
-        return obPolyline;
-    }
-}
 
 function select_clinic() {
     alert('asd')
 }
 
+$(document).ready(function () {
+    $('.searchMap__inputSend').bind('click', function () {
+        var adr = $('.searchMap__input').val();
+        var q = 'Санкт-Петербург, ' + adr;
+        var minDistanse = 0;
+        var myGeocoder = ymaps.geocode(q);
+        myGeocoder.then(function (res) {
+            var cords = res.geoObjects.get(0).geometry.getCoordinates()
+
+            var questionPos = cords;
+            $.ajax({
+                type: "POST",
+                dataType: 'json',
+                url: "/ajax/",
+                data: {
+                    "ID": $(this).data('id'),
+                    "URL": $(this).data('url'),
+                    "action": 'Action_getAllClinicsCoords'
+                },
+                beforeSend: function () {
+                },
+                success: function (response) {
+                    var all_clinics = JSON.parse(response)
+
+                    all_clinics.forEach(function (element, index) {
+                        var distance = ymaps.coordSystem.geo.getDistance([element.LAT, element.LON], questionPos);
+
+                        if (minDistanse == 0) {
+
+                            minDistanse = distance;
+                            clinic = element;
+                        } else {
+                            if (distance <= minDistanse) {
+                                minDistanse = distance;
+                                clinic = element;
+                            }
+                        }
+                    });
+
+
+
+                    console.log(clinic)
+                }
+            });
+
+
+        });
+
+    })
+
+
+})

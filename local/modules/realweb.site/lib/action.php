@@ -21,6 +21,7 @@ class Action
 
         return $this->_request;
     }
+
     public function confirmClinic()
     {
         if ($id = intval($this->_getRequest()->get('ID'))) {
@@ -29,5 +30,29 @@ class Action
             return array('url' => $this->_getRequest()->get('URL'));
         }
     }
+
+    public function getAllClinicsCoords()
+    {
+        /*Список клиник с ID, и координатами*/
+        $cls = Site::getIBlockElements(['IBLOCK_ID' => \Realweb\Site\Site::getIblockId('clinics')]);
+        $places = [];
+
+
+        foreach ($cls as $clinic) {
+
+
+            $places[] = array(
+                'LON' => str_replace(',', '.', $clinic['PROPERTIES']['LONGITUDE']["VALUE"]),
+                'LAT' => str_replace(',', '.', $clinic['PROPERTIES']['LATITUDE']["VALUE"]),
+                'NAME' => $clinic['NAME'],
+                'TID' => $clinic['ID']
+            );
+
+
+        }
+
+        return json_encode($places);
+    }
 }
+
 ?>
