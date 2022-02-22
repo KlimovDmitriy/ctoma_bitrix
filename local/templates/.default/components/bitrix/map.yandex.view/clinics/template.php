@@ -128,7 +128,7 @@ function BX_SetPlacemarks_<?echo $arParams['MAP_ID']?>(map)
                                 }
                             }
                         });
-                        BX_TestFunc(map, questionPos, [clinic.LAT, clinic.LON]);
+                        BX_RouteFunc(map, questionPos, [clinic.LAT, clinic.LON]);
                     }
                 });
             });

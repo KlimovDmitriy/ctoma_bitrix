@@ -30,9 +30,24 @@ if (!window.BX_YMapAddPlacemark) {
             }
         );
         /* Cобытие клика по метке */
-        obPlacemark.events.add('click', function () {
-            select_clinic(obPlacemark);
-        });
+
+
+
+            obPlacemark.events.add('click', function () {
+                var adr = $('.searchMap__input').val();
+                var q = 'Санкт-Петербург, ' + adr;
+                var minDistanse = 0;
+                if (adr) {
+                    var myGeocoder = ymaps.geocode(q);
+                    myGeocoder.then(function (res) {
+                        map.geoObjects.remove(window['BX_Route']);
+                        var cords = res.geoObjects.get(0).geometry.getCoordinates()
+
+                        var questionPos = cords;
+                        BX_RouteFunc(map, questionPos, [arPlacemark.LAT, arPlacemark.LON])
+                    });
+                }
+            });
         map.geoObjects.add(obPlacemark);
         return obPlacemark;
     }
@@ -42,7 +57,7 @@ if (!window.BX_YMapAddPlacemark) {
 function select_clinic() {
     alert('asd')
 }
-BX_TestFunc = function(map, startCoords, endCoords) {
+BX_RouteFunc = function(map, startCoords, endCoords) {
     var multiRoute = new ymaps.multiRouter.MultiRoute({
         // Описание опорных точек мультимаршрута.
         referencePoints: [
@@ -58,6 +73,7 @@ BX_TestFunc = function(map, startCoords, endCoords) {
         // Автоматически устанавливать границы карты так, чтобы маршрут был виден целиком.
         boundsAutoApply: true
     });
+    window['BX_Route'] = multiRoute;
     map.geoObjects.add(multiRoute);
 };
 //
