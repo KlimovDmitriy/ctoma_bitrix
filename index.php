@@ -167,6 +167,7 @@ $APPLICATION->SetTitle("Главная");
     <a href="/jobs" class="stomatology__more">Вакансии</a>
   </div>
 </div>
+    <? $APPLICATION->IncludeComponent("realweb:blank", "clinics_map", array(), false, array('HIDE_ICONS' => 'Y')); ?>
 
 
 </div>
