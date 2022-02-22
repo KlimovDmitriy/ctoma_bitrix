@@ -147,4 +147,3 @@ function BX_SetPlacemarks_<?echo $arParams['MAP_ID']?>(map)
 <?
 endif;
 ?>
-<script src="multiroute_driving.js" type="text/javascript"></script>
