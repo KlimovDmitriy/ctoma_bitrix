@@ -91,6 +91,33 @@ function BX_SetPlacemarks_<?echo $arParams['MAP_ID']?>(map)
 	endif;
 ?>
     $(document).ready(function () {
+        window['routeParams'] = {
+            results: 2
+        };
+        $('.searchMap__routes span').click(function () {
+            var params = $(this).data('route');
+            switch (params) {
+                case 'pedestrian':
+                    window['routeParams'] = {
+                        routingMode: 'pedestrian'
+                    };
+                    break;
+                case 'masstransit':
+                    window['routeParams'] = {
+                        routingMode: 'masstransit'
+                    };
+                    break;
+                case 'auto':
+                    window['routeParams'] = {
+                        results: 2
+                    };
+                    break;
+            };
+            if (window['BX_Route']) {
+                BX_RouteFunc(map, window['startCoords'], window['endCoords']);
+
+            }
+        });
         $('.searchMap__inputSend').bind('click', function () {
             var adr = $('.searchMap__input').val();
             var q = 'Санкт-Петербург, ' + adr;

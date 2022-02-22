@@ -40,7 +40,6 @@ if (!window.BX_YMapAddPlacemark) {
                 if (adr) {
                     var myGeocoder = ymaps.geocode(q);
                     myGeocoder.then(function (res) {
-                        map.geoObjects.remove(window['BX_Route']);
                         var cords = res.geoObjects.get(0).geometry.getCoordinates()
 
                         var questionPos = cords;
@@ -53,11 +52,12 @@ if (!window.BX_YMapAddPlacemark) {
     }
 }
 
-
-function select_clinic() {
-    alert('asd')
-}
 BX_RouteFunc = function(map, startCoords, endCoords) {
+    window['startCoords'] = startCoords;
+    window['endCoords'] = endCoords;
+    if (window['BX_Route']) {
+        map.geoObjects.remove(window['BX_Route']);
+    }
     var multiRoute = new ymaps.multiRouter.MultiRoute({
         // Описание опорных точек мультимаршрута.
         referencePoints: [
@@ -65,10 +65,7 @@ BX_RouteFunc = function(map, startCoords, endCoords) {
             endCoords
         ],
         // Параметры маршрутизации.
-        params: {
-            // Ограничение на максимальное количество маршрутов, возвращаемое маршрутизатором.
-            results: 2
-        }
+        params: window['routeParams']
     }, {
         // Автоматически устанавливать границы карты так, чтобы маршрут был виден целиком.
         boundsAutoApply: true

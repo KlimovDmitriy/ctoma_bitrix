@@ -54,6 +54,6 @@
             </div>
         </div>
     </div>
-    <div class="searchMap__routes width width_norm width_paddingStandart"><span>Построить маршрут на автомобиле</span>
-        <span>Общественном транспорте</span> <span>Пешком</span></div>
+    <div class="searchMap__routes width width_norm width_paddingStandart"><span data-route="auto">Построить маршрут на автомобиле</span>
+        <span data-route="masstransit">Общественном транспорте</span> <span data-route="pedestrian">Пешком</span></div>
 </div>
