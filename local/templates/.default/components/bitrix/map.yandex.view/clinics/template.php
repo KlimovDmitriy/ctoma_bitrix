@@ -23,6 +23,7 @@ else:
 		'API_KEY' => $arParams['API_KEY'],
 		'LOCALE' => $arParams['LOCALE'],
 		'ONMAPREADY' => 'BX_SetPlacemarks_'.$arParams['MAP_ID'],
+        'YANDEX_VERSION' => '2.1'
 	);
 
 	if ($arParams['DEV_MODE'] == 'Y')
@@ -35,7 +36,7 @@ else:
 <script type="text/javascript">
 function BX_SetPlacemarks_<?echo $arParams['MAP_ID']?>(map)
 {
-	if(typeof window["BX_YMapAddPlacemark"] != 'function')
+    if(typeof window["BX_YMapAddPlacemark"] != 'function')
 	{
 		/* If component's result was cached as html,
 		 * script.js will not been loaded next time.
@@ -89,7 +90,52 @@ function BX_SetPlacemarks_<?echo $arParams['MAP_ID']?>(map)
 <?
 	endif;
 ?>
+    $(document).ready(function () {
+        $('.searchMap__inputSend').bind('click', function () {
+            var adr = $('.searchMap__input').val();
+            var q = 'Санкт-Петербург, ' + adr;
+            var minDistanse = 0;
+            var myGeocoder = ymaps.geocode(q);
+            myGeocoder.then(function (res) {
+                var cords = res.geoObjects.get(0).geometry.getCoordinates()
+
+                var questionPos = cords;
+                $.ajax({
+                    type: "POST",
+                    dataType: 'json',
+                    url: "/ajax/",
+                    data: {
+                        "ID": $(this).data('id'),
+                        "URL": $(this).data('url'),
+                        "action": 'Action_getAllClinicsCoords'
+                    },
+                    beforeSend: function () {
+                    },
+                    success: function (response) {
+                        var all_clinics = JSON.parse(response)
+
+                        all_clinics.forEach(function (element, index) {
+                            var distance = ymaps.coordSystem.geo.getDistance([element.LAT, element.LON], questionPos);
+
+                            if (minDistanse == 0) {
+
+                                minDistanse = distance;
+                                clinic = element;
+                            } else {
+                                if (distance <= minDistanse) {
+                                    minDistanse = distance;
+                                    clinic = element;
+                                }
+                            }
+                        });
+                        BX_TestFunc(map, questionPos, [clinic.LAT, clinic.LON]);
+                    }
+                });
+            });
+        })
+    })
 }
+
 </script>
 <div class="bx-yandex-view-layout">
 	<div class="bx-yandex-view-map">
@@ -101,3 +147,4 @@ function BX_SetPlacemarks_<?echo $arParams['MAP_ID']?>(map)
 <?
 endif;
 ?>
+<script src="multiroute_driving.js" type="text/javascript"></script>
