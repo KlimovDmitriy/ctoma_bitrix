@@ -1,0 +1,103 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Услуги",
+		"/stomatology",
+		Array(), 
+		Array(), 
+		"" 
+	),
+  Array(
+    "Клиники",
+    "/clinics",
+    Array(),
+    Array(),
+    ""
+  ),
+  Array(
+    "Цены",
+    "/price",
+    Array(),
+    Array(),
+    ""
+  ),
+  Array(
+    "Врачи",
+    "/personal",
+    Array(),
+    Array(),
+    ""
+  ),
+  Array(
+    "Запись на прием",
+    "/make-an-appointment",
+    Array(),
+    Array(),
+    ""
+  ),
+  Array(
+    "О нас",
+    "/about",
+    Array(),
+    Array(),
+    ""
+  ),
+  Array(
+    "Акции",
+    "/akcii",
+    Array(),
+    Array(),
+    ""
+  ),
+  Array(
+    "Статьи",
+    "/articles",
+    Array(),
+    Array(),
+    ""
+  ),
+  Array(
+    "Вакансии",
+    "/jobs",
+    Array(),
+    Array(),
+    ""
+  ),
+  Array(
+    "Стоматология в кредит",
+    "/lechenie-v-kredit",
+    Array(),
+    Array(),
+    ""
+  ),
+  Array(
+    "Лицензии и сертификаты",
+    "/licenses",
+    Array(),
+    Array(),
+    ""
+  ),
+  Array(
+    "Новости",
+    "/news",
+    Array(),
+    Array(),
+    ""
+  ),
+  Array(
+    "Вопрос-ответ",
+    "/questions",
+    Array(),
+    Array(),
+    ""
+  ),
+  Array(
+    "Отзывы",
+    "/reviews",
+    Array(),
+    Array(),
+    ""
+  ),
+
+);
+?>
