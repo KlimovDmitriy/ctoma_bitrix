@@ -194,7 +194,10 @@ $this->setFrameMode(true);
 
         </div>
     </div>
-<?php
+    <div class="actions__title title_home width width_norm width_paddingStandart"><span class="title__br"></span><span
+                class="title__text map__caption">Клиники на карте</span><span class="title__br"></span></div>
+    <?php
+$APPLICATION->IncludeComponent("realweb:blank", "clinics_map", array(), false, array('HIDE_ICONS' => 'Y'));
 
 $COMPONENTS = $APPLICATION->GetPageProperty('COMPONENTS');
 ?>
