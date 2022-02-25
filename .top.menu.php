@@ -7,33 +7,5 @@ $aMenuLinks = Array(
 		Array(), 
 		"" 
 	),
-	Array(
-		"Профиль", 
-		"/personal/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Контент", 
-		"/content/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Магазин", 
-		"/e-store/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Типовые примеры", 
-		"/examples/", 
-		Array(), 
-		Array(), 
-		"" 
-	)
 );
 ?>
