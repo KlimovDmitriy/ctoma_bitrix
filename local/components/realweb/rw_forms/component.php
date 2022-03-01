@@ -23,6 +23,7 @@ foreach ($elements as $el) {
     $FORM_F = [
         'NAME' => $el['FIELDS']['CODE'],
         'TITLE' => $el['FIELDS']['NAME'],
+        'DESCRIPTION'=>$el['FIELDS']['PREVIEW_TEXT'],
         'TYPE' => $el['PROPERTIES']['FIELD_TYPE']['VALUE_XML_ID'],
         'VALID' => $el['PROPERTIES']['FIELD_VALIDATION']['VALUE_XML_ID'],
         'LENGTH' => $el['PROPERTIES']['LENGTH']['VALUE'],
@@ -40,9 +41,8 @@ foreach ($elements as $el) {
     $FORM_FIELDS[] = $FORM_F;
 
 }
-echo '<pre>';
-print_r($FORM_FIELDS);
 
+$arResult['FIELDS'] = $FORM_FIELDS;
+$this->IncludeComponentTemplate();
 
-echo '</pre>';
 ?>
