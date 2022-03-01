@@ -24,7 +24,6 @@ $this->setFrameMode(true);
 
 <div class="service__container">
 
-
     <div class="service__center width width_norm width_paddingStandart">
         <div class="service__leftSidebar">
 
@@ -51,21 +50,33 @@ $this->setFrameMode(true);
                     false
                 ); ?>
 
-
             </div>
-
-
-            <?php \Realweb\Site\Site::showIncludeText('LEFT_BANNER_STATIC'); ?>
-
-
         </div>
 
         <div class="service__bottomMobile">
             <p class="toggleH2"><a class="content_toggle" href="#">Услуги</a></p>
             <div class="content_block_service" style="display: none;">
                 <div class="serviceMenu">
-
-
+                    <?php
+                    $APPLICATION->IncludeComponent(
+                        "bitrix:menu",
+                        "stomatology",
+                        array(
+                            "ALLOW_MULTI_SELECT" => "Y",
+                            "CHILD_MENU_TYPE" => "left",
+                            "COMPONENT_TEMPLATE" => ".default",
+                            "DELAY" => "N",
+                            "MAX_LEVEL" => "2",
+                            "MENU_CACHE_GET_VARS" => array(),
+                            "MENU_CACHE_TIME" => "3600",
+                            "MENU_CACHE_TYPE" => "A",
+                            "MENU_CACHE_USE_GROUPS" => "N",
+                            "MENU_THEME" => "site",
+                            "ROOT_MENU_TYPE" => "service",
+                            "USE_EXT" => "Y"
+                        ),
+                        false
+                    ); ?>
                 </div>
             </div>
         </div>
@@ -185,5 +196,40 @@ $this->setFrameMode(true);
                     ), $component
                     );
                     ?>
+
+                  <?php
+                  $GLOBALS['arrFilterOther'] = array('!ID' => $ElementID);
+                  $APPLICATION->IncludeComponent(
+                      "bitrix:catalog.section",
+                      "other",
+                      array(
+                          "ADD_SECTIONS_CHAIN" => "Y",
+                          "CACHE_FILTER" => "N",
+                          "CACHE_GROUPS" => "Y",
+                          "CACHE_TIME" => "36000000",
+                          "CACHE_TYPE" => "A",
+                          "COUNT_ELEMENTS" => "N",
+                          "FILTER_NAME" => "arrFilterOther",
+                          "IBLOCK_ID" => $arParams["IBLOCK_ID"],
+                          "IBLOCK_TYPE" => "content",
+                          "SECTION_CODE" => $_REQUEST["SECTION_CODE"],
+                          "SECTION_FIELDS" => array("", ""),
+                          "SECTION_ID" => "",
+                          "SECTION_URL" => "",
+                          "SECTION_USER_FIELDS" => array("", ""),
+                          "SHOW_PARENT_NAME" => "Y",
+                          "TOP_DEPTH" => "2",
+                          "PAGE_ELEMENT_COUNT" => "3",
+                          "VIEW_MODE" => "LINE",
+                          "ELEMENT_SORT_ORDER" => "RAND",
+                          "ELEMENT_SORT_FIELD2" => "RAND",
+                      ),
+                      $component
+                  );
+                  ?>
         </div>
     </div>
+
+
+
+

@@ -185,7 +185,10 @@
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+<link rel="stylesheet" media="all" href="/local/templates/main/css/twentytwenty.css">
 <script src="/local/templates/main/js/custom.js"></script>
+<script src="/local/templates/main/js/jquery.event.move.js"></script>
+<script src="/local/templates/main/js/jquery.twentytwenty.js"></script>
 
 
 </body>

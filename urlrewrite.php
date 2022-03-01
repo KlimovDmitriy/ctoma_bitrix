@@ -26,6 +26,14 @@ $arUrlRewrite = array(
         ),
     4 =>
         array(
+            'CONDITION' => '#^/portfolio/#',
+            'RULE' => '',
+            'ID' => 'bitrix:catalog',
+            'PATH' => '/portfolio/index.php',
+            'SORT' => 100,
+        ),
+    5 =>
+        array(
             'CONDITION' => '#^/#',
             'RULE' => '',
             'ID' => NULL,

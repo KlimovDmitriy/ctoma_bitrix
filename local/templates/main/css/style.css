@@ -3174,6 +3174,9 @@
     .width_paddingDisableMobileDevice {
         padding: 0;
     }
+    .viewServices__row {
+        flex-basis: 100%;
+    }
 }
 
 @media only screen and (max-width:479px) and (min-width:0px) {
@@ -5633,6 +5636,15 @@
     .portfolioDetail .uslugiPrevu__nameWrap {
         width: 100% !important;
     }
+
+    .portfolioImgFix {
+        width: 100% !important;
+        overflow: hidden;
+    }
+    .portfolioPreview .uslugiPrevu__nameWrap {
+        width: 100% !important;
+    }
+
 }
 
 .ContentH2 {
