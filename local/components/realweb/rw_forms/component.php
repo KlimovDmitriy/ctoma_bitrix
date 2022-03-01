@@ -35,11 +35,10 @@ foreach ($elements as $el) {
         $FORM_F['IBLOCK'] = $el['PROPERTIES']['IBLOCK_CODE']['VALUE'];
     }
 
-    $FORM_FIELDS[] = $FORM_F;
+    $arResult['FIELDS'][] = $FORM_F;
 
 }
 
-$arResult['FIELDS'] = $FORM_FIELDS;
 $this->IncludeComponentTemplate();
 
 ?>
