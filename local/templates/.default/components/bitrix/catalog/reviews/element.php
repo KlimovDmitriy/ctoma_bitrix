@@ -15,7 +15,19 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<div class="otzyv">
+<?php
+$APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
+        "START_FROM" => "0",
+        "PATH" => "",
+        "SITE_ID" => "s1"
+    )
+);
+?>
 
+<div class="otzyv__container">
+    <div class="block-region-main">
+        <div class="block">
 <?
 $ElementID = $APPLICATION->IncludeComponent(
     "realweb:catalog.element", "", array(
@@ -131,3 +143,7 @@ $ElementID = $APPLICATION->IncludeComponent(
 ), $component
 );
 ?>
+        </div>
+    </div>
+</div>
+</div>

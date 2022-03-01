@@ -132,7 +132,7 @@ $APPLICATION->SetTitle("");
         "SECTION_TOP_DEPTH" => "2",
         "SEF_FOLDER" => "/reviews/",
         "SEF_MODE" => "Y",
-        "SEF_URL_TEMPLATES" => array("compare" => "", "element" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/", "section" => "#SECTION_CODE_PATH#/", "sections" => "/reviews/", "smart_filter" => ""),
+        "SEF_URL_TEMPLATES" => array("compare" => "", "element" => "#ELEMENT_CODE#/", "section" => "", "sections" => "/reviews/", "smart_filter" => ""),
         "SET_LAST_MODIFIED" => "N",
         "SET_STATUS_404" => "N",
         "SET_TITLE" => "Y",
