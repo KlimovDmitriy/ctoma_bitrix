@@ -64,8 +64,26 @@ $this->setFrameMode(true);
             <p class="toggleH2"><a class="content_toggle" href="#">Услуги</a></p>
             <div class="content_block_service" style="display: none;">
                 <div class="serviceMenu">
-
-
+                    <?php
+                    $APPLICATION->IncludeComponent(
+                        "bitrix:menu",
+                        "stomatology",
+                        array(
+                            "ALLOW_MULTI_SELECT" => "Y",
+                            "CHILD_MENU_TYPE" => "left",
+                            "COMPONENT_TEMPLATE" => ".default",
+                            "DELAY" => "N",
+                            "MAX_LEVEL" => "2",
+                            "MENU_CACHE_GET_VARS" => array(),
+                            "MENU_CACHE_TIME" => "3600",
+                            "MENU_CACHE_TYPE" => "A",
+                            "MENU_CACHE_USE_GROUPS" => "N",
+                            "MENU_THEME" => "site",
+                            "ROOT_MENU_TYPE" => "service",
+                            "USE_EXT" => "Y"
+                        ),
+                        false
+                    ); ?>
                 </div>
             </div>
         </div>

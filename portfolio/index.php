@@ -3,7 +3,7 @@ require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 $APPLICATION->SetPageProperty("title", "Работы специалистов клиник СТОМА");
 $APPLICATION->SetPageProperty("keywords", "");
 $APPLICATION->SetPageProperty("description", "В данном разделе представлены результаты работы наших специалистов.");
-?><?/*$APPLICATION->IncludeComponent(
+?><? $APPLICATION->IncludeComponent(
     "bitrix:catalog",
     "portfolio",
     Array(
@@ -41,7 +41,7 @@ $APPLICATION->SetPageProperty("description", "В данном разделе п�
         "DETAIL_META_KEYWORDS" => "-",
         "DETAIL_PRODUCT_INFO_BLOCK_ORDER" => "sku,props",
         "DETAIL_PRODUCT_PAY_BLOCK_ORDER" => "rating,price,priceRanges,quantityLimit,quantity,buttons",
-        "DETAIL_PROPERTY_CODE" => array(0=>"NOTE",),
+        "DETAIL_PROPERTY_CODE" => array(0=>"DOCTOR",),
         "DETAIL_SET_CANONICAL_URL" => "N",
         "DETAIL_SET_VIEWED_IN_COMPONENT" => "N",
         "DETAIL_SHOW_MAX_QUANTITY" => "N",
@@ -108,7 +108,7 @@ $APPLICATION->SetPageProperty("description", "В данном разделе п�
         "PAGER_SHOW_ALWAYS" => "N",
         "PAGER_TEMPLATE" => ".default",
         "PAGER_TITLE" => "Товары",
-        "PAGE_ELEMENT_COUNT" => "99999",
+        "PAGE_ELEMENT_COUNT" => "12",
         "PARTIAL_PRODUCT_PROPERTIES" => "N",
         "PRICE_CODE" => array(),
         "PRICE_VAT_INCLUDE" => "N",
@@ -187,4 +187,4 @@ $APPLICATION->SetPageProperty("description", "В данном разделе п�
     Array(
         'HIDE_ICONS' => 'Y'
     )
-);*/?><?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+); ?><?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
