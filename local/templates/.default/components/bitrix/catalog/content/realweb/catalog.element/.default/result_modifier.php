@@ -8,7 +8,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 $arResult['TEXT_PAGE'] = false;
 $arResult['REDIRECT'] = "";
 foreach ($arResult['PROPERTIES']['PAGE_TYPE']['VALUE'] as $PAGE_TYPE) {
-    print_r($PAGE_TYPE);
     if ($PAGE_TYPE['TYPE'] == 'PAGE') {
         $arResult['TEXT_PAGE'] = true;
     }
