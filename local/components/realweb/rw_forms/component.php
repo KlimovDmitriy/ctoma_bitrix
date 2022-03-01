@@ -11,10 +11,7 @@ $arParams["IBLOCK_ID"] = \Realweb\Site\Site::getIblockId('FORMS');
 $res = CIBlockSection::GetList(array(), array('IBLOCK_ID' => $arParams["IBLOCK_ID"], 'SITE_ID' => "s1"));
 $section = $res->Fetch();
 
-$elements = \Realweb\Site\Site::getIBlockElements(['IBLOCK_ID' => $arParams["IBLOCK_ID"],
-
-
-    'IBLOCK_SECTION_ID' => $section["ID"]]);
+$elements = \Realweb\Site\Site::getIBlockElements(['IBLOCK_ID' => $arParams["IBLOCK_ID"], 'IBLOCK_SECTION_ID' => $section["ID"]]);
 
 $FORM_FIELDS = [];
 
@@ -23,7 +20,7 @@ foreach ($elements as $el) {
     $FORM_F = [
         'NAME' => $el['FIELDS']['CODE'],
         'TITLE' => $el['FIELDS']['NAME'],
-        'DESCRIPTION'=>$el['FIELDS']['PREVIEW_TEXT'],
+        'DESCRIPTION' => $el['FIELDS']['PREVIEW_TEXT'],
         'TYPE' => $el['PROPERTIES']['FIELD_TYPE']['VALUE_XML_ID'],
         'VALID' => $el['PROPERTIES']['FIELD_VALIDATION']['VALUE_XML_ID'],
         'LENGTH' => $el['PROPERTIES']['LENGTH']['VALUE'],
