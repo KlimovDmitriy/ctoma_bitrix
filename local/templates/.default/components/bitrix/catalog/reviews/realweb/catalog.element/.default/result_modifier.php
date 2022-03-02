@@ -17,5 +17,9 @@ $arResult['DOCTOR_DETAIL_PICTURE'] = CFile::GetPath($doctor_info["DETAIL_PICTURE
 $arResult['DOCTOR_NAME'] = $doctor_info['NAME'];
 $arResult['DOCTOR_URL'] = $doctor_info["DETAIL_PAGE_URL"];
 
+$dateP = new DateTime($arResult['ACTIVE_FROM']);
+$arResult['DATE_MODIF'] = $dateP->format('d-m-Y');
+
+$this->__component->SetResultCacheKeys(['DOCTOR_NAME','NAME','DATE_MODIF']);
 
 ?>
