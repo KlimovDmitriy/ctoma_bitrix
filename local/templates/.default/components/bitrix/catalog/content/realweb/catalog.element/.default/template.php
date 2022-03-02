@@ -61,7 +61,19 @@ $name = !empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'])
 
 
                     <div class="normPageDefault content_norm">
+                        <?php
+                        foreach ($arResult['COMPONENTS'] as $PAGE_TYPE): ?>
+                            <?php if ($PAGE_TYPE['TYPE'] == 'COMPONENT'): ?>
+                                <?
+
+                                $APPLICATION->IncludeComponent(
+                                    $PAGE_TYPE['COMPONENT_NAME'], $PAGE_TYPE['TEMPLATE'], \Realweb\Site\Property\PageType::ProcessParams($PAGE_TYPE['arParams']), false, array('HIDE_ICONS' => 'Y')
+                                );
+                                ?>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
                         <?php echo $arResult['DETAIL_TEXT']; ?>
+
                     </div>
                 </div>
             </div>

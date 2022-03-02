@@ -132,7 +132,7 @@ $APPLICATION->SetPageProperty("description", "В данном разделе п�
         "SECTION_TOP_DEPTH" => "2",
         "SEF_FOLDER" => "/portfolio/",
         "SEF_MODE" => "Y",
-        "SEF_URL_TEMPLATES" => Array("compare"=>"","element"=>"#SECTION_CODE_PATH#/#ELEMENT_CODE#/","section"=>"#SECTION_CODE_PATH#/","sections"=>"/portfolio/","smart_filter"=>""),
+        "SEF_URL_TEMPLATES" => array("compare" => "", "element" => "#ELEMENT_CODE#/", "section" => "", "sections" => "/portfolio/", "smart_filter" => ""),
         "SET_LAST_MODIFIED" => "N",
         "SET_STATUS_404" => "N",
         "SET_TITLE" => "Y",

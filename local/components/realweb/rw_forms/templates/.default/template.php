@@ -1,4 +1,5 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+<?
+if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -10,21 +11,6 @@
 /** @var string $templateFolder */
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
-
 $this->setFrameMode(true);
 ?>
-<div class="views-element-container contextual-region">
-
-<?php
-$APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
-        "START_FROM" => "0",
-        "PATH" => "",
-        "SITE_ID" => "s1"
-    )
-);
-?>
-
-<?include_once('section.php');?>
-
-</div>
 

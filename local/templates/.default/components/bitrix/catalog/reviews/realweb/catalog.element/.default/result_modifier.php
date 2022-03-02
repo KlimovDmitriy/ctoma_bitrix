@@ -1,15 +1,25 @@
 
 <? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
-//Предварительно готовим картинки
-if($arResult['PROPERTIES']['GALLERY']['VALUE']){
-    $photos = [];
-    foreach ($arResult['PROPERTIES']['GALLERY']['VALUE'] as $key => $photoId) {
-        $arPhoto = CFile::ResizeImageGet($photoId, ["width" => 230, "height" => 152], BX_RESIZE_IMAGE_EXACT, true, false, false, 100);
-        $arPhotoBig = CFile::ResizeImageGet($photoId, ["width" => 800, "height" => 600], BX_RESIZE_IMAGE_PROPORTIONAL, true, false, false, 100);
-        $photos[] = ['SRC'=>$arPhoto['src'], 'SRC_BIG' => $arPhotoBig['src'], 'ALT'=>$arResult['PROPERTIES']['GALLERY']['DESCRIPTION'][$key]];
-    }
+if($arResult["DISPLAY_PROPERTIES"]["DOCTOR"]["VALUE"]){
+    $props=CIBlockElement::GetByID($arResult["DISPLAY_PROPERTIES"]["DOCTOR"]["VALUE"])->GetNextElement()->GetProperties();
 
-    //И сохраняем в кеш только нужные данные
-    $arResult['GALLARY_PHOTOS'] = $photos;
-    $this->__component->SetResultCacheKeys(['GALLARY_PHOTOS']);
+    foreach($props["WORK_PLACE"]["VALUE"] as $analog) {
+        $res = CIBlockElement::GetByID($analog);
+        if($ar_res = $res->GetNext())
+            $arResult['DOCTOR_CLINICS'][] = '<a href="'.$ar_res['DETAIL_PAGE_URL'].'">'.$ar_res["NAME"].'</a>';
+    }
 }
+$arResult['DOCTOR_POSITION'] = $props['POSITION']['VALUE'];
+
+$doctor_obj = CIBlockElement::GetByID($arResult['PROPERTIES']['DOCTOR']['VALUE']);
+$doctor_info = $doctor_obj->GetNext();
+$arResult['DOCTOR_DETAIL_PICTURE'] = CFile::GetPath($doctor_info["DETAIL_PICTURE"]);
+$arResult['DOCTOR_NAME'] = $doctor_info['NAME'];
+$arResult['DOCTOR_URL'] = $doctor_info["DETAIL_PAGE_URL"];
+
+$dateP = new DateTime($arResult['ACTIVE_FROM']);
+$arResult['DATE_MODIF'] = $dateP->format('d-m-Y');
+
+$this->__component->SetResultCacheKeys(['DOCTOR_NAME','NAME','DATE_MODIF']);
+
+?>

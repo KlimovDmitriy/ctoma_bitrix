@@ -30,5 +30,10 @@ if ($arResult['PROPERTIES']['GALLERY']['VALUE']) {
         }
     }
 }
-
+$arResult['COMPONENTS'] = array();
+foreach ($arResult['PROPERTIES']['PAGE_TYPE']['VALUE'] as $PAGE_TYPE) {
+    if ($PAGE_TYPE['TYPE'] == 'COMPONENT') {
+        $arResult['COMPONENTS'][] = $PAGE_TYPE;
+    }
+}
 $this->__component->SetResultCacheKeys(array('REDIRECT'));
