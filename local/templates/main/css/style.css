@@ -3229,6 +3229,9 @@
         font-size: 20px;
         font-weight: bold;
     }
+    .header__menuTop {
+        max-width: inherit !important;
+    }
 }
 
 .title_norm {
@@ -7365,12 +7368,6 @@ blockquote {
         text-align: right;
     }
 
-    .plusDoctorN {
-        padding-right: 25px;
-        width: 150px;
-        text-align: right;
-    }
-
     .menuHeader__a {
         width: inherit !important;
     }
@@ -7415,7 +7412,9 @@ blockquote {
     z-index: 10;
     margin-left: -10px;
 }
-
+.glavnoeMenu__ul.subMenuDoctorN.menuMobileDortorUl {
+    position: inherit !important;
+}
 .subMenuDoctor .glavnoeMenu__a {
     line-height: 2;
 }
@@ -7425,7 +7424,7 @@ blockquote {
 }
 
 .menuMobileDortor {
-    height: 195px;
+    /*height: 195px;*/
     max-width: 240px;
 }
 
@@ -7435,12 +7434,12 @@ blockquote {
 }
 
 .menuMobileDortorUl {
-    position: absolute !important;
+    /*position: absolute !important;*/
     display: flex !important;
     flex-direction: column !important;
     align-items: start !important;
     z-index: 1 !important;
-    margin-top: 40px !important;
+    /*margin-top: 40px !important;*/
     padding-left: 30px !important;
     top: inherit !important;
 }
@@ -18139,4 +18138,22 @@ a.ui-button:active,
         flex-direction: column;
         margin-bottom: 10px;
     }
+}
+
+.menuHeader__ul .parentLink {
+    display: flex;
+    flex-direction: column;
+}
+.plusDoctorWr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.header__menuTop {
+    max-width: 270px;
+}
+.plusDoctorN {
+    padding-right: 25px;
+    width: 150px;
+    text-align: right;
 }

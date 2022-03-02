@@ -85,3 +85,28 @@ $('.service__bottomMobile .content_toggle').click(function(){
     $('.content_block_service').slideToggle(300);
     return false;
 });
+
+$('.glavnoeMenu__ul .parentLink').hover(function () {
+    clearTimeout($.data(this,'timer'));
+    $('ul',this).stop(true,true).slideDown(200);
+}, function () {
+    $.data(this,'timer', setTimeout($.proxy(function() {
+        $('ul',this).stop(true,true).slideUp(200);
+    }, this), 100));
+});
+
+$('.menuMobile').each(function(){
+    var menu = $(this);
+    $('.menuMobile__button', menu).click(function(){
+        if(menu.hasClass('menuMobile_active')){
+            menu.removeClass('menuMobile_active');
+        } else {
+            menu.addClass('menuMobile_active');
+        }
+    });
+});
+
+$('.plusDoctorWr .plusDoctorN').click(function(){
+    $(this).parent().next().toggleClass('menuMobileDortorUl');
+    $(this).prev().toggleClass('menuMobileDortor');
+});
