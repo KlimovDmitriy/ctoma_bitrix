@@ -230,7 +230,7 @@
     );
     ?>
 </div>
-<div id="otziv" class="dialog" title="Обратный звонок">
+<div id="otziv" class="dialog" title="Контроль качества">
 
     <?
     $APPLICATION->IncludeComponent(
