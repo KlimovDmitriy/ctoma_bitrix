@@ -22,7 +22,7 @@ $this->setFrameMode(true);
 
             <? foreach ($arResult['FIELDS'] as $field) { ?>
 
-                <div class="<?= trim($field['WRAP_CSS']); ?>">
+                <div class="<?= trim($field['WRAP_CSS']); ?>" >
 
                     <? switch ($field['TYPE']) {
                         case 'BUTTON':
@@ -78,7 +78,7 @@ $this->setFrameMode(true);
 
 
                             <input type="checkbox" id="edit-agreement" name="<?= $field['NAME'] ?>" value="1"
-                                   checked="checked" class="form-checkbox required" <?= $field['REQ']; ?>
+                                   checked="checked" class="form-checkbox <?= $field['FIELD_CSS']; ?>" <?= $field['REQ']; ?>
                                    aria-required="true">
 
                             <? if (!empty($field['DESCRIPTION'])) { ?>
@@ -91,6 +91,21 @@ $this->setFrameMode(true);
 
 
                             <? break; ?>
+                        <? case 'TEXT_MARKED': ?>
+
+
+
+                            <? if (!empty($field['DESCRIPTION'])) { ?>
+                               <div class="<?= $field['FIELD_CSS']; ?>">
+                                <?= $field['DESCRIPTION']; ?>
+                               </div>
+                            <? } ?>
+
+
+                            <? break; ?>
+
+
+
                         <? case 'SELECT': ?>
                             <?
                             //Определяем инфоблок для SELECT
