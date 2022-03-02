@@ -313,6 +313,7 @@
 	-moz-box-shadow: 2px 3.464px 3.6px 0.4px rgba(0, 0, 0, 0.09);
 	-webkit-box-shadow: 2px 3.464px 3.6px 0.4px rgba(0, 0, 0, 0.09);
 	box-shadow: 2px 3.464px 3.6px 0.4px rgba(0, 0, 0, 0.09);
+	object-fit: cover;
 }
 @media only screen and (max-width: 479px) and (min-width: 0px) {
 	/* line 123, ../bem/blocks/doctorsFilter/_default.scss */
@@ -765,4 +766,13 @@
 /* line 40, ../bem/blocks/makeImg/_default.scss */
 .makeImg__button {
 	margin: auto;
+}
+
+.doctorsFilter__work ul {
+	margin-left: 15px;
+}
+.minLabel {
+	font-size: 11px !important;
+	font-style: normal !important;
+	display: inline-block !important;
 }

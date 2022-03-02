@@ -11,6 +11,9 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /** @var string $templateFolder */
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
+
+
+
 $this->setFrameMode(true);
 ?>
 <div class="make__form">
@@ -54,7 +57,24 @@ $this->setFrameMode(true);
 
 
                             <? break; ?>
+                        <? case 'SELECT': ?>
+                            <?
+                            //Определяем инфоблок для SELECT
+                            $SELECT_IBLOCK_ID = \Realweb\Site\Site::getIblockId($field['IBLOCK']);
+                            //Достаем активные элементы из него
+                            $select_elements = \Realweb\Site\Site::getIBlockElements(['IBLOCK_ID' => $SELECT_IBLOCK_ID, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y"]);
 
+                            ?>
+                            <label for="edit-<?= $field['NAME'] ?>"><?= $field['TITLE'] ?></label>
+
+                            <select id="edit-<?= $field['NAME'] ?>" name="<?= $field['NAME'] ?>"
+                                    class="<?= $field['FIELD_CSS']; ?>">
+                                <option value="" selected="selected"><?= $field['PLACEHOLDER'] ?></option>
+                                <? foreach ($select_elements as $sel) { ?>
+                                    <option value="35"><?= $sel['FIELDS']['NAME']; ?></option>
+                                <? } ?>
+                            </select>
+                            <? break; ?>
 
                         <? } ?>
                 </div>

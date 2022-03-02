@@ -21,8 +21,8 @@ $APPLICATION->IncludeComponent("bitrix:news","vraci",Array(
     "USE_CATEGORIES" => "Y",
     "USE_REVIEW" => "Y",
     "USE_FILTER" => "Y",
-    "SORT_BY1" => "ACTIVE_FROM",
-    "SORT_ORDER1" => "DESC",
+    "SORT_BY1" => "NAME",
+    "SORT_ORDER1" => "ASC",
     "SORT_BY2" => "SORT",
     "SORT_ORDER2" => "ASC",
     "CHECK_DATES" => "Y",
@@ -31,7 +31,10 @@ $APPLICATION->IncludeComponent("bitrix:news","vraci",Array(
     "LIST_FIELD_CODE" => Array(
       0 => 'DETAIL_PICTURE'
     ),
-    "LIST_PROPERTY_CODE" => Array(),
+    "LIST_PROPERTY_CODE" => Array(
+      0 => "POSITION",
+        1 => "WORK_PLACE"
+    ),
     "HIDE_LINK_WHEN_NO_DETAIL" => "Y",
     "DISPLAY_NAME" => "Y",
     "META_KEYWORDS" => "-",
