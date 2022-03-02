@@ -3,7 +3,11 @@
 <?if (!empty($arResult)):?>
   <ul class="menuHeader__ul">
     <li class="menuHeader__li menuHeader__mobile">
+    <? if ($APPLICATION->GetCurPage(false) !== '/'): ?>
         <a class="menuHeader__a" href="/">Главная</a>
+    <?else:?>
+        <span class="menuHeader__a">Главная</span>
+    <?endif?>
     </li>
 
   <?
@@ -50,7 +54,7 @@ foreach($arResult as $arItem):?>
       <?else:?>
               <li class="glavnoeMenu__li">
                   <?if ($arItem["SELECTED"]):?>
-                      <span class="menuHeader__a"><?=$arItem["TEXT"]?></span>
+                      <span class="glavnoeMenu__a glavnoeMenu__span"><?=$arItem["TEXT"]?></span>
                   <?else:?>
                       <a href="<?=$arItem["LINK"]?>" class="glavnoeMenu__a"><?=$arItem["TEXT"]?></a>
                   <?endif?>

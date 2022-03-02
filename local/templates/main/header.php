@@ -92,9 +92,9 @@ Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/twentytwenty.css');
                 <div class="header__menuAndButton menuMobile__content">
                     <nav class="header__menuTop menuHeader ">
                         <?$APPLICATION->IncludeComponent("bitrix:menu", "top_mobile_menu", Array(
-                            "ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
+                            "ROOT_MENU_TYPE" => "topmobile",	// Тип меню для первого уровня
                             "MAX_LEVEL" => "2",	// Уровень вложенности меню
-                            "CHILD_MENU_TYPE" => "top",	// Тип меню для остальных уровней
+                            "CHILD_MENU_TYPE" => "topmobile",	// Тип меню для остальных уровней
                             "USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
                             "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
                             "MENU_CACHE_TYPE" => "A",	// Тип кеширования

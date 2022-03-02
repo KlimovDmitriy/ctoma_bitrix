@@ -18157,3 +18157,6 @@ a.ui-button:active,
     width: 150px;
     text-align: right;
 }
+.glavnoeMenu__span {
+    color: #ffffff !important;
+}
