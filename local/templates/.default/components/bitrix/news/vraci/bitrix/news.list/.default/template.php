@@ -12,6 +12,9 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<!--<pre>-->
+<!--    --><?// print_r($arResult["ITEMS"]); ?>
+<!--</pre>-->
 <div class="doctorsFilter__right text" id="all-flavors">
 <div class="doctorsFilter__selectDoctor">
 <?foreach($arResult["ITEMS"] as $arItem):?>
@@ -31,14 +34,14 @@ $this->setFrameMode(true);
         <span class="doctorsFilter__title">
             <a href="<?= $arItem['DETAIL_PAGE_URL']?>" hreflang="ru"><?= $arItem['NAME']?></a>
         </span>
-            <span class="doctorsFilter__position">Стоматолог-терапевт</span>
+            <span class="doctorsFilter__position"><?= $arItem['PROPERTIES']['POSITION']['VALUE'] ?></span>
 
             <span class="doctorsFilter__work"><label>Места работы:</label>
            <ul><li><a href="/clinics/klinika-na-lenina" hreflang="ru">Клиника на Ленина (м. Петроградская)</a></li></ul>
         </span>
 
             <span class="doctorsFilter__work"><label>Стаж работы с:</label>
-           <span class="minLabel">2018 года</span>
+           <span class="minLabel"><?= $arItem['PROPERTIES']['WORK_EXPERIENCE']['VALUE'] ?> года</span>
         </span>
 
             <span class="doctorsFilter__work"><label>Отзывов:</label>
