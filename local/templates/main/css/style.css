@@ -7289,11 +7289,6 @@ blockquote {
         margin-left: inherit;
     }
 
-    .glavnoeMenu__ul.subMenuDoctorN {
-        background-color: inherit !important;
-        margin-left: inherit;
-    }
-
     .rev__home_block .reviews__swiperButtonNext.swiper-button-next.swiper-button-white {
         width: 40px !important;
         height: 42px !important;
@@ -13005,7 +13000,7 @@ button.swiper-pagination-bullet {
     position: relative;
 }
 
-@media only screen and (max-width:767px) and (min-width:480px) {
+@media only screen and (max-width:991px) and (min-width:480px) {
     .header__link {
         -webkit-flex-basis: 32%;
         flex-basis: 32%;
@@ -13196,9 +13191,9 @@ button.swiper-pagination-bullet {
 }
 
 @media only screen and (min-width:768px) and (max-width:991px) {
-    .header__menuTablet {
-        display: block;
-    }
+    /*.header__menuTablet {*/
+    /*    display: block;*/
+    /*}*/
 }
 
 .header__topWrapper {
@@ -13212,7 +13207,7 @@ button.swiper-pagination-bullet {
     display: none;
 }
 
-@media only screen and (max-width:767px) and (min-width:480px) {
+@media only screen and (max-width:991px) and (min-width:480px) {
     .header__topWrapper {
         display: -webkit-flex;
         display: flex;
@@ -13300,7 +13295,7 @@ button.swiper-pagination-bullet {
     text-align: left;
 }
 
-@media only screen and (max-width:767px) and (min-width:480px) {
+@media only screen and (max-width:991px) and (min-width:480px) {
     .header__center {
         display: none;
     }
@@ -13456,17 +13451,14 @@ button.swiper-pagination-bullet {
     display: none;
 }
 
-@media only screen and (max-width:767px) and (min-width:480px) {
+@media only screen and (max-width:991px) and (min-width:0px) {
     .header__buttons {
         display: -webkit-flex;
         display: flex;
     }
-}
-
-@media only screen and (max-width:479px) and (min-width:0px) {
-    .header__buttons {
-        display: -webkit-flex;
-        display: flex;
+    .glavnoeMenu__ul.subMenuDoctorN {
+        background-color: inherit !important;
+        margin-left: inherit;
     }
 }
 
@@ -13500,7 +13492,7 @@ button.swiper-pagination-bullet {
     transition: all 0.3s ease;
 }
 
-@media only screen and (max-width:767px) and (min-width:480px) {
+@media only screen and (max-width:991px) and (min-width:480px) {
     .header__buttons a {
         -webkit-flex-basis: 32%;
         flex-basis: 32%;
@@ -13527,7 +13519,7 @@ button.swiper-pagination-bullet {
     color: white;
 }
 
-@media only screen and (max-width:767px) and (min-width:480px) {
+@media only screen and (max-width:991px) and (min-width:480px) {
     .header__buttons a {
         font-size: 12px;
     }
@@ -13549,7 +13541,7 @@ button.swiper-pagination-bullet {
     color: white;
 }
 
-@media only screen and (max-width:767px) and (min-width:480px) {
+@media only screen and (max-width:991px) and (min-width:480px) {
     .header__buttons a.header__make {
         display: none;
     }
@@ -14560,7 +14552,7 @@ button.swiper-pagination-bullet {
     height: auto;
 }
 
-@media only screen and (max-width:767px) and (min-width:480px) {
+@media only screen and (max-width:991px) and (min-width:480px) {
     .logo__img {
         max-width: 80px;
     }
@@ -14586,9 +14578,9 @@ button.swiper-pagination-bullet {
     display: block;
 }
 
-@media only screen and (min-width:768px) and (max-width:991px) {
+@media only screen and (min-width:0px) and (max-width:991px) {
     .logo_mobile {
-        display: none;
+        display: block;
     }
 }
 
@@ -14765,24 +14757,18 @@ button.swiper-pagination-bullet {
     transition: background 0.3s;
 }
 
-@media only screen and (min-width:768px) and (max-width:991px) {
+@media only screen and (max-width:991px) and (min-width:0px) {
     .menuMobile__button {
         display: block;
     }
-}
-
-@media only screen and (max-width:767px) and (min-width:480px) {
-    .menuMobile__button {
-        display: block;
+    .header__fixedWrap {
+        position: relative;
+        z-index: 10;
     }
 }
-
-@media only screen and (max-width:479px) and (min-width:0px) {
-    .menuMobile__button {
-        display: block;
-    }
+.logo_mobile .logo__linck {
+    display: block;
 }
-
 .menuMobile__button:focus {
     outline: none;
 }
@@ -14875,7 +14861,7 @@ button.swiper-pagination-bullet {
     display: flex;
 }
 
-@media only screen and (max-width:767px) and (min-width:480px) {
+@media only screen and (max-width:991px) and (min-width:480px) {
     .menuHeader__ul {
         -webkit-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -14898,7 +14884,7 @@ button.swiper-pagination-bullet {
     display: inline-flex;
 }
 
-@media only screen and (max-width:767px) and (min-width:480px) {
+@media only screen and (max-width:991px) and (min-width:480px) {
     .menuHeader__li {
         width: 100%;
         border-bottom: 1px solid #f1f8f7;
@@ -14930,7 +14916,7 @@ button.swiper-pagination-bullet {
     }
 }
 
-@media only screen and (max-width:767px) and (min-width:480px) {
+@media only screen and (max-width:991px) and (min-width:480px) {
     .menuHeader__a {
         padding: 10px 0;
         text-align: left;

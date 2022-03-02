@@ -201,26 +201,6 @@ Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/twentytwenty.css');
                     </div>
                 </div>
             </div>
-
-            <div class="header__menuTablet">
-                <div class="glavnoeMenu width_paddingLeftRight">
-                    <?$APPLICATION->IncludeComponent("bitrix:menu", "top_menu", Array(
-                        "ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
-                        "MAX_LEVEL" => "2",	// Уровень вложенности меню
-                        "CHILD_MENU_TYPE" => "top",	// Тип меню для остальных уровней
-                        "USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
-                        "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
-                        "MENU_CACHE_TYPE" => "A",	// Тип кеширования
-                        "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
-                        "MENU_CACHE_USE_GROUPS" => "N",	// Учитывать права доступа
-                        "MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
-                        "COMPONENT_TEMPLATE" => "",
-                        "DELAY" => "N",	// Откладывать выполнение шаблона меню
-                    ),
-                        false
-                    );?>
-                </div>
-            </div>
         </div>
     </div>
 </header>
