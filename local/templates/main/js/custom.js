@@ -9,7 +9,6 @@ var swiper = new Swiper('.swipe__slider', {
 });
 
 
-
 var galleryThumbs = new Swiper('.stomatology__swiperThumbsWrap', {
     spaceBetween: 60,
     slidesPerView: 4,
@@ -50,7 +49,7 @@ var galleryTop = new Swiper('.stomatology__swiper', {
     }
 });
 
-$('.choosingClinic__info').on('click',function(){
+$('.choosingClinic__info').on('click', function () {
     $('.choosingClinic__list').toggle();
 })
 $(document).on('click', '.choosingClinic__clinic', function (e) {
@@ -62,43 +61,43 @@ $(document).on('click', '.choosingClinic__clinic', function (e) {
         url: "/ajax/",
         data: {
             "ID": $(this).data('id'),
-            "URL":$(this).data('url'),
+            "URL": $(this).data('url'),
             "action": 'Action_confirmClinic'
         },
         beforeSend: function () {
         },
         success: function (response) {
-            if (response.url){
+            if (response.url) {
                 location.replace(response.url);
             }
         }
     });
 });
-$('.menu_ml').on('click',function(){
-    var elem= $(this);
+$('.menu_ml').on('click', function () {
+    var elem = $(this);
     elem.toggleClass('sub_open');
     elem.toggleClass('sub_close');
     elem.parent().find(".serviceMenu__list").toggle();
 });
 
-$('.service__bottomMobile .content_toggle').click(function(){
+$('.service__bottomMobile .content_toggle').click(function () {
     $('.content_block_service').slideToggle(300);
     return false;
 });
 
 $('.glavnoeMenu__ul .parentLink').hover(function () {
-    clearTimeout($.data(this,'timer'));
-    $('ul',this).stop(true,true).slideDown(200);
+    clearTimeout($.data(this, 'timer'));
+    $('ul', this).stop(true, true).slideDown(200);
 }, function () {
-    $.data(this,'timer', setTimeout($.proxy(function() {
-        $('ul',this).stop(true,true).slideUp(200);
+    $.data(this, 'timer', setTimeout($.proxy(function () {
+        $('ul', this).stop(true, true).slideUp(200);
     }, this), 100));
 });
 
-$('.menuMobile').each(function(){
+$('.menuMobile').each(function () {
     var menu = $(this);
-    $('.menuMobile__button', menu).click(function(){
-        if(menu.hasClass('menuMobile_active')){
+    $('.menuMobile__button', menu).click(function () {
+        if (menu.hasClass('menuMobile_active')) {
             menu.removeClass('menuMobile_active');
         } else {
             menu.addClass('menuMobile_active');
@@ -106,7 +105,19 @@ $('.menuMobile').each(function(){
     });
 });
 
-$('.plusDoctorWr .plusDoctorN').click(function(){
+$('.plusDoctorWr .plusDoctorN').click(function () {
     $(this).parent().next().toggleClass('menuMobileDortorUl');
     $(this).prev().toggleClass('menuMobileDortor');
 });
+$(document).ready(function () {
+
+    $('.modaler').on('click', function (e) {
+        var fid = $(this).data('form');
+        $('#'+fid).dialog({
+            width:"500px",
+            minHeight:"500px",
+            dialogClass:"popupDialog",
+            modal:true
+        });
+    })
+})
