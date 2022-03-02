@@ -11,12 +11,18 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title><? $APPLICATION->ShowTitle(); ?></title>
 <?$APPLICATION->ShowHead()?>
-<link rel="stylesheet" media="all" href="/local/templates/main/css/style.css">
 <?
-Asset::getInstance()->addJs('https://code.jquery.com/jquery-3.6.0.min.js');
-Asset::getInstance()->addJs('https://use.fontawesome.com/9031eecf23.js');
-Asset::getInstance()->addJs('https://unpkg.com/swiper@8/swiper-bundle.min.js');
-Asset::getInstance()->addJs('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery-3.6.0.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/fontawesome.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/swiper-bundle.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.fancybox.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/custom.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.event.move.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.twentytwenty.js');
+
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/style.css');
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/jquery.fancybox.min.css');
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/twentytwenty.css');
 ?>
 
 </head>

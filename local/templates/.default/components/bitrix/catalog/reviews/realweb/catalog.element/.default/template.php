@@ -27,7 +27,10 @@ $this->setFrameMode(true);
         <span class="otzyvDefault__podlojka"></span>
         <div class="otzyvDefault__content">
             <div class="otzyvDefault__top">
-                <div><div class="otzyvDefault__vrach width_paddingStandart">
+                <!-- doctor block begin -->
+                <? if($arResult["DISPLAY_PROPERTIES"]["DOCTOR"]["VALUE"]){ ?>
+                <div>
+                    <div class="otzyvDefault__vrach width_paddingStandart">
                         <div>
                             <a href="<?=$arResult['DOCTOR_URL'];?>">
                                 <img src="<?=$arResult['DOCTOR_DETAIL_PICTURE'];?>" alt="Отзыв о враче <?=$arResult['DOCTOR_NAME'];?>" width="320" height="320">
@@ -51,8 +54,8 @@ $this->setFrameMode(true);
                             <?endforeach;?>
                         </div>
                     </div>
-                </div>
-
+                </div><!-- doctor block end -->
+                <? } ?>
                 <div class="otzyvDefault__info width_paddingStandart">
                     <div class="otzyvDefault__ot">
                         <label>ОТ:</label>
