@@ -16,6 +16,9 @@
         padding-bottom: 30px;
     }
 }
+.make__form{
+    margin-bottom:2rem;
+}
 
 @media only screen and (max-width: 767px) and (min-width: 480px) {
     .normPage__title {
