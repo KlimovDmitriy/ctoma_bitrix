@@ -16,9 +16,15 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery-3.6.0.min.js');
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/fontawesome.js');
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/swiper-bundle.min.js');
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.fancybox.min.js');
-Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/custom.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/mask.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/validate.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/jquery-ui/jquery-ui.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/jquery-ui/rus.js');
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.event.move.js');
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.twentytwenty.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/custom.js');
+
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/jquery-ui/jquery-ui.css');
 
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/style.css');
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/jquery.fancybox.min.css');
