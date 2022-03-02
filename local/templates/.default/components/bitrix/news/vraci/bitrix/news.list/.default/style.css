@@ -767,3 +767,7 @@
 .makeImg__button {
 	margin: auto;
 }
+
+.doctorsFilter__work ul {
+	margin-left: 15px;
+}
