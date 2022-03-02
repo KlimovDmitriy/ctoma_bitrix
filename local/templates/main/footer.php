@@ -152,13 +152,9 @@
                 <div class="footer__menu width_paddingLeftRight">
                     <a class="footer__linkBold" href="/make-an-appointment/">Записаться</a>
 
-                    <a class="use-ajax footer__link" data-dialog-options="{
-                           &quot;width&quot;:&quot;450px&quot;,
-                           &quot;minHeight&quot;:&quot;500px&quot;,
-                           &quot;dialogClass&quot;:&quot;popupDialog&quot;
-                           }" data-dialog-type="modal">Заказать звонок
-                    </a>
+                    <a data-form="callback" class="modaler footer__link">Заказать звонок</a>
                     <a data-form="zadat-vopros" class="modaler footer__link">Задать вопрос</a>
+
                     <a href="https://ctoma.ru/form/kontrol-kacestva" class="use-ajax footer__link" data-dialog-options="{
                            &quot;width&quot;:&quot;500px&quot;,
                            &quot;minHeight&quot;:&quot;500px&quot;,
@@ -226,7 +222,19 @@
     );
     ?>
 </div>
+<div id="callback" class="dialog" title="Обратный звонок">
 
+    <?
+    $APPLICATION->IncludeComponent(
+        "realweb:rw_forms", ".default",
+        array(
+            "CODE" => 'callback',
+            "COMPONENT_TEMPLATE" => ".default",
+            "EDIT_TEMPLATE" => ""
+        ),
+    );
+    ?>
+</div>
 
 </body>
 </html>
