@@ -771,3 +771,8 @@
 .doctorsFilter__work ul {
 	margin-left: 15px;
 }
+.minLabel {
+	font-size: 11px !important;
+	font-style: normal !important;
+	display: inline-block !important;
+}
