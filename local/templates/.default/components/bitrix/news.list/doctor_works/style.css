@@ -1,6 +1,6 @@
 /* line 2, ../bem/blocks/articles/_default.scss */
 .articles__container {
-    background: url("/themes/my_theme/bem/blocks/articles/img/bg.jpg");
+    background: url("/local/templates/main/images/articlesSlide/bg.jpg");
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;

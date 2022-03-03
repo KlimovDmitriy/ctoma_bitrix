@@ -1093,8 +1093,8 @@ div.news-detail img.detail_picture
 
 /* line 1, ../bem/blocks/articlesSlide/_default.scss */
 .articlesSlide {
-	background: url("/themes/my_theme/bem/blocks/articlesSlide/img/bg.jpg");
-	background-repeat: no-repeat;
+    background: url("/local/templates/main/images/articlesSlide/bg.jpg");
+    background-repeat: no-repeat;
 	background-position: center center;
 	padding-bottom: 30px;
 }
