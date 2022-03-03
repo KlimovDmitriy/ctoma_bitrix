@@ -4,7 +4,7 @@ CModule::IncludeModule("iblock");
 
     if (!empty($arResult["DETAIL_PICTURE"]["SRC"])) {
         $arFileTmp = CFile::ResizeImageGet(
-          $arElement["DETAIL_PICTURE"],
+          $arResult["DETAIL_PICTURE"],
           array("width" => 410, "height" => 520),
           BX_RESIZE_IMAGE_EXACT,
           true,
