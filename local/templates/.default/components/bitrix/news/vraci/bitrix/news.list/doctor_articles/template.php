@@ -12,9 +12,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<!--<pre>-->
-<?// print_r($arResult['ITEMS']);?>
-<!--</pre>-->
 <?php if(count($arResult['ITEMS'])>0):?>
 <div class="articlesSlide width width_full">
     <div class="articlesSlide__container width width_norm width_paddingStandart">
