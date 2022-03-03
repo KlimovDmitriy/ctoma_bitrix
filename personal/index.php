@@ -17,7 +17,7 @@ $APPLICATION->IncludeComponent(
 		"AJAX_MODE" => "N",
 		"IBLOCK_TYPE" => "content",
 		"IBLOCK_ID" => \Realweb\Site\Site::getIblockId("doctors"),
-		"NEWS_COUNT" => "20",
+		"NEWS_COUNT" => "5",
 		"USE_SEARCH" => "Y",
 		"USE_RSS" => "Y",
 		"USE_RATING" => "Y",
