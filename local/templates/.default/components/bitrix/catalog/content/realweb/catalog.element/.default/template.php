@@ -61,6 +61,7 @@ $name = !empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'])
 
 
                     <div class="normPageDefault content_norm">
+                        <?php echo $arResult['PREVIEW_TEXT']; ?>
                         <?php
                         foreach ($arResult['COMPONENTS'] as $PAGE_TYPE): ?>
                             <?php if ($PAGE_TYPE['TYPE'] == 'COMPONENT'): ?>

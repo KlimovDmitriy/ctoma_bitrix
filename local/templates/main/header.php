@@ -16,9 +16,15 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery-3.6.0.min.js');
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/fontawesome.js');
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/swiper-bundle.min.js');
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.fancybox.min.js');
-Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/custom.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/mask.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/validate.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/jquery-ui/jquery-ui.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/jquery-ui/rus.js');
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.event.move.js');
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.twentytwenty.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/custom.js');
+
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/jquery-ui/jquery-ui.css');
 
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/style.css');
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/jquery.fancybox.min.css');
@@ -85,35 +91,21 @@ Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/twentytwenty.css');
             </div>
                 <div class="header__menuAndButton menuMobile__content">
                     <nav class="header__menuTop menuHeader ">
-                    <ul class="menuHeader__ul" role="menu">
-                    <li class="menuHeader__li menuHeader__mobile" role="presentation">
-                    <a class="menuHeader__a" role="menuitem" href="/">Главная</a>
-                </li>
-                        <li class="menuHeader__li" role="presentation">
-                    <a href="/about" class="menuHeader__a" role="menuitem" data-drupal-link-system-path="taxonomy/term/47">О компании</a>
-                                </li>
-                        <li class="menuHeader__li" role="presentation">
-                    <a href="/stomatology" class="menuHeader__a" role="menuitem" data-drupal-link-system-path="stomatology">Услуги</a>
-                                </li>
-                        <li class="menuHeader__li" role="presentation">
-                    <a href="/price" class="menuHeader__a" role="menuitem" data-drupal-link-system-path="taxonomy/term/127">Цены</a>
-                                </li>
-                        <li class="menuHeader__li" role="presentation">
-                    <a href="/personal" class="menuHeader__a" role="menuitem" data-drupal-link-system-path="personal">Врачи</a>
-                                </li>
-                        <li class="menuHeader__li" role="presentation">
-                    <a href="/clinics" class="menuHeader__a" role="menuitem" data-drupal-link-system-path="clinics">Клиники</a>
-                                </li>
-                        <li class="menuHeader__li" role="presentation">
-                    <a href="/portfolio" class="menuHeader__a" role="menuitem" data-drupal-link-system-path="portfolio">Портфолио</a>
-                                </li>
-                        <li class="menuHeader__li" role="presentation">
-                    <a href="/akcii" class="menuHeader__a" role="menuitem" data-drupal-link-system-path="akcii">Акции</a>
-                                </li>
-                        <li class="menuHeader__li" role="presentation">
-                    <a href="/reviews" class="menuHeader__a" role="menuitem" data-drupal-link-system-path="reviews">Отзывы</a>
-                                </li>
-                  </ul>
+                        <?$APPLICATION->IncludeComponent("bitrix:menu", "top_mobile_menu", Array(
+                            "ROOT_MENU_TYPE" => "topmobile",	// Тип меню для первого уровня
+                            "MAX_LEVEL" => "2",	// Уровень вложенности меню
+                            "CHILD_MENU_TYPE" => "topmobile",	// Тип меню для остальных уровней
+                            "USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+                            "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+                            "MENU_CACHE_TYPE" => "A",	// Тип кеширования
+                            "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+                            "MENU_CACHE_USE_GROUPS" => "N",	// Учитывать права доступа
+                            "MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
+                            "COMPONENT_TEMPLATE" => "",
+                            "DELAY" => "N",	// Откладывать выполнение шаблона меню
+                        ),
+                            false
+                        );?>
                     </nav>
                 </div>
 
@@ -176,29 +168,21 @@ Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/twentytwenty.css');
                 </div>
                 <div class="header__menu">
                     <div class="glavnoeMenu width_paddingLeftRight">
-                        <ul class="glavnoeMenu__ul" role="menu">
-                            <li class="glavnoeMenu__li" role="presentation">
-                                <a href="/stomatology" class="glavnoeMenu__a" role="menuitem" data-drupal-link-system-path="stomatology">Услуги</a>
-                            </li>
-                             <li class="glavnoeMenu__li" role="presentation">
-                                <a href="/price" class="glavnoeMenu__a" role="menuitem" data-drupal-link-system-path="taxonomy/term/127">Цены</a>
-                            </li>
-                            <li class="glavnoeMenu__li" role="presentation">
-                                <a href="/akcii" class="glavnoeMenu__a" role="menuitem" data-drupal-link-system-path="akcii">Акции</a>
-                            </li>
-                            <li class="glavnoeMenu__li" role="presentation">
-                                <a href="/clinics" class="glavnoeMenu__a" role="menuitem" data-drupal-link-system-path="clinics">Клиники</a>
-                            </li>
-                            <li class="glavnoeMenu__li" role="presentation">
-                                 <a href="/personal" class="glavnoeMenu__a" role="menuitem" data-drupal-link-system-path="personal">Врачи</a><ul role="menu" class="glavnoeMenu__ul subMenuDoctor"><li class="glavnoeMenu__li"><a href="/personal/stomatologi-terapevty" class="glavnoeMenu__a">Терапевты</a></li><li class="glavnoeMenu__li"><a href="/personal/parodontologi" class="glavnoeMenu__a">Пародонтологи</a></li><li class="glavnoeMenu__li"><a href="/personal/stomatologi-ortopedy" class="glavnoeMenu__a">Ортопеды</a></li><li class="glavnoeMenu__li"><a href="/personal/ortodonty" class="glavnoeMenu__a">Ортодонты</a></li><li class="glavnoeMenu__li"><a href="/personal/stomatologi-hirurgi" class="glavnoeMenu__a">Хирурги</a></li></ul>
-                            </li>
-                            <li class="glavnoeMenu__li" role="presentation">
-                                <a href="/portfolio" class="glavnoeMenu__a" role="menuitem" data-drupal-link-system-path="portfolio">Портфолио</a>
-                            </li>
-                            <li class="glavnoeMenu__li" role="presentation">
-                                <a href="/about" class="glavnoeMenu__a" role="menuitem" data-drupal-link-system-path="taxonomy/term/47">О компании</a><ul role="menu" class="glavnoeMenu__ul subMenuDoctorN"><li class="glavnoeMenu__li"><a href="/news" class="glavnoeMenu__a">Новости</a></li></ul>
-                            </li>
-                        </ul>
+                        <?$APPLICATION->IncludeComponent("bitrix:menu", "top_menu", Array(
+                            "ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
+                            "MAX_LEVEL" => "2",	// Уровень вложенности меню
+                            "CHILD_MENU_TYPE" => "top",	// Тип меню для остальных уровней
+                            "USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+                            "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+                            "MENU_CACHE_TYPE" => "A",	// Тип кеширования
+                            "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+                            "MENU_CACHE_USE_GROUPS" => "N",	// Учитывать права доступа
+                            "MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
+                            "COMPONENT_TEMPLATE" => "",
+                            "DELAY" => "N",	// Откладывать выполнение шаблона меню
+                        ),
+                            false
+                        );?>
                 </div>
             </div>
                 <div class="header__search width_paddingStandart">
@@ -215,34 +199,6 @@ Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/twentytwenty.css');
                             <div class="grafik">Часы работы call-центра: 09:00-21:00</div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="header__menuTablet">
-                <div class="glavnoeMenu width_paddingLeftRight">
-                        <ul class="glavnoeMenu__ul" role="menu">
-                            <li class="glavnoeMenu__li" role="presentation">
-                                <a href="/stomatology" class="glavnoeMenu__a" role="menuitem" data-drupal-link-system-path="stomatology">Услуги</a>
-                            </li>
-                            <li class="glavnoeMenu__li" role="presentation">
-                                <a href="/price" class="glavnoeMenu__a" role="menuitem" data-drupal-link-system-path="taxonomy/term/127">Цены</a>
-                            </li>
-                            <li class="glavnoeMenu__li" role="presentation">
-                                <a href="/akcii" class="glavnoeMenu__a" role="menuitem" data-drupal-link-system-path="akcii">Акции</a>
-                            </li>
-                            <li class="glavnoeMenu__li" role="presentation">
-                                <a href="/clinics" class="glavnoeMenu__a" role="menuitem" data-drupal-link-system-path="clinics">Клиники</a>
-                            </li>
-                            <li class="glavnoeMenu__li" role="presentation">
-                                <a href="/personal" class="glavnoeMenu__a" role="menuitem" data-drupal-link-system-path="personal">Врачи</a><ul role="menu" class="glavnoeMenu__ul subMenuDoctor"><li class="glavnoeMenu__li"><a href="/personal/stomatologi-terapevty" class="glavnoeMenu__a">Терапевты</a></li><li class="glavnoeMenu__li"><a href="/personal/parodontologi" class="glavnoeMenu__a">Пародонтологи</a></li><li class="glavnoeMenu__li"><a href="/personal/stomatologi-ortopedy" class="glavnoeMenu__a">Ортопеды</a></li><li class="glavnoeMenu__li"><a href="/personal/ortodonty" class="glavnoeMenu__a">Ортодонты</a></li><li class="glavnoeMenu__li"><a href="/personal/stomatologi-hirurgi" class="glavnoeMenu__a">Хирурги</a></li></ul>
-                            </li>
-                            <li class="glavnoeMenu__li" role="presentation">
-                                <a href="/portfolio" class="glavnoeMenu__a" role="menuitem" data-drupal-link-system-path="portfolio">Портфолио</a>
-                            </li>
-                            <li class="glavnoeMenu__li" role="presentation">
-                                <a href="/about" class="glavnoeMenu__a" role="menuitem" data-drupal-link-system-path="taxonomy/term/47">О компании</a><ul role="menu" class="glavnoeMenu__ul subMenuDoctorN"><li class="glavnoeMenu__li"><a href="/news" class="glavnoeMenu__a">Новости</a></li></ul>
-                            </li>
-                        </ul>
                 </div>
             </div>
         </div>
