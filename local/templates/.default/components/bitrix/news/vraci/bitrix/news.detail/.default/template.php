@@ -95,6 +95,9 @@ $this->setFrameMode(true);
                                 </div>
                             <?php
                             endif; ?>
+                            <div class="doctor__zapisatsa">
+                                <a href="" class="use-ajax button_red">Записаться к врачу</a>
+                            </div>
                         </div>
                     </div>
                 </article>
