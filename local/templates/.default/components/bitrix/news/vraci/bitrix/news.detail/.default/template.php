@@ -87,7 +87,7 @@ $this->setFrameMode(true);
                                         <ul>
                                             <?php foreach ($arResult['CLINICS'] as $clinic): ?>
                                             <li>
-                                                <a href="<?= $clinic['LIST_PAGE_URL'].$clinic['DETAIL_PAGE_URL']?>" hreflang="ru"><?= $clinic['NAME'?></a>
+                                                <a href="<?= $clinic['LIST_PAGE_URL'].$clinic['DETAIL_PAGE_URL']?>" hreflang="ru"><?= $clinic['NAME']?></a>
                                             </li>
                                             <?php endforeach; ?>
                                         </ul>
