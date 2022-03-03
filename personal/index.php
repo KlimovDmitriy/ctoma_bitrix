@@ -75,7 +75,6 @@ $APPLICATION->IncludeComponent(
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
 		"USE_PERMISSIONS" => "Y",
 		"GROUP_PERMISSIONS" => array(
-			0 => "1",
 		),
 		"CACHE_TYPE" => "A",
 		"CACHE_TIME" => "3600",
