@@ -1,6 +1,3 @@
-<pre>
-<?php print_r($arResult['DIPLOMAS'])?>
-</pre>
 <?php if (count($arResult['DIPLOMAS']) > 0):?>
 <div class="diplomas width width_full">
 
