@@ -13,6 +13,9 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 /** @var string $templateFolder */
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
+use \Bitrix\Main\Page\Asset;
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.event.move.js');
+
 $this->setFrameMode(true);
 ?>
 <? $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
