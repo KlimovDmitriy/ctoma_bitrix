@@ -265,7 +265,7 @@ div.news-detail img.detail_picture
 
 /* line 1, ../bem/blocks/diplomas/_default.scss */
 .diplomas {
-	background: url("/themes/my_theme/bem/blocks/diplomas/img/bg.jpg");
+	background: url("/local/templates/main/images/diplomas/bg.jpg");
 	background-repeat: no-repeat;
 	background-position: center center;
 }
