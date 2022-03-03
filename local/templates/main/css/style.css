@@ -18089,3 +18089,18 @@ a.ui-button:active,
 .glavnoeMenu__span {
     color: #ffffff !important;
 }
+.forSert div {
+    float:left;
+}
+.forSert {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.forSert:first-child {
+    display: flex;
+    justify-content: center;
+}
+.node__content a {
+    color: #777777;
+}
