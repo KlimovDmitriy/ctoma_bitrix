@@ -73,7 +73,7 @@ $APPLICATION->IncludeComponent(
 		"PAGER_BASE_LINK" => "",
 		"PAGER_PARAMS_NAME" => "arrPager",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
-		"USE_PERMISSIONS" => "Y",
+		"USE_PERMISSIONS" => "N",
 		"GROUP_PERMISSIONS" => array(
 		),
 		"CACHE_TYPE" => "A",
