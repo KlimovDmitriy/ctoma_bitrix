@@ -12,9 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<!--<pre>-->
-<!--    --><?// print_r($arResult["ITEMS"]); ?>
-<!--</pre>-->
+
 <div class="doctorsFilter__right text" id="all-flavors">
 <div class="doctorsFilter__selectDoctor">
 <?foreach($arResult["ITEMS"] as $arItem):?>
