@@ -33,10 +33,6 @@ $this->setFrameMode(true);
               array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM'))
             );
             ?>
-            <!--<pre>-->
-            <!--    --><?
-            // print_r($arResult['ITEMS'])[0]?>
-            <!--</pre>-->
             <div class="views-row flavor" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
                 <div class="doctorsFilter__doctor">
                     <div class="doctorsFilter__photo">
