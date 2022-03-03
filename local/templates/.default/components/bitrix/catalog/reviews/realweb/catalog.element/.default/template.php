@@ -16,8 +16,11 @@ $this->setFrameMode(true);
 ?>
 
 <h1 class="otzyv__title title_grey width width_norm width_paddingStandart">
-    <span class="title__br t1"></span><span class="title__text" style="font-size:24px;">Отзыв о клинике «Стома» от <?=$arResult['ACTIVE_FROM'];?><span class="title__br"></span>
-</span>
+    <span class="title__br t1"></span>
+        <span class="title__text" style="font-size:24px;">Отзыв о клинике «Стома» от <?=$arResult['ACTIVE_FROM'];?>
+            <span class="title__br"></span>
+        </span>
+    <span class="title__br t1"></span>
 </h1>
 <div class="otzyvy__actions width width_light width_paddingLeftRight rev__Right">
     <a class="button_red" href="/reviews/add">Оставить отзыв</a>
