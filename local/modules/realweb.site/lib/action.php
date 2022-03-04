@@ -95,7 +95,7 @@ class Action
         );
 
         //Результат в конце отработки
-        if ($ID = $el->Add($fields)) {
+        if (!empty($sumbission_data) && $ID = $el->Add($fields)) {
             $result = ['success' => 1];
         } else {
             $result = ['error' => 1];
