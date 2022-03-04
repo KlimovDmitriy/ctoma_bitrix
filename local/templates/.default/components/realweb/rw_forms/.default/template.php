@@ -14,15 +14,26 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
 
 $this->setFrameMode(true);
+
+
 ?>
 
 <? if (!empty($arResult['FIELDS'])) { ?>
     <div class="make__form">
-        <form id="<?=$arParams['CODE'];?>" method="post" class="webform-submission-form webform-submission-add-form webform-submission-makeform-form webform-submission-makeform-add-form webform-submission-makeform-page_variant-make_appointment-panels_variant-0-form webform-submission-makeform-page_variant-make_appointment-panels_variant-0-add-form makeform js-webform-details-toggle webform-details-toggle">
-
+        <div id="success_<?= $arParams['CODE']; ?>" class="success_form">
+            <i class="fa fa-check"></i> Ваше сообщение успешно отправлено.
+        </div>
+        <div id="error_<?= $arParams['CODE']; ?>" class="error_form">
+            <i class="fa fa-times-circle"></i> Произошла ошибка. Попробуйте повторить позже.
+        </div>
+        <form id="<?= $arParams['CODE']; ?>" method="post"
+              class="webform-submission-form webform-submission-add-form webform-submission-makeform-form webform-submission-makeform-add-form webform-submission-makeform-page_variant-make_appointment-panels_variant-0-form webform-submission-makeform-page_variant-make_appointment-panels_variant-0-add-form makeform js-webform-details-toggle webform-details-toggle">
+            <input type="hidden" name="action" value="Action_formSubmit">
+            <input type="hidden" name="form_name" value="<?=$arResult['FORM']['NAME'];?>">
+            <input type="hidden" name="form_id" value="<?=$arResult['FORM']['ID'];?>">
             <? foreach ($arResult['FIELDS'] as $field) { ?>
 
-                <div class="<?= trim($field['WRAP_CSS']); ?>" >
+                <div class="<?= trim($field['WRAP_CSS']); ?>">
 
                     <? switch ($field['TYPE']) {
                         case 'BUTTON':
@@ -48,7 +59,7 @@ $this->setFrameMode(true);
                                    placeholder="<?= $field['PLACEHOLDER']; ?>"
                                    class="form-element <?= $field['FIELD_CSS']; ?>"
                                    value=""
-                                   autocomplete="off"  <?= $field['LENGTH']; ?> <?= $field['REQ']; ?>>
+                                   autocomplete="off" <?= $field['LENGTH']; ?> <?= $field['REQ']; ?>>
                             <? break; ?>
                         <? case 'TEXTAREA': ?>
 
@@ -70,7 +81,8 @@ $this->setFrameMode(true);
                                     id="edit-message"
                                     name="<?= $field['NAME'] ?>"
                                     rows="5" cols="60"
-                                    placeholder="<?= $field['PLACEHOLDER']; ?>" class="form-element <?= $field['FIELD_CSS']; ?>" <?= $field['REQ']; ?>></textarea>
+                                    placeholder="<?= $field['PLACEHOLDER']; ?>"
+                                    class="form-element <?= $field['FIELD_CSS']; ?>" <?= $field['REQ']; ?>></textarea>
 
                             <? break; ?>
 
@@ -78,7 +90,8 @@ $this->setFrameMode(true);
 
 
                             <input type="checkbox" id="edit-agreement" name="<?= $field['NAME'] ?>" value="1"
-                                   checked="checked" class="form-checkbox <?= $field['FIELD_CSS']; ?>" <?= $field['REQ']; ?>
+                                   checked="checked"
+                                   class="form-checkbox <?= $field['FIELD_CSS']; ?>" <?= $field['REQ']; ?>
                                    aria-required="true">
 
                             <? if (!empty($field['DESCRIPTION'])) { ?>
@@ -94,16 +107,14 @@ $this->setFrameMode(true);
                         <? case 'TEXT_MARKED': ?>
 
 
-
                             <? if (!empty($field['DESCRIPTION'])) { ?>
-                               <div class="<?= $field['FIELD_CSS']; ?>">
-                                <?= $field['DESCRIPTION']; ?>
-                               </div>
+                                <div class="<?= $field['FIELD_CSS']; ?>">
+                                    <?= $field['DESCRIPTION']; ?>
+                                </div>
                             <? } ?>
 
 
                             <? break; ?>
-
 
 
                         <? case 'SELECT': ?>

@@ -1,39 +1,94 @@
 .breadcrumb {
     list-style: none;
 }
+
 .breadcrumb > li {
     display: inline-block;
 }
+
 .breadcrumb > li + li:before {
     padding: 0 5px;
     color: #ccc;
     content: "/\00a0";
 }
-.choosingClinic__list{
-    display:none;
+
+.choosingClinic__list {
+    display: none;
 }
-.page404{margin:auto;}.page404__layout{font-size:24px;color:#8c8c8c;line-height:34px;text-align:center;display:-webkit-flex;display:flex;-webkit-flex-direction:row;flex-direction:row;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;}@media only screen and (max-width:479px) and (min-width:0px){.page404__layout{-webkit-flex-direction:column;flex-direction:column;}}.page404__img{height:auto;}@media only screen and (max-width:767px) and (min-width:480px){.page404__img{max-width:130px;}}@media only screen and (max-width:479px) and (min-width:0px){.page404__img{max-width:130px;}}.page404__text{font-size:16px;line-height:18px;}
-.informJob{
-    flex-basis:100%;
+
+.page404 {
+    margin: auto;
 }
-.informJob div{
-   margin:1.5rem;
+
+.page404__layout {
+    font-size: 24px;
+    color: #8c8c8c;
+    line-height: 34px;
+    text-align: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
 }
-.titleJob{
-    font-size:1.5rem!important;
-    color:#c7cfd8 !important;
-    text-transform:none !important;
+
+@media only screen and (max-width: 479px) and (min-width: 0px) {
+    .page404__layout {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
 }
-.webform-submission-form label{
+
+.page404__img {
+    height: auto;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+    .page404__img {
+        max-width: 130px;
+    }
+}
+
+@media only screen and (max-width: 479px) and (min-width: 0px) {
+    .page404__img {
+        max-width: 130px;
+    }
+}
+
+.page404__text {
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.informJob {
+    flex-basis: 100%;
+}
+
+.informJob div {
+    margin: 1.5rem;
+}
+
+.titleJob {
+    font-size: 1.5rem !important;
+    color: #c7cfd8 !important;
+    text-transform: none !important;
+}
+
+.webform-submission-form label {
     font-size: 12px;
     margin-bottom: 5px;
     display: block;
 
 }
-.informJob .title_grey .title__br{
-    max-width:150px;
+
+.informJob .title_grey .title__br {
+    max-width: 150px;
 }
-.makeform__clinic input{
+
+.makeform__clinic input {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -427,26 +482,47 @@
     box-shadow: none;
     background-color: #b01a37;
 }
-.popupDialog .makeform{
-    background:transparent !important;
+
+.popupDialog .makeform {
+    background: transparent !important;
     box-shadow: none !important;
 }
-.popupDialog .makeform__agreement,.popupDialog a{
+
+.popupDialog .makeform__agreement, .popupDialog a {
 
     color: #FFF !important;
 }
 
-.popupDialog button[type=submit]{
+.popupDialog button[type=submit] {
     color: white !important;
     background: #57aace !important;
-    margin-top:1.5rem;
+    margin-top: 1.5rem;
 }
-.popupDialog .js-form-item{
-    margin-top:1rem !important;
+
+.popupDialog .js-form-item {
+    margin-top: 1rem !important;
 }
+
 .modaler {
-    cursor:pointer;
+    cursor: pointer;
 }
-.dialog{
-    display:none;
+
+.success_form, .error_form, .dialog {
+    display: none;
+}
+
+.success_form, .error_form {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 3px 3px 3px 3px;
+}
+
+.success_form {
+    color: #270;
+    background-color: #DFF2BF;
+}
+
+.error_form {
+    color: #D8000C;
+    background-color: #FFBABA;
 }
