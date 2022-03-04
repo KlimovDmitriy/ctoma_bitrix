@@ -18146,3 +18146,61 @@ a.ui-button:active,
     text-transform: uppercase;
     line-height: 20px;
 }
+.praiseTable__group {
+    margin-bottom: 25px;
+}
+.praiseTable__nameGroup {
+    background: #d82043;
+    color: white;
+    font-size: 17px;
+    padding: 8px 15px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.praiseTable__list {
+    background: white;
+}
+.praiseTable__row.odd {
+    background: #f2f2f2;
+}
+.praiseTable__row {
+    display: flex;
+}
+.praiseTable__row.even {
+    background: #FFFFFF;
+}
+.praiseTable__row.odd {
+    background: #f2f2f2;
+}
+.praiseTable__name {
+    flex-basis: 78%;
+    padding: 8px 20px;
+    font-size: 14px;
+    color: #474747;
+    font-family: 'ralewayregular',sans-serif;
+    display: flex;
+}
+.praiseTable__cena {
+    flex-basis: 22%;
+    padding: 8px 20px;
+    border-left: 2px solid #e8e8e8;
+    font-size: 14px;
+    color: #d82043;
+    font-family: 'pantonregular',sans-serif;
+    font-weight: bold;
+    display: flex;
+}
+.praiseTable__name > div, .praiseTable__cena > div {
+    margin: auto 0;
+}
+.praiseTable__delimiter {
+    flex-basis: 100%;
+    padding: 8px 20px;
+    font-size: 14px;
+    color: #474747;
+    font-family: 'ralewayregular',sans-serif;
+    display: flex;
+}
+.praiseTable__delimiter > div {
+    margin: auto;
+}

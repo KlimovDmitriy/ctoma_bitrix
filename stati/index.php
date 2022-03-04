@@ -41,7 +41,7 @@ $APPLICATION->SetPageProperty("description", "Полезные статьи и �
         "DETAIL_META_KEYWORDS" => "-",
         "DETAIL_PRODUCT_INFO_BLOCK_ORDER" => "sku,props",
         "DETAIL_PRODUCT_PAY_BLOCK_ORDER" => "rating,price,priceRanges,quantityLimit,quantity,buttons",
-        "DETAIL_PROPERTY_CODE" => array(0=>"DOCTOR",),
+        "DETAIL_PROPERTY_CODE" => array(0 => "DOCTOR", 1 => "SERVICES_ELEMENTS", 2 => "RELATED", 3 => "SERVICES_GROUPS"),
         "DETAIL_SET_CANONICAL_URL" => "N",
         "DETAIL_SET_VIEWED_IN_COMPONENT" => "N",
         "DETAIL_SHOW_MAX_QUANTITY" => "N",
