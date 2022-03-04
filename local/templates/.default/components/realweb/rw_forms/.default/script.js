@@ -44,7 +44,9 @@ $(document).ready(function () {
 
 
 $("form").on('submit', function () {
-    $("form").validate();
+    $("form").validate({
+        errorElement: 'span'
+    });
     if ($("form").valid()) {
         var frm = $(this);
 
