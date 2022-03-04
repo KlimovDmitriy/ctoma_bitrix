@@ -26,26 +26,42 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
     </h1>
     <div class="doctors__content width width_norm width_paddingStandart">
         <div id="doctorsFilter" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml" class="doctorsFilter">
+            <?$APPLICATION->IncludeComponent(
+              "bitrix:catalog.smart.filter",
+              ".default",
+              array(
+                "COMPONENT_TEMPLATE" => ".default",
+                "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
+                "IBLOCK_ID" => $arParams["IBLOCK_ID"],
+                "SECTION_ID" => "",
+                "SECTION_CODE" => "",
+                "FILTER_NAME" => $arParams["FILTER_NAME"],
+                "HIDE_NOT_AVAILABLE" => "N",
+                "TEMPLATE_THEME" => "blue",
+                "FILTER_VIEW_MODE" => "horizontal",
+                "DISPLAY_ELEMENT_COUNT" => "Y",
+                "SEF_MODE" => "N",
+                "CACHE_TYPE" => "A",
+                "CACHE_TIME" => "36000000",
+                "CACHE_GROUPS" => "Y",
+                "SAVE_IN_SESSION" => "N",
+                "INSTANT_RELOAD" => "Y",
+                "PAGER_PARAMS_NAME" => "arrPager",
+                "PRICE_CODE" => array(
+                  0 => "BASE",
+                ),
+                "CONVERT_CURRENCY" => "Y",
+                "XML_EXPORT" => "N",
+                "SECTION_TITLE" => "-",
+                "SECTION_DESCRIPTION" => "-",
+                "POPUP_POSITION" => "left",
+                "SEF_RULE" => "/personal/filter/#SMART_FILTER_PATH#/apply/",
+                "SECTION_CODE_PATH" => "",
+                "SMART_FILTER_PATH" => $_REQUEST["SMART_FILTER_PATH"],
+              ),
+              $component
+            );?>
 
-<?if($arParams["USE_FILTER"]=="Y"):?>
-<?$APPLICATION->IncludeComponent(
-	"bitrix:catalog.filter",
-	"",
-	Array(
-		"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
-		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
-		"FILTER_NAME" => $arParams["FILTER_NAME"],
-		"FIELD_CODE" => $arParams["FILTER_FIELD_CODE"],
-		"PROPERTY_CODE" => $arParams["FILTER_PROPERTY_CODE"],
-		"CACHE_TYPE" => $arParams["CACHE_TYPE"],
-		"CACHE_TIME" => $arParams["CACHE_TIME"],
-		"CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
-		"PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
-	),
-	$component
-);
-?>
-<?endif?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"",
