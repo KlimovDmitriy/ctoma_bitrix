@@ -24,8 +24,6 @@ $this->setFrameMode(true);
     )
 ); ?>
 
-
-
     <div class="articlesPage__center width width_norm">
         <div class="articlesPage__leftSidebar width_paddingStandart">
 
@@ -88,6 +86,51 @@ $this->setFrameMode(true);
                 ); ?>
 
             <?php \Realweb\Site\Site::showIncludeText('LEFT_BANNER_STATIC'); ?>
+
+
+                    <?
+                    $arItems = \Realweb\Site\Site::getIBlockElements(array('CODE' => $arResult['VARIABLES']['ELEMENT_CODE'], 'IBLOCK_ID' => $arParams['IBLOCK_ID']));
+                    foreach ($arItems as $arI) {
+                        $arFilter = Array("IBLOCK_ID"=>\Realweb\Site\Site::getIblockId('articles'), "ID"=>$arI['ID']);
+                        $res = CIBlockElement::GetList(Array(), $arFilter);
+                        if ($ob = $res->GetNextElement()){;
+                            $arProps = $ob->GetProperties();
+                            if ($arProps["RELATED"]["VALUE"]) { ?>
+                                <h3 class="articlesHeaderH3">Рекомендуемые статьи</h3>
+                                <div class="menuNormPage rekArticle">
+                                    <div>
+                                        <? foreach($arProps["RELATED"]["VALUE"] as $articleItem) {
+                                            $res = CIBlockElement::GetByID($articleItem);
+                                            if($ar_res = $res->GetNext())
+                                                echo '<div><a href="'.$ar_res['DETAIL_PAGE_URL'].'">'.$ar_res['NAME'].'</a></div>';
+                                        } ?>
+                                    </div>
+                                </div>
+                            <? }
+
+                            if ($arProps["DOCTOR"]["VALUE"]) {
+                                $res = CIBlockElement::GetByID($arProps["DOCTOR"]["VALUE"]);
+                                if($ar_res = $res->GetNext()) {
+                                ?>
+                                <div class="menuNormPage">
+                                    <div class="photo-stomatolog-article">
+                                        <a class="foto_vraca" href="<?=$ar_res['DETAIL_PAGE_URL'];?>">
+                                            <img src="" alt="<?=$ar_res['NAME'];?>">
+                                        </a>
+                                    </div>
+                                    <div class="name-stomatolog-article"><?=$ar_res['NAME'];?></div>
+                                    <div class="specialnost-article">пародонтолог, стоматолог-терапевт  </div>
+                                </div>
+
+                            <? }
+                            }
+
+
+                        }
+                    }
+                    ?>
+
+
 
         </div>
 
