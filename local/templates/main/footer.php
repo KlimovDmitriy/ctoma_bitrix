@@ -106,12 +106,12 @@
                 <div class="footer__menu width_paddingLeftRight">
                     <ul class="footerMenu__ul" role="menu">
                         <li class="footerMenu__li" role="presentation">
-                            <a href="https://ctoma.ru/about" class="footerMenu__a" role="menuitem"
-                               data-drupal-link-system-path="taxonomy/term/47">О СТОМЕ</a>
+                            <a href="/about/" class="footerMenu__a" role="menuitem"
+                               >О СТОМЕ</a>
                         </li>
                         <li class="footerMenu__li" role="presentation">
-                            <a href="https://ctoma.ru/lechenie-v-kredit" class="footerMenu__a" role="menuitem"
-                               data-drupal-link-system-path="taxonomy/term/157">Лечение в рассрочку</a>
+                            <a href="/lechenie-v-kredit/" class="footerMenu__a" role="menuitem"
+                               >Лечение в рассрочку</a>
                         </li>
                         <li class="footerMenu__li" role="presentation">
                             <a href="https://ctoma.ru/jobs" class="footerMenu__a" role="menuitem"

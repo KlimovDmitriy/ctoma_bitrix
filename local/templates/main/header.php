@@ -45,44 +45,8 @@ Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/twentytwenty.css');
 
 
                     </div>
-                    <noindex>
-                        <div class="header__links width_paddingLeftRight">
-                        <span class="header__link">
-                            <a href="/form/zapros-dokumentov-dla-nalogovogo" class="use-ajax" data-dialog-options="{
-                                    &quot;width&quot;:&quot;600px&quot;,
-                                    &quot;minHeight&quot;:&quot;500px&quot;,
-                                    &quot;dialogClass&quot;:&quot;popupDialog&quot;
-                                    }" data-dialog-type="modal">Налоговый вычет</a>
-                        </span>
-                        <span class="header__link">
-                        <a href="/form/callback" rel="nofollow" class="use-ajax" data-dialog-options="{
-                               &quot;width&quot;:&quot;450px&quot;,
-                               &quot;minHeight&quot;:&quot;500px&quot;,
-                               &quot;dialogClass&quot;:&quot;popupDialog&quot;
-                               }" data-dialog-type="modal">Заказать звонок</a>
-                        </span>
+                    <?php \Realweb\Site\Site::showIncludeText('TOP_FORMS_LINKS'); ?>
 
-                            <span class="header__link">
-                            <a href="/form/zadat-vopros" class="use-ajax" data-dialog-options="{
-                                    &quot;width&quot;:&quot;500px&quot;,
-                                    &quot;minHeight&quot;:&quot;500px&quot;,
-                                    &quot;dialogClass&quot;:&quot;popupDialog&quot;
-                                    }" data-dialog-type="modal">Задать вопрос</a>
-                        </span>
-                            <span class="header__link">
-                            <a href="/form/kontrol-kacestva" class="use-ajax" data-dialog-options="{
-                               &quot;width&quot;:&quot;500px&quot;,
-                               &quot;minHeight&quot;:&quot;500px&quot;,
-                               &quot;dialogClass&quot;:&quot;popupDialog&quot;
-                               }" data-dialog-type="modal">Контроль качества</a>
-                        </span>
-                        </div>
-                    </noindex>
-                    <noindex>
-                        <div class="header__makeAppointmentWrap width_paddingLeftRight">
-                            <a class="header__makeAppointment" href="/make-an-appointment">Запись на прием</a>
-                        </div>
-                    </noindex>
                 </div>
             </div>
             <div class="header__topWrapper width_paddingStandart menuMobile">
