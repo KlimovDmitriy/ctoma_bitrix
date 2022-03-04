@@ -34,19 +34,16 @@ $(document).ready(function () {
 
     });
 
-    //Валидация полей
-    $("form").validate({
-        errorElement: 'span'
-    });
+
 
 
 })
 
-
+$("form").validate({
+    errorElement: 'span'
+});
 $("form").on('submit', function () {
-    $("form").validate({
-        errorElement: 'span'
-    });
+
     if ($("form").valid()) {
         var frm = $(this);
 
