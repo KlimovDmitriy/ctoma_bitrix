@@ -243,5 +243,18 @@
     );
     ?>
 </div>
+<div id="nalog" class="dialog" title="Запрос документов для налогового вычета">
+
+    <?
+    $APPLICATION->IncludeComponent(
+        "realweb:rw_forms", ".default",
+        array(
+            "CODE" => 'nalog',
+            "COMPONENT_TEMPLATE" => ".default",
+            "EDIT_TEMPLATE" => ""
+        ),
+    );
+    ?>
+</div>
 </body>
 </html>
