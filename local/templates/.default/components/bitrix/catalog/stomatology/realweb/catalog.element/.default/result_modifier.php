@@ -5,21 +5,10 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 /** @var CBitrixComponentTemplate $this */
 /** @var array $arParams */
 /** @var array $arResult */
+
 $arResult['TEXT_PAGE'] = false;
 $arResult['REDIRECT'] = "";
 
+$arResult['DETAIL_TEXT']=str_replace('[[FORM]]','FORM',$arResult['DETAIL_TEXT']);
 
-if ($arResult['PROPERTIES']['GALLERY']['VALUE']) {
-    if (Bitrix\Main\Loader::includeModule("iblock")) {
-        $rsResult = \Bitrix\Iblock\ElementTable::getList(array(
-            'select' => array('ID', 'NAME', 'PREVIEW_PICTURE', 'IBLOCK_SECTION_ID'),
-            'filter' => array('IBLOCK_ID' => IBLOCK_CONTENT_GALLERY, 'IBLOCK_SECTION_ID' => $arResult['PROPERTIES']['GALLERY']['VALUE']),
-            'order' => array('SORT' => 'ASC')
-        ));
-        while ($row = $rsResult->fetch()) {
-            $arResult['GALLERY'][$row['IBLOCK_SECTION_ID']][$row['ID']] = $row;
-        }
-    }
-}
 
-$this->__component->SetResultCacheKeys(array('REDIRECT'));

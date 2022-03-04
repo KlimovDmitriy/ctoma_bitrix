@@ -16,12 +16,16 @@ $this->setFrameMode(true);
 $name = !empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'])
     ? $arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']
     : $arResult['NAME'];
-
+ob_start();
 ?>
+    <h1 class="service__titleText title_norm width width_norm width_paddingStandart"><? echo $name; ?></h1>
+    <div class="serviceDefault content_norm">
+        <?php echo $arResult['DETAIL_TEXT']; ?>
+    </div>
+<?php // передаем данные буфера вывода в файл component_epilog.php
+$this->__component->SetResultCacheKeys(array("CACHED_TPL"));
 
+$this->__component->arResult["CACHED_TPL"] = @ob_get_contents();
 
-
-<h1 class="service__titleText title_norm width width_norm width_paddingStandart"><? echo $name; ?></h1>
-<div class="serviceDefault content_norm">
-    <?php echo $arResult['DETAIL_TEXT']; ?>
-</div>
+ob_get_clean();
+?>
