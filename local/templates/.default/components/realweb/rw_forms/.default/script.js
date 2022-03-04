@@ -33,8 +33,16 @@ $(document).ready(function () {
         minDate: '+1d'
 
     });
-
-
+//Модальные формы
+    $('.modaler').on('click', function (e) {
+        var fid = $(this).data('form');
+        $('#'+fid).dialog({
+            width:"500px",
+            minHeight:"500px",
+            dialogClass:"popupDialog",
+            modal:true
+        });
+    })
 
 
 })
@@ -43,7 +51,7 @@ $("form").validate({
     errorElement: 'span'
 });
 $("form").on('submit', function () {
-    $("form").validate({
+    $("#"+$(this).attr('id')).validate({
         errorElement: 'span'
     });
     if ($("form").valid()) {

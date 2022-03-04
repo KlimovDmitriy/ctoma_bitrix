@@ -109,15 +109,3 @@ $('.plusDoctorWr .plusDoctorN').click(function () {
     $(this).parent().next().toggleClass('menuMobileDortorUl');
     $(this).prev().toggleClass('menuMobileDortor');
 });
-$(document).ready(function () {
-
-    $('.modaler').on('click', function (e) {
-        var fid = $(this).data('form');
-        $('#'+fid).dialog({
-            width:"500px",
-            minHeight:"500px",
-            dialogClass:"popupDialog",
-            modal:true
-        });
-    })
-})
