@@ -51,7 +51,7 @@ $("form").validate({
     errorElement: 'span'
 });
 $("form").on('submit', function () {
-    $("#"+$(this).attr('id')).validate({
+    $(this).validate({
         errorElement: 'span'
     });
     if ($("form").valid()) {
@@ -83,5 +83,7 @@ $("form").on('submit', function () {
 
         return false;
 
+    }else{
+        return false;
     }
 })
