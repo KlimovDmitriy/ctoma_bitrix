@@ -52,7 +52,7 @@ $this->setFrameMode(true);
                     "SECTION_USER_FIELDS" => array("", ""),
                     "SHOW_PARENT_NAME" => "Y",
                     "TOP_DEPTH" => "2",
-                    "PAGE_ELEMENT_COUNT" => "12",
+                    "PAGE_ELEMENT_COUNT" => "9",
                     "VIEW_MODE" => "LINE"
                 ),
                 $component
