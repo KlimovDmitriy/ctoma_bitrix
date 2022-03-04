@@ -45,7 +45,7 @@ foreach ($elements as $el) {
 
         $FORM_F['IBLOCK'] = $el['PROPERTIES']['IBLOCK_CODE']['VALUE'];
     }
-
+    $arResult['FORM'] = ['ID' => $section['ID'], 'NAME' => $section['NAME']];
     $arResult['FIELDS'][] = $FORM_F;
 
 }
