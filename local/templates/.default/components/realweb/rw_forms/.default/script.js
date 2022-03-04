@@ -44,7 +44,7 @@ $(document).ready(function () {
 
 
 $("form").on('submit', function () {
-
+    $("form").validate();
     if ($("form").valid()) {
         var frm = $(this);
 

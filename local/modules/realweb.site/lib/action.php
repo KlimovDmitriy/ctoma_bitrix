@@ -95,7 +95,7 @@ class Action
         );
 
         //Результат в конце отработки
-        if ($html != '<h3>Данные формы</h3>' && $ID = $el->Add($fields)) {
+        if ($ID = $el->Add($fields)) {
             $result = ['success' => 1];
         } else {
             $result = ['error' => 1];
