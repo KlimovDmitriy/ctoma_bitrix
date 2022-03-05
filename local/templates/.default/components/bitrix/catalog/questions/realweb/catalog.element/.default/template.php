@@ -32,7 +32,7 @@ $this->setFrameMode(true);
                         <div><?=htmlspecialchars_decode($arResult['PREVIEW_TEXT']);?></div>
 
                         <div class="questionDefault__date">
-                            <?=FormatDateFromDB($arResult["DATE_CREATE"], 'SHORT');?>
+                            <?=FormatDateFromDB($arResult["DATE_ACTIVE_FROM"], 'SHORT');?>
                         </div>
                     </div>
 

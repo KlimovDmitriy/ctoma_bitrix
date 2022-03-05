@@ -6,5 +6,4 @@ if ($arResult['PROPERTIES']['OLD_ID']['VALUE']) {
     $arResult['DISPLAY_ID'] = $arResult['ID'];
 }
 
-
 ?>
