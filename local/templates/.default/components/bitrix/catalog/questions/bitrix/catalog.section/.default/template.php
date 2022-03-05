@@ -24,8 +24,8 @@ if ($_REQUEST['PAGEN_1']>0){
     <h1 class="otzyvy__title title_grey width width_norm width_paddingStandart">
         <span class="title__br"></span><span class="title__text">Вопрос-ответ. Страница <?=$page;?> </span><span class="title__br"></span>
     </h1>
-    <div class="otzyvy__actions width width_light width_paddingLeftRight">
-        <a class="button_red" href="/reviews/add">Оставить отзыв</a>
+    <div class="faq_link">
+        <a href="/faq/" class="button_red">Ответы на часто задаваемые вопросы</a>
     </div>
     <div class="otzyvy__content width width_norm width_paddingStandart">
         <div class="views-element-container">
@@ -43,6 +43,7 @@ if ($_REQUEST['PAGEN_1']>0){
                                     <div class="otzyvDefault__info width_paddingStandart">
 
                                         <div class="otzyvDefault__body">
+                                            Вопрос:
                                             <div>
                                                 <?= html_entity_decode($item['PREVIEW_TEXT']); ?>
                                             </div>
