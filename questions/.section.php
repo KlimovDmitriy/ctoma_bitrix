@@ -1,3 +1,3 @@
 <?
-$sSectionName = "Отзывы";
+$sSectionName = "Вопросы - Ответы";
 ?>
