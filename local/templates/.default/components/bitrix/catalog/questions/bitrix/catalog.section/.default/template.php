@@ -20,7 +20,7 @@ if ($_REQUEST['PAGEN_1'] > 0) {
     $page = $_REQUEST['PAGEN_1'];
 }
 ?>
-<div class="otzyvy__container">
+<div class="questions__container">
     <h1 class="otzyvy__title title_grey width width_norm width_paddingStandart">
         <span class="title__br"></span><span class="title__text">Вопрос-ответ. Страница <?= $page; ?> </span><span
                 class="title__br"></span>

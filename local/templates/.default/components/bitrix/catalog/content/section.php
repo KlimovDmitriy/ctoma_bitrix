@@ -17,10 +17,12 @@ use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
 $this->setFrameMode(true);
 ?>
+
 <?php if (intval($arResult['VARIABLES']['SECTION_ID']) == 0): ?>
     <?php
     $arVariables = array();
     $isElement = \Realweb\Site\Property\PageType::isElement($arParams["SEF_FOLDER"], $arParams['IBLOCK_ID'], $arVariables);
+
     if ($isElement) {
         $componentPage = 'element';
         $arResult['VARIABLES'] = $arVariables;

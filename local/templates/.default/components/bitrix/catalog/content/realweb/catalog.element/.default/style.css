@@ -1,9 +1,4 @@
-.normPage__container {
-    background: url("/themes/my_theme/bem/blocks/normPage/img/bg.jpg");
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
-}
+
 
 .normPage__title {
     padding-top: 100px;

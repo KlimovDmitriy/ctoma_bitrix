@@ -17,3 +17,8 @@
 .questionTeaser__more .button_red {
     color: #fff !important;
 }
+.questions__container {
+    background: url(/local/templates/main/images/bg-q.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+}
