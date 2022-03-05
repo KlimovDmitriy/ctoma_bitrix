@@ -16,26 +16,63 @@ $this->setFrameMode(true);
 ?>
 
 
-<div class="klinika__title">
-    <h1 class="service__titleText title_norm width width_norm width_paddingStandart"><div><?=$arResult['NAME']?></div></h1>
-</div>
+<div class="articleDefault content_norm" itemscope="" itemtype="https://schema.org/Article">
+    <meta itemprop="headline" content="<?=$arResult['NAME'];?>">
+    <div itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization" style="display: none">
+        <meta itemprop="name" content="«СТОМА»">
+        <meta itemprop="telephone" content="+78123210201">
+        <meta itemprop="address" content="Санкт-Петербург">
+        <span itemprop="logo" itemscope="" itemtype="https://schema.org/ImageObject">
+      <img class="itemprops" itemprop="url image" src="/local/templates/main/images/logo.jpg" alt="Стоматология в СПб – зубные клиники «СТОМА»" title="«СТОМА» - Сеть стоматологических клиник Санкт-Петербурга" width="245" height="65">
+    </span>
+    </div>
+    <meta itemprop="name" content="<?=$arResult['NAME'];?>">
+    <meta itemprop="description" content="">
+    <meta itemprop="author" content="<?=$arResult["DISPLAY_PROPERTIES"]["DOCTOR"]["LINK_ELEMENT_VALUE"]["NAME"];?>">
+    <meta itemprop="datePublished" content="<?=FormatDateFromDB($arResult['DATE_CREATE'], 'Y-m-d');?>">
+    <meta itemprop="dateModified" content="<?=FormatDateFromDB($arResult['TIMESTAMP_X'], 'Y-m-d');?>">
 
-<div class="wrapPortfolioInfo">
-    <div class="portfolioInfo">
-        <div class="portDoctor"><span class="wrPortText">Врач: </span>
-            <div><?=$arResult["DISPLAY_PROPERTIES"]["DOCTOR"]["DISPLAY_VALUE"];?></div>
+    <div class="articleDefault__top">
+        <div class="articleDefault__img width_paddingStandart" itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject" style="display:none">
+
+            <meta itemprop="image" content="/themes/my_theme/bem/blocks/makeImg/img/zapis_img.jpg">
         </div>
-    </div>
-</div>
-
-
-<div class="portContent">
-    <div class="portfolioDescription">
-        <div>
-            <?=$arResult['DETAIL_TEXT']?>
+        <div class="articleDefault__info width_paddingStandart" style="width:100%">
+            <?=FormatDateFromDB($arElement['ACTIVE_FROM'], 'Y/m/d');?>
+            <div class="timeto">Время прочтения - <span id="p1"><?=$arResult['READ_TIME'];?></span> минут.</div>
         </div>
+
     </div>
-    <div class="service__zapisatsa">
-        <a href="/make-an-appointment" class="button_red">Записаться</a>
+    <div class="articleDefault__info width_paddingStandart" style="width:100%">
+        <div></div>
+    </div>
+    <div class="articleDefault__body width_paddingStandart" itemprop="articleBody" id="main_text">
+        <? if ($arResult['content'] != '') {?>
+            <div class="ContentH2">Содержание</div>
+                <ul>
+                    <?=$arResult['content']?>
+                </ul>
+        <? } ?>
+
+        <div><?=$arResult['DETAIL_TEXT']?></div>
+
+
+        <script>(function() {
+                if (window.pluso)if (typeof window.pluso.start == "function") return;
+                if (window.ifpluso==undefined) { window.ifpluso = 1;
+                    var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+                    s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+                    s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+                    var h=d[g]('body')[0];
+                    h.appendChild(s);
+                }})();
+        </script>
+        <div class="pluso" data-background="none;" data-options="medium,square,line,horizontal,nocounter,sepcounter=1,theme=14" data-services="vkontakte,facebook,odnoklassniki"></div>
+
+
+
+        <div id="toTop"><div class="toTop">Оглавление</div></div>
     </div>
 </div>
+
+
