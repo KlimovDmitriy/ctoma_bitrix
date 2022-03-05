@@ -3,150 +3,73 @@
         <div class="footer__col1">
             <div class="footer__menus ">
                 <div class="footer__menu width_paddingLeftRight">
-                    <ul class="footerMenu__ul" role="menu">
-                        <li class="footerMenu__li footerMenu__liBold" role="presentation">
-                            <a href="https://ctoma.ru/clinics" class="footer__boldLink footerMenu__a" role="menuitem"
-                               data-drupal-link-system-path="clinics">Клиники</a>
-                        </li>
-                        <li class="footerMenu__li footerMenu__liBold" role="presentation">
-                            <a href="https://ctoma.ru/stomatology" class="footerMenu__a" role="menuitem"
-                               data-drupal-link-system-path="stomatology">Услуги</a>
-                        </li>
-                        <li class="footerMenu__li footerMenu__liBold" role="presentation">
-                            <a href="https://ctoma.ru/personal" class="footer__boldLink footerMenu__a" role="menuitem"
-                               data-drupal-link-system-path="personal">Врачи</a>
-                        </li>
-                        <li class="footerMenu__li footerMenu__liBold" role="presentation">
-                            <a href="https://ctoma.ru/akcii" class="footer__boldLink footerMenu__a" role="menuitem"
-                               data-drupal-link-system-path="akcii">Акции</a>
-                        </li>
-                        <li class="footerMenu__li footerMenu__liBold" role="presentation">
-                            <a href="https://ctoma.ru/price" class="footerMenu__a" role="menuitem"
-                               data-drupal-link-system-path="taxonomy/term/127">Цены</a>
-                        </li>
-                        <li class="footerMenu__li footerMenu__liBold" role="presentation">
-                            <a href="https://ctoma.ru/news" class="footerMenu__a" role="menuitem"
-                               data-drupal-link-system-path="news">Новости</a>
-                        </li>
-                    </ul>
+                    <?$APPLICATION->IncludeComponent("bitrix:menu", "footer_menu", Array(
+                        "ROOT_MENU_TYPE" => "bottom1",	// Тип меню для первого уровня
+                        "MAX_LEVEL" => "1",	// Уровень вложенности меню
+                        "CHILD_MENU_TYPE" => "",	// Тип меню для остальных уровней
+                        "USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+                        "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+                        "MENU_CACHE_TYPE" => "A",	// Тип кеширования
+                        "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+                        "MENU_CACHE_USE_GROUPS" => "N",	// Учитывать права доступа
+                        "MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
+                        "COMPONENT_TEMPLATE" => "",
+                        "DELAY" => "N",	// Откладывать выполнение шаблона меню
+                    ),
+                        false
+                    );?>
                 </div>
                 <div class="footer__menu width_paddingLeftRight">
-                    <a class="footer__linkBold" href="https://ctoma.ru/stomatology">Услуги</a>
-                    <div class="views-element-container">
-                        <div class="footerMenuUslugi">
-                            <div class="footerMenuUslugi__li views-row">
-                                <span class="views-field views-field-name"><span class="field-content"><a
-                                                href="https://ctoma.ru/stomatology/terapiya/lechenie-zubov-pod-mikroskopom"
-                                                hreflang="ru">Лечение зубов под микроскопом</a></span></span>
-                            </div>
-                            <div class="footerMenuUslugi__li views-row">
-                                <span class="views-field views-field-name"><span class="field-content"><a
-                                                href="https://ctoma.ru/stomatology/esteticheskaya-stomatologiya/otbelivanie"
-                                                hreflang="ru">Отбеливание зубов</a></span></span>
-                            </div>
-                            <div class="footerMenuUslugi__li views-row">
-                                <span class="views-field views-field-name"><span class="field-content"><a
-                                                href="https://ctoma.ru/stomatology/profilaktika/professionalnaa-gigiena"
-                                                hreflang="ru">Профессиональная гигиена</a></span></span>
-                            </div>
-                            <div class="footerMenuUslugi__li views-row">
-                                <span class="views-field views-field-name"><span class="field-content"><a
-                                                href="https://ctoma.ru/stomatology/hirurgiya/implantacia" hreflang="ru">Имплантация</a></span></span>
-                            </div>
-                            <div class="footerMenuUslugi__li views-row">
-                                <span class="views-field views-field-name"><span class="field-content"><a
-                                                href="https://ctoma.ru/stomatology/protezirovanie/viniry" hreflang="ru">Виниры на зубы</a></span></span>
-                            </div>
-                            <div class="footerMenuUslugi__li views-row">
-                                <span class="views-field views-field-name"><span class="field-content"><a
-                                                href="https://ctoma.ru/stomatology/komfortnoe-lecenie" hreflang="ru">Комфортное лечение</a></span></span>
-                            </div>
-                            <div class="footerMenuUslugi__li views-row">
-                                <span class="views-field views-field-name"><span class="field-content"><a
-                                                href="https://ctoma.ru/stomatology/diagnostika" hreflang="ru">Диагностика</a></span></span>
-                            </div>
-                            <div class="footerMenuUslugi__li views-row">
-                                <span class="views-field views-field-name"><span class="field-content"><a
-                                                href="https://ctoma.ru/esteticheskaya-stomatologiya" hreflang="ru">Эстетическая стоматология</a></span></span>
-                            </div>
-                            <div class="footerMenuUslugi__li views-row">
-                                <span class="views-field views-field-name"><span class="field-content"><a
-                                                href="https://ctoma.ru/stomatology/kids" hreflang="ru">Детская стоматология</a></span></span>
-                            </div>
-                            <div class="footerMenuUslugi__li views-row">
-                                <span class="views-field views-field-name"><span class="field-content"><a
-                                                href="https://ctoma.ru/stomatology/ortodontija"
-                                                hreflang="ru">Ортодонтия</a></span></span>
-                            </div>
-                            <div class="footerMenuUslugi__li views-row">
-                                <span class="views-field views-field-name"><span class="field-content"><a
-                                                href="https://ctoma.ru/stomatology/protezirovanie" hreflang="ru">Протезирование зубов</a></span></span>
-                            </div>
-                            <div class="footerMenuUslugi__li views-row">
-                                <span class="views-field views-field-name"><span class="field-content"><a
-                                                href="https://ctoma.ru/stomatology/parodontology" hreflang="ru">Пародонтология</a></span></span>
-                            </div>
-                            <div class="footerMenuUslugi__li views-row">
-                                <span class="views-field views-field-name"><span class="field-content"><a
-                                                href="https://ctoma.ru/stomatology/konsultatsiya-stomatologa"
-                                                hreflang="ru">Консультация стоматолога</a></span></span>
-                            </div>
-                            <div class="footerMenuUslugi__li views-row">
-                                <span class="views-field views-field-name"><span class="field-content"><a
-                                                href="https://ctoma.ru/stomatology/hirurgiya" hreflang="ru">Хирургическая стоматология</a></span></span>
-                            </div>
-                            <div class="footerMenuUslugi__li views-row">
-                                <span class="views-field views-field-name"><span class="field-content"><a
-                                                href="https://ctoma.ru/stomatology/terapiya"
-                                                hreflang="ru">Лечение зубов</a></span></span>
-                            </div>
-                        </div>
-                    </div>
+                      <?$APPLICATION->IncludeComponent("bitrix:menu", "footer_menu_light", Array(
+                        "ROOT_MENU_TYPE" => "bottom2",	// Тип меню для первого уровня
+                        "MAX_LEVEL" => "1",	// Уровень вложенности меню
+                        "CHILD_MENU_TYPE" => "",	// Тип меню для остальных уровней
+                        "USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+                        "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+                        "MENU_CACHE_TYPE" => "A",	// Тип кеширования
+                        "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+                        "MENU_CACHE_USE_GROUPS" => "N",	// Учитывать права доступа
+                        "MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
+                        "COMPONENT_TEMPLATE" => "",
+                        "DELAY" => "N",	// Откладывать выполнение шаблона меню
+                    ),
+                        false
+                    );?>
                 </div>
                 <div class="footer__menu width_paddingLeftRight">
-                    <ul class="footerMenu__ul" role="menu">
-                        <li class="footerMenu__li" role="presentation">
-                            <a href="/about/" class="footerMenu__a" role="menuitem"
-                               >О СТОМЕ</a>
-                        </li>
-                        <li class="footerMenu__li" role="presentation">
-                            <a href="/lechenie-v-kredit/" class="footerMenu__a" role="menuitem"
-                               >Лечение в рассрочку</a>
-                        </li>
-                        <li class="footerMenu__li" role="presentation">
-                            <a href="https://ctoma.ru/jobs" class="footerMenu__a" role="menuitem"
-                               data-drupal-link-system-path="jobs">Вакансии</a>
-                        </li>
-                        <li class="footerMenu__li" role="presentation">
-                            <a href="https://ctoma.ru/reviews" class="footerMenu__a" role="menuitem"
-                               data-drupal-link-system-path="reviews">Отзывы</a>
-                        </li>
-                        <li class="footerMenu__li" role="presentation">
-                            <a href="https://ctoma.ru/sitemap" class="footerMenu__a" role="menuitem"
-                               data-drupal-link-system-path="sitemap">Карта сайта</a>
-                        </li>
-                        <li class="footerMenu__li" role="presentation">
-                            <a href="https://ctoma.ru/about" class="footerMenu__a" role="menuitem"
-                               data-drupal-link-system-path="taxonomy/term/47">О нас</a>
-                        </li>
-                        <li class="footerMenu__li" role="presentation">
-                            <a href="https://ctoma.ru/faq" class="footerMenu__a" role="menuitem"
-                               data-drupal-link-system-path="faq">FAQ</a>
-                        </li>
-                    </ul>
+                    <?$APPLICATION->IncludeComponent("bitrix:menu", "footer_menu_light", Array(
+                        "ROOT_MENU_TYPE" => "bottom3",	// Тип меню для первого уровня
+                        "MAX_LEVEL" => "1",	// Уровень вложенности меню
+                        "CHILD_MENU_TYPE" => "",	// Тип меню для остальных уровней
+                        "USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+                        "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+                        "MENU_CACHE_TYPE" => "A",	// Тип кеширования
+                        "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+                        "MENU_CACHE_USE_GROUPS" => "N",	// Учитывать права доступа
+                        "MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
+                        "COMPONENT_TEMPLATE" => "",
+                        "DELAY" => "N",	// Откладывать выполнение шаблона меню
+                    ),
+                        false
+                    );?>
                 </div>
 
                 <div class="footer__menu width_paddingLeftRight">
-                    <ul class="footerMenu__ul" role="menu">
-                        <li class="footerMenu__li" role="presentation">
-                            <a href="https://ctoma.ru/articles" class="footerMenu__a" role="menuitem"
-                               data-drupal-link-system-path="articles">Статьи</a>
-                        </li>
-                        <li class="footerMenu__li" role="presentation">
-                            <a href="https://ctoma.ru/bolezni" class="footerMenu__a" role="menuitem"
-                               data-drupal-link-system-path="bolezni">Указатель болезней</a>
-                        </li>
-                    </ul>
+                    <?$APPLICATION->IncludeComponent("bitrix:menu", "footer_menu_light", Array(
+                        "ROOT_MENU_TYPE" => "bottom4",	// Тип меню для первого уровня
+                        "MAX_LEVEL" => "1",	// Уровень вложенности меню
+                        "CHILD_MENU_TYPE" => "",	// Тип меню для остальных уровней
+                        "USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+                        "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+                        "MENU_CACHE_TYPE" => "A",	// Тип кеширования
+                        "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+                        "MENU_CACHE_USE_GROUPS" => "N",	// Учитывать права доступа
+                        "MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
+                        "COMPONENT_TEMPLATE" => "",
+                        "DELAY" => "N",	// Откладывать выполнение шаблона меню
+                    ),
+                        false
+                    );?>
                 </div>
 
                 <div class="footer__menu width_paddingLeftRight">
@@ -204,6 +127,7 @@
         <span class="footer__copy width_paddingStandart">18+, ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА</span>
     </div>
 </footer>
+<a onclick="topFunction()" id="myBtn" title="Наверх страницы"><img src="/local/templates/main/images/up.png" alt="Вверх"></a>
 <!--Модальные формы -->
 <div id="zadat-vopros" class="dialog" title="Задать вопрос">
     <?
@@ -256,5 +180,6 @@
     );
     ?>
 </div>
+
 </body>
 </html>
