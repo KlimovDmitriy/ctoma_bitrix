@@ -17,12 +17,23 @@ use \Bitrix\Main\Page\Asset;
 
 $this->setFrameMode(true);
 ?>
+
+<div class="articlesPage">
 <? $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
         "START_FROM" => "0",
         "PATH" => "",
         "SITE_ID" => "s1"
     )
 ); ?>
+<?
+$arItems = \Realweb\Site\Site::getIBlockElements(array('CODE' => $arResult['VARIABLES']['ELEMENT_CODE'], 'IBLOCK_ID' => $arParams['IBLOCK_ID']));
+foreach ($arItems as $arI) {
+?>
+<div class="articlesPage__container ">
+
+<div class="articlesPage__title">
+    <h1 class="articlesPage__titleText title_norm width width_norm width_paddingStandart"><?=$arI['NAME'];?></h1>
+</div>
 
     <div class="articlesPage__center width width_norm">
         <div class="articlesPage__leftSidebar width_paddingStandart">
@@ -86,15 +97,13 @@ $this->setFrameMode(true);
                 ); ?>
 
             <?php \Realweb\Site\Site::showIncludeText('LEFT_BANNER_STATIC'); ?>
-
-
                     <?
-                    $arItems = \Realweb\Site\Site::getIBlockElements(array('CODE' => $arResult['VARIABLES']['ELEMENT_CODE'], 'IBLOCK_ID' => $arParams['IBLOCK_ID']));
-                    foreach ($arItems as $arI) {
+
                         $arFilter = Array("IBLOCK_ID"=>\Realweb\Site\Site::getIblockId('articles'), "ID"=>$arI['ID']);
                         $res = CIBlockElement::GetList(Array(), $arFilter);
                         if ($ob = $res->GetNextElement()){;
                             $arProps = $ob->GetProperties();
+
                             if ($arProps["RELATED"]["VALUE"]) { ?>
                                 <h3 class="articlesHeaderH3">Рекомендуемые статьи</h3>
                                 <div class="menuNormPage rekArticle">
@@ -109,29 +118,28 @@ $this->setFrameMode(true);
                             <? }
 
                             if ($arProps["DOCTOR"]["VALUE"]) {
-                                $res = CIBlockElement::GetByID($arProps["DOCTOR"]["VALUE"]);
-                                if($ar_res = $res->GetNext()) {
-                                ?>
+                                $arFilter = Array("IBLOCK_ID"=>\Realweb\Site\Site::getIblockId('doctors'), "ID"=>$arProps["DOCTOR"]["VALUE"]);
+                                    $res = CIBlockElement::GetList(Array(), $arFilter);
+                                    if ($ob = $res->GetNextElement()){;
+                                        $arFields = $ob->GetFields();
+                                        $arProps = $ob->GetProperties();
+                                        $file = CFile::GetFileArray($arFields["DETAIL_PICTURE"]);
+                                    } ?>
                                 <div class="menuNormPage">
                                     <div class="photo-stomatolog-article">
-                                        <a class="foto_vraca" href="<?=$ar_res['DETAIL_PAGE_URL'];?>">
-                                            <img src="" alt="<?=$ar_res['NAME'];?>">
+                                        <a class="foto_vraca" href="<?=$arFields['DETAIL_PAGE_URL'];?>">
+                                            <img src="<?=$file["SRC"];?>" alt="<?=$arFields['NAME'];?>">
                                         </a>
                                     </div>
-                                    <div class="name-stomatolog-article"><?=$ar_res['NAME'];?></div>
-                                    <div class="specialnost-article">пародонтолог, стоматолог-терапевт  </div>
+                                    <div class="name-stomatolog-article"><?=$arFields['NAME'];?></div>
+                                    <div class="specialnost-article"><?=$arProps['POSITION']['VALUE'];?></div>
                                 </div>
 
-                            <? }
+                            <?
                             }
 
 
-                        }
-                    }
                     ?>
-
-
-
         </div>
 
         <div class="articlesPage__content">
@@ -250,9 +258,59 @@ $this->setFrameMode(true);
                     );
                     ?>
 
+
+            <div class="views-element-container block block-views-block-uslugi-v-statah-block-1" id="block-views-block-uslugi-v-statah-block-1">
+
+                <span class="block__title">Вас заинтересуют эти услуги</span>
+
+                <?
+                $arFilter = Array("IBLOCK_ID"=>\Realweb\Site\Site::getIblockId('articles'), "ID"=>$arI['ID']);
+                $res = CIBlockElement::GetList(Array(), $arFilter);
+                if ($ob = $res->GetNextElement()) {
+                    $arProps = $ob->GetProperties();
+                    if ($arProps["SERVICES_ELEMENTS"]["VALUE"]) {
+                        foreach ($arProps["SERVICES_ELEMENTS"]["VALUE"] as $serItem) {
+                            $res = CIBlockElement::GetByID($serItem);
+                            if ($ar_res = $res->GetNext()) {}
+                            echo '<div><a href="' . $ar_res['DETAIL_PAGE_URL'] . '">' . $ar_res['NAME'] . '</a></div>';
+                        }
+                    }
+
+                }
+                ?>
+
+                <div>
+                    <div class="servicesList">
+
+
+                        <div class="views-row">
+                            <div class="views-field views-field-field-img">
+                                <div class="field-content">
+                                    <img src="/sites/default/files/2017-10/serv-children-min.jpg" alt="Детская стоматология" typeof="foaf:Image" width="245" height="260">
+                                </div>
+                            </div>
+                            <div class="views-field views-field-name">
+                            <span class="field-content">
+                                <a href="/stomatology/kids" hreflang="ru">Детская стоматология</a>
+                            </span>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </div>
+</div>
 
 
+</div>
 
 
+<?
+                        }
+}
+?>
