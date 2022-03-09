@@ -100,7 +100,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
                             "CATEGORY_0_TITLE" => "Услуги",
                             "CHECK_DATES" => "Y",
                             "COMPONENT_TEMPLATE" => ".default",
-                            "CONTAINER_ID" => "search",
+                            "CONTAINER_ID" => "search_mobile",
                             "CONVERT_CURRENCY" => "Y",
                             "CURRENCY_ID" => "RUB",
                             "IBLOCK_ID" => array(
