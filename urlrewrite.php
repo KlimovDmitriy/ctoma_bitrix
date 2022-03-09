@@ -50,10 +50,10 @@ $arUrlRewrite = array(
         ),
     7 =>
         array(
-            'CONDITION' => '#^/stati/#',
+            'CONDITION' => '#^/articles/#',
             'RULE' => '',
             'ID' => 'bitrix:catalog',
-            'PATH' => '/stati/index.php',
+            'PATH' => '/articles/index.php',
             'SORT' => 100,
         ),
     5 =>
