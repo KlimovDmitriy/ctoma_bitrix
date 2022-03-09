@@ -127,3 +127,7 @@ function topFunction() {
 }
 
 /*Кнопка наверх*/
+/*Показать поиск в мобильной версии*/
+$('.header__searchMobileButton').on('click',function(){
+    $('.header__searchMobile').toggle();
+})
