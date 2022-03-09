@@ -262,6 +262,7 @@ foreach ($arItems as $arI) {
             <div class="views-element-container block block-views-block-uslugi-v-statah-block-1" id="block-views-block-uslugi-v-statah-block-1">
 
                 <span class="block__title">Вас заинтересуют эти услуги</span>
+                <div class="servicesList">
 
                 <?
                 $arFilter = Array("IBLOCK_ID"=>\Realweb\Site\Site::getIblockId('articles'), "ID"=>$arI['ID']);
@@ -271,34 +272,68 @@ foreach ($arItems as $arI) {
                     if ($arProps["SERVICES_ELEMENTS"]["VALUE"]) {
                         foreach ($arProps["SERVICES_ELEMENTS"]["VALUE"] as $serItem) {
                             $res = CIBlockElement::GetByID($serItem);
-                            if ($ar_res = $res->GetNext()) {}
-                            echo '<div><a href="' . $ar_res['DETAIL_PAGE_URL'] . '">' . $ar_res['NAME'] . '</a></div>';
-                        }
+                            if ($ar_res = $res->GetNext())
+                            $img = CFile::ResizeImageGet($ar_res['PREVIEW_PICTURE'], array("width"=>245, "height"=>260), BX_RESIZE_IMAGE_EXACT, true, array(), false, 70);
+                            ?>
+                            <div class="views-row">
+                                <div class="views-field views-field-field-img">
+                                    <div class="field-content">
+                                        <img src="<?=$img['src'];?>" alt="<?=$ar_res['NAME'];?>">
+                                    </div>
+                                </div>
+                                <div class="views-field views-field-name">
+                            <span class="field-content">
+                                <a href="<?=$ar_res['DETAIL_PAGE_URL'];?>" hreflang="ru"><?=$ar_res['NAME'];?></a>
+                            </span>
+                                </div>
+                            </div>
+
+                       <? }
                     }
+
+                    if ($arProps["SERVICES_GROUPS"]["VALUE"]) {
+                        foreach ($arProps["SERVICES_GROUPS"]["VALUE"] as $serItems) {
+                            $res = CIBlockSection::GetByID($serItems);
+                            if($ar_res = $res->GetNext())
+                            $img = CFile::ResizeImageGet($ar_res['PICTURE'], array("width"=>245, "height"=>260), BX_RESIZE_IMAGE_EXACT, true, array(), false, 70);
+                            ?>
+                            <div class="views-row">
+                                <div class="views-field views-field-field-img">
+                                    <div class="field-content">
+                                        <img src="<?=$img['src'];?>" alt="<?=$ar_res['NAME'];?>">
+                                    </div>
+                                </div>
+                                <div class="views-field views-field-name">
+                            <span class="field-content">
+                                <a href="<?=$ar_res['SECTION_PAGE_URL'];?>" hreflang="ru"><?=$ar_res['NAME'];?></a>
+                            </span>
+                                </div>
+                            </div>
+
+                        <? }
+                    }
+
+
+
 
                 }
                 ?>
 
-                <div>
-                    <div class="servicesList">
 
 
-                        <div class="views-row">
-                            <div class="views-field views-field-field-img">
-                                <div class="field-content">
-                                    <img src="/sites/default/files/2017-10/serv-children-min.jpg" alt="Детская стоматология" typeof="foaf:Image" width="245" height="260">
-                                </div>
-                            </div>
-                            <div class="views-field views-field-name">
-                            <span class="field-content">
-                                <a href="/stomatology/kids" hreflang="ru">Детская стоматология</a>
-                            </span>
-                            </div>
-                        </div>
+
+
+
 
 
                     </div>
-                </div>
+
+
+
+
+
+
+
 
             </div>
 
