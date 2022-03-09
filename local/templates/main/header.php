@@ -108,7 +108,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
                                 1 => \Realweb\Site\Site::getIblockId("news"),
                                 2 => \Realweb\Site\Site::getIblockId("stomatology"),
                             ),
-                            "INPUT_ID" => "title-search-input",
+                            "INPUT_ID" => "title-search-input-mobile",
                             "JS_OPENER" => "N",
                             "JS_OPENER_MOBILE" => "N",
                             "NUM_CATEGORIES" => "3",
