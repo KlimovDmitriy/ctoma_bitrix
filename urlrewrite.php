@@ -16,7 +16,7 @@ $arUrlRewrite = array(
             'PATH' => '/portfolio/index.php',
             'SORT' => 100,
         ),
-    6 =>
+    8 =>
         array(
             'CONDITION' => '#^/personal/#',
             'RULE' => '',

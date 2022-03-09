@@ -11,6 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+//print_r(\Realweb\Site\Site::getPropEnumValues(['IBLOCK_ID'=>\Realweb\Site\Site::getIblockId('stomatology'), 'CODE'=>'SPECIALIZATION_LIST']));
 global $worksFilter;
 ?>
 <div class="doctor">
