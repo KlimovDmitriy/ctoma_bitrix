@@ -39,3 +39,4 @@ ErrorDocument 404 /404.php
 </IfModule>
 
 Redirect 301 /voprosy-i-otvety /questions
+Redirect 301 /stati /articles

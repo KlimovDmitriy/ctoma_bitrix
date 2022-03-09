@@ -100,7 +100,6 @@ foreach ($arItems as $arI) {
 
                 <?php \Realweb\Site\Site::showIncludeText('LEFT_BANNER_STATIC'); ?>
                 <?
-
                 /*Получим рекомендуемые статьи*/
                 $recommended = \Realweb\Site\Site::getPropValue('RELATED', $arParams['IBLOCK_ID'], $arI['ID']);
                 ?>
@@ -117,34 +116,36 @@ foreach ($arItems as $arI) {
                         </div>
                     </div>
 
+                <? } ?>
+
                 <?
-                } ?>
-                <?
-
-                if ($arProps["DOCTOR"]["VALUE"]) {
-                    $arFilter = array("IBLOCK_ID" => \Realweb\Site\Site::getIblockId('doctors'), "ID" => $arProps["DOCTOR"]["VALUE"]);
-                    $res = CIBlockElement::GetList(array(), $arFilter);
-                    if ($ob = $res->GetNextElement()) {
-                        ;
-                        $arFields = $ob->GetFields();
-                        $arProps = $ob->GetProperties();
-                        $file = CFile::GetFileArray($arFields["DETAIL_PICTURE"]);
-                    } ?>
-                    <div class="menuNormPage">
-                        <div class="photo-stomatolog-article">
-                            <a class="foto_vraca" href="<?= $arFields['DETAIL_PAGE_URL']; ?>">
-                                <img src="<?= $file["SRC"]; ?>" alt="<?= $arFields['NAME']; ?>">
-                            </a>
-                        </div>
-                        <div class="name-stomatolog-article"><?= $arFields['NAME']; ?></div>
-                        <div class="specialnost-article"><?= $arProps['POSITION']['VALUE']; ?></div>
-                    </div>
-
-                    <?
-                }
-
-
+                $doctor = \Realweb\Site\Site::getPropValue('DOCTOR', $arParams['IBLOCK_ID'], $arI['ID']);
                 ?>
+
+                <? if (!empty($doctor)) { ?>
+                        <div>
+                            <? foreach ($doctor as $articleItem) {
+                                $res = CIBlockElement::GetByID($articleItem['VALUE']);
+                                $db_props = CIBlockElement::GetProperty(\Realweb\Site\Site::getIblockId('doctors'), $articleItem['VALUE'], "sort", "asc", Array("CODE"=>"POSITION"));
+
+                                if ($ar_res = $res->GetNext())
+                                    $file = CFile::GetFileArray($ar_res["DETAIL_PICTURE"]);
+                                    ?>
+                                <div class="menuNormPage">
+                                    <div class="photo-stomatolog-article">
+                                        <a class="foto_vraca" href="<?= $ar_res['DETAIL_PAGE_URL']; ?>">
+                                            <img src="<?= $file["SRC"]; ?>" alt="<?= $ar_res['NAME']; ?>">
+                                        </a>
+                                    </div>
+                                    <?
+                                    if($ar_props = $db_props->Fetch())
+                                    ?>
+                                    <div class="name-stomatolog-article"><?= $ar_res['NAME']; ?></div>
+                                    <div class="specialnost-article"><?= $ar_props['VALUE']; ?></div>
+                                </div>
+                           <? } ?>
+                        </div>
+                <? } ?>
             </div>
 
             <div class="articlesPage__content">
