@@ -257,8 +257,16 @@ foreach ($arItems as $arI) {
                 ), $component
                 );
                 ?>
+                <div class="articleDefault__body width_paddingStandart">
+                <?
+                $arFilter = Array("IBLOCK_ID"=>\Realweb\Site\Site::getIblockId('articles'), "ID"=>$arI['ID']);
+                $res = CIBlockElement::GetList(Array(), $arFilter);
+                if ($ob = $res->GetNextElement()) {
+                    $arProps = $ob->GetProperties();
 
-
+                }
+                if (!empty($arProps["SERVICES_ELEMENTS"]["VALUE"]) || !empty($arProps["SERVICES_GROUPS"]["VALUE"])) {
+                ?>
                 <div class="views-element-container block block-views-block-uslugi-v-statah-block-1"
                      id="block-views-block-uslugi-v-statah-block-1">
 
@@ -274,12 +282,14 @@ foreach ($arItems as $arI) {
                                 <div class="views-row">
                                     <div class="views-field views-field-field-img">
                                         <div class="field-content">
-                                            <img src="<?= $img['src']; ?>" alt="<?= $ar_res['NAME']; ?>">
+                                            <a href="<?= $ar_res['DETAIL_PAGE_URL']; ?>">
+                                                <img src="<?= $img['src']; ?>" alt="<?= $ar_res['NAME']; ?>">
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="views-field views-field-name">
                                     <span class="field-content">
-                                        <a href="<?= $ar_res['DETAIL_PAGE_URL']; ?>" hreflang="ru"><?= $ar_res['NAME']; ?></a>
+                                        <a href="<?= $ar_res['DETAIL_PAGE_URL']; ?>"><?= $ar_res['NAME']; ?></a>
                                     </span>
                                     </div>
                                 </div>
@@ -287,12 +297,7 @@ foreach ($arItems as $arI) {
                         } ?>
 
                         <?
-                        $arFilter = Array("IBLOCK_ID"=>\Realweb\Site\Site::getIblockId('articles'), "ID"=>$arI['ID']);
-                        $res = CIBlockElement::GetList(Array(), $arFilter);
-                        if ($ob = $res->GetNextElement()) {
-                            $arProps = $ob->GetProperties();
-
-                            if ($arProps["SERVICES_GROUPS"]["VALUE"]) {
+                        if($arProps["SERVICES_GROUPS"]["VALUE"]) {
                                 foreach ($arProps["SERVICES_GROUPS"]["VALUE"] as $serItems) {
                                     $res = CIBlockSection::GetByID($serItems);
                                     if($ar_res = $res->GetNext())
@@ -301,18 +306,19 @@ foreach ($arItems as $arI) {
                                     <div class="views-row">
                                         <div class="views-field views-field-field-img">
                                             <div class="field-content">
-                                                <img src="<?= $img['src']; ?>" alt="<?= $ar_res['NAME']; ?>">
+                                                <a href="<?= $ar_res['SECTION_PAGE_URL']; ?>">
+                                                    <img src="<?= $img['src']; ?>" alt="<?= $ar_res['NAME']; ?>">
+                                                </a>
                                             </div>
                                         </div>
                                         <div class="views-field views-field-name">
                                             <span class="field-content">
-                                                <a href="<?= $ar_res['SECTION_PAGE_URL']; ?>" hreflang="ru"><?= $ar_res['NAME']; ?></a>
+                                                <a href="<?= $ar_res['SECTION_PAGE_URL']; ?>"><?= $ar_res['NAME']; ?></a>
                                             </span>
                                         </div>
                                     </div>
 
                                 <? }
-                            }
                         } ?>
 
                     </div>
@@ -320,6 +326,8 @@ foreach ($arItems as $arI) {
 
 
 
+                </div>
+                <? } ?>
                 </div>
             </div>
         </div>
