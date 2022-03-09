@@ -40,7 +40,7 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
                 "HIDE_NOT_AVAILABLE" => "N",
                 "TEMPLATE_THEME" => "blue",
                 "FILTER_VIEW_MODE" => "horizontal",
-                "DISPLAY_ELEMENT_COUNT" => "Y",
+                "DISPLAY_ELEMENT_COUNT" => "N",
                 "SEF_MODE" => "N",
                 "CACHE_TYPE" => "A",
                 "CACHE_TIME" => "36000000",
