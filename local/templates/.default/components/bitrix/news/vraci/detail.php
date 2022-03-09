@@ -11,7 +11,13 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-//print_r(\Realweb\Site\Site::getPropEnumValues(['IBLOCK_ID'=>\Realweb\Site\Site::getIblockId('stomatology'), 'CODE'=>'SPECIALIZATION_LIST']));
+$specialisationCodes = \Realweb\Site\Site::getXmlIds(['IBLOCK_ID'=>\Realweb\Site\Site::getIblockId('doctors'), 'CODE'=>'SPECIALIZATION_LIST']);
+$url = explode('/',$APPLICATION->GetCurPage(false))[2];
+if (in_array($url, $specialisationCodes)) {
+    global $isSpecialization;
+    $isSpecialization = true;
+    include 'section.php';
+} else {
 global $worksFilter;
 ?>
 <div class="doctor">
@@ -246,5 +252,6 @@ global $worksFilter;
     );
     ?>
 </div>
+<?php }?>
 
 
