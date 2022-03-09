@@ -126,6 +126,8 @@ foreach ($arItems as $arI) {
                         <div>
                             <? foreach ($doctor as $articleItem) {
                                 $res = CIBlockElement::GetByID($articleItem['VALUE']);
+                                $db_props = CIBlockElement::GetProperty(\Realweb\Site\Site::getIblockId('doctors'), $articleItem['VALUE'], "sort", "asc", Array("CODE"=>"POSITION"));
+
                                 if ($ar_res = $res->GetNext())
                                     $file = CFile::GetFileArray($ar_res["DETAIL_PICTURE"]);
                                     ?>
@@ -135,8 +137,11 @@ foreach ($arItems as $arI) {
                                             <img src="<?= $file["SRC"]; ?>" alt="<?= $ar_res['NAME']; ?>">
                                         </a>
                                     </div>
+                                    <?
+                                    if($ar_props = $db_props->Fetch())
+                                    ?>
                                     <div class="name-stomatolog-article"><?= $ar_res['NAME']; ?></div>
-                                    <div class="specialnost-article"><?= $ar_res['POSITION']['VALUE']; ?></div>
+                                    <div class="specialnost-article"><?= $ar_props['VALUE']; ?></div>
                                 </div>
                            <? } ?>
                         </div>
