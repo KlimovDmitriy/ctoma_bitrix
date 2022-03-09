@@ -5491,6 +5491,7 @@
     flex: 1 1 auto;
     align-items: center;
     justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .servicesList .views-field-name {
@@ -5523,7 +5524,7 @@
 
 .servicesList .views-row {
     flex: 0 1 30%;
-    margin: 0 10px;
+    margin: 0 8px;
     padding: 5px;
     max-width: 300px;
 }
