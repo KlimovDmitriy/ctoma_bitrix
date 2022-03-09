@@ -18263,3 +18263,26 @@ display:none;
     display: inline-block;
     overflow: hidden;
 }
+.doctorsFilter__left input:checked ~ span {
+    background-color: inherit !important;
+    color: #d82043 !important;
+}
+.doctorsFilter__left .bx-filter-parameters-box-title {
+    background: #d82043;
+    color: white;
+    font-weight: bold;
+    height: 50px;
+    padding-left: 20px;
+    display: block;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding-top: 17px;
+    font-family: "ralewayregular", sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 14px !important;
+}
+.doctorsFilter__left #specialization_list .bx-filter-parameters-box-title {
+    padding-top: 7px !important;
+}

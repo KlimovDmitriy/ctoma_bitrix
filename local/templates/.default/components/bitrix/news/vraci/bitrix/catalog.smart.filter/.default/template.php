@@ -11,7 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-
+global $isSpecialization;
 $templateData = array(
 	'TEMPLATE_THEME' => $this->GetFolder().'/themes/'.$arParams['TEMPLATE_THEME'].'/colors.css',
 	'TEMPLATE_CLASS' => 'bx-'.$arParams['TEMPLATE_THEME']
@@ -46,6 +46,8 @@ $this->addExternalCss("/bitrix/css/main/font-awesome.css");
 						)
 					)
 						continue;
+                    if ($isSpecialization && $arItem['CODE'] == 'SPECIALIZATION_LIST')
+                        continue;
 					?>
 					<div class="bx-filter-parameters-box <?if ($arItem["DISPLAY_EXPANDED"]== "Y"):?>bx-active<?endif?>" id="<?=strtolower($arItem['CODE'])?>">
 						<span class="bx-filter-container-modef"></span>
@@ -153,7 +155,8 @@ $this->addExternalCss("/bitrix/css/main/font-awesome.css");
 														id="<? echo "all_".$arCur["CONTROL_ID"] ?>"
 														onclick="smartFilter.click(this)"
 													/>
-													<span class="bx-filter-param-text"><? echo GetMessage("CT_BCSF_FILTER_ALL"); ?></span>
+													<span class="bx-filter-param-text"><? echo GetMessage("CT_BCSF_FILTER_ALL"); ?>
+                                                    <?= $arItem['CODE']=='SPECIALIZATION_LIST' ? ' специализации' : ' клиники' ?></span>
 												</span>
 											</label>
 										</div>

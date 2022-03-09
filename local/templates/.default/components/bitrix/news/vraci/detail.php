@@ -14,6 +14,8 @@ $this->setFrameMode(true);
 $specialisationCodes = \Realweb\Site\Site::getXmlIds(['IBLOCK_ID'=>\Realweb\Site\Site::getIblockId('doctors'), 'CODE'=>'SPECIALIZATION_LIST']);
 $url = explode('/',$APPLICATION->GetCurPage(false))[2];
 if (in_array($url, $specialisationCodes)) {
+    global $isSpecialization;
+    $isSpecialization = true;
     include 'section.php';
 } else {
 global $worksFilter;
