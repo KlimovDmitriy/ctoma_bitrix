@@ -110,7 +110,7 @@ foreach ($arItems as $arI) {
                             <? foreach ($recommended as $articleItem) {
                                 $res = CIBlockElement::GetByID($articleItem['VALUE']);
                                 if ($ar_res = $res->GetNext())
-                                    echo '<div><a href="' . $ar_res['DETAIL_PAGE_URL'] . '">' . $ar_res['NAME'] . '</a></div>';
+                                    echo '<div><a href="' . $ar_res['DETAIL_PAGE_URL'] . '/">' . $ar_res['NAME'] . '</a></div>';
                             } ?>
                         </div>
                     </div>
@@ -129,7 +129,7 @@ foreach ($arItems as $arI) {
                                     ?>
                                 <div class="menuNormPage">
                                     <div class="photo-stomatolog-article">
-                                        <a class="foto_vraca" href="<?= $ar_res['DETAIL_PAGE_URL']; ?>/">
+                                        <a class="foto_vraca" href="<?= $ar_res['DETAIL_PAGE_URL']; ?>">
                                             <img src="<?= $file["SRC"]; ?>" alt="<?= $ar_res['NAME']; ?>">
                                         </a>
                                     </div>
