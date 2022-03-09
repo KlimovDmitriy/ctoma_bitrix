@@ -100,7 +100,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
                             "CATEGORY_0_TITLE" => "Услуги",
                             "CHECK_DATES" => "Y",
                             "COMPONENT_TEMPLATE" => ".default",
-                            "CONTAINER_ID" => "search",
+                            "CONTAINER_ID" => "search_mobile",
                             "CONVERT_CURRENCY" => "Y",
                             "CURRENCY_ID" => "RUB",
                             "IBLOCK_ID" => array(
@@ -108,7 +108,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
                                 1 => \Realweb\Site\Site::getIblockId("news"),
                                 2 => \Realweb\Site\Site::getIblockId("stomatology"),
                             ),
-                            "INPUT_ID" => "title-search-input",
+                            "INPUT_ID" => "title-search-input-mobile",
                             "JS_OPENER" => "N",
                             "JS_OPENER_MOBILE" => "N",
                             "NUM_CATEGORIES" => "3",
@@ -171,35 +171,20 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
         </noindex>
         <noindex>
             <div class="header__buttons width_paddingStandart">
+
             <span class="header__link">
-                <a href="/form/callback" class="use-ajax" data-dialog-options="{
-                           &quot;width&quot;:&quot;450px&quot;,
-                           &quot;minHeight&quot;:&quot;500px&quot;,
-                           &quot;dialogClass&quot;:&quot;popupDialog&quot;
-                           }" data-dialog-type="modal">Заказать звонок</a>
+                <a data-form="callback" class="modaler use-ajax">Заказать звонок</a>
             </span>
                 <span class="header__link">
-                <a href="/form/zadat-vopros" class="use-ajax" data-dialog-options="{
-                           &quot;width&quot;:&quot;500px&quot;,
-                           &quot;minHeight&quot;:&quot;500px&quot;,
-                           &quot;dialogClass&quot;:&quot;popupDialog&quot;
-                           }" data-dialog-type="modal">Задать вопрос</a>
+                <a data-form="zadat-vopros" class="modaler use-ajax">Задать вопрос</a>
             </span>
                 <span class="header__link">
-                <a href="/form/kontrol-kacestva" class="use-ajax" data-dialog-options="{
-                           &quot;width&quot;:&quot;500px&quot;,
-                           &quot;minHeight&quot;:&quot;500px&quot;,
-                           &quot;dialogClass&quot;:&quot;popupDialog&quot;
-                           }" data-dialog-type="modal">Контроль качества</a>
+                <a data-form="otziv" class="modaler use-ajax">Контроль качества</a>
             </span>
 
                 <a class="header__make" href="/make-an-appointment">Запись на прием</a>
                 <span class="header__link" style="flex-basis: 100%">
-                        <a href="/form/zapros-dokumentov-dla-nalogovogo" class="use-ajax" data-dialog-options="{
-                                &quot;width&quot;:&quot;600px&quot;,
-                                &quot;minHeight&quot;:&quot;500px&quot;,
-                                &quot;dialogClass&quot;:&quot;popupDialog&quot;
-                                }" data-dialog-type="modal">Налоговый вычет</a>
+                        <a data-form="nalog" class="modaler use-ajax">Налоговый вычет</a>
                     </span>
             </div>
         </noindex>
