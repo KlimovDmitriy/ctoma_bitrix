@@ -18204,3 +18204,62 @@ a.ui-button:active,
 .praiseTable__delimiter > div {
     margin: auto;
 }
+
+.doctorsFilter__left #set_filter {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff !important;
+    background: #d82043;
+    border: 0;
+    border-radius: 30px;
+    text-transform: uppercase;
+}
+.doctorsFilter__left #del_filter {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff !important;
+    color: #d82043;
+    background: #57aace;
+    border: 0;
+    border-radius: 30px;
+    text-transform: uppercase;
+}
+#doctorsFilter .bx-filter-param-text {
+    display: block !important;
+    padding: 7px 20px 7px 0;
+    cursor: pointer;
+    font-size: 14px;
+    color: #727272;
+    font-weight: bold;
+    font-family: "ralewayregular", sans-serif;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#doctorsFilter input {
+display:none;
+}
+.doctorsFilter__left {
+    display: block !important;
+}
+.doctorsFilter__left form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#work_place {
+    flex-basis: 62%;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+}
+#specialization_list {
+    flex-basis: 33%;
+    display: inline-block;
+    overflow: hidden;
+}

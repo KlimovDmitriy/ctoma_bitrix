@@ -361,4 +361,13 @@ class Site
             }
         }
     }
+
+    public static function getXmlIds($arFilter) {
+        $values = \Realweb\Site\Site::getPropEnumValues($arFilter);
+        $xmlIds = [];
+        foreach ($values as $value) {
+            $xmlIds[$value['ID']] = $value['XML_ID'];
+        }
+        return $xmlIds;
+    }
 }
