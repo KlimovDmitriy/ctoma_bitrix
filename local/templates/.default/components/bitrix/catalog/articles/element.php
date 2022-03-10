@@ -100,7 +100,6 @@ foreach ($arItems as $arI) {
 
                 <?php \Realweb\Site\Site::showIncludeText('LEFT_BANNER_STATIC'); ?>
                 <?
-                /*Получим рекомендуемые статьи*/
                 $recommended = \Realweb\Site\Site::getPropValue('RELATED', $arParams['IBLOCK_ID'], $arI['ID']);
                 ?>
 
@@ -111,7 +110,7 @@ foreach ($arItems as $arI) {
                             <? foreach ($recommended as $articleItem) {
                                 $res = CIBlockElement::GetByID($articleItem['VALUE']);
                                 if ($ar_res = $res->GetNext())
-                                    echo '<div><a href="' . $ar_res['DETAIL_PAGE_URL'] . '">' . $ar_res['NAME'] . '</a></div>';
+                                    echo '<div><a href="' . $ar_res['DETAIL_PAGE_URL'] . '/">' . $ar_res['NAME'] . '</a></div>';
                             } ?>
                         </div>
                     </div>
@@ -124,10 +123,7 @@ foreach ($arItems as $arI) {
 
                 <? if (!empty($doctor)) { ?>
                         <div>
-                            <? foreach ($doctor as $articleItem) {
-                                $res = CIBlockElement::GetByID($articleItem['VALUE']);
-                                $db_props = CIBlockElement::GetProperty(\Realweb\Site\Site::getIblockId('doctors'), $articleItem['VALUE'], "sort", "asc", Array("CODE"=>"POSITION"));
-
+                            <? $res = CIBlockElement::GetByID($doctor[0]['VALUE']);
                                 if ($ar_res = $res->GetNext())
                                     $file = CFile::GetFileArray($ar_res["DETAIL_PICTURE"]);
                                     ?>
@@ -137,13 +133,11 @@ foreach ($arItems as $arI) {
                                             <img src="<?= $file["SRC"]; ?>" alt="<?= $ar_res['NAME']; ?>">
                                         </a>
                                     </div>
-                                    <?
-                                    if($ar_props = $db_props->Fetch())
-                                    ?>
                                     <div class="name-stomatolog-article"><?= $ar_res['NAME']; ?></div>
-                                    <div class="specialnost-article"><?= $ar_props['VALUE']; ?></div>
+                                    <? $position = \Realweb\Site\Site::getPropValue('POSITION', \Realweb\Site\Site::getIblockId('doctors'), $doctor[0]['VALUE']); ?>
+                                    <div class="specialnost-article"><?= $position[0]['VALUE']; ?></div>
                                 </div>
-                           <? } ?>
+
                         </div>
                 <? } ?>
             </div>
@@ -263,82 +257,82 @@ foreach ($arItems as $arI) {
                 ), $component
                 );
                 ?>
+                <div class="articleDefault__body width_paddingStandart">
+                <?
+                $arFilter = Array("IBLOCK_ID"=>\Realweb\Site\Site::getIblockId('articles'), "ID"=>$arI['ID']);
+                $res = CIBlockElement::GetList(Array(), $arFilter);
+                if ($ob = $res->GetNextElement()) {
+                    $arProps = $ob->GetProperties();
 
-
+                }
+                if (!empty($arProps["SERVICES_ELEMENTS"]["VALUE"]) || !empty($arProps["SERVICES_GROUPS"]["VALUE"])) {
+                ?>
                 <div class="views-element-container block block-views-block-uslugi-v-statah-block-1"
                      id="block-views-block-uslugi-v-statah-block-1">
 
                     <span class="block__title">Вас заинтересуют эти услуги</span>
+
                     <div class="servicesList">
+                        <? $servicesElements = \Realweb\Site\Site::getPropValue('SERVICES_ELEMENTS', $arParams['IBLOCK_ID'], $arI['ID']);
+                        if (!empty($servicesElements)) {
+                            foreach ($servicesElements as $articleItem) {
+                                $res = CIBlockElement::GetByID($articleItem['VALUE']);
+                                if ($ar_res = $res->GetNext()) $img = CFile::ResizeImageGet($ar_res['PREVIEW_PICTURE'], array("width" => 245, "height" => 260), BX_RESIZE_IMAGE_EXACT, true, array(), false, 70);
+                                ?>
+                                <div class="views-row">
+                                    <div class="views-field views-field-field-img">
+                                        <div class="field-content">
+                                            <a href="<?= $ar_res['DETAIL_PAGE_URL']; ?>">
+                                                <img src="<?= $img['src']; ?>" alt="<?= $ar_res['NAME']; ?>">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="views-field views-field-name">
+                                    <span class="field-content">
+                                        <a href="<?= $ar_res['DETAIL_PAGE_URL']; ?>"><?= $ar_res['NAME']; ?></a>
+                                    </span>
+                                    </div>
+                                </div>
+                            <? }
+                        } ?>
 
                         <?
-                        $arFilter = array("IBLOCK_ID" => \Realweb\Site\Site::getIblockId('articles'), "ID" => $arI['ID']);
-                        $res = CIBlockElement::GetList(array(), $arFilter);
-                        if ($ob = $res->GetNextElement()) {
-                            $arProps = $ob->GetProperties();
-                            if ($arProps["SERVICES_ELEMENTS"]["VALUE"]) {
-                                foreach ($arProps["SERVICES_ELEMENTS"]["VALUE"] as $serItem) {
-                                    $res = CIBlockElement::GetByID($serItem);
-                                    if ($ar_res = $res->GetNext())
-                                        $img = CFile::ResizeImageGet($ar_res['PREVIEW_PICTURE'], array("width" => 245, "height" => 260), BX_RESIZE_IMAGE_EXACT, true, array(), false, 70);
-                                    ?>
-                                    <div class="views-row">
-                                        <div class="views-field views-field-field-img">
-                                            <div class="field-content">
-                                                <img src="<?= $img['src']; ?>" alt="<?= $ar_res['NAME']; ?>">
-                                            </div>
-                                        </div>
-                                        <div class="views-field views-field-name">
-                            <span class="field-content">
-                                <a href="<?= $ar_res['DETAIL_PAGE_URL']; ?>" hreflang="ru"><?= $ar_res['NAME']; ?></a>
-                            </span>
-                                        </div>
-                                    </div>
-
-                                <? }
-                            }
-
-                            if ($arProps["SERVICES_GROUPS"]["VALUE"]) {
+                        if($arProps["SERVICES_GROUPS"]["VALUE"]) {
                                 foreach ($arProps["SERVICES_GROUPS"]["VALUE"] as $serItems) {
                                     $res = CIBlockSection::GetByID($serItems);
-                                    if ($ar_res = $res->GetNext())
-                                        $img = CFile::ResizeImageGet($ar_res['PICTURE'], array("width" => 245, "height" => 260), BX_RESIZE_IMAGE_EXACT, true, array(), false, 70);
+                                    if($ar_res = $res->GetNext())
+                                        $img = CFile::ResizeImageGet($ar_res['PICTURE'], array("width"=>245, "height"=>260), BX_RESIZE_IMAGE_EXACT, true, array(), false, 70);
                                     ?>
                                     <div class="views-row">
                                         <div class="views-field views-field-field-img">
                                             <div class="field-content">
-                                                <img src="<?= $img['src']; ?>" alt="<?= $ar_res['NAME']; ?>">
+                                                <a href="<?= $ar_res['SECTION_PAGE_URL']; ?>">
+                                                    <img src="<?= $img['src']; ?>" alt="<?= $ar_res['NAME']; ?>">
+                                                </a>
                                             </div>
                                         </div>
                                         <div class="views-field views-field-name">
-                            <span class="field-content">
-                                <a href="<?= $ar_res['SECTION_PAGE_URL']; ?>" hreflang="ru"><?= $ar_res['NAME']; ?></a>
-                            </span>
+                                            <span class="field-content">
+                                                <a href="<?= $ar_res['SECTION_PAGE_URL']; ?>"><?= $ar_res['NAME']; ?></a>
+                                            </span>
                                         </div>
                                     </div>
 
                                 <? }
-                            }
-
-
-                        }
-                        ?>
-
+                        } ?>
 
                     </div>
 
 
-                </div>
 
+
+                </div>
+                <? } ?>
+                </div>
             </div>
         </div>
     </div>
 
-
     </div>
 
-
-    <?
-
-}
-?>
+    <? } ?>
