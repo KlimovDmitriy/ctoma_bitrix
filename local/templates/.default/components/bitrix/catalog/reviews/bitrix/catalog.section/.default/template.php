@@ -20,7 +20,7 @@ $this->setFrameMode(true);
         <span class="title__br"></span><span class="title__text">Отзывы </span><span class="title__br"></span>
     </h1>
     <div class="otzyvy__actions width width_light width_paddingLeftRight">
-        <a class="button_red" href="/reviews/add">Оставить отзыв</a>
+        <a class="button_red" href="/reviews/add/">Оставить отзыв</a>
     </div>
     <div class="otzyvy__content width width_norm width_paddingStandart">
         <div class="views-element-container">
@@ -37,7 +37,7 @@ $this->setFrameMode(true);
                                         <div>
                                             <div class="otzyvDefault__vrach width_paddingStandart">
                                                 <? $file = CFile::ResizeImageGet($item['DOCTOR']['PICTURE'], array('width' => 320, 'height' => 320), BX_RESIZE_IMAGE_PROPORTIONAL, true); ?>
-                                                <div><a href="/vrac/<?= $item['DOCTOR']['CODE'] ?>/'"><img
+                                                <div><a href="/vrac/<?= $item['DOCTOR']['CODE'] ?>'"><img
                                                                 src="<?= $file['src'] ?>"
                                                                 width="320" height="320"
                                                                 alt="Отзыв о враче <?= $item['DOCTOR']['NAME'] ?>"
@@ -85,7 +85,7 @@ $this->setFrameMode(true);
                                 </div>
 
                                 <div class="otzyvDefault__more"><a class="button_red"
-                                                                   href="<?= $item['DETAIL_PAGE_URL']; ?>/">Подробнее</a>
+                                                                   href="<?= $item['DETAIL_PAGE_URL']; ?>">Подробнее</a>
                                 </div>
 
                             </div>

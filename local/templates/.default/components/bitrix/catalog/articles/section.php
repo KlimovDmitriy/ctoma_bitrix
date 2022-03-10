@@ -53,7 +53,9 @@ $this->setFrameMode(true);
                     "SHOW_PARENT_NAME" => "Y",
                     "TOP_DEPTH" => "2",
                     "PAGE_ELEMENT_COUNT" => "9",
-                    "VIEW_MODE" => "LINE"
+                    "VIEW_MODE" => "LINE",
+                    "ELEMENT_SORT_FIELD" => "active_from",
+                    "ELEMENT_SORT_ORDER" => "desc",
                 ),
                 $component
             );

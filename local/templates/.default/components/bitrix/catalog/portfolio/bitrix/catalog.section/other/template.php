@@ -13,7 +13,7 @@
                     <?foreach($arResult["ITEMS"] as $arElement):?>
                     <div class="views-row">
                         <div class="uslugiPrevu portfolioPreview">
-                            <a class="uslugiPrevu__link" href="/portfolio/<?=$arElement["CODE"]?>">
+                            <a class="uslugiPrevu__link" href="/portfolio/<?=$arElement["CODE"]?>/">
                                 <div class="portfolioImgFix"> <img src="<?=$arElement['PHOTO_AFTER'];?>" alt=""></div>
                                 <div class="uslugiPrevu__nameWrap">
                                     <span class="uslugiPrevu__name"><?=$arElement["NAME"]?></span>

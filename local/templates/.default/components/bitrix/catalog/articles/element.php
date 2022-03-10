@@ -110,7 +110,7 @@ foreach ($arItems as $arI) {
                             <? foreach ($recommended as $articleItem) {
                                 $res = CIBlockElement::GetByID($articleItem['VALUE']);
                                 if ($ar_res = $res->GetNext())
-                                    echo '<div><a href="' . $ar_res['DETAIL_PAGE_URL'] . '/">' . $ar_res['NAME'] . '</a></div>';
+                                    echo '<div><a href="' . $ar_res['DETAIL_PAGE_URL'] . '">' . $ar_res['NAME'] . '</a></div>';
                             } ?>
                         </div>
                     </div>
