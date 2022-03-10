@@ -23,6 +23,14 @@ $dt = round($cnt / 1500);
 $arResult['READ_TIME'] = $dt;
 
 
+if ($arResult["PROPERTIES"]["rating"]["VALUE"] <= 3.65) {
+    $arResult["PROPERTIES"]["rating"]["VALUE"] = 3.65;
+
+}
+if ($arResult["PROPERTIES"]["vote_count"]["VALUE"] == 0) {
+    $arResult["PROPERTIES"]["vote_count"]["VALUE"] = 1;
+}
+
 
 ?>
 

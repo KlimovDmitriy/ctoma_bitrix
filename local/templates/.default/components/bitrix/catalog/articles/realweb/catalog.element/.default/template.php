@@ -44,7 +44,23 @@ $this->setFrameMode(true);
 
     </div>
     <div class="articleDefault__info width_paddingStandart" style="width:100%">
-        <div></div>
+        <div>
+            <?$APPLICATION->IncludeComponent(
+                "bitrix:iblock.vote",
+                "ajax",
+                Array(
+                    "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
+                    "IBLOCK_ID" => $arParams["IBLOCK_ID"],
+                    "ELEMENT_ID" => $arResult['ID'],
+                    "MAX_VOTE" => $arParams["MAX_VOTE"],
+                    "VOTE_NAMES" => $arParams["VOTE_NAMES"],
+                    "CACHE_TYPE" => $arParams["CACHE_TYPE"],
+                    "CACHE_TIME" => $arParams["CACHE_TIME"],
+                ),
+                $component
+            );
+            ?>
+        </div>
     </div>
     <div class="articleDefault__body width_paddingStandart" itemprop="articleBody" id="main_text">
         <? if ($arResult['content'] != '') {?>

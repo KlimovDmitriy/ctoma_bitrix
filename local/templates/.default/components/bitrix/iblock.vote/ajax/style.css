@@ -1,0 +1,70 @@
+.voteBlockFlex {
+	justify-content: space-between !important;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-top: 30px !important;
+	margin-bottom: 30px !important;
+}
+.voteBlockFlex .shareClMiddle {
+	left: 80px;
+	top: 0px !important;
+}
+.ratingArt .vote-result div {
+	margin-left: 10px;
+}
+.ratingArt div.star-active {
+	cursor: pointer;
+}
+.ratingArt div.star-empty {
+	background-image: url(/local/templates/.default/components/bitrix/iblock.vote/ajax/images/empty.gif);
+	width: 14px;
+	height: 14px;
+	overflow: hidden;
+	background-size: cover;
+}
+.ratingArt div.star-voted {
+	background-image: url(/local/templates/.default/components/bitrix/iblock.vote/ajax/images/voted.gif);
+	width: 14px;
+	height: 14px;
+	overflow: hidden;
+	background-size: cover;
+}
+.ratingArt div.star-over {
+	background-image: url(/local/templates/.default/components/bitrix/iblock.vote/ajax/images/over.gif);
+	width: 14px;
+	height: 14px;
+	overflow: hidden;
+	background-size: cover;
+}
+.ratingArt .vote-result div {
+	margin-left: 10px;
+}
+.ratingArt .voteHead {
+	padding-right: 10px;
+	font-weight: bold;
+}
+@media screen and (max-width:1200px) {
+	.voteBlockFlex {
+		flex-direction: column;
+	}
+	.voteBlockFlex .shareClMiddle {
+		left: 0px;
+	}
+}
+.ratingArt {
+	border: 0 !important;
+	background: none !important;
+	margin: 0 !important;
+}
+.ratingArt tbody tr:nth-child(2n+1) td {
+	background: none !important;
+}
+.ratingArt td {
+	border: 0 !important;
+	background: none !important;
+	padding: 2px !important;
+}
+.ratingArt .vote-result div {
+	margin-left: 0 !important;
+}
