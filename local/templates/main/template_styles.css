@@ -550,6 +550,8 @@
 .cap_code_block,.cap_label{
     display:inline-block !important;
     width:45%;
+    width: 46%;
+    margin: 5px;
 }
 .cap_code{
     -moz-box-sizing: border-box;
