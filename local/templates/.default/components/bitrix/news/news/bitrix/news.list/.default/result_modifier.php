@@ -25,6 +25,6 @@ foreach ($arResult["ITEMS"] as $key => $arElement) {
 }
 foreach ($arResult['ITEMS'] as $id => $news) {
     $text = preg_replace('/(<[^>]*) style=("[^"]+"|\'[^\']+\')([^>]*>)/i', '$1$3', $news['~DETAIL_TEXT']);
-    $text = preg_replace('#(<img(.*?)>)#', '', $text);
+//    $text = preg_replace('#(<img(.*?)>)#', '', $text);
 $arResult['ITEMS'][$id]['~DETAIL_TEXT'] = $text;
 }
