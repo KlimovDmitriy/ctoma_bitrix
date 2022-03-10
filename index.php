@@ -91,6 +91,7 @@ $APPLICATION->SetTitle("Главная");
     )
 );?>
     </div>
+    <? $APPLICATION->IncludeComponent("realweb:blank", "subscribe", array(), false, array('HIDE_ICONS' => 'Y')); ?>
 
     <div class="content_norm width width_light">
 
