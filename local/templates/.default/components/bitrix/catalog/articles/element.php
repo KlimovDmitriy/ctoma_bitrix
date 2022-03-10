@@ -275,6 +275,7 @@ foreach ($arItems as $arI) {
                     <div class="servicesList">
                         <? $servicesElements = \Realweb\Site\Site::getPropValue('SERVICES_ELEMENTS', $arParams['IBLOCK_ID'], $arI['ID']);
                         if (!empty($servicesElements)) {
+                            if($arProps["SERVICES_ELEMENTS"]["VALUE"]) {
                             foreach ($servicesElements as $articleItem) {
                                 $res = CIBlockElement::GetByID($articleItem['VALUE']);
                                 if ($ar_res = $res->GetNext()) $img = CFile::ResizeImageGet($ar_res['PREVIEW_PICTURE'], array("width" => 245, "height" => 260), BX_RESIZE_IMAGE_EXACT, true, array(), false, 70);
@@ -293,7 +294,9 @@ foreach ($arItems as $arI) {
                                     </span>
                                     </div>
                                 </div>
+
                             <? }
+                            }
                         } ?>
 
                         <?
