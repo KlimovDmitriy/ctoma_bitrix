@@ -33,7 +33,7 @@ $this->setFrameMode(true);
             </div>
             <?php endforeach;?>
             <div class="news__all">
-                <a href="/news" class="button_red">Все новости</a>
+                <a href="/news/" class="button_red">Все новости</a>
             </div>
         </div>
         <div class="news__right width_paddingStandart">
