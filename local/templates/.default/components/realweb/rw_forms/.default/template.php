@@ -24,7 +24,7 @@ $this->setFrameMode(true);
             <i class="fa fa-check"></i> Ваше сообщение успешно отправлено.
         </div>
         <div id="error_<?= $arParams['CODE']; ?>" class="error_form">
-            <i class="fa fa-times-circle"></i> Произошла ошибка. Попробуйте повторить позже.
+            <i class="fa fa-times-circle"></i> <span class="error_main_text"> Произошла ошибка. Попробуйте повторить позже.</span>
         </div>
         <form id="<?= $arParams['CODE']; ?>" method="post"
               class="webform-submission-form webform-submission-add-form webform-submission-makeform-form webform-submission-makeform-add-form webform-submission-makeform-page_variant-make_appointment-panels_variant-0-form webform-submission-makeform-page_variant-make_appointment-panels_variant-0-add-form makeform js-webform-details-toggle webform-details-toggle">
@@ -38,6 +38,21 @@ $this->setFrameMode(true);
                     <? switch ($field['TYPE']) {
                         case 'BUTTON':
                             ?>
+                          <?
+                            $capCode = $GLOBALS["APPLICATION"]->CaptchaGetCode();
+                            ?>
+
+                            <label for="edit-captcha"
+                                   class="cap_label">Введите код с картинки<br>
+                                <img src="/bitrix/tools/captcha.php?captcha_sid=<?= htmlspecialchars($capCode) ?>" width="180" height="40">
+                            </label>
+
+<div class="cap_code_block">
+                            <input size="40" value="" name="cap" class="cap_code"  />
+</div>
+
+                            <input type="hidden" name="captcha_sid" value="<?= htmlspecialchars($capCode) ?>">
+
                             <button type="submit" class="<?= $field['FIELD_CSS']; ?>"><?= $field['TITLE'] ?></button>
 
                             <? break; ?>

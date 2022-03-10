@@ -48,6 +48,15 @@ class Action
 
 
         }
+
+
+        if (!$GLOBALS["APPLICATION"]->CaptchaCheckCode($input['cap'], $input['captcha_sid'])) {
+
+            $errors[] = 'Вы неверно ввели код с картинки';
+
+        }
+
+
         $filter = ['IBLOCK_ID' => Site::getIblockId('FORMS'), 'SECTION_ID' => $input['form_id']];
         $datas = Site::getIBlockElements($filter);
 
@@ -93,12 +102,15 @@ class Action
             "PREVIEW_TEXT" => $html
 
         );
-
-        //Результат в конце отработки
-        if ($ID = $el->Add($fields)) {
-            $result = ['success' => 1];
+        if (empty($errors)) {
+            //Результат в конце отработки
+            if ($ID = $el->Add($fields)) {
+                $result = ['success' => 1];
+            } else {
+                $result = ['error' => 1];
+            }
         } else {
-            $result = ['error' => 1];
+            $result = ['error' => $errors[0]];
         }
         return $result;
     }
