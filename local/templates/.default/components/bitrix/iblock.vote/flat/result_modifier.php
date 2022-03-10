@@ -21,9 +21,7 @@ if ($arResult["PROPERTIES"]["rating"]["VALUE"] <= 3.65) {
 	$arResult["PROPERTIES"]["rating"]["VALUE"] = 3.65;
 
 }
-if ( $arResult["PROPERTIES"]["vote_count"]["VALUE"]==0){
-	$arResult["PROPERTIES"]["vote_count"]["VALUE"]=1;
-}
+
 //03*
 //Пробегаем по параметрам чщательно складывая их в хранилище
 foreach($arParams as $k=>$v)

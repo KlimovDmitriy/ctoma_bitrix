@@ -30,6 +30,9 @@ if ($arResult["PROPERTIES"]["rating"]["VALUE"] <= 3.65) {
 if ($arResult["PROPERTIES"]["vote_count"]["VALUE"] == 0) {
     $arResult["PROPERTIES"]["vote_count"]["VALUE"] = 1;
 }
+else {
+    $arResult["PROPERTIES"]["vote_count"]["VALUE"]+=1;
+}
 
 
 ?>
