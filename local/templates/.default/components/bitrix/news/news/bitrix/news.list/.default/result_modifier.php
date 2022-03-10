@@ -23,7 +23,8 @@ foreach ($arResult["ITEMS"] as $key => $arElement) {
         );
     }
 }
-foreach ($arResult['ITEMS'] as $id => $doctor) {
-    $reviewsList = CIBlockElement::GetList(['SORT'=>'ASC'], ['PROPERTY_DOCTOR'=>$doctor['ID'], 'ACTIVE'=>'Y'], false, false, ['ID', 'IBLOCK_ID']);
-    $arResult['ITEMS'][$id]['REVIEWS_COUNT'] = $reviewsList->SelectedRowsCount();
+foreach ($arResult['ITEMS'] as $id => $news) {
+    $text = preg_replace('#(style=("|\Z)(.*?)("|\Z))#', '\\1\\6', $news['~DETAIL_TEXT']);
+    $text = preg_replace('#(<img(.*?)>)#', '', $text);
+$arResult['ITEMS'][$id]['~DETAIL_TEXT'] = $text;
 }
