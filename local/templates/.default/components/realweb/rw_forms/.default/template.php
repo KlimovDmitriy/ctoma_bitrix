@@ -49,7 +49,7 @@ $this->setFrameMode(true);
                             </label>
 
                             <div class="cap_code_block">
-                                <input placeholder="Введите символы с картинки" value="" name="cap" class="cap_code"/>
+                                <input placeholder="Введите код с картинки" value="" name="cap" class="cap_code"/>
                             </div>
 
                             <input type="hidden" name="captcha_sid" value="<?= htmlspecialchars($capCode) ?>">

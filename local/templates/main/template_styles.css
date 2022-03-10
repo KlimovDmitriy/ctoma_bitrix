@@ -575,3 +575,6 @@
     top: -15px;
     position: relative;
 }
+.cap_code{
+    max-width:100%;
+}
