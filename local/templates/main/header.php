@@ -76,11 +76,17 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
             </div>
 
             <div class="header__logoMobile logo_mobile">
+                <? if ($APPLICATION->GetCurPage(false) !== '/'): ?>
                 <a class="logo__linck" href="/">
                     <img class="logo__img" src="/local/templates/main/images/logo.jpg"
                          alt="Стоматология в СПб – зубные клиники «СТОМА»"
                          title="«СТОМА» - Сеть стоматологических клиник Санкт-Петербурга">
                 </a>
+                <?else:?>
+                    <img class="logo__img" src="/local/templates/main/images/logo.jpg"
+                         alt="Стоматология в СПб – зубные клиники «СТОМА»"
+                         title="«СТОМА» - Сеть стоматологических клиник Санкт-Петербурга">
+                <? endif; ?>
             </div>
 
             <div class="header__searchMobileButton width_paddingStandart">
@@ -191,9 +197,17 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
         <div class="header__center">
             <div class="header__centerWrapper width width_norm width_paddingDisableMobileDevice">
                 <div class="header__logo width_paddingStandart">
+                    <? if ($APPLICATION->GetCurPage(false) !== '/'): ?>
+                    <a href="/">
                     <img src="/local/templates/main/images/logo.jpg" class="logo__img"
                          alt="Стоматология в СПб – зубные клиники «СТОМА»"
                          title="«СТОМА» - Сеть стоматологических клиник Санкт-Петербурга">
+                    </a>
+                    <?else:?>
+                        <img src="/local/templates/main/images/logo.jpg" class="logo__img"
+                             alt="Стоматология в СПб – зубные клиники «СТОМА»"
+                             title="«СТОМА» - Сеть стоматологических клиник Санкт-Петербурга">
+                    <? endif; ?>
                 </div>
                 <div class="header__menu">
                     <div class="glavnoeMenu width_paddingLeftRight">
