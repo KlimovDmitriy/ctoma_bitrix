@@ -45,7 +45,7 @@ $this->setFrameMode(true);
                             </div>
                         </div>
                         <div class="newsPageAnons__info content_norm width_paddingStandart">
-                            <span class="newsPageAnons__date"><?=FormatDateFromDB($arItem["DATE_ACTIVE_FROM"], 'SHORT');?></span>
+                            <span class="newsPageAnons__date"><?=$arItem["ACTIVE_FROM"];?></span>
                             <a href="<?=$arItem['DETAIL_PAGE_URL']?>" class="newsPageAnons__title">
                                 <span>
                                     <?=$arItem['NAME']?>
