@@ -48,7 +48,7 @@ $this->setFrameMode(true);
                             <span class="newsPageAnons__date"><?=$arItem['DATE_ACTIVE_FROM']?></span>
                             <a href="<?=$arItem['DETAIL_PAGE_URL']?>" class="newsPageAnons__title">
                                 <span>
-                                    <?=$arItem['TITLE']?>
+                                    <?=$arItem['NAME']?>
                                 </span>
                             </a>
                             <div>
