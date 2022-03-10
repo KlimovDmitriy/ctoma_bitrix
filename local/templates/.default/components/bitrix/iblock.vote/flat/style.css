@@ -13,3 +13,6 @@
 	color: #dcdedc;
 	content: "\f005" !important;
 }
+.bx-star-active.fa-star-o::before {
+	color: #fc8214 !important;
+}
