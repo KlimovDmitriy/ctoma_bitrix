@@ -5,4 +5,4 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 }
 CModule::IncludeModule("iblock");
 
-$arResult['FIRST_ITEM'] = array_shift($arResult['ITEMS']);
+//$arResult['FIRST_ITEM'] = array_shift($arResult['ITEMS']);

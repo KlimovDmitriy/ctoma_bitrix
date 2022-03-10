@@ -27,6 +27,8 @@ $this->setFrameMode(true);
                 <div class="news__wrap">
                     <span class="news__mTitle"><?=$item['NAME']?></span>
                     <span class="news__mCreated"><?=$item['ACTIVE_FROM']?></span>
+                    <span class="detail" style="display: none"><?= $item['~DETAIL_TEXT'] ?></span>
+                    <span class="url" style="display: none"><?= $item['DETAIL_PAGE_URL'] ?></span>
                 </div>
             </div>
             <?php endforeach;?>
@@ -37,16 +39,34 @@ $this->setFrameMode(true);
         <div class="news__right width_paddingStandart">
             <div class="news__activElem">
                 <div class="news__wrap">
-                    <div class="news__created"><?= $arResult['FIRST_ITEM']['ACTIVE_FROM']?></div>
-                    <div class="news__titl"><?= $arResult['FIRST_ITEM']['NAME']?></div>
+                    <div class="news__created"></div>
+                    <div class="news__titl"></div>
                     <div class="news__body content_norm">
-                        <?= $arResult['FIRST_ITEM']['~DETAIL_TEXT'] ?>
+
                     </div>
                 </div>
                 <div class="news__more">
-                    <a href="<?= $arResult['FIRST_ITEM']['DETAIL_PAGE_URL']?>" class="button_red">Подробнее</a>
+                    <a href="" class="button_red">Подробнее</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        let activeNews = $('.news__elem.active');
+        let updateActiveNews = function(news) {
+            $('.news__activElem .news__created').text(news.find('.news__mCreated').text());
+            $('.news__activElem .news__titl').text(news.find('.news__mTitle').text());
+            $('.news__activElem .news__body').html(news.find('.detail').html());
+            $('.news__activElem .news__more a').attr('href', news.find('.url').text());
+        };
+        updateActiveNews(activeNews);
+        $('.news__elem').on('click', function() {
+            $('.news__elem').removeClass('active');
+            $(this).addClass('active');
+            updateActiveNews($(this));
+        })
+    });
+</script>
