@@ -43,13 +43,13 @@ $this->setFrameMode(true);
                             ?>
 
                             <label for="edit-captcha"
-                                   class="cap_label">Введите код<br>
+                                   class="cap_label">Введите код с картинки<br>
                                 <img src="/bitrix/tools/captcha.php?captcha_sid=<?= htmlspecialchars($capCode) ?>"
                                      width="180" height="40">
                             </label>
 
                             <div class="cap_code_block">
-                                <input placeholder="Введите код с картинки" value="" name="cap" class="cap_code"/>
+                                <input placeholder="Введите код" value="" name="cap" class="cap_code"/>
                             </div>
 
                             <input type="hidden" name="captcha_sid" value="<?= htmlspecialchars($capCode) ?>">
