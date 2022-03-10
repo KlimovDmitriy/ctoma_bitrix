@@ -526,3 +526,23 @@
     color: #D8000C;
     background-color: #FFBABA;
 }
+.subscription__content{
+    padding:35px 10px !important;
+}
+#main_subscribe > .subscription__agreement{
+    top:4.3rem !important;
+    bottom:0 !important;
+}
+#edit-email-error{
+    display:block ;
+    margin:5px 0 !important;
+}
+#agreement_subscribe-error{
+    display: block;
+    position: absolute;
+    bottom: -40px;
+    left: 20px;
+}
+#success_main_subscribe,#error_main_subscribe{
+    max-width: 350px; width: 100%; margin:0 auto;text-align:center;
+}

@@ -36,11 +36,11 @@ $(document).ready(function () {
 //Модальные формы
     $('.modaler').on('click', function (e) {
         var fid = $(this).data('form');
-        $('#'+fid).dialog({
-            width:"500px",
-            minHeight:"500px",
-            dialogClass:"popupDialog",
-            modal:true
+        $('#' + fid).dialog({
+            width: "500px",
+            minHeight: "500px",
+            dialogClass: "popupDialog",
+            modal: true
         });
     })
 
@@ -69,10 +69,12 @@ $("form").on('submit', function () {
 
                 }
                 if (response.error) {
-
+                    if (response.error != 1) {
+                        $('.error_main_text').html(response.error)
+                    }
                     $('#error_' + frm.attr('id')).show();
 
-                    setTimeout(function() {
+                    setTimeout(function () {
                         $('#error_' + frm.attr('id')).fadeOut('fast');
                     }, 2000);
 
@@ -83,7 +85,7 @@ $("form").on('submit', function () {
 
         return false;
 
-    }else{
+    } else {
         return false;
     }
 })
