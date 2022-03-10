@@ -546,3 +546,35 @@
 #success_main_subscribe,#error_main_subscribe{
     max-width: 350px; width: 100%; margin:0 auto;text-align:center;
 }
+/*Captcha*/
+.cap_code_block,.cap_label{
+    display:inline-block !important;
+    width:45%;
+    width: 46%;
+    margin: 5px;
+}
+.cap_code{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding: 10px;
+    font-size: 16px;
+    display: block;
+    margin: 5px 0;
+    outline: none;
+    background: #f6f6f6;
+    border: 1px solid #dedede;
+    color: #464646;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    top: -15px;
+    position: relative;
+}
+.cap_code{
+    max-width:100%;
+}
