@@ -43,7 +43,7 @@ $this->setFrameMode(true);
                             ?>
 
                             <label for="edit-captcha"
-                                   class="cap_label">Введите код с картинки<br>
+                                   class="cap_label">Введите код<br>
                                 <img src="/bitrix/tools/captcha.php?captcha_sid=<?= htmlspecialchars($capCode) ?>"
                                      width="180" height="40">
                             </label>
