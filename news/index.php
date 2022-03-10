@@ -7,8 +7,8 @@ $APPLICATION->SetPageProperty("description", "Новости стоматоло�
 
 <?
 $APPLICATION->IncludeComponent(
-	"bitrix:news",
-	"news",
+	"bitrix:news", 
+	"news", 
 	array(
 		"DISPLAY_DATE" => "Y",
 		"DISPLAY_PICTURE" => "Y",
@@ -18,8 +18,8 @@ $APPLICATION->IncludeComponent(
 		"IBLOCK_TYPE" => "content",
 		"IBLOCK_ID" => \Realweb\Site\Site::getIblockId("news"),
 		"NEWS_COUNT" => "10",
-		"USE_SEARCH" => "Y",
-		"USE_RSS" => "Y",
+		"USE_SEARCH" => "N",
+		"USE_RSS" => "N",
 		"USE_RATING" => "Y",
 		"USE_CATEGORIES" => "Y",
 		"USE_REVIEW" => "Y",
@@ -38,8 +38,6 @@ $APPLICATION->IncludeComponent(
 		"LIST_PROPERTY_CODE" => array(
 			0 => "",
 			1 => "",
-			2 => "",
-			3 => "",
 		),
 		"HIDE_LINK_WHEN_NO_DETAIL" => "Y",
 		"DISPLAY_NAME" => "Y",
@@ -55,14 +53,13 @@ $APPLICATION->IncludeComponent(
 		"DETAIL_PROPERTY_CODE" => array(
 			0 => "",
 			1 => "",
-			2 => "",
 		),
-		"DETAIL_DISPLAY_TOP_PAGER" => "Y",
+		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_PAGER_TITLE" => "Страница",
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_SHOW_ALL" => "Y",
-		"STRICT_SECTION_CHECK" => "Y",
+		"STRICT_SECTION_CHECK" => "N",
 		"SET_TITLE" => "Y",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"ADD_ELEMENT_CHAIN" => "Y",
@@ -95,8 +92,8 @@ $APPLICATION->IncludeComponent(
 		),
 		"FILTER_PROPERTY_CODE" => array(
 			0 => "",
-			1 => "WORK_PLACE",
-			2 => "SPECIALIZATION_LIST",
+			1 => "",
+			2 => "",
 			3 => "",
 		),
 		"NUM_NEWS" => "20",
@@ -113,7 +110,7 @@ $APPLICATION->IncludeComponent(
 		),
 		"CATEGORY_IBLOCK" => array(
 		),
-		"CATEGORY_CODE" => "CATEGORY",
+		"CATEGORY_CODE" => "",
 		"CATEGORY_ITEMS_COUNT" => "5",
 		"MESSAGES_PER_PAGE" => "10",
 		"USE_CAPTCHA" => "Y",
@@ -146,7 +143,8 @@ $APPLICATION->IncludeComponent(
 		"FILE_404" => "",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
-			"detail" => "#ELEMENT_CODE#/",
+			"section" => "",
+			"detail" => "/#ELEMENT_CODE#/",
 		)
 	),
 	false
