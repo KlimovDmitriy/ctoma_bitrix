@@ -24,7 +24,7 @@ $APPLICATION->IncludeComponent(
 		"USE_CATEGORIES" => "Y",
 		"USE_REVIEW" => "Y",
 		"USE_FILTER" => "Y",
-		"SORT_BY1" => "DATE_ACTIVE_FROM",
+		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_ORDER1" => "DESC",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER2" => "ASC",
@@ -47,7 +47,7 @@ $APPLICATION->IncludeComponent(
 		"META_DESCRIPTION" => "-",
 		"BROWSER_TITLE" => "-",
 		"DETAIL_SET_CANONICAL_URL" => "Y",
-		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"DETAIL_ACTIVE_DATE_FORMAT" => "d/m/Y",
 		"DETAIL_FIELD_CODE" => array(
 			0 => "",
 			1 => "",
