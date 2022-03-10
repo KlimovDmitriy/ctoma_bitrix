@@ -17,7 +17,7 @@ $APPLICATION->IncludeComponent(
 		"AJAX_MODE" => "N",
 		"IBLOCK_TYPE" => "content",
 		"IBLOCK_ID" => \Realweb\Site\Site::getIblockId("news"),
-		"NEWS_COUNT" => "5",
+		"NEWS_COUNT" => "10",
 		"USE_SEARCH" => "Y",
 		"USE_RSS" => "Y",
 		"USE_RATING" => "Y",

@@ -28,7 +28,7 @@ $this->setFrameMode(true);
     <div class="otzyvy__container">
         <h1 class="newsAll__title title_grey width width_norm width_paddingStandart">
             <span class="title__br"></span>
-            <span class="title__text"></span>
+            <span class="title__text">Новости</span>
             <span class="title__br"></span>
         </h1>
         <div class="newsAll__content width width_light">
