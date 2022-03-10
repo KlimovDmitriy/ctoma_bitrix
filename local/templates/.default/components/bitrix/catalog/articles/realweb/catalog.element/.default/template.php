@@ -38,7 +38,7 @@ $this->setFrameMode(true);
             <meta itemprop="image" content="/themes/my_theme/bem/blocks/makeImg/img/zapis_img.jpg">
         </div>
         <div class="articleDefault__info width_paddingStandart" style="width:100%">
-            <?=FormatDateFromDB($arElement['ACTIVE_FROM'], 'Y/m/d');?>
+            <?=FormatDateFromDB($arResult['ACTIVE_FROM'], 'Y/m/d');?>
             <div class="timeto">Время прочтения - <span id="p1"><?=$arResult['READ_TIME'];?></span> минут.</div>
         </div>
 

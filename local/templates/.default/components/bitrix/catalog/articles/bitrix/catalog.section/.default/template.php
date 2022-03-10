@@ -8,7 +8,7 @@
 
             </div>
             <div class="articleTeaser__info width_paddingStandart">
-                <a href="<?=$arElement["DETAIL_PAGE_URL"]?>/" class="articleTeaser__title"><span><?=$arElement["NAME"]?></span>
+                <a href="<?=$arElement["DETAIL_PAGE_URL"]?>" class="articleTeaser__title"><span><?=$arElement["NAME"]?></span>
                 </a>
                 <?=FormatDateFromDB($arElement['ACTIVE_FROM'], 'Y/m/d');?>
             </div>
