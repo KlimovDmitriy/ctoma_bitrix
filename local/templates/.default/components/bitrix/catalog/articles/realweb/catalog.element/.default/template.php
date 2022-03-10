@@ -47,19 +47,20 @@ $this->setFrameMode(true);
         <div>
             <?$APPLICATION->IncludeComponent(
                 "bitrix:iblock.vote",
-                "ajax",
+                "flat",
                 Array(
                     "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
                     "IBLOCK_ID" => $arParams["IBLOCK_ID"],
                     "ELEMENT_ID" => $arResult['ID'],
-                    "MAX_VOTE" => $arParams["MAX_VOTE"],
-                    "VOTE_NAMES" => $arParams["VOTE_NAMES"],
-                    "CACHE_TYPE" => $arParams["CACHE_TYPE"],
+                    "MAX_VOTE" => "5",
+                    "VOTE_NAMES" => array("1","2","3","4","5"),
+                    "CACHE_TYPE" => "N",
                     "CACHE_TIME" => $arParams["CACHE_TIME"],
                 ),
                 $component
             );
             ?>
+            <div>Рейтинг: <?=$arResult["PROPERTIES"]["rating"]["VALUE"];?> (Голосов: <?=$arResult["PROPERTIES"]["vote_count"]["VALUE"];?>)</div>
         </div>
     </div>
     <div class="articleDefault__body width_paddingStandart" itemprop="articleBody" id="main_text">
