@@ -32,12 +32,13 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/jquery.fancybox.min.css');
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/twentytwenty.css');
     ?>
-
+    <?php \Realweb\Site\Site::showIncludeText('HEAD_AFTER'); ?>
 </head>
 
 <body class="html__body path-frontpage">
-<div id="panel"><? $APPLICATION->ShowPanel(); ?></div>
 
+<div id="panel"><? $APPLICATION->ShowPanel(); ?></div>
+<?php \Realweb\Site\Site::showIncludeText('BODY_BEFORE'); ?>
 <header class="header" role="banner">
     <div class="header__top">
         <div class="header__fixedWrap">
