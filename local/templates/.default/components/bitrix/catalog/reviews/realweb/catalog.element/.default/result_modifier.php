@@ -6,7 +6,6 @@ if($arResult["DISPLAY_PROPERTIES"]["DOCTOR"]["VALUE"]){
     foreach($props["WORK_PLACE"]["VALUE"] as $analog) {
         $res = CIBlockElement::GetByID($analog);
         if($ar_res = $res->GetNext())
-            //var_dump($ar_res);
             $arResult['DOCTOR_CLINICS'][] = '<a href="'.$ar_res["LIST_PAGE_URL"].$ar_res["DETAIL_PAGE_URL"].'">'.$ar_res["NAME"].'</a>';
     }
 }
