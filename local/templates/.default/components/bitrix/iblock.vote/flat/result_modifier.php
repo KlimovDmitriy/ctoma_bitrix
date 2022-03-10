@@ -17,6 +17,11 @@ $component = $this->__component;
 $arSessionParams = array(
 	"PAGE_PARAMS" => array("ELEMENT_ID"),
 );
+if ($arResult["PROPERTIES"]["rating"]["VALUE"] <= 3.65) {
+	$arResult["PROPERTIES"]["rating"]["VALUE"] = 3.65;
+
+}
+
 //03*
 //Пробегаем по параметрам чщательно складывая их в хранилище
 foreach($arParams as $k=>$v)
