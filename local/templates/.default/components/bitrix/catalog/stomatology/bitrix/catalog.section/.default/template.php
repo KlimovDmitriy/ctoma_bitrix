@@ -20,4 +20,9 @@ $name = !empty($arResult['IPROPERTY_VALUES']['SECTION_PAGE_TITLE'])
 <h1 class="service__titleText title_norm width width_norm width_paddingStandart"><? echo $name; ?></h1>
 <div class="serviceDefault content_norm">
 <?php echo $arResult['DESCRIPTION']; ?>
+    <?php if(!$arResult['UF_HIDE_BUTTON']):?>
+        <div class="service__zapisatsa">
+            <a href="/make-an-appointment" class="button_red" target="_blank">Записаться</a>
+        </div>
+    <?php endif; ?>
 </div>
