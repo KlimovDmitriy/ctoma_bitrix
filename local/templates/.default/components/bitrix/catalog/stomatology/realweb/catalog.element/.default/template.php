@@ -21,7 +21,13 @@ ob_start();
     <h1 class="service__titleText title_norm width width_norm width_paddingStandart"><? echo $name; ?></h1>
     <div class="serviceDefault content_norm">
         <?php echo $arResult['DETAIL_TEXT']; ?>
+        <?php if(!$arResult['PROPERTIES']['HIDE_BUTTON']):?>
+            <div class="service__zapisatsa">
+                <a href="/make-an-appointment" class="button_red" target="_blank">Записаться</a>
+            </div>
+        <?php endif; ?>
     </div>
+
 <?php // передаем данные буфера вывода в файл component_epilog.php
 $this->__component->SetResultCacheKeys(array("CACHED_TPL"));
 
