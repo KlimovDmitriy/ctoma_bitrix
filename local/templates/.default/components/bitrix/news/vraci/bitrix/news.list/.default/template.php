@@ -62,12 +62,7 @@ $this->setFrameMode(true);
 
 
                         <div class="doctorsFilter__action">
-                            <a href="/form/zapisatsa-k-vracu?doctor_nid=11481" class="use-ajax button_red"
-                               data-dialog-options='{
-            "width":"500px",
-                "minHeight":"800px",
-                "dialogClass":"popupDialog"
-                }' data-dialog-type="modal">Записаться</a>
+                            <a data-form="vrac" data-vrac="<? echo $arItem["NAME"]; ?>" class="modaler_vrac use-ajax button_red">Записаться</a>
                         </div>
 
                     </div>
