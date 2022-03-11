@@ -17,10 +17,10 @@
             while ($ob = $res->GetNext()) {
 
 
-                $res = CIBlockElement::GetByID($ob['VALUE']);
-                if ($ar_res = $res->GetNext()) {
+                $res2 = CIBlockElement::GetByID($ob['VALUE']);
+                if ($ar_res2 = $res2->GetNext()) {
 
-                    $VALUES[$ar_res['CODE']] = $ar_res['NAME'];
+                    $VALUES[$ar_res2['CODE']] = $ar_res['NAME'];
                 }
 
             }
