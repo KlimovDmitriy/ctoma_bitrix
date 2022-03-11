@@ -37,7 +37,7 @@ $this->setFrameMode(true);
                     <div id="akc_text_<?= $arParams['CODE']; ?>" class="action_text"></div>
                 </div>
               <input type="hidden" id="akc_name_<?= $arParams['CODE']; ?>" name="akc_name" value="">
-              <input type="hidden" id="vrac_name_<?= $arParams['CODE']; ?>" name="akc_name" value="">
+              <input type="hidden" id="vrac_name_<?= $arParams['CODE']; ?>" name="vrac_name" value="">
             </div>
             <? foreach ($arResult['FIELDS'] as $field) { ?>
 
