@@ -1,0 +1,7 @@
+.actions__swiper.swiper-container{
+    max-height: 100%
+}
+.actions__slider .swiper-slide.swiper-slide-active {
+    opacity: 1 !important;
+    z-index: 1;
+}
