@@ -43,7 +43,7 @@ $this->setFrameMode(true);
                                                                 alt="Отзыв о враче <?= $item['DOCTOR']['NAME'] ?>"
                                                                 typeof="foaf:Image"></a></div>
                                                 <div class="otzyvDefault__name">
-                                                    <a href="/vrac/<?= $item['DOCTOR']['CODE'] ?>/"><span><?= $item['DOCTOR']['NAME'] ?></span>
+                                                    <a href="/personal/<?= $item['DOCTOR']['CODE'] ?>/"><span><?= $item['DOCTOR']['NAME'] ?></span>
                                                     </a>
                                                 </div>
                                                 <div class="otzyvDefault__dolznost">

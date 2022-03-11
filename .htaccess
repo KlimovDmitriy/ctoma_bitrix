@@ -40,3 +40,4 @@ ErrorDocument 404 /404.php
 
 Redirect 301 /voprosy-i-otvety /questions
 Redirect 301 /stati /articles
+Redirect 301 /vrac /personal
