@@ -46,6 +46,7 @@ $this->setFrameMode(true);
                     "SECTION_USER_FIELDS" => array("", ""),
                     "SHOW_PARENT_NAME" => "Y",
                     "TOP_DEPTH" => "2",
+                    "PROPERTY_CODE"=>$arParams['LIST_PROPERTY_CODE'],
                     "PAGE_ELEMENT_COUNT" => "10",
                     "VIEW_MODE" => "LINE",
                     "ELEMENT_SORT_FIELD" => "active_from",
