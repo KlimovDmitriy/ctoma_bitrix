@@ -43,7 +43,22 @@ $(document).ready(function () {
             modal: true
         });
     })
+    $('.modaler_action').on('click', function (e) {
+        var fid = $(this).data('form');
+        var act_name = $(this).data('act_name');
+alert(fid);
+        $('#akc_name_'+fid).val(act_name);
+        $('#akc_text_'+fid).html(act_name);
+        $('#any_name_'+fid).show();
+        $('#' + fid).dialog({
+            width: "500px",
+            minHeight: "500px",
+            dialogClass: "popupDialog",
+            modal: true
+        });
 
+
+    })
 
 })
 

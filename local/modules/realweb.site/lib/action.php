@@ -79,6 +79,11 @@ class Action
                 unset($sumbission_data[$code]);
             }
         }
+        if ($input['akc_name'] != '') {
+            $sumbission_data[] = ['LABEL' => 'Название акции', 'VALUE' => $input['akc_name']];
+           // $sumbission_data = array_merge($akc, $sumbission_data);
+        }
+
         $html = '<h3>Данные формы</h3>';
         foreach ($sumbission_data as $line) {
 
