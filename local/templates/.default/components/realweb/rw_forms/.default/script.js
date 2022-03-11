@@ -35,12 +35,19 @@ $(document).ready(function () {
     });
 //Модальные формы
     $('.modaler').on('click', function (e) {
+        /*Простые формы*/
         var fid = $(this).data('form');
         $('#' + fid).dialog({
             width: "500px",
             minHeight: "500px",
             dialogClass: "popupDialog",
-            modal: true
+            modal: true,
+            close: function (event, ui) {
+                $('.success_form').hide();
+                $('#' + fid+' form').show();
+                $('#' + fid+' input').val('');
+
+            }
         });
     })
     $('.modaler_action').on('click', function (e) {
@@ -54,7 +61,13 @@ $(document).ready(function () {
             width: "500px",
             minHeight: "500px",
             dialogClass: "popupDialog",
-            modal: true
+            modal: true,
+            close: function (event, ui) {
+                $('.success_form').hide();
+                $('#' + fid+' form').show();
+                $('#' + fid+' input').val('');
+
+            }
         });
 
 
@@ -70,7 +83,13 @@ $(document).ready(function () {
             width: "500px",
             minHeight: "500px",
             dialogClass: "popupDialog",
-            modal: true
+            modal: true,
+            close: function (event, ui) {
+                $('.success_form').hide();
+                $('#' + fid+' form').show();
+                $('#' + fid+' input').val('');
+
+            }
         });
 
 

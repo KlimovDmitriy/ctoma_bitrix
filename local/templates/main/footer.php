@@ -129,7 +129,7 @@
 </footer>
 <a onclick="topFunction()" id="myBtn" title="Наверх страницы"><img src="/local/templates/main/images/up.png" alt="Вверх"></a>
 <!--Модальные формы -->
-<div id="vrac" class="zapis-action" title="Записаться к врачу">
+<div id="vrac" class="dialog zapis-action" title="Записаться к врачу">
     <?
     $APPLICATION->IncludeComponent(
         "realweb:rw_forms", ".default",
@@ -141,7 +141,7 @@
     );
     ?>
 </div>
-<div id="akciya" class="zapis-action" title="Записаться по акции">
+<div id="akciya" class="dialog zapis-action" title="Записаться по акции">
     <?
     $APPLICATION->IncludeComponent(
         "realweb:rw_forms", ".default",
