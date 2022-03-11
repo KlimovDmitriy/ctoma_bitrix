@@ -20,7 +20,7 @@ $this->setFrameMode(true);
         <span class="title__br"></span><span class="title__text">Отзывы </span><span class="title__br"></span>
     </h1>
     <div class="otzyvy__actions width width_light width_paddingLeftRight">
-        <a class="button_red" href="/reviews/add/">Оставить отзыв</a>
+        <a class="button_red" href="/add_review/">Оставить отзыв</a>
     </div>
     <div class="otzyvy__content width width_norm width_paddingStandart">
         <div class="views-element-container">
