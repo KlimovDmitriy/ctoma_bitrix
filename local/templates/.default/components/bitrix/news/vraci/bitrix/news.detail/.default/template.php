@@ -53,7 +53,7 @@ $this->setFrameMode(true);
                             <?php
                             endif; ?>
                             <?php
-                            if ($arResult['PROPERTIES']['EDUCATION']['VALUE']['TEXT']): ?>
+                            if ($arResult['PROPERTIES']['EDUCATION']['VALUE']): ?>
                                 <div class="doctor__field content_norm">
                                     <label>Образование:</label>
                                     <div><?= $arResult['PROPERTIES']['EDUCATION']['~VALUE']['TEXT'] ?></div>
@@ -61,7 +61,7 @@ $this->setFrameMode(true);
                             <?php
                             endif; ?>
                             <?php
-                            if ($arResult['PROPERTIES']['SPECIALIZATION_TEXT']['VALUE']['TEXT']): ?>
+                            if ($arResult['PROPERTIES']['SPECIALIZATION_TEXT']['VALUE']): ?>
                                 <div class="doctor__field content_norm">
                                     <label>Специализация:</label>
                                     <div><?= $arResult['PROPERTIES']['SPECIALIZATION_TEXT']['~VALUE']['TEXT'] ?></div>
@@ -69,7 +69,7 @@ $this->setFrameMode(true);
                             <?php
                             endif; ?>
                             <?php
-                            if ($arResult['PROPERTIES']['EXPERIENCE']['VALUE']['TEXT']): ?>
+                            if ($arResult['PROPERTIES']['EXPERIENCE']['VALUE']): ?>
                                 <div class="doctor__field content_norm">
                                     <label>Опыт и достижения:</label>
                                     <div><?= $arResult['PROPERTIES']['EXPERIENCE']['~VALUE']['TEXT'] ?>

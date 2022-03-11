@@ -45,7 +45,13 @@ $this->setFrameMode(true);
                         <span class="doctorsFilter__position"><?= $arItem['PROPERTIES']['POSITION']['VALUE'] ?></span>
 
                         <span class="doctorsFilter__work"><label>Места работы:</label>
-           <ul><li><a href="/clinics/klinika-na-lenina" hreflang="ru">Клиника на Ленина (м. Петроградская)</a></li></ul>
+           <ul>
+               <?php foreach ($arItem['CLINICS'] as $clinic): ?>
+                   <li>
+                                                <a href="<?= $clinic['LIST_PAGE_URL'].$clinic['DETAIL_PAGE_URL']?>" hreflang="ru"><?= $clinic['NAME']?></a>
+                                            </li>
+               <?php endforeach; ?>
+           </ul>
         </span>
 
                         <span class="doctorsFilter__work"><label>Стаж работы с:</label>
