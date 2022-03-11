@@ -2,14 +2,19 @@
 CModule::IncludeModule("iblock");
 
 foreach ($arResult['ITEMS'] as $key => $item) {
+    $cls = [];
+    //Получаем клиники
+    $clinics = $item['PROPERTIES']['CLINICS']['VALUE'];
+    foreach ($clinics as $c) {
 
-
-    $dbEl = CIBlockElement::GetByID($item['ID']);
-    if ($obEl = $dbEl->GetNextElement()) {
-        $arProps[$item['ID']] = $obEl->GetProperties();
-        $arResult["ITEMS"][$key]['CLINICS'] = $arProps[$item['ID']]["CLINICS"]["VALUE"];
+        $res = CIBlockElement::GetByID($c);
+        if ($ar_res = $res->GetNext()) {
+            $cls[] = $ar_res;
+        }
 
     }
+    $arResult["ITEMS"][$key]['CLINICS'] = $cls;
+
 
 }
 
