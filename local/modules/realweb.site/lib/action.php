@@ -83,6 +83,10 @@ class Action
             $sumbission_data[] = ['LABEL' => 'Название акции', 'VALUE' => $input['akc_name']];
            // $sumbission_data = array_merge($akc, $sumbission_data);
         }
+        if ($input['vrac_name'] != '') {
+            $sumbission_data[] = ['LABEL' => 'Врач к которому производится запись', 'VALUE' => $input['vrac_name']];
+            // $sumbission_data = array_merge($akc, $sumbission_data);
+        }
 
         $html = '<h3>Данные формы</h3>';
         foreach ($sumbission_data as $line) {
