@@ -31,7 +31,7 @@ $this->setFrameMode(true);
             <input type="hidden" name="action" value="Action_formSubmit">
             <input type="hidden" name="form_name" value="<?= $arResult['FORM']['NAME']; ?>">
             <input type="hidden" name="form_id" value="<?= $arResult['FORM']['ID']; ?>">
-            <div id="any_name_<?= $arParams['CODE']; ?>">
+            <div id="any_name_<?= $arParams['CODE']; ?>" class="any_text">
                 <div class="makeform__name js-form-item form-item js-form-type-textfield form-item-name js-form-item-name form-no-label">
                     <div id="vrac_text_<?= $arParams['CODE']; ?>" class="action_text"></div>
                     <div id="akc_text_<?= $arParams['CODE']; ?>" class="action_text"></div>
