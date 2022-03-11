@@ -14,6 +14,7 @@
             $doctor['POSITION'] = \Realweb\Site\Site::getPropValue('POSITION', $doctors_iblock, $ar_res['ID'])[0]['VALUE'];
 
             $res = CIBlockElement::GetProperty($doctors_iblock, $ar_res['ID'], "sort", "asc", array("CODE" => "WORK_PLACE"));
+            $VALUES = [];
             while ($ob = $res->GetNext()) {
 
 
@@ -39,7 +40,7 @@
 }
 global $APPLICATION;
 $cp = $this->__component;
-if (is_object($cp)){
+if (is_object($cp)) {
     $cp->arResult['DESC'] = implode(' ', array_slice(explode(' ', strip_tags($arResult["PREVIEW_TEXT"])), 0, 20));
     $cp->SetResultCacheKeys(array('DESC'));
     $arResult['DESC'] = $cp->arResult['DESC'];
