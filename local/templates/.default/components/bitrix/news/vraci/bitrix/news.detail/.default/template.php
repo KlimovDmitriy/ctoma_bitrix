@@ -96,7 +96,7 @@ $this->setFrameMode(true);
                             <?php
                             endif; ?>
                             <div class="doctor__zapisatsa">
-                                <a href="" class="use-ajax button_red">Записаться к врачу</a>
+                                <a data-form="vrac" data-vrac="<? echo $arResult["NAME"]; ?>" class="modaler_vrac use-ajax button_red">Записаться к врачу</a>
                             </div>
                         </div>
                     </div>

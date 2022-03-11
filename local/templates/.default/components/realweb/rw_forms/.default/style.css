@@ -5,3 +5,16 @@ span.error {
     font-weight: bold;
     padding: 5px 10px;
 }
+#any_name{
+    display:none;
+}
+.action_text{
+    display:block;
+    width:100%;
+    color:#fff;
+    border-bottom:1px solid #fff;
+    font-size: 1.5rem;
+}
+.any_text{
+    display:none;
+}

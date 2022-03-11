@@ -22,15 +22,15 @@ $this->setFrameMode(true);
         foreach ($arResult["ITEMS"] as $arItem): ?>
             <?
             $this->AddEditAction(
-              $arItem['ID'],
-              $arItem['EDIT_LINK'],
-              CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT")
+                $arItem['ID'],
+                $arItem['EDIT_LINK'],
+                CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT")
             );
             $this->AddDeleteAction(
-              $arItem['ID'],
-              $arItem['DELETE_LINK'],
-              CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"),
-              array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM'))
+                $arItem['ID'],
+                $arItem['DELETE_LINK'],
+                CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"),
+                array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM'))
             );
             ?>
             <div class="views-row flavor" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
@@ -62,12 +62,7 @@ $this->setFrameMode(true);
 
 
                         <div class="doctorsFilter__action">
-                            <a href="/form/zapisatsa-k-vracu?doctor_nid=11481" class="use-ajax button_red"
-                               data-dialog-options='{
-            "width":"500px",
-                "minHeight":"800px",
-                "dialogClass":"popupDialog"
-                }' data-dialog-type="modal">Записаться</a>
+                            <a data-form="vrac" data-vrac="<? echo $arItem["NAME"]; ?>" class="modaler_vrac use-ajax button_red">Записаться</a>
                         </div>
 
                     </div>

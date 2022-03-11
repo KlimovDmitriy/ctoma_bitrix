@@ -30,7 +30,7 @@ $this->setFrameMode(true);
               <div class="actions__wrap">
                 <div class="actions__img">  
                   <a href="<?=$arItem["DETAIL_PAGE_URL"];?>">
-                    <img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"];?>" alt="" width="212" height="300">
+                    <img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"];?>" alt="<?=$arItem["NAME"];?>" width="212" height="300">
 
                   </a>
                 </div> 
@@ -50,7 +50,7 @@ $this->setFrameMode(true);
                   </span>  
                   <span class="actions__actions">
                     <a href="<?=$arItem["DETAIL_PAGE_URL"];?>" class="actions__more">Подробности</a>
-                    <a href="/form/zapisatsa-po-akcii?action_nid=<?=$arItem["ID"];?>" class="actions__zapis use-ajax">Записаться</a>
+                    <a data-form="akciya" data-act_name="<?=$arItem["NAME"];?>" class="modaler_action actions__zapis use-ajax">Записаться</a>
                   </span>
                 </div>
               </div>

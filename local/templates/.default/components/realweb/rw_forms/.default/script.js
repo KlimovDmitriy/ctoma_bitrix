@@ -35,16 +35,65 @@ $(document).ready(function () {
     });
 //Модальные формы
     $('.modaler').on('click', function (e) {
+        /*Простые формы*/
         var fid = $(this).data('form');
         $('#' + fid).dialog({
             width: "500px",
             minHeight: "500px",
             dialogClass: "popupDialog",
-            modal: true
+            modal: true,
+            close: function (event, ui) {
+                $('.success_form').hide();
+                $('#' + fid+' form').show();
+                $('#' + fid+' input').val('');
+
+            }
         });
     })
+    $('.modaler_action').on('click', function (e) {
+        /*Форма записи по акции*/
+        var fid = $(this).data('form');
+        var act_name = $(this).data('act_name');
+        $('#akc_name_' + fid).val(act_name);
+        $('#akc_text_' + fid).html(act_name);
+        $('#any_name_' + fid).show();
+        $('#' + fid).dialog({
+            width: "500px",
+            minHeight: "500px",
+            dialogClass: "popupDialog",
+            modal: true,
+            close: function (event, ui) {
+                $('.success_form').hide();
+                $('#' + fid+' form').show();
+                $('#' + fid+' input').val('');
+
+            }
+        });
 
 
+    })
+    $('.modaler_vrac').on('click', function (e) {
+        /*Форма записи к врачу*/
+        var fid = $(this).data('form');
+        var vrac_name = $(this).data('vrac');
+        $('#vrac_name_' + fid).val(vrac_name);
+        $('#vrac_text_' + fid).html(vrac_name);
+        $('#any_name_' + fid).show();
+        $('#' + fid).dialog({
+            width: "500px",
+            minHeight: "500px",
+            dialogClass: "popupDialog",
+            modal: true,
+            close: function (event, ui) {
+                $('.success_form').hide();
+                $('#' + fid+' form').show();
+                $('#' + fid+' input').val('');
+
+            }
+        });
+
+
+    })
 })
 
 $("form").validate({

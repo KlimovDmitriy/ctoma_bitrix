@@ -38,6 +38,8 @@ ErrorDocument 404 /404.php
 	ExpiresByType image/gif "access plus 3 day"
 </IfModule>
 
-Redirect 301 /voprosy-i-otvety /questions
-Redirect 301 /stati /articles
-Redirect 301 /vrac /personal
+Redirect 301 /voprosy-i-otvety /questions/
+Redirect 301 /stati /articles/
+Redirect 301 /vrac /personal/
+Redirect 301 /form /
+Redirect 301 /reviews/add /add_review/

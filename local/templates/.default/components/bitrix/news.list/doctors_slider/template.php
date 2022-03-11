@@ -35,11 +35,7 @@ $this->setFrameMode(true);
                 </div>
                 <span class="stomatology__actions">
                   <a href="<? echo $arItem["DETAIL_PAGE_URL"]; ?>" class="stomatology__more">Подробности</a>
-                  <a href="/form/zapisatsa-k-vracu?doctor_nid=<?=$arItem["ID"]; ?>" data-dialog-options="{
-                  &quot;width&quot;:&quot;500px&quot;,
-                  &quot;minHeight&quot;:&quot;800px&quot;,
-                  &quot;dialogClass&quot;:&quot;popupDialog&quot;
-                }" data-dialog-type="modal" class="use-ajax stomatology__zapis">Записаться</a>
+                  <a data-form="vrac" data-vrac="<? echo $arItem["NAME"]; ?>" class="modaler_vrac use-ajax stomatology__zapis">Записаться</a>
               </span>
             </div>
           </div>

@@ -129,14 +129,38 @@
 </footer>
 <a onclick="topFunction()" id="myBtn" title="Наверх страницы"><img src="/local/templates/main/images/up.png" alt="Вверх"></a>
 <!--Модальные формы -->
-<div id="zadat-vopros" class="dialog" title="Задать вопрос">
+<div id="vrac" class="dialog zapis-action" title="Записаться к врачу">
+    <?
+    $APPLICATION->IncludeComponent(
+        "realweb:rw_forms", ".default",
+        array(
+            "CODE" => 'vrac',
+            "COMPONENT_TEMPLATE" => ".default",
+            "EDIT_TEMPLATE" => ""
+        ),
+    );
+    ?>
+</div>
+<div id="akciya" class="dialog zapis-action" title="Записаться по акции">
+    <?
+    $APPLICATION->IncludeComponent(
+        "realweb:rw_forms", ".default",
+        array(
+            "CODE" => 'akciya',
+            "COMPONENT_TEMPLATE" => ".default",
+            "EDIT_TEMPLATE" => ""
+        ),
+    );
+    ?>
+</div>
+<div id="zadat-vopros" class="dialog" title="Задать вопрос" >
     <?
     $APPLICATION->IncludeComponent(
         "realweb:rw_forms", ".default",
         array(
             "CODE" => 'zadat-vopros',
             "COMPONENT_TEMPLATE" => ".default",
-            "EDIT_TEMPLATE" => ""
+            "EDIT_TEMPLATE" => "",
         ),
     );
     ?>
