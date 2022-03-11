@@ -64,6 +64,14 @@ $arUrlRewrite=array (
     'PATH' => '/news/index.php',
     'SORT' => 100,
   ),
+  10 =>
+  array (
+    'CONDITION' => '#^/akcii/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/akcii/index.php',
+    'SORT' => 100,
+  ),
   5 => 
   array (
     'CONDITION' => '#^/#',

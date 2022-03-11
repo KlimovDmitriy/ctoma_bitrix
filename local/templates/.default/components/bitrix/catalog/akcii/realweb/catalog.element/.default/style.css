@@ -1,0 +1,149 @@
+.title_norm {
+    margin-top: 0 !important;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-family: "ralewayregular",sans-serif;
+    font-weight: bold;
+    color: #d82043;
+    font-size: 32px;
+}
+.width_paddingStandart {
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
+.width_norm {
+    max-width: 1240px;
+}
+.width {
+    margin: auto;
+    width: 100%;
+}
+.akciaFull {
+    display: flex;
+}
+.akciaFull__img {
+    flex-basis: 320px;
+    min-width: 320px;
+}
+.akciaFull__img div {
+    position: relative;
+}
+.akciaFull__img img {
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    display: block;
+    box-shadow: 2px 3.464px 36px 4px rgba(0,0,0,0.06);
+    border-bottom: 5px solid #d82043;
+}
+.akciaFull__info {
+    padding: 20px 50px 0;
+    color: #434343;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.akciaFull__srokText {
+    padding: 8px 35px;
+    font-weight: bold;
+    position: relative;
+}
+.akciaFull__srokText::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 16px;
+    left: 0;
+    top: 10px;
+    height: 17px;
+    background: url("/local/templates/main/images/icons.png") no-repeat 0 -30px;
+}
+.content_norm p {
+    margin: 0 0 20px;
+}
+.akciaFull__anons {
+    padding: 8px 35px;
+    font-weight: bold;
+}
+.akciaFull__kliniks {
+    padding: 8px 35px;
+    font-size: 15px;
+    font-family: "ralewayregular",sans-serif;
+    line-height: 20px;
+    font-weight: bold;
+    position: relative;
+}
+.akciaFull__kliniks::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 16px;
+    left: 0;
+    top: 10px;
+    height: 14px;
+    background: url("/local/templates/main/images/icons.png") no-repeat 0 -14px;
+}
+.akciaFull__kliniks label {
+    color: #d82043;
+    display: inline-block;
+}
+.akciaFull__kliniks div {
+    display: inline-block;
+    width: 100%;
+}
+.akciaFull__kliniks div div {
+    display: block;
+}
+.akciaFull__kliniks a {
+    color: #d82043;
+    text-decoration: underline;
+}
+.akciaFull__zapisatsa {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid #f2f2f2;
+    position: relative;
+}
+@media only screen and (min-width:992px) {
+    .akciaFull__img div::before {
+        content: '';
+        background: white;
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        width: 100%;
+        height: 100%;
+        box-shadow: 4px 6.928px 23.04px 0.96px rgba(0,0,0,0.1);
+    }
+}
+@media only screen and (max-width:1366px) and (min-width:1200px) {
+    .akciaFull__img {
+        flex-basis: 320px;
+        min-width: 320px;
+    }
+}
+@media only screen and (max-width:767px) and (min-width:480px) {
+    .akciaFull__info {
+        padding: 10px 20px 0;
+    }
+    .akciaFull__img {
+        flex: auto;
+        min-width: inherit;
+    }
+}
+@media only screen and (max-width:499px) and (min-width:0px) {
+    .akciaFull {
+        flex-direction: column;
+    }
+    .akciaFull__info {
+        padding: 10px 0;
+    }
+    .title_norm {
+        margin-top: 10px;
+        margin-bottom: 0;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px 15px;
+    }
+}
