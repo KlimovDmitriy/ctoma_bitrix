@@ -22,14 +22,15 @@ foreach ($arResult['PROPERTIES']['OTHER_ILLNESSES']['VALUE'] as $other) {
     $res = CIBlockElement::GetByID($other);
     if ($ar_res = $res->GetNextElement()) {
         $arFields = $ar_res->GetFields();
-        $arProps = $ar_res->GetProperties();
+    //    $arProps = $ar_res->GetProperties();
 
         $alt_name = $arFields['NAME'];
+        /*
         if ($arProps['MENU_NAME']['VALUE'] != '') {
 
 
             $alt_name = $arProps['MENU_NAME']['VALUE'];
-        }
+        }*/
         $url = $arFields['DETAIL_PAGE_URL'];
 
         $arResult['OTHERS'][] = ['NAME' => $alt_name, 'LINK' => $url];

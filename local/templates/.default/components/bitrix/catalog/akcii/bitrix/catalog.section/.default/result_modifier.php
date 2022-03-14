@@ -15,6 +15,8 @@ foreach ($arResult['ITEMS'] as $key => $item) {
     }
     $arResult["ITEMS"][$key]['CLINICS'] = $cls;
 
-
+echo '<pre>';
+print_r($item);
+echo '</pre>';
 }
 
