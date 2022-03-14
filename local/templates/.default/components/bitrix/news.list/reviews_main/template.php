@@ -77,7 +77,7 @@ $this->setFrameMode(true);
                                 <div class="otzyvDefault__more">
                                     <a href="<?= $item['DETAIL_PAGE_URL']; ?>" class="button_red">Подробнее</a>
                                 </div> <div class="otzyvDefault__more">
-                                    <a href="/reviews/add/" class="button_red">Оставить отзыв</a>
+                                    <a href="/add_review/" class="button_red">Оставить отзыв</a>
                                 </div>
                             </div>
                         </div>
