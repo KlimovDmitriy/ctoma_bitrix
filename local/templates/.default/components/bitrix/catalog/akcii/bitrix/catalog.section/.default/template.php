@@ -20,16 +20,20 @@
 				<div class="akciiView__label">Стоматология:</div>
 
 				<?
-                foreach ($arElement['CLINICS'] as $number) {
-                    $arFilter = Array("IBLOCK_ID"=>\Realweb\Site\Site::getIblockId('clinics'), "ID"=>$number);
-                    $res = CIBlockElement::GetList(Array(), $arFilter);
-                    if ($ob = $res->GetNextElement()){;
-                        $arFields = $ob->GetFields();
-                        echo '<a href="'.$arFields["LIST_PAGE_URL"].$arFields["DETAIL_PAGE_URL"].'">'.$arFields["NAME"].'</a>, ';
+                $i = 0;
+                foreach ($arElement['CLINICS'] as $clinic) {
+
+                        echo '<a href="'.$clinic["DETAIL_PAGE_URL"].'">'.$clinic["NAME"].'</a> ';
+                    $i++;
+                    if($i == 3) {
+                        break;
                     }
                 }
                 ?>
-				<a href="<?=$arElement["DETAIL_PAGE_URL"]?>">и другие</a>
+                <?
+                if (count($arElement['CLINICS']) >= 4) { ?>
+                 <a href="<?=$arElement["DETAIL_PAGE_URL"]?>">и другие</a>
+                <? } ?>
 			</div>
 
 			<div class="akciiView__more">

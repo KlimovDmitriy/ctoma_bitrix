@@ -35,12 +35,12 @@ $this->setFrameMode(true);
                 <div>
                     <div class="otzyvDefault__vrach width_paddingStandart">
                         <div>
-                            <a href="<?=$arResult['DOCTOR_URL'];?>">
-                                <img src="<?=$arResult['DOCTOR_DETAIL_PICTURE'];?>" alt="Отзыв о враче <?=$arResult['DOCTOR_NAME'];?>" width="320" height="320">
+                            <a href="<?=$arResult["DOCTOR_INFO"]["DETAIL_PAGE_URL"];?>">
+                                <img src="<?=$arResult['DOCTOR_DETAIL_PICTURE'];?>" alt="Отзыв о враче <?=$arResult["DOCTOR_INFO"]["NAME"];?>" width="320" height="320">
                             </a>
                         </div>
                         <div class="otzyvDefault__name">
-                            <span><?=$arResult["DISPLAY_PROPERTIES"]["DOCTOR"]["DISPLAY_VALUE"];?></span>
+                            <span><a href="<?=$arResult["DOCTOR_INFO"]["DETAIL_PAGE_URL"];?>"><?=$arResult["DOCTOR_INFO"]["NAME"];?></a></span>
                         </div>
                         <div class="otzyvDefault__dolznost">
                             <div><?=$arResult['DOCTOR_POSITION'];?></div>

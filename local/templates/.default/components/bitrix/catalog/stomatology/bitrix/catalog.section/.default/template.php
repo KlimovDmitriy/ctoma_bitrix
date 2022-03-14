@@ -20,6 +20,61 @@ $name = !empty($arResult['IPROPERTY_VALUES']['SECTION_PAGE_TITLE'])
 <h1 class="service__titleText title_norm width width_norm width_paddingStandart"><? echo $name; ?></h1>
 <div class="serviceDefault content_norm">
 <?php echo $arResult['DESCRIPTION']; ?>
+    <?php if($arResult['PRICE_LIST']):
+        $i = 0;?>
+        <div class="praiseTable">
+            <div>
+                <div>
+                    <div class="praiseTable__group">
+                        <div class="praiseTable__nameGroup">
+                            <div><?= $arResult['PRICE_LIST']['NAME'] ?></div>
+                        </div>
+                        <div class="praiseTable__list">
+                            <?php
+                            foreach ($arResult['PRICE_LIST']['ITEMS'] as $item): ?>
+                                <div class="praiseTable__row <?= $i % 2 == 0 ? 'odd' : 'even' ?>">
+                                    <div class="praiseTable__name">
+                                        <?= $item['NAME'] ?>
+                                    </div>
+                                    <div class="praiseTable__cena">
+                                        <?= $item['PROPERTY_PRICE_VALUE']; ?>
+                                    </div>
+                                </div>
+                                <?php
+                                $i++;
+                            endforeach; ?>
+                            <?php
+                            if ($arResult['PRICE_LIST']['SUBSECTION']): ?>
+                                <?php
+                                foreach ($arResult['PRICE_LIST']['SUBSECTION'] as $key => $subsection): ?>
+                                    <div class="praiseTable__row <?= $i++ % 2 == 0 ? 'odd' : 'even' ?>">
+                                        <div class="praiseTable__delimiter">
+                                            <div><?= $subsection['NAME'] ?></div>
+                                        </div>
+                                    </div>
+                                    <?php
+                                    foreach ($arResult['PRICE_LIST']['SUBSECTION'][$key]['ITEMS'] as $item): ?>
+                                        <div class="praiseTable__row <?= $i % 2 == 0 ? 'odd' : 'even' ?>">
+                                            <div class="praiseTable__name">
+                                                <?= $item['NAME'] ?>
+                                            </div>
+                                            <div class="praiseTable__cena">
+                                                <?= $item['PROPERTY_PRICE_VALUE']; ?>
+                                            </div>
+                                        </div>
+                                        <?php
+                                        $i++;
+                                    endforeach; ?>
+                                <?php
+                                endforeach; ?>
+                            <?php
+                            endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
     <?php if(!$arResult['UF_HIDE_BUTTON']):?>
         <div class="service__zapisatsa">
             <a href="/make-an-appointment" class="button_red" target="_blank">Записаться</a>
