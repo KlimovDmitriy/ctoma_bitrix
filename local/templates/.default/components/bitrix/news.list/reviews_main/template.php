@@ -55,12 +55,9 @@ $this->setFrameMode(true);
                                                             <li><a href="/clinics/<?= $key ?>/"
                                                                    hreflang="ru"><?= $clinic ?></a></li>
                                                         <? } ?>
-
                                                     </ul>
                                                 </div>
-
                                             </div>
-
                                         </div>
                                     </div>
                                 <? } ?>
