@@ -13,10 +13,10 @@ $mainElements = CIBlockElement::GetList(
   ['ID', 'IBLOCK_ID', 'DETAIL_PAGE_URL', 'NAME', 'DETAIL_PICTURE']
 );
 while ($mainElement = $mainElements->GetNext()) {
-    print_r(CFile::GetFileArray($mainElement['DETAIL_PICTURE'])->Fetch());
+    print_r(CFile::GetFileArray($mainElement['DETAIL_PICTURE']));
     $arResult['SECTIONS'][] = [
       'SECTION_PAGE_URL' => $mainElement['DETAIL_PAGE_URL'],
       'NAME' => $mainElement['NAME'],
-      'PICTURE' => CFile::GetFileArray($mainElement['DETAIL_PICTURE'])->Fetch()
+      'PICTURE' => CFile::GetFileArray($mainElement['DETAIL_PICTURE'])
     ];
 }
