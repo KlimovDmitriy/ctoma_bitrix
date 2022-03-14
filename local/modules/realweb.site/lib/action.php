@@ -81,7 +81,7 @@ class Action
         }
         if ($input['akc_name'] != '') {
             $sumbission_data[] = ['LABEL' => 'Название акции', 'VALUE' => $input['akc_name']];
-           // $sumbission_data = array_merge($akc, $sumbission_data);
+            // $sumbission_data = array_merge($akc, $sumbission_data);
         }
         if ($input['vrac_name'] != '') {
             $sumbission_data[] = ['LABEL' => 'Врач к которому производится запись', 'VALUE' => $input['vrac_name']];
@@ -99,18 +99,63 @@ class Action
         \Bitrix\Main\Loader::includeModule('iblock');
 
         $el = new \CIBlockElement;
-        $iblock_id = Site::getIblockId('RESULTS');
-        $section_id = false;
-        $fields = array(
-            "DATE_CREATE" => date("d.m.Y H:i:s"), //Передаем дата создания
-            "CREATED_BY" => $GLOBALS['USER']->GetID(),    //Передаем ID пользователя кто добавляет
-            "IBLOCK_ID" => $iblock_id, //ID информационного блока
-            "PROPERTY_VALUES" => $PROPS, // Передаем массив значении для свойств
-            "NAME" => $PROPS['form'] . ' от ' . date("d.m.Y H:i:s"),
-            "ACTIVE" => "Y", //поумолчанию делаем активным или ставим N для отключении поумолчанию
-            "PREVIEW_TEXT" => $html
 
-        );
+
+        if ($PROPS['form'] == 'Оставить отзыв') {
+
+            $PROPS2 = [];
+
+
+            $SELECT_IBLOCK_ID = Site::getIblockId(['doctors']);
+            $doctor_name = $sumbission_data['doctor']['VALUE'];
+            $select_elements = Site::getIBlockElements(['IBLOCK_ID' => $SELECT_IBLOCK_ID, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "NAME" => $doctor_name]);
+
+            $doctor_id = array_key_first($select_elements);
+
+
+            if ($doctor_id > 0) {
+                $PROPS2['DOCTOR'] = $doctor_id;
+            }
+
+            /*Оставление отзыва*/
+
+
+            $iblock_id = Site::getIblockId('reviews');
+            $arParams = array("replace_space" => "_", "replace_other" => "");
+            $trans = \Cutil::translit($PROPS['fio'], "ru", $arParams);
+            $fields = array(
+                "DATE_CREATE" => date("d.m.Y H:i:s"), //Передаем дата создания
+                "CREATED_BY" => $GLOBALS['USER']->GetID(),    //Передаем ID пользователя кто добавляет
+                "IBLOCK_ID" => $iblock_id, //ID информационного блока
+                "PROPERTY_VALUES" => $PROPS2, // Передаем массив значении для свойств
+                "PREVIEW_TEXT" => $sumbission_data['comment']['VALUE'],
+                "ACTIVE_FROM" => date('d.m.Y'),
+                "CODE" => $trans.'_'.time(),
+                "NAME" => $PROPS['fio'],
+                "ACTIVE" => "N", //поумолчанию делаем активным или ставим N для отключении поумолчанию
+
+            );
+
+
+        } else {
+            /*Остальные формы*/
+
+            $iblock_id = Site::getIblockId('RESULTS');
+
+            $fields = array(
+                "DATE_CREATE" => date("d.m.Y H:i:s"), //Передаем дата создания
+                "CREATED_BY" => $GLOBALS['USER']->GetID(),    //Передаем ID пользователя кто добавляет
+                "IBLOCK_ID" => $iblock_id, //ID информационного блока
+                "PROPERTY_VALUES" => $PROPS, // Передаем массив значении для свойств
+                "NAME" => $PROPS['form'] . ' от ' . date("d.m.Y H:i:s"),
+                "ACTIVE" => "Y", //поумолчанию делаем активным или ставим N для отключении поумолчанию
+                "PREVIEW_TEXT" => $html
+
+            );
+
+        }
+
+
         if (empty($errors)) {
             //Результат в конце отработки
             if ($ID = $el->Add($fields)) {
