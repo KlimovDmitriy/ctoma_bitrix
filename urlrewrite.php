@@ -72,7 +72,7 @@ $arUrlRewrite = array(
             'PATH' => '/akcii/index.php',
             'SORT' => 100,
         ),
-    10 =>
+    11 =>
         array(
             'CONDITION' => '#^/bolezni/#',
             'RULE' => '',
