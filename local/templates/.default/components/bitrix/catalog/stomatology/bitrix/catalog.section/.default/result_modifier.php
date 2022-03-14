@@ -1,6 +1,6 @@
 <?php
 
-$arResult['DETAIL_TEXT']=str_replace('[[FORM]]','FORM',$arResult['DETAIL_TEXT']);
+$arResult['DESCRIPTION']=str_replace('[[FORM]]','FORM',$arResult['DESCRIPTION']);
 
 $priceSections = CIBlockSection::GetList(['SORT'=>'ASC'], ['IBLOCK_ID' => \Realweb\Site\Site::getIblockId('price_list'), 'UF_SERVICE_GROUP' => $arResult['ID']], false, ['ID', 'NAME']);
 $priceList = [];

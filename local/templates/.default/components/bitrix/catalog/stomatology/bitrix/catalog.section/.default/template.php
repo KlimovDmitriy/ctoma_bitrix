@@ -77,7 +77,7 @@ $name = !empty($arResult['IPROPERTY_VALUES']['SECTION_PAGE_TITLE'])
     <?php endif; ?>
     <?php if(!$arResult['UF_HIDE_BUTTON']):?>
         <div class="service__zapisatsa">
-            <a href="/make-an-appointment" class="button_red" target="_blank">Записаться</a>
+            <a href="/make-an-appointment/" class="button_red" target="_blank">Записаться</a>
         </div>
     <?php endif; ?>
 </div>
