@@ -1,0 +1,16 @@
+.reviews__swiperButtonNext.swiper-button-next.swiper-button-white {
+    background-image: url('/local/templates/main/images/btn_right_o.png') !important;
+    width: 65px !important;
+    height: 65px !important;
+    right: 20% !important;
+    margin-top: -21px;
+    background-position: top;
+    background-size: cover;
+    opacity: 0.7;
+}
+.reviews__swiperButtonPrev.swiper-button-prev.swiper-button-white {
+    left: 20% !important;
+    background-image: url('/local/templates/main/images/btn_left_o.png') !important;
+    width: 65px !important;
+    height: 65px !important;
+}
