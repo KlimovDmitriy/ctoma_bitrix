@@ -155,12 +155,6 @@ $APPLICATION->SetTitle("Главная");
     <? $APPLICATION->IncludeComponent("realweb:blank", "subscribe", array(), false, array('HIDE_ICONS' => 'Y')); ?>
 
 
-
-    <div id="stomatologyHome" xmlns:v-bind="http://www.w3.org/1999/xhtml" class="stomatology width width_full">
-      <div class="stomatology__title title_homeRed width width_norm width_paddingStandart">
-        <span class="title__br"></span><span class="title__text">Врачи</span><span class="title__br"></span>
-      </div>
-
     <? $APPLICATION->IncludeComponent(
     "bitrix:news.list",
     "doctors_slider",
@@ -219,11 +213,7 @@ $APPLICATION->SetTitle("Главная");
     )
 ); ?>
 
-  <div class="stomatology__actionsBottom width width_paddingStandart width_norm">
-    <a href="/personal" class="stomatology__more">Все врачи</a>
-    <a href="/jobs" class="stomatology__more">Вакансии</a>
-  </div>
-</div>
+
 </div>
     <? $APPLICATION->IncludeComponent("realweb:blank", "clinics_map", array(), false, array('HIDE_ICONS' => 'Y')); ?>
 
