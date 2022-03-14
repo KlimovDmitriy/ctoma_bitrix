@@ -35,7 +35,7 @@ $APPLICATION->IncludeComponent(
         "SECTION_FIELDS" => array("", ""),
         "SECTION_ID" => "",
         "SECTION_URL" => "",
-        "SECTION_USER_FIELDS" => array("", ""),
+        "SECTION_USER_FIELDS" => array("UF_SHOW_ON_MAIN", ""),
         "SHOW_PARENT_NAME" => "Y",
         "TOP_DEPTH" => "2",
         "VIEW_MODE" => "LINE"
