@@ -20,13 +20,20 @@
 				<div class="akciiView__label">Стоматология:</div>
 
 				<?
+                $i = 0;
                 foreach ($arElement['CLINICS'] as $clinic) {
 
-                        echo '<a href="'.$clinic["DETAIL_PAGE_URL"].'">'.$clinic["NAME"].'</a>, ';
-
+                        echo '<a href="'.$clinic["DETAIL_PAGE_URL"].'">'.$clinic["NAME"].'</a> ';
+                    $i++;
+                    if($i == 3) {
+                        break;
+                    }
                 }
                 ?>
-				<a href="<?=$arElement["DETAIL_PAGE_URL"]?>">и другие</a>
+                <?
+                if (count($arElement['CLINICS']) >= 4) { ?>
+                 <a href="<?=$arElement["DETAIL_PAGE_URL"]?>">и другие</a>
+                <? } ?>
 			</div>
 
 			<div class="akciiView__more">
