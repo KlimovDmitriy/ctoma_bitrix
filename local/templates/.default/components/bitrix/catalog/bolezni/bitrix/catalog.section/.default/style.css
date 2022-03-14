@@ -1,0 +1,130 @@
+.bolezni__container {
+    padding-bottom: 20px;
+}
+
+.bolezni__title {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.bolezni__center {
+    display: -webkit-flex;
+    display: flex;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+    .bolezni__center {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 479px) and (min-width: 0px) {
+    .bolezni__center {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+.bolezni__leftSidebar {
+    -webkit-flex-basis: 30%;
+    flex-basis: 30%;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+    .bolezni__leftSidebar {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 479px) and (min-width: 0px) {
+    .bolezni__leftSidebar {
+        display: none;
+    }
+}
+
+.bolezni__content {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 20px 30px 20px;
+    -webkit-flex: auto;
+    flex: auto;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+    .bolezni__content {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 479px) and (min-width: 0px) {
+    .bolezni__content {
+        padding: 0;
+    }
+}
+
+.bolezni__nav {
+    list-style: none;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.bolezni__navItem a {
+    display: block;
+    padding: 5px 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.bolezni__navItem.active a {
+    background-color: #d82043;
+    color: #fff;
+}
+
+.bolezni__group {
+    list-style: none;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.bolezni__list {
+    list-style: none;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.bolezni__listItem {
+    -webkit-flex-basis: 33%;
+    flex-basis: 33%;
+    margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+    .bolezni__listItem {
+        -webkit-flex-basis: 100%;
+        flex-basis: 100%;
+    }
+}
+
+.bolezni__bottomMobile {
+    display: none;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+    .bolezni__bottomMobile {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 479px) and (min-width: 0px) {
+    .bolezni__bottomMobile {
+        display: block;
+    }
+}
