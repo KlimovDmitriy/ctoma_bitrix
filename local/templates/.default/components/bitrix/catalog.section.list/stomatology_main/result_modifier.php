@@ -16,6 +16,6 @@ while ($mainElement = $mainElements->GetNext()) {
     $arResult['SECTIONS'][] = [
       'SECTION_PAGE_URL' => $mainElement['DETAIL_PAGE_URL'],
       'NAME' => $mainElement['NAME'],
-      'PICTURE' => CFile::GetByID($mainElement['DETAIL_PICTURE'])->Fetch()
+      'PICTURE' => CFile::GetFileArray($mainElement['DETAIL_PICTURE'])->Fetch()
     ];
 }
