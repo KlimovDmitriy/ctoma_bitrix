@@ -10,3 +10,16 @@ $(function () {
         click_to_move: false
     });
 });
+
+$(window).scroll(function () {
+    if ($(this).scrollTop() !== 0) {
+        $('#toTop').fadeIn();
+    } else {
+        $('#toTop').fadeOut();
+    }
+});
+
+$('#toTop').click(function () {
+    var top = $('.articleDefault__top').offset().top;
+    $('body,html').animate({scrollTop: top}, 800);
+});
