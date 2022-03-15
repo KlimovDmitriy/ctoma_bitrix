@@ -334,6 +334,7 @@ $APPLICATION->IncludeComponent(
     "CACHE_TYPE" => "A",
     "CACHE_TIME" => "36000000",
     "CACHE_NOTES" => "",
-    "CACHE_GROUPS" => "Y"
+    "CACHE_GROUPS" => "Y",
+      "FILTER_NAME" => "clinicFilter"
   )
 );?>
