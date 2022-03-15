@@ -18282,10 +18282,6 @@ display:none;
     background-size: cover;
     background-image: url("/local/templates/main/images/services/bg.jpg");
 }
-.uslugi_all {
-    min-height: 920px;
-    width: 100%;
-}
 .serviceChildren__top {
     background-position: center 100px !important;
     padding-bottom: 20px !important;
