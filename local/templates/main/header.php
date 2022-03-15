@@ -23,7 +23,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/validate.min.js');
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/jquery-ui/jquery-ui.js');
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/jquery-ui/rus.js');
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.twentytwenty.js');
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/custom.js');
 
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/jquery-ui/jquery-ui.css');
