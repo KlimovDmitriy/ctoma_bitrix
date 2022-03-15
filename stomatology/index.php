@@ -1,6 +1,8 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
-$APPLICATION->SetTitle("");
+$APPLICATION->SetPageProperty("title", "Стоматология «Стома»: сеть стоматологических клиник в Санкт-Петербурге");
+$APPLICATION->SetPageProperty("keywords", "");
+$APPLICATION->SetPageProperty("description", "Сеть стоматологических клиник «Стома» оказывает полный спектр услуг стоматологии: детская стоматология и для взрослых. 8 клиник в Санкт-Петербурге рядом с метро, телефон для справок: +7 (812) 321-02-01");
 
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:catalog",
