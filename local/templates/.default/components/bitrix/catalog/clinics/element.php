@@ -203,7 +203,7 @@ $APPLICATION->IncludeComponent(
 
 <? $APPLICATION->IncludeComponent(
   "bitrix:news.list",
-  "akcii",
+  "akcii_list",
   array(
     "ACTIVE_DATE_FORMAT" => "d.m.Y",
     "ADD_SECTIONS_CHAIN" => "N",
