@@ -71,6 +71,7 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
 
             <?php \Realweb\Site\Site::showIncludeText('LEFT_BANNER_STATIC'); ?>
 
+            <? $APPLICATION->IncludeComponent("realweb:blank", "popup_map", array(), false, array('HIDE_ICONS' => 'Y')); ?>
 
         </div>
 

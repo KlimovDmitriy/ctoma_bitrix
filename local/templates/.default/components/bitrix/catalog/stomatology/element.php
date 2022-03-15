@@ -59,6 +59,7 @@ $el = CIBlockElement::GetList(array(), array('IBLOCK_ID'=>$arParams['IBLOCK_ID']
 
 
             <?php \Realweb\Site\Site::showIncludeText('LEFT_BANNER_STATIC'); ?>
+            <? $APPLICATION->IncludeComponent("realweb:blank", "popup_map", array(), false, array('HIDE_ICONS' => 'Y')); ?>
 
 
         </div>
