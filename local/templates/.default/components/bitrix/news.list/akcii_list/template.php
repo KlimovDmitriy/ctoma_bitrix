@@ -15,7 +15,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<div id="actionsClinik" class="actions width width_full">
+<div id="actionsClinik" class="actions actions_clinik width width_full fullCommonWrap">
     <h2 class="actions__title title_home width width_norm width_paddingStandart"><span class="title__br"></span><span
                 class="title__text">Акции</span><span class="title__br"></span></h2>
 <div class="act__CommonBlock">
