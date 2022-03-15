@@ -16,6 +16,7 @@ $this->setFrameMode(true);
 global $clinic;
 $GLOBALS["clinicFilter"]["PROPERTY_WORK_PLACE"] = $arResult['ID'];
 $GLOBALS["clinicFilter"]["PROPERTY_CLINICS"] = $arResult['ID'];
+$GLOBALS["clinicFilter"]["UF_CLINICS"] = $arResult['ID'];
 $clinic = [
         'NAME' => $arResult['NAME'],
     'LONGITUDE' => $arResult['PROPERTIES']['LONGITUDE'],
