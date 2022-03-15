@@ -201,6 +201,36 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
         ?>
 
         <?php
+        global $questionFilter;
+        $questionFilter = ['PROPERTY_WHERE_SHOW_SECTION' => $arResult['VARIABLES']['SECTION_ID']];
+        $APPLICATION->IncludeComponent(
+            "bitrix:catalog.section",
+            "question_answer",
+            array(
+                "ADD_SECTIONS_CHAIN" => "Y",
+                "CACHE_FILTER" => "N",
+                "CACHE_GROUPS" => "Y",
+                "CACHE_TIME" => "36000000",
+                "CACHE_TYPE" => "A",
+                "COUNT_ELEMENTS" => "N",
+                "FILTER_NAME" => "questionFilter",
+                "IBLOCK_ID" => \Realweb\Site\Site::getIblockId('faq'),
+                "IBLOCK_TYPE" => "content",
+                "SECTION_CODE" => $_REQUEST["SECTION_CODE"],
+                "SECTION_FIELDS" => array("", ""),
+                "SECTION_ID" => "",
+                "SECTION_URL" => "",
+                "SECTION_USER_FIELDS" => array("", ""),
+                "SHOW_PARENT_NAME" => "Y",
+                "TOP_DEPTH" => "2",
+                "PAGE_ELEMENT_COUNT" => "3",
+                "VIEW_MODE" => "LINE"
+            ),
+            $component
+        );
+        ?>
+
+        <?php
         global $portfFilter;
         $portfFilter = ['PROPERTY_WHERE_SHOW_SECTION' => $arResult['VARIABLES']['SECTION_ID']];
         $APPLICATION->IncludeComponent(
