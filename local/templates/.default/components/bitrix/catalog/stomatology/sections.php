@@ -17,8 +17,9 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
         "PATH" => "",
         "SITE_ID" => "s1"
     )
-);
-$APPLICATION->IncludeComponent(
+); ?>
+<div class="services__container">
+<? $APPLICATION->IncludeComponent(
     "bitrix:catalog.section.list",
     "",
     Array(
@@ -41,3 +42,5 @@ $APPLICATION->IncludeComponent(
         "VIEW_MODE" => "LINE"
     )
 );
+?>
+</div>

@@ -13,12 +13,19 @@ ErrorDocument 404 /404.php
 <IfModule mod_rewrite.c>
 
 	RewriteEngine On
+
+
+
 	#Добавляем слеш в конце урл
 	RewriteBase /
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_URI} !(.*)/$
     RewriteRule ^(.*[^/])$ $1/ [L,R=301]
     #Добавляем слеш в конце урл
+    #Удаляем несколько слешей подряд
+    RewriteCond %{THE_REQUEST} ([^\s]*)\/{2,}(\?[^\s]*)?
+    RewriteRule (.*) %1 [R=301,L]
+    #Удаляем несколько слешей подряд
     Options +FollowSymLinks
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-l
@@ -26,6 +33,7 @@ ErrorDocument 404 /404.php
 	RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
 	RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
 	RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+
 </IfModule>
 
 <IfModule mod_dir.c>
@@ -43,3 +51,4 @@ Redirect 301 /stati /articles/
 Redirect 301 /vrac /personal/
 Redirect 301 /form /
 Redirect 301 /reviews/add /add_review/
+Redirect 301 /otzyvy /reviews/
