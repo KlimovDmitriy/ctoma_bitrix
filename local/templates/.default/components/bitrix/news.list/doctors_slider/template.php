@@ -12,6 +12,11 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<? if (count($arResult['ITEMS']) > 0) { ?>
+<div id="stomatologyHome" xmlns:v-bind="http://www.w3.org/1999/xhtml" class="stomatology width width_full">
+    <div class="stomatology__title title_homeRed width width_norm width_paddingStandart">
+        <span class="title__br"></span><span class="title__text">Врачи</span><span class="title__br"></span>
+    </div>
 
   <div class="stomatology__content width width_paddingStandart">
 
@@ -71,3 +76,11 @@ $this->setFrameMode(true);
           <div class="stomatology__swiperThumbButtonNext swiper-button-next swiper-button-white"></div>
       </div>
   </div><!-- /end slider thumbs -->
+
+      <div class="stomatology__actionsBottom width width_paddingStandart width_norm">
+          <a href="/personal/" class="stomatology__more">Все врачи</a>
+          <a href="/jobs/" class="stomatology__more">Вакансии</a>
+      </div>
+  </div>
+
+<? } ?>

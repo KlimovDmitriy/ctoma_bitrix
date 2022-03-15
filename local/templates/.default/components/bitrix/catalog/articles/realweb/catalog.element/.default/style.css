@@ -15,3 +15,25 @@
 }
 .pluso-more{display:none !important;}
 .timeto{float:right}
+
+#toTop {
+    width: 40px;
+    height: 170px !important;
+    border-radius: 5px;
+    background: #d82043;
+    text-align: center;
+    padding: 48px 1px 5px 4px;
+    position: fixed;
+    bottom: 30%;
+    right: 10px;
+    cursor: pointer;
+    display: none;
+    color: #fff;
+    font-family: 'Open Sans';
+    font-size: 14px;
+    z-index: 1;
+}
+
+.toTop {
+    transform: rotate(90deg);
+}

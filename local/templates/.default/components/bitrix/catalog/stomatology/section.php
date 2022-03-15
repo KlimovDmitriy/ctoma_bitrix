@@ -36,10 +36,10 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
     }
     ?>
 <?php else: ?>
-<div class="service__container ">
+<div class="<? if ($arResult['VARIABLES']['SECTION_ID'] == 94): ?>serviceChildren__container<?else:?>service__container<? endif; ?>">
+    <? if ($arResult['VARIABLES']['SECTION_ID'] == 94): ?><div class="serviceChildren__top"><? endif; ?>
+        <div class="width width_norm width_paddingStandart<? if ($arResult['VARIABLES']['SECTION_ID'] == 94): ?> serviceChildren__center<?else:?> service__center<? endif; ?>">
 
-
-    <div class="service__center width width_norm width_paddingStandart">
         <div class="service__leftSidebar">
 
             <div class="serviceMenu">
@@ -206,5 +206,71 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
 
     </div>
     </div>
-
+        <? if ($arResult['VARIABLES']['SECTION_ID'] == 94): ?></div><? endif; ?>
+</div>
     <?php endif; ?>
+
+
+<?
+global $servFilter;
+$servFilter = ['PROPERTY_SERVICES_GROUPS' => $arResult['VARIABLES']['SECTION_ID']];
+?>
+<? $APPLICATION->IncludeComponent(
+    "bitrix:news.list",
+    "doctors_slider",
+    array(
+        "ACTIVE_DATE_FORMAT" => "d.m.Y",
+        "ADD_SECTIONS_CHAIN" => "N",
+        "AJAX_MODE" => "N",
+        "AJAX_OPTION_ADDITIONAL" => "",
+        "AJAX_OPTION_HISTORY" => "N",
+        "AJAX_OPTION_JUMP" => "N",
+        "AJAX_OPTION_STYLE" => "Y",
+        "CACHE_FILTER" => "N",
+        "CACHE_GROUPS" => "Y",
+        "CACHE_TIME" => "36000000",
+        "CACHE_TYPE" => "A",
+        "CHECK_DATES" => "Y",
+        "DETAIL_URL" => "",
+        "DISPLAY_BOTTOM_PAGER" => "N",
+        "DISPLAY_DATE" => "N",
+        "DISPLAY_NAME" => "Y",
+        "DISPLAY_PICTURE" => "Y",
+        "DISPLAY_PREVIEW_TEXT" => "Y",
+        "DISPLAY_TOP_PAGER" => "N",
+        "FIELD_CODE" => array(0 => "NAME", 1 => "PREVIEW_TEXT", 2 => "PREVIEW_PICTURE", 3 => "DETAIL_PICTURE",),
+        "FILTER_NAME" => "servFilter",
+        "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+        "IBLOCK_ID" => \Realweb\Site\Site::getIblockId('doctors'),
+        "IBLOCK_TYPE" => "content",
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+        "INCLUDE_SUBSECTIONS" => "N",
+        "MESSAGE_404" => "",
+        "NEWS_COUNT" => "200",
+        "PAGER_BASE_LINK_ENABLE" => "N",
+        "PAGER_DESC_NUMBERING" => "N",
+        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+        "PAGER_SHOW_ALL" => "N",
+        "PAGER_SHOW_ALWAYS" => "N",
+        "PAGER_TEMPLATE" => ".default",
+        "PAGER_TITLE" => "Новости",
+        "PARENT_SECTION" => "",
+        "PARENT_SECTION_CODE" => "",
+        "PREVIEW_TRUNCATE_LEN" => "",
+        "PROPERTY_CODE" => array(0 => "POSITION", 1 => "EXPERIENCE", 2 => "EDUCATION"),
+        "SET_BROWSER_TITLE" => "N",
+        "SET_LAST_MODIFIED" => "N",
+        "SET_META_DESCRIPTION" => "N",
+        "SET_META_KEYWORDS" => "N",
+        "SET_STATUS_404" => "N",
+        "SET_TITLE" => "N",
+        "SHOW_404" => "N",
+        "SORT_BY1" => "SORT",
+        "SORT_BY2" => "TIMESTAMP_X",
+        "SORT_ORDER1" => "ASC",
+        "SORT_ORDER2" => "DESC",
+        "STRICT_SECTION_CHECK" => "N"
+    )
+); ?>
+    <? $APPLICATION->IncludeComponent("realweb:blank", "clinics_map", array(), false, array('HIDE_ICONS' => 'Y')); ?>
+
