@@ -280,7 +280,6 @@ $el = CIBlockElement::GetList(array(), array('IBLOCK_ID'=>$arParams['IBLOCK_ID']
             "STRICT_SECTION_CHECK" => "N"
         )
     );
- $APPLICATION->IncludeComponent("realweb:blank", "clinics_map", array(), false, array('HIDE_ICONS' => 'Y')); ?>
     <? $APPLICATION->IncludeComponent("realweb:blank", "subscribe", array(), false, array('HIDE_ICONS' => 'Y')); ?>
     <? $APPLICATION->IncludeComponent(
       "bitrix:news.list",
