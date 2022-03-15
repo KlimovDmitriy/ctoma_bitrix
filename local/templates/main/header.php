@@ -26,7 +26,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/custom.js');
 
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/jquery-ui/jquery-ui.css');
-
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/style.css');
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/jquery.fancybox.min.css');
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/twentytwenty.css');
