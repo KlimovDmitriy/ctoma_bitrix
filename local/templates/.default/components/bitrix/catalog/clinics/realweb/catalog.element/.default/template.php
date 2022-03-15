@@ -13,6 +13,12 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+global $clinic;
+$clinic = [
+        'NAME' => $arResult['NAME'],
+    'LONGITUDE' => $arResult['PROPERTIES']['LONGITUDE'],
+    'LATITUDE' => $arResult['PROPERTIES']['LATITUDE']
+];
 $name = !empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'])
     ? $arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']
     : $arResult['NAME'];
