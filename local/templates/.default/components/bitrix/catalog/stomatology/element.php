@@ -453,7 +453,7 @@ $el = CIBlockElement::GetList(array(), array('IBLOCK_ID'=>$arParams['IBLOCK_ID']
       )
     ); ?>
 
-    $COMPONENTS = $APPLICATION->GetPageProperty('COMPONENTS');
+    <?$COMPONENTS = $APPLICATION->GetPageProperty('COMPONENTS');
     ?>
     <? if (is_array($COMPONENTS)) { ?>
         <?php foreach ($COMPONENTS as $PAGE_TYPE): ?>
