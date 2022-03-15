@@ -257,7 +257,7 @@ $APPLICATION->IncludeComponent(
     "ELEMENT_SORT_ORDER" => "asc",
     "ELEMENT_SORT_ORDER2" => "desc",
     "FILTER_HIDE_ON_MOBILE" => "N",
-    "FILTER_NAME" => "clinicFilter",
+    "FILTER_NAME" => "clinicFilters",
     "FILTER_VIEW_MODE" => "VERTICAL",
     "GIFTS_DETAIL_BLOCK_TITLE" => "Выберите один из подарков",
     "GIFTS_DETAIL_HIDE_BLOCK_TITLE" => "N",

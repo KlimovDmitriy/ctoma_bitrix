@@ -15,7 +15,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 $this->setFrameMode(true);
 global $clinic;
 $GLOBALS["clinicFilter"]["PROPERTY_WORK_PLACE"] = $arResult['ID'];
-$GLOBALS["clinicFilter"]["PROPERTY_CLINICS"] = $arResult['ID'];
+$GLOBALS["clinicFilters"]["PROPERTY_CLINICS"] = $arResult['ID'];
 $clinic = [
         'NAME' => $arResult['NAME'],
     'LONGITUDE' => $arResult['PROPERTIES']['LONGITUDE'],
