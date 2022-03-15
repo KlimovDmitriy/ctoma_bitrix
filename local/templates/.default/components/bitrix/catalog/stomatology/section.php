@@ -36,10 +36,10 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
     }
     ?>
 <?php else: ?>
-<div class="service__container ">
+<div class="<? if ($arResult['VARIABLES']['SECTION_ID'] == 94): ?>serviceChildren__container<?else:?>service__container<? endif; ?>">
+    <? if ($arResult['VARIABLES']['SECTION_ID'] == 94): ?><div class="serviceChildren__top"><? endif; ?>
+        <div class="width width_norm width_paddingStandart<? if ($arResult['VARIABLES']['SECTION_ID'] == 94): ?> serviceChildren__center<?else:?> service__center<? endif; ?>">
 
-
-    <div class="service__center width width_norm width_paddingStandart">
         <div class="service__leftSidebar">
 
             <div class="serviceMenu">
@@ -206,7 +206,8 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
 
     </div>
     </div>
-
+        <? if ($arResult['VARIABLES']['SECTION_ID'] == 94): ?></div><? endif; ?>
+</div>
     <?php endif; ?>
 
 

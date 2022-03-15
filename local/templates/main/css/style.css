@@ -3195,6 +3195,9 @@
     .articles__center {
         flex-direction: column;
     }
+    .serviceChildren__center {
+        flex-direction: column;
+    }
 }
 
 .width_paddingLeftRight {
@@ -18272,4 +18275,25 @@ display:none;
 }
 .doctorsFilter__left #specialization_list .bx-filter-parameters-box-title {
     padding-top: 7px !important;
+}
+.services__container {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-image: url("/local/templates/main/images/services/bg.jpg");
+}
+.uslugi_all {
+    min-height: 920px;
+    width: 100%;
+}
+.serviceChildren__top {
+    background-position: center 100px !important;
+    padding-bottom: 20px !important;
+    background-size: 30% !important;
+    background-image: url("/local/templates/main/images/bgChildren.jpg") !important;
+}
+.serviceChildren__center {
+    background: white;
+    padding-top: 30px;
+    display: flex;
 }
