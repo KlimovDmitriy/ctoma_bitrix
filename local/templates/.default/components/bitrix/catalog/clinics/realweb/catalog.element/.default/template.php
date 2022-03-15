@@ -14,6 +14,8 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 global $clinic;
+global $clinicFilter;
+$clinicFilter = ['PROPERTY_WORK_PLACE'=>$arResult["ID"]];
 $clinic = [
         'NAME' => $arResult['NAME'],
     'LONGITUDE' => $arResult['PROPERTIES']['LONGITUDE'],
