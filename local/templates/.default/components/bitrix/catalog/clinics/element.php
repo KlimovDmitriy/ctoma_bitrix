@@ -225,7 +225,7 @@ $APPLICATION->IncludeComponent(
     "DISPLAY_PREVIEW_TEXT" => "Y",
     "DISPLAY_TOP_PAGER" => "N",
     "FIELD_CODE" => array(0 => "NAME", 1 => "PREVIEW_TEXT", 2 => "PREVIEW_PICTURE", 3 => "ACTIVE_TO",),
-    "FILTER_NAME" => "clinicFilters",
+    "FILTER_NAME" => "clinicFilter",
     "HIDE_LINK_WHEN_NO_DETAIL" => "N",
     "IBLOCK_ID" => \Realweb\Site\Site::getIblockId('akcii'),
     "IBLOCK_TYPE" => "content",
