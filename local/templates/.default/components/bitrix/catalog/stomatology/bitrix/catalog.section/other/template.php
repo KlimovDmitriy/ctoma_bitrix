@@ -1,5 +1,6 @@
 <? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die(); ?>
 
+<? if (count($arResult['ITEMS']) > 0) { ?>
 <div class="views-element-container">
     <h2 class="portfolioBlock__title">
         <span class="title__br"></span>
@@ -32,3 +33,4 @@
         </div>
     </div>
 </div>
+<? } ?>
