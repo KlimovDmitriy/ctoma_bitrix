@@ -15,8 +15,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 /** @var CBitrixComponent $component */
 use \Bitrix\Main\Page\Asset;
 
-Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.twentytwenty.js');
-Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.event.move.js');
 
 $this->setFrameMode(true);
 ?>
