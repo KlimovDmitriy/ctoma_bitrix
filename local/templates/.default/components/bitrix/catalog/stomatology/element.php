@@ -233,7 +233,7 @@ $el = CIBlockElement::GetList(array(), array('IBLOCK_ID'=>$arParams['IBLOCK_ID']
                             "SECTION_USER_FIELDS" => array("", ""),
                             "SHOW_PARENT_NAME" => "Y",
                             "TOP_DEPTH" => "2",
-                            "PAGE_ELEMENT_COUNT" => "3",
+                            "PAGE_ELEMENT_COUNT" => "100",
                             "VIEW_MODE" => "LINE"
                         ),
                         $component
@@ -263,7 +263,7 @@ $el = CIBlockElement::GetList(array(), array('IBLOCK_ID'=>$arParams['IBLOCK_ID']
                             "SECTION_USER_FIELDS" => array("", ""),
                             "SHOW_PARENT_NAME" => "Y",
                             "TOP_DEPTH" => "2",
-                            "PAGE_ELEMENT_COUNT" => "3",
+                            "PAGE_ELEMENT_COUNT" => "100",
                             "VIEW_MODE" => "LINE"
                         ),
                         $component

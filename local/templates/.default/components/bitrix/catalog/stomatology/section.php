@@ -223,7 +223,7 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
                 "SECTION_USER_FIELDS" => array("", ""),
                 "SHOW_PARENT_NAME" => "Y",
                 "TOP_DEPTH" => "2",
-                "PAGE_ELEMENT_COUNT" => "3",
+                "PAGE_ELEMENT_COUNT" => "100",
                 "VIEW_MODE" => "LINE"
             ),
             $component
@@ -253,7 +253,7 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
                 "SECTION_USER_FIELDS" => array("", ""),
                 "SHOW_PARENT_NAME" => "Y",
                 "TOP_DEPTH" => "2",
-                "PAGE_ELEMENT_COUNT" => "3",
+                "PAGE_ELEMENT_COUNT" => "100",
                 "VIEW_MODE" => "LINE"
             ),
             $component
