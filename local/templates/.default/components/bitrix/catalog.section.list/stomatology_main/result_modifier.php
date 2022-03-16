@@ -5,9 +5,13 @@ foreach ($arResult['SECTIONS'] as $key => $section) {
         unset($arResult['SECTIONS'][$key]);
     }
 }
+$arFilter = ['IBLOCK_ID' => \Realweb\Site\Site::getIblockId('stomatology'), 'PROPERTY_SHOW_ON_MAIN_VALUE' => 'Да'];
+if ($GLOBALS["clinicFilter"]["UF_CLINICS"]) {
+    array_push($arFilter, ['PROPERTY_CLINICS' => $GLOBALS["clinicFilter"]["UF_CLINICS"]]);
+}
 $mainElements = CIBlockElement::GetList(
   ['SORT' => 'ASC'],
-  ['IBLOCK_ID' => \Realweb\Site\Site::getIblockId('stomatology'), 'PROPERTY_SHOW_ON_MAIN_VALUE' => 'Да'],
+  $arFilter,
   false,
   false,
   ['ID', 'IBLOCK_ID', 'DETAIL_PAGE_URL', 'NAME', 'DETAIL_PICTURE']

@@ -18282,10 +18282,6 @@ display:none;
     background-size: cover;
     background-image: url("/local/templates/main/images/services/bg.jpg");
 }
-.uslugi_all {
-    min-height: 920px;
-    width: 100%;
-}
 .serviceChildren__top {
     background-position: center 100px !important;
     padding-bottom: 20px !important;
@@ -18296,4 +18292,53 @@ display:none;
     background: white;
     padding-top: 30px;
     display: flex;
+}
+.image-map-container {
+                    position: relative;
+                    display:inline-block;
+                    margin-top: 20px;
+                    box-shadow: 2px 3.464px 36px 4px rgba(0, 0, 0, 0.06);
+                }
+                .image-map-container img {
+                    display:block;
+                }
+                .image-map-container .map-selector {
+                    left:0;
+                    top:0;
+                    right:0;
+                    bottom:0;
+                    color:#546E7A00;
+                }
+                .image-map-container .map-selector.hover {
+                    color:#546E7A80;
+                }
+
+                .map-selector:after {
+                    content: '';
+                    position: absolute;
+                    top: inherit;
+                    right: inherit;
+                    bottom: inherit;
+                    left: inherit;
+                    display: none;
+                    pointer-events: none;
+                    border: 2px solid #AB5FFF;
+                    border-radius:10px;
+                }
+
+                .map-selector.hover:after {
+                    content: '';
+                    position: absolute;
+                    top: inherit;
+                    right: inherit;
+                    bottom: inherit;
+                    left: inherit;
+                    display:inherit;
+                    pointer-events: none;
+                    border: 2px solid #AB5FFF;
+                    border-radius:10px;
+                }
+                .doctors__title {
+    padding-top: 60px !important;
+    padding-bottom: 60px;
 }

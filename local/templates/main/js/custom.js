@@ -131,3 +131,35 @@ function topFunction() {
 $('.header__searchMobileButton').on('click',function(){
     $('.header__searchMobile').toggle();
 })
+
+
+$(document).ready(function() {
+    $(".fancybox").fancybox({
+        maxWidth	: 800,
+        maxHeight	: 600,
+        fitToView	: false,
+        width		: '70%',
+        height		: '70%',
+        autoSize	: true,
+        closeClick	: false,
+        openEffect	: 'none',
+        closeEffect	: 'none'
+    });
+    $('#image-map area').hover(
+        function () {
+            let coords = $(this).attr('coords').split(',');
+            var width = $('.image-map-container').width();
+            var height = $('.image-map-container').height();
+            $('.image-map-container .map-selector').addClass('hover').css({
+                'left': coords[0]+'px',
+                'top': coords[1] + 'px',
+                'right': width - coords[2],
+                'bottom': height - coords[3]
+            })
+        },
+
+        function () {
+            $('.image-map-container .map-selector').removeClass('hover').attr('style','');
+        }
+    )
+});
