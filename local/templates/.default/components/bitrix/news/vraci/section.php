@@ -12,6 +12,13 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 global $arrFilter;
+$arH1 = [
+  'stomatologi-terapevty' => 'Стоматологи-терапевты',
+  'parodontologi' => 'Пародонтологи',
+  'stomatologi-ortopedy' => 'Стоматологи-ортопеды',
+  'ortodonty' => 'Ортодонты',
+  'stomatologi-hirurgi' => 'Стоматологи-хирурги',
+];
 ?>
 <?php
 $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
@@ -23,7 +30,7 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
 ?>
 <div class="doctors__container">
     <h1 class="doctors__title title_grey width width_norm width_paddingStandart">
-        <span class="title__text"></span>
+        <span class="title__text"><?=  $arH1[$url] ?></span>
     </h1>
     <div class="doctors__content width width_norm width_paddingStandart">
         <div id="doctorsFilter" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml" class="doctorsFilter">
@@ -122,3 +129,8 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $('.breadcrumb__text').text('<?=  $arH1[$url] ?>');
+    })
+</script>

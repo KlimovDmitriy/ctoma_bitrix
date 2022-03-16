@@ -18338,3 +18338,7 @@ display:none;
                     border: 2px solid #AB5FFF;
                     border-radius:10px;
                 }
+                .doctors__title {
+    padding-top: 60px !important;
+    padding-bottom: 60px;
+}
