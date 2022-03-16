@@ -24,7 +24,44 @@ $APPLICATION->SetPageProperty('description', 'Карта сайта');
                 <span class="title__br"></span>
             </h1>
             <div class="normPage__center width width_norm width_paddingStandart">
-                <div class="normPage__leftSidebar"></div>
+                <div class="normPage__leftSidebar">
+
+
+                    <div class="menuNormPage">
+                        <?
+
+                        $elements = \Realweb\Site\Site::getIBlockElements(['IBLOCK_ID' => \Realweb\Site\Site::getIblockId('content'), 'PROPERTY_SHOW_MENU_VALUE' => "да"]);
+
+                        ?>
+
+                        <ul class="menuNormPage__list">
+
+                            <li class="menuNormPage__element">
+                                <a class="menuNormPage__linck <? if ($_SERVER['REQUEST_URI']=='/sitemap/') {
+                                    ?>is-active<? }else{ ?>" href="/sitemap/"<? } ?>"
+                                >Карта сайта</a></li>
+                            <?
+                            foreach ($elements as $el) {
+
+                                ?>
+
+                                <li class="menuNormPage__element">
+                                    <a
+                                            class="menuNormPage__linck <? if ($el['CODE'] == $arResult['CODE']) {
+                                                ?>is-active<? }else{ ?>" href="/<?= $el['CODE'] ?>/"<? } ?>"
+                                    ><?= $el['NAME'] ?></a>
+                                </li>
+                            <? } ?>
+
+                        </ul>
+
+
+                    </div>
+
+                    <?php \Realweb\Site\Site::showIncludeText('LEFT_BANNER_STATIC'); ?>
+
+
+                </div>
                 <div class="normPage__content">
                     <?
                     $APPLICATION->IncludeComponent(

@@ -34,6 +34,11 @@ $name = !empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'])
                 ?>
 
                 <ul class="menuNormPage__list">
+
+                    <li class="menuNormPage__element">
+                        <a class="menuNormPage__linck <? if ($_SERVER['REQUEST_URI']=='/sitemap/') {
+                            ?>is-active<? }else{ ?>" href="/sitemap/"<? } ?>"
+                        >Карта сайта</a></li>
                     <?
                     foreach ($elements as $el) {
 
