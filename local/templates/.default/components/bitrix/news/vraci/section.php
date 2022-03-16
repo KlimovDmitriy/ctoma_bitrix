@@ -137,3 +137,14 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
         $('.breadcrumb__text').text('<?=  $arH1[$url] ?>');
     })
 </script>
+<style>
+    #work_place {
+        flex-basis: auto;
+    }
+    .doctorsFilter__left {
+        flex-basis: 35%;
+    }
+    .doctorsFilter__right {
+        flex-basis: 60%;
+    }
+</style>
