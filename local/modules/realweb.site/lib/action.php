@@ -160,6 +160,7 @@ class Action
             //Результат в конце отработки
             if ($ID = $el->Add($fields)) {
                 $result = ['success' => 1];
+                Action::sendMail($PROPS['form'], $fields['NAME'], $html);
             } else {
                 $result = ['error' => 1];
             }
@@ -248,6 +249,27 @@ class Action
 
         return json_encode($places);
     }
+
+    private static function sendMail($formName, $theme, $text) {
+        $EVENT_TYPE = 'NEW_FORM_DATA';
+        $sid = 's1';
+        switch ($formName) {
+            case 'Резюме':
+                break;
+            case 'Запрос документов для налогового вычета':
+                break;
+            default:
+                $emailTo = 'stoma@stoma-spb.ru, rek@stoma-spb.ru';
+                $arFeedForm = array(
+                  "MAIL_TO" => $emailTo,
+                  "CONTENT" => $text,
+                  "THEME" => $theme
+                );
+                \Bitrix\Main\Mail\Event::sendImmediate($EVENT_TYPE, $sid, $arFeedForm, 'Y', '', []);
+        }
+    }
+
+
 }
 
 ?>
