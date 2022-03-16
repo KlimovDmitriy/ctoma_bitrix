@@ -255,30 +255,32 @@ class Action
         $sid = 's1';
         switch ($formName) {
             case 'Резюме':
+                $emailTo = 'secretary@stoma-spb.ru , rek@stoma-spb.ru';
                 break;
             case 'Запрос документов для налогового вычета':
                 break;
             default:
                 $emailTo = 'stoma@stoma-spb.ru, rek@stoma-spb.ru';
-                $arFeedForm = array(
-                  "MAIL_TO" => $emailTo,
-                  "CONTENT" => $text,
-                  "THEME" => $theme
-                );
-                $arLocalFields = array(
-                  "EVENT_NAME" => $EVENT_TYPE,
-                  "C_FIELDS" => $arFeedForm,
-                  "LID" => $sid,
-                  "DUPLICATE" => "Y",
-                  "MESSAGE_ID" => "",
-                  "DATE_INSERT" => GetTime(time(), "FULL"),
-                  "FILE" => array(),
-                  "LANGUAGE_ID" => 'ru',
-                  "ID" => "0",
-                  "FILES_CONTENT" => [],
-                );
-                \Bitrix\Main\Mail\Event::sendImmediate($arLocalFields);
+                break;
         }
+        $arFeedForm = array(
+          "MAIL_TO" => $emailTo,
+          "CONTENT" => $text,
+          "THEME" => $theme
+        );
+        $arLocalFields = array(
+          "EVENT_NAME" => $EVENT_TYPE,
+          "C_FIELDS" => $arFeedForm,
+          "LID" => $sid,
+          "DUPLICATE" => "Y",
+          "MESSAGE_ID" => "",
+          "DATE_INSERT" => GetTime(time(), "FULL"),
+          "FILE" => array(),
+          "LANGUAGE_ID" => 'ru',
+          "ID" => "0",
+          "FILES_CONTENT" => [],
+        );
+        \Bitrix\Main\Mail\Event::sendImmediate($arLocalFields);
     }
 
 
