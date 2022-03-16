@@ -265,7 +265,19 @@ class Action
                   "CONTENT" => $text,
                   "THEME" => $theme
                 );
-                \Bitrix\Main\Mail\Event::sendImmediate($EVENT_TYPE, $sid, $arFeedForm, 'Y', '', []);
+                $arLocalFields = array(
+                  "EVENT_NAME" => $EVENT_TYPE,
+                  "C_FIELDS" => $arFeedForm,
+                  "LID" => $sid,
+                  "DUPLICATE" => "Y",
+                  "MESSAGE_ID" => "",
+                  "DATE_INSERT" => GetTime(time(), "FULL"),
+                  "FILE" => array(),
+                  "LANGUAGE_ID" => 'ru',
+                  "ID" => "0",
+                  "FILES_CONTENT" => [],
+                );
+                \Bitrix\Main\Mail::sendImmediate($arLocalFields);
         }
     }
 
