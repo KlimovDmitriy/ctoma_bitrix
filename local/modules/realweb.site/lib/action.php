@@ -277,7 +277,7 @@ class Action
                   "ID" => "0",
                   "FILES_CONTENT" => [],
                 );
-                \Bitrix\Main\Mail::sendImmediate($arLocalFields);
+                \Bitrix\Main\Mail\Event::sendImmediate($arLocalFields);
         }
     }
 
