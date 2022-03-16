@@ -19,6 +19,9 @@ $arH1 = [
   'ortodonty' => 'Ортодонты',
   'stomatologi-hirurgi' => 'Стоматологи-хирурги',
 ];
+$APPLICATION->SetPageProperty("title", $arH1[$url] . " в Санкт-Петербурге – отзывы и запись на прием онлайн");
+$APPLICATION->SetPageProperty("keywords", "");
+$APPLICATION->SetPageProperty("description", "В разделе собраны " . $arH1[$url] . " клиник СТОМА. Отзывы, примеры работ. Онлайн-запись на прием. Клиники во всех районах города.");
 ?>
 <?php
 $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
