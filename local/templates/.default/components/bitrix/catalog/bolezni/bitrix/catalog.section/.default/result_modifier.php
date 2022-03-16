@@ -6,6 +6,15 @@ $ru = array(
     'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я'
 );
 $res_new = [];
+
+
+$SELECT_IBLOCK_ID = \Realweb\Site\Site::getIblockId('stomatology');
+$code = ['lechenie-periodontita', 'lechenie-pulpita'];
+$select_elements = \Realweb\Site\Site::getIBlockElements(['IBLOCK_ID' => $SELECT_IBLOCK_ID, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "!PROPERTY_MENU_NAME" => false]);
+
+
+$arResult['ITEMS'] = array_merge($select_elements, $arResult['ITEMS']);
+
 foreach ($ru as $letter) {
     $tar = [];
     foreach ($arResult['ITEMS'] as $item) {
@@ -14,7 +23,7 @@ foreach ($ru as $letter) {
 
         $alt_name = $item['PROPERTIES']['MENU_NAME']['VALUE'];
 
-        if ($alt_name != '') {
+        if (isset($item['PROPERTIES']['MENU_NAME']['VALUE']) && $alt_name != '') {
             $ename = $alt_name;
         }
 
@@ -31,11 +40,13 @@ foreach ($ru as $letter) {
     }
 
     if (!empty($tar)) {
+
         $res_new[$letter] = $tar;
     }
 
 
 }
+
 $arResult['LETTERS'] = $res_new;
 
 
