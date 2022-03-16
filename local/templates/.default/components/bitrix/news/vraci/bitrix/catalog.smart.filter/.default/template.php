@@ -245,7 +245,9 @@ $this->addExternalCss("/bitrix/css/main/font-awesome.css");
 			</div>
 			<div class="clb"></div>
 		</form>
-	</div>
+<div class="doctorsFilter__baner">  <?php \Realweb\Site\Site::showIncludeText('LEFT_BANNER_STATIC'); ?></div>
+
+</div>
 <script type="text/javascript">
 	var smartFilter = new JCSmartFilter('<?echo CUtil::JSEscape($arResult["FORM_ACTION"])?>', '<?=CUtil::JSEscape($arParams["FILTER_VIEW_MODE"])?>', <?=CUtil::PhpToJSObject($arResult["JS_FILTER_PARAMS"])?>);
 </script>

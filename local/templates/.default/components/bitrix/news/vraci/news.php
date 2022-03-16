@@ -22,7 +22,7 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
 ?>
 <div class="doctors__container">
     <h1 class="doctors__title title_grey width width_norm width_paddingStandart">
-        <span class="title__text"></span>
+        <span class="title__text">Врачи</span>
     </h1>
     <div class="doctors__content width width_norm width_paddingStandart">
         <div id="doctorsFilter" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml" class="doctorsFilter">
@@ -62,7 +62,8 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
               $component
             );?>
 
-<?$APPLICATION->IncludeComponent(
+
+            <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"",
 	Array(
