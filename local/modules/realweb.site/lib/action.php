@@ -160,7 +160,7 @@ class Action
             //Результат в конце отработки
             if ($ID = $el->Add($fields)) {
                 $result = ['success' => 1];
-                Action::sendMail($PROPS['form'], $fields['NAME'], $html);
+                Action::sendMail($PROPS, $fields['NAME'], $html);
             } else {
                 $result = ['error' => 1];
             }
@@ -196,8 +196,29 @@ class Action
         while ($ob = $res->GetNextElement()) {
             $errors[] = 'Этот адрес уже подписан на рассылку!';
         }
+        $sumbission_data = [];
+        $exclude = ['submit', 'pers_data'];
+        foreach ($datas as $form_field) {
+            $code = strtolower($form_field['FIELDS']['CODE']);
 
+            $sumbission_data[$code] = ['LABEL' => $form_field['FIELDS']['NAME'], 'VALUE' => $input[$code]];
 
+            if (in_array($code, $main_array)) {
+
+                $PROPS[$code] = $sumbission_data[$code]['VALUE'];
+                unset($sumbission_data[$code]);
+            }
+            if (in_array($code, $exclude)) {
+
+                unset($sumbission_data[$code]);
+            }
+        }
+        $html = '<h3>Данные формы</h3>';
+        foreach ($sumbission_data as $line) {
+
+            $html .= '<b>' . $line['LABEL'] . '</b> ' . $line['VALUE'] . '<br>';
+
+        }
         if (empty($errors)) {
 
             $PROPS = ['EMAIL' => $input['email']];
@@ -217,6 +238,7 @@ class Action
 
             if ($ID = $el->Add($fields)) {
                 $result = ['success' => 1];
+                Action::sendMail($PROPS, $fields['NAME'], $html);
             } else {
                 $result = ['error' => 1];
             }
@@ -250,14 +272,44 @@ class Action
         return json_encode($places);
     }
 
-    private static function sendMail($formName, $theme, $text) {
+    private static function sendMail($formData, $theme, $text) {
         $EVENT_TYPE = 'NEW_FORM_DATA';
         $sid = 's1';
-        switch ($formName) {
+        switch ($formData['form']) {
             case 'Резюме':
                 $emailTo = 'secretary@stoma-spb.ru , rek@stoma-spb.ru';
                 break;
             case 'Запрос документов для налогового вычета':
+                $emailTo = 'rek@stoma-spb.ru';
+                switch ($formData['clinic']) {
+                    case 'Клиника на Науки (м. Академическая)' :
+                        $emailTo .= ', stomagrand@stoma-spb.ru';
+                        break;
+                    case 'Клиника на Сикейроса (м. Озерки)':
+                        $emailTo .= ', stomaart@stoma-spb.ru';
+                        break;
+                    case 'Клиника на Савушкина (м. Беговая)':
+                        $emailTo .= ', stoma2@stoma-spb.ru';
+                        break;
+                    case 'Клиника на Коломяжском (м.Пионерская)':
+                        $emailTo .= ', stoma1@stoma-spb.ru';
+                        break;
+                    case 'Клиника на Невском (м. пл. Ал. Невского)':
+                        $emailTo .= ', stoma.siti@stoma-spb.ru';
+                        break;
+                    case 'Клиника на Московском (м. Московская)':
+                        $emailTo .= ', ecostom@stoma-spb.ru';
+                        break;
+                    case 'Клиника на Ленина (м. Петроградская)':
+                        $emailTo .= ', stoma.lenina@stoma-spb.ru';
+                        break;
+                    case 'Клиника на Кораблестроителей (м. Приморская)':
+                        $emailTo .= ', stoma@stoma-spb.ru';
+                        break;
+                    default:
+                        $emailTo .= ', nesterova@stoma-spb.ru';
+                        break;
+                }
                 break;
             default:
                 $emailTo = 'stoma@stoma-spb.ru, rek@stoma-spb.ru';
