@@ -61,13 +61,14 @@ class Action
         $datas = Site::getIBlockElements($filter);
 
         $sumbission_data = [];
+        $mail_data = [];
         $main_array = ['form', 'fio', 'phone', 'clinic'];
         $exclude = ['submit', 'pers_data'];
         $PROPS = ['form' => $input['form_name']];
         foreach ($datas as $form_field) {
             $code = strtolower($form_field['FIELDS']['CODE']);
 
-            $sumbission_data[$code] = ['LABEL' => $form_field['FIELDS']['NAME'], 'VALUE' => $input[$code]];
+            $sumbission_data[$code] = $mail_data[$code] = ['LABEL' => $form_field['FIELDS']['NAME'], 'VALUE' => $input[$code]];
 
             if (in_array($code, $main_array)) {
 
@@ -75,24 +76,26 @@ class Action
                 unset($sumbission_data[$code]);
             }
             if (in_array($code, $exclude)) {
-
+                unset($mail_data[$code]);
                 unset($sumbission_data[$code]);
             }
         }
         if ($input['akc_name'] != '') {
-            $sumbission_data[] = ['LABEL' => 'Название акции', 'VALUE' => $input['akc_name']];
+            $sumbission_data[] = $mail_data[] = ['LABEL' => 'Название акции', 'VALUE' => $input['akc_name']];
             // $sumbission_data = array_merge($akc, $sumbission_data);
         }
         if ($input['vrac_name'] != '') {
-            $sumbission_data[] = ['LABEL' => 'Врач к которому производится запись', 'VALUE' => $input['vrac_name']];
+            $sumbission_data[] = $mail_data[] = ['LABEL' => 'Врач к которому производится запись', 'VALUE' => $input['vrac_name']];
             // $sumbission_data = array_merge($akc, $sumbission_data);
         }
 
-        $html = '<h3>Данные формы</h3>';
+        $html = $mail = '<h3>Данные формы</h3>';
         foreach ($sumbission_data as $line) {
-
             $html .= '<b>' . $line['LABEL'] . '</b> ' . $line['VALUE'] . '<br>';
+        }
 
+        foreach ($mail_data as $line) {
+            $mail .= '<b>' . $line['LABEL'] . '</b> ' . $line['VALUE'] . '<br>';
         }
 
 
@@ -160,7 +163,7 @@ class Action
             //Результат в конце отработки
             if ($ID = $el->Add($fields)) {
                 $result = ['success' => 1];
-                Action::sendMail($PROPS, $fields['NAME'], $html);
+                Action::sendMail($PROPS, $fields['NAME'], $mail);
             } else {
                 $result = ['error' => 1];
             }
@@ -203,13 +206,7 @@ class Action
 
             $sumbission_data[$code] = ['LABEL' => $form_field['FIELDS']['NAME'], 'VALUE' => $input[$code]];
 
-            if (in_array($code, $main_array)) {
-
-                $PROPS[$code] = $sumbission_data[$code]['VALUE'];
-                unset($sumbission_data[$code]);
-            }
             if (in_array($code, $exclude)) {
-
                 unset($sumbission_data[$code]);
             }
         }
