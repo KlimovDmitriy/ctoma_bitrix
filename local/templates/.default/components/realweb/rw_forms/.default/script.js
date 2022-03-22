@@ -119,6 +119,60 @@ $("form").on('submit', function () {
                         frm.hide();
                         $('#success_' + frm.attr('id')).show();
 
+                        switch (frm.attr('id')) {
+                            case 'make-an-appointment':
+                                ym(10785961, 'reachGoal', 'make_appointment');
+                                console.log('Цель отправлена: make_appointment');
+
+                                dataLayer.push({
+                                    'event' : 'GAEvent',
+                                    'eventCategory' : 'form',
+                                    'eventAction' : 'success',
+                                    'eventLabel' : 'make_appointment'
+                                });
+                                break;
+
+                            case 'callback':
+                                ym(10785961, 'reachGoal', 'request_call');
+                                console.log('Цель отправлена: request_call');
+
+                                dataLayer.push({
+                                    'event' : 'GAEvent',
+                                    'eventCategory' : 'form',
+                                    'eventAction' : 'success',
+                                    'eventLabel' : 'request_call'
+                                });
+
+                                break;
+
+                            case 'zadat-vopros':
+                                ym(10785961, 'reachGoal', 'ask_question');
+                                console.log('Цель отправлена: ask_question');
+
+                                dataLayer.push({
+                                    'event' : 'GAEvent',
+                                    'eventCategory' : 'form',
+                                    'eventAction' : 'success',
+                                    'eventLabel' : 'ask_question'
+                                });
+                                break;
+
+                            case 'otziv':
+                                ym(10785961, 'reachGoal', 'quality_control');
+                                console.log('Цель отправлена: quality_control');
+
+                                dataLayer.push({
+                                    'event' : 'GAEvent',
+                                    'eventCategory' : 'form',
+                                    'eventAction' : 'success',
+                                    'eventLabel' : 'quality_control'
+                                });
+                                break;
+
+                            default: // do nothing;
+                                break;
+                        }
+
                     }
                     if (response.error) {
                         if (response.error != 1) {
