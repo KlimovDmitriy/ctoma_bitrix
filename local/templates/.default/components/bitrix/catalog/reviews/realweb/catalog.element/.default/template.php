@@ -67,7 +67,7 @@ $this->setFrameMode(true);
                     </div>
                     <div class="otzyvDefault__body">
                         <div>
-                            <p><?=htmlspecialchars_decode($arResult['PREVIEW_TEXT']);?></p>
+                            <p><?=$arResult["~PREVIEW_TEXT"];?></p>
                         </div>
                     </div>
                 </div>

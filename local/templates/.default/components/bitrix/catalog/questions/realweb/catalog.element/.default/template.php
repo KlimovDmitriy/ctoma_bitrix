@@ -29,7 +29,7 @@ $this->setFrameMode(true);
 
                     <div class="questionDefault__question content_norm">
                         <label>Вопрос:</label>
-                        <div><?=htmlspecialchars_decode($arResult['PREVIEW_TEXT']);?></div>
+                        <div><?=$arResult['~PREVIEW_TEXT'];?></div>
 
                         <div class="questionDefault__date">
                             <?=FormatDateFromDB($arResult["DATE_ACTIVE_FROM"], 'SHORT');?>
@@ -38,7 +38,7 @@ $this->setFrameMode(true);
 
                     <div class="questionDefault__answer content_norm">
                         <label>Ответ:</label>
-                        <div><?=htmlspecialchars_decode($arResult['DETAIL_TEXT']);?></div>
+                        <div><?=$arResult['~DETAIL_TEXT'];?></div>
 
                     </div>
                 </div>

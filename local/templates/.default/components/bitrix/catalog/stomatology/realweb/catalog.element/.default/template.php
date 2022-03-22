@@ -20,7 +20,7 @@ ob_start();
 ?>
     <h1 class="service__titleText title_norm width width_norm width_paddingStandart"><? echo $name; ?></h1>
     <div class="serviceDefault content_norm">
-        <?php echo $arResult['DETAIL_TEXT']; ?>
+        <?php echo $arResult['~DETAIL_TEXT']; ?>
         <?php if($arResult['PRICE_LIST']):
             $i = 0;?>
             <div class="praiseTable">
