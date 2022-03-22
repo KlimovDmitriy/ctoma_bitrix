@@ -169,6 +169,24 @@ $("form").on('submit', function () {
                                 });
                                 break;
 
+                            case 'add_review':
+                                ym(10785961, 'reachGoal', 'give_feedback');
+                                console.log('Цель отправлена: give_feedback');
+
+                                break;
+
+                            case 'vrac':
+                                ym(10785961, 'reachGoal', 'appointment_doctor');
+                                console.log('Цель отправлена: appointment_doctor');
+
+                                break;
+
+                            case 'akciya':
+                                ym(10785961, 'reachGoal', 'sign_up_promotion');
+                                console.log('Цель отправлена: sign_up_promotion');
+
+                                break;
+
                             default: // do nothing;
                                 break;
                         }
