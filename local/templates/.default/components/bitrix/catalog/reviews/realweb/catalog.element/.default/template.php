@@ -74,6 +74,5 @@ $this->setFrameMode(true);
             </div>
         </div>
     </div>
-
 </div>
 

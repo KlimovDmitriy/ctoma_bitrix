@@ -82,7 +82,6 @@ ob_start();
             </div>
         <?php endif; ?>
     </div>
-
 <?php // передаем данные буфера вывода в файл component_epilog.php
 $this->__component->SetResultCacheKeys(array("CACHED_TPL"));
 
