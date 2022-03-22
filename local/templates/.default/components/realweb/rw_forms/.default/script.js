@@ -173,17 +173,38 @@ $("form").on('submit', function () {
                                 ym(10785961, 'reachGoal', 'give_feedback');
                                 console.log('Цель отправлена: give_feedback');
 
+                                dataLayer.push({
+                                    'event' : 'GAEvent',
+                                    'eventCategory' : 'form',
+                                    'eventAction' : 'success',
+                                    'eventLabel' : 'give_feedback'
+                                });
+
                                 break;
 
                             case 'vrac':
                                 ym(10785961, 'reachGoal', 'appointment_doctor');
                                 console.log('Цель отправлена: appointment_doctor');
 
+                                dataLayer.push({
+                                    'event' : 'GAEvent',
+                                    'eventCategory' : 'form',
+                                    'eventAction' : 'success',
+                                    'eventLabel' : 'appointment_doctor'
+                                });
+
                                 break;
 
                             case 'akciya':
                                 ym(10785961, 'reachGoal', 'sign_up_promotion');
                                 console.log('Цель отправлена: sign_up_promotion');
+
+                                dataLayer.push({
+                                    'event' : 'GAEvent',
+                                    'eventCategory' : 'form',
+                                    'eventAction' : 'success',
+                                    'eventLabel' : 'sign_up_promotion'
+                                });
 
                                 break;
 

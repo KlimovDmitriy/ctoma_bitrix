@@ -29,6 +29,14 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
     <noscript><div><img src="https://mc.yandex.ru/watch/10785961" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
 
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MXWLCSM');</script>
+    <!-- End Google Tag Manager -->
+
     <script type="text/javascript">!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?169",t.onload=function(){VK.Retargeting.Init("VK-RTRG-1223227-5FlYT"),VK.Retargeting.Hit()},document.head.appendChild(t)}();</script><noscript><img src="https://vk.com/rtrg?p=VK-RTRG-1223227-5FlYT" style="position:fixed; left:-999px;" alt=""/></noscript>
 
     <? $APPLICATION->ShowHead() ?>
@@ -72,6 +80,13 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
         <img src="https://top-fwz1.mail.ru/counter?id=3239403;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru" />
     </div></noscript>
 <!-- //Rating Mail.ru counter -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXWLCSM"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <div id="panel"><? $APPLICATION->ShowPanel(); ?></div>
 <?php \Realweb\Site\Site::showIncludeText('BODY_BEFORE'); ?>
