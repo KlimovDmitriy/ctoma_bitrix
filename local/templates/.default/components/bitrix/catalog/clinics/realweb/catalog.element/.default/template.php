@@ -87,7 +87,7 @@ $name = !empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'])
                     <div class="clinic__bottom">
                         <div class="clinic__bottomRight">
                             <div class="clinic__informacia content_norm">
-                                <?php echo $arResult['DETAIL_TEXT']; ?>
+                                <?php echo $arResult['~DETAIL_TEXT']; ?>
                             </div>
                         <div class="kliniksGallery content_norm">
                             <h2>Фотографии клиники</h2>

@@ -82,7 +82,7 @@ $name = !empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'])
                     </ul>
                 <? } ?>
 
-                <div><?= $arResult['DETAIL_TEXT'] ?></div>
+                <div><?= $arResult['~DETAIL_TEXT'] ?></div>
 
 
                 <div id="toTop">

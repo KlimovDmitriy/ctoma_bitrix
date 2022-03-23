@@ -49,7 +49,7 @@ $this->setFrameMode(true);
 <div class="portContent">
     <div class="portfolioDescription">
         <div>
-            <?=$arResult['DETAIL_TEXT']?>
+            <?=$arResult['~DETAIL_TEXT']?>
         </div>
     </div>
     <div class="service__zapisatsa">

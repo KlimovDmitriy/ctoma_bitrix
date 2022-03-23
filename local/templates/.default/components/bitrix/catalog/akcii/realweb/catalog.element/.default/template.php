@@ -30,9 +30,9 @@ $this->setFrameMode(true);
                 </div>
                 <div class="akciaFull__info">
                     <div class="akciaFull__srokText content_norm">
-                        <div><?=htmlspecialchars_decode($arResult["PROPERTIES"]["TIME_TO"]["VALUE"]["TEXT"]);?></div>
+                        <div><?=$arResult["PROPERTIES"]["TIME_TO"]["~VALUE"]["TEXT"];?></div>
                     </div>
-                    <div class="akciaFull__anons content_norm"><?=$arResult['DETAIL_TEXT']?></div>
+                    <div class="akciaFull__anons content_norm"><?=$arResult['~DETAIL_TEXT']?></div>
 
                     <div class="akciaFull__kliniks">
                         <label>Стоматологии:</label>
