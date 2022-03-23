@@ -29,3 +29,6 @@ $clinicsList = CIBlockElement::GetList(['ID'=>'ASC'], ['ID' => $clinicId], false
 while ($clinic = $clinicsList->GetNext()) {
     $arResult['CLINICS'][] = $clinic;
 }
+$arResult['DOCTOR_POSITION'] = $arResult['PROPERTIES']['POSITION']['VALUE'];
+
+$this->__component->SetResultCacheKeys(['NAME','DOCTOR_POSITION']);
