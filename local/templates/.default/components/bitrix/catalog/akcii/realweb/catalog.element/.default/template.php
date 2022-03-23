@@ -29,6 +29,7 @@ $this->setFrameMode(true);
                     </div>
                 </div>
                 <div class="akciaFull__info">
+                    <span class="akciaFull__otDate">Опубликовано: <?= FormatDate("d/m/y", MakeTimeStamp($arResult['ACTIVE_FROM'])) ?></span>
                     <?if (isset($arResult["PROPERTIES"]["TIME_TO"]["~VALUE"]["TEXT"])){?>
                     <div class="akciaFull__srokText content_norm">
                         <div><?=$arResult["PROPERTIES"]["TIME_TO"]["~VALUE"]["TEXT"];?></div>

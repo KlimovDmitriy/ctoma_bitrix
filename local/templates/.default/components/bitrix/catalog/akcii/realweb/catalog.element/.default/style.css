@@ -147,3 +147,7 @@
         padding: 10px 15px;
     }
 }
+.akciaFull__otDate {
+    display: block;
+    color: #9d9d9d;
+}
