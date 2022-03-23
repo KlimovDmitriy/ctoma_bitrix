@@ -23,6 +23,7 @@ $APPLICATION->SetPageProperty("title", $arH1[$url] . " в Санкт-Петер�
 $APPLICATION->SetPageProperty("keywords", "");
 $APPLICATION->SetPageProperty("description", "В разделе собраны " . mb_strtolower($arH1[$url]) . " клиник СТОМА. Отзывы, примеры работ. Онлайн-запись на прием. Клиники во всех районах города.");
 ?>
+<div class="views-element-container contextual-region">
 <?php
 $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
     "START_FROM" => "0",
@@ -131,6 +132,7 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
             );?>
         </div>
     </div>
+</div>
 </div>
 <script>
     $(document).ready(function () {
