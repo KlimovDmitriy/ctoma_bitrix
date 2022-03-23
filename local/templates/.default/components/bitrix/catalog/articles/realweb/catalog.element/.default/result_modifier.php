@@ -13,7 +13,7 @@ for ($i=0; $i < count($matches[0]); $i++) {
             $content .= '</ol>';
     }
     $content .= '<li><a href="#a' . $cnt_a++ . '">' . preg_replace('~\d\.~', '', $matches[2][$i]) . '</a>' . "\n";
-    $arResult['~DETAIL_TEXT'] = str_replace($matches[0][$i], '<h' . $matches[1][$i] .' id="a' . $cnt_h2++ . '">' . $matches[2][$i] . '</h' . $matches[1][$i] . '>', $arResult['DETAIL_TEXT']);
+    $arResult['DETAIL_TEXT'] = str_replace($matches[0][$i], '<h' . $matches[1][$i] .' id="a' . $cnt_h2++ . '">' . $matches[2][$i] . '</h' . $matches[1][$i] . '>', $arResult['DETAIL_TEXT']);
 }
 $arResult['content'] = $content;
 

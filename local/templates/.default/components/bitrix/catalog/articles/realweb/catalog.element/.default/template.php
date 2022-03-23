@@ -71,7 +71,7 @@ $this->setFrameMode(true);
                 </ul>
         <? } ?>
 
-        <div><?=$arResult['~DETAIL_TEXT']?></div>
+        <div><?=$arResult['DETAIL_TEXT']?></div>
 
 
         <script>(function() {
