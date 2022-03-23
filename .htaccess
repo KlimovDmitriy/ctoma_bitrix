@@ -52,3 +52,4 @@ Redirect 301 /vrac /personal/
 Redirect 301 /form /
 Redirect 301 /reviews/add /add_review/
 Redirect 301 /otzyvy /reviews/
+Redirect 301 /akcia /akcii
