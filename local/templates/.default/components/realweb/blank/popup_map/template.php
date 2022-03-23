@@ -13,7 +13,6 @@
     <map name="image-map" id="image-map">
         <area target="_blank" alt="" title="" href="/clinics/klinika-na-ul-savushkina" coords="42,148,102,173" shape="rect">
         <area target="_blank" alt="" title="" href="/clinics/klinika-na-korablestroitelej" coords="69,275,141,309" shape="rect">
-        <area target="_blank" alt="" title="" href="/clinics/klinika-na-bolshoj-pr-petrogradskoj-storony" coords="162,262,239,287" shape="rect">
         <area target="_blank" alt="" title="" href="/clinics/klinika-na-sikejrosa" coords="270,80,352,104" shape="rect">
         <area target="_blank" alt="" title="" href="/clinics/klinika-na-kolomyazhskom-prospekte" coords="271,137,351,162" shape="rect">
         <area target="_blank" alt="" title="" href="/clinics/klinika-na-lenina" coords="269,208,366,236" shape="rect">
