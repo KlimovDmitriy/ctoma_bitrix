@@ -53,3 +53,4 @@ Redirect 301 /form /
 Redirect 301 /reviews/add /add_review/
 Redirect 301 /otzyvy /reviews/
 Redirect 301 /akcia /akcii
+Redirect 301 /clinics/klinika-na-bolshoj-pr-petrogradskoj-storony /clinics/
