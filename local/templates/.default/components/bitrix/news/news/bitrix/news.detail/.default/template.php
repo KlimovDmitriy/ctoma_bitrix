@@ -30,6 +30,7 @@ $this->setFrameMode(true);
                     </div>
                 </div>
                 <div class="newsPageDefault__info content_norm width_paddingStandart">
+                    <span class="newsPageDefault__otDate">Опубликовано: <?= FormatDate("d/m/y", MakeTimeStamp($arResult['ACTIVE_FROM'])) ?></span>
                     <div>
                         <?= $arResult['~DETAIL_TEXT'] ?>
                     </div>
