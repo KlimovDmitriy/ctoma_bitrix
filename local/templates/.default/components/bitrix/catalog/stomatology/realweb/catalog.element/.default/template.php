@@ -81,6 +81,7 @@ ob_start();
                 <a href="/make-an-appointment" class="button_red" target="_blank">Записаться</a>
             </div>
         <?php endif; ?>
+        <?php echo $arResult['PREVIEW_TEXT']; ?>
     </div>
 <?php // передаем данные буфера вывода в файл component_epilog.php
 $this->__component->SetResultCacheKeys(array("CACHED_TPL"));
