@@ -12,6 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<div class="views-element-container contextual-region">
 <?php
 $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
     "START_FROM" => "0",
@@ -118,4 +119,5 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
 );?>
         </div>
     </div>
+</div>
 </div>

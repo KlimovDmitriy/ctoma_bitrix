@@ -776,3 +776,6 @@
 	font-style: normal !important;
 	display: inline-block !important;
 }
+.breadcrumb {
+	background-color: inherit;
+}

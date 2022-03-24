@@ -18342,3 +18342,7 @@ display:none;
     padding-top: 60px !important;
     padding-bottom: 60px;
 }
+
+.textAlignCenter {
+    text-align: center !important;
+}
