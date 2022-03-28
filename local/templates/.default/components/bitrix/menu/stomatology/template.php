@@ -27,7 +27,7 @@ foreach($arResult as $arItem):?>
             <ul class="serviceMenu__list">
 		<?else:?>
             <li class="serviceMenu__element menu-item--expanded">
-				<ul<? if($cnt == 4) : ?> class="SEOUrl"<?endif?>>
+				<ul>
 		<?endif?>
 
 	<?else:?>
