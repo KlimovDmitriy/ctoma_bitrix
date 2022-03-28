@@ -14,10 +14,11 @@ ErrorDocument 404 /404.php
 
 	RewriteEngine On
 
-
-
 	#Добавляем слеш в конце урл
 	RewriteBase /
+
+	RewriteRule ^stomatology/kids/hirurgia/udalenie-zubov/$ /stomatology/kids/udalenie-zubov/ [L]
+
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_URI} !(.*)/$
     RewriteRule ^(.*[^/])$ $1/ [L,R=301]
