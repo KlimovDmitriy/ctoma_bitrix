@@ -1,5 +1,12 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 
+<?
+$sSEOUrl = $_SERVER['REQUEST_URI'];
+$urlRewrite = array(
+    '/stomatology/kids/hirurgia/udalenie-zubov/',
+);
+?>
+
 <?if (!empty($arResult)):?>
 <ul class="serviceMenu__list">
 
@@ -19,9 +26,7 @@ foreach($arResult as $arItem):?>
             <span class="menu_ml<?if ($arItem["SELECTED"]):?> sub_open<?else:?> sub_close<?endif?>"></span>
             <ul class="serviceMenu__list">
 		<?else:?>
-			<li class="serviceMenu__element <?if ($arItem["SELECTED"]):?> menu-item--active-trail<?endif?>">
-                <a href="<?=$arItem["LINK"]?>" class="serviceMenu__linck"><?=$arItem["TEXT"]?></a>
-				<ul>
+				<ul<? if(in_array($sSEOUrl ,$urlRewrite)) : ?> class="SEOUrl"<?endif?>>
 		<?endif?>
 
 	<?else:?>
@@ -33,7 +38,7 @@ foreach($arResult as $arItem):?>
                     <a href="<?=$arItem["LINK"]?>" class="serviceMenu__linck"><?=$arItem["TEXT"]?></a>
                 </li>
 			<?else:?>
-				<li class="serviceMenu__element menu-item--expanded<?if ($arItem["SELECTED"]):?> menu-item--active-trail<?endif?>">
+				<li class="serviceMenu__element menu-item--expanded<?if ($arItem["SELECTED"]):?> <? if(!in_array($sSEOUrl ,$urlRewrite)) : ?>  menu-item--active-trail<?endif?><?endif?>">
                     <a href="<?=$arItem["LINK"]?>" class="serviceMenu__linck"><?=$arItem["TEXT"]?></a>
                 </li>
 			<?endif?>
