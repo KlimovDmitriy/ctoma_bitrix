@@ -40,7 +40,7 @@ foreach($arResult as $arItem):?>
                 </li>
 			<?else:?>
 				<li class="serviceMenu__element menu-item--expanded<?if ($arItem["SELECTED"]):?> <? if($cnt < 4) : ?>  menu-item--active-trail<?endif?><?endif?>">
-                    <a href="<?=$arItem["LINK"]?>" class="serviceMenu__linck"><?=$arItem["TEXT"]?></a>
+                    <a href="<?=$arItem["LINK"]?>" class="serviceMenu__linck <? if($arItem["LINK"] == $url) : ?> fixUrlClass<?endif?>"><?=$arItem["TEXT"]?></a>
                 </li>
 			<?endif?>
 
