@@ -11,7 +11,7 @@ $arResult['TEXT_PAGE'] = false;
 $arResult['REDIRECT'] = "";
 
 $arResult['DETAIL_TEXT'] = str_replace('[[FORM]]', 'FORM', $arResult['DETAIL_TEXT']);
-
+$arResult['PREVIEW_TEXT'] = str_replace('[[FORM]]', 'FORM', $arResult['PREVIEW_TEXT']);
 $priceSections = CIBlockSection::GetList(
   ['SORT' => 'ASC'],
   ['IBLOCK_ID' => \Realweb\Site\Site::getIblockId('price_list'), 'UF_SERVICE_ELEMENT' => $arResult['ID']],
@@ -24,6 +24,7 @@ while ($priceSection = $priceSections->GetNext()) {
     $priceSectionId[] = $priceSection['ID'];
     $priceList['NAME'] = $priceSection['NAME'];
 }
+
 if ($priceSection) {
     $priceLists = CIBlockSection::GetMixedList(
       ['DEPTH_LEVEL' => 'ASC'],

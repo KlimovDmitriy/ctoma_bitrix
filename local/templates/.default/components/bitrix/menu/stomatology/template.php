@@ -1,5 +1,12 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 
+<?
+$url = $APPLICATION->GetCurPage();
+$path= parse_url($url, PHP_URL_PATH);
+$result = explode("/", trim($path, "/"));
+$cnt = count($result);
+?>
+
 <?if (!empty($arResult)):?>
 <ul class="serviceMenu__list">
 
@@ -19,8 +26,7 @@ foreach($arResult as $arItem):?>
             <span class="menu_ml<?if ($arItem["SELECTED"]):?> sub_open<?else:?> sub_close<?endif?>"></span>
             <ul class="serviceMenu__list">
 		<?else:?>
-			<li class="serviceMenu__element <?if ($arItem["SELECTED"]):?> menu-item--active-trail<?endif?>">
-                <a href="<?=$arItem["LINK"]?>" class="serviceMenu__linck"><?=$arItem["TEXT"]?></a>
+            <li class="serviceMenu__element menu-item--expanded">
 				<ul>
 		<?endif?>
 
@@ -33,8 +39,8 @@ foreach($arResult as $arItem):?>
                     <a href="<?=$arItem["LINK"]?>" class="serviceMenu__linck"><?=$arItem["TEXT"]?></a>
                 </li>
 			<?else:?>
-				<li class="serviceMenu__element menu-item--expanded<?if ($arItem["SELECTED"]):?> menu-item--active-trail<?endif?>">
-                    <a href="<?=$arItem["LINK"]?>" class="serviceMenu__linck"><?=$arItem["TEXT"]?></a>
+				<li class="serviceMenu__element menu-item--expanded<?if ($arItem["SELECTED"]):?> <? if($cnt < 4) : ?>  menu-item--active-trail<?endif?><?endif?>">
+                    <a href="<?=$arItem["LINK"]?>" class="serviceMenu__linck <? if($arItem["LINK"] == $url) : ?> fixUrlClass<?endif?>"><?=$arItem["TEXT"]?></a>
                 </li>
 			<?endif?>
 

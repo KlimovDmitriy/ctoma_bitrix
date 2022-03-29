@@ -2,3 +2,8 @@
     margin-top: 0px !important;
     padding-left: 0px !important;
 }
+@media only screen and (max-width: 479px) and (min-width: 0px) {
+    .otzyvDefault__body {
+        overflow-wrap: break-word;
+    }
+}
