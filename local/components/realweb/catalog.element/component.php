@@ -427,6 +427,7 @@ if($this->StartResultCache(false, ($arParams["CACHE_GROUPS"]==="N"? false: $USER
 			"IBLOCK_ID" => $arParams["IBLOCK_ID"],
 			"IBLOCK_LID" => SITE_ID,
 			"IBLOCK_ACTIVE" => "Y",
+      'SECTION_CODE' => $arParams['SECTION_CODE'],
 			"ACTIVE_DATE" => "Y",
 			"CHECK_PERMISSIONS" => "Y",
 			"MIN_PERMISSION" => 'R',
