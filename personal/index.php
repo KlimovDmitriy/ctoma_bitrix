@@ -1,8 +1,8 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
-$APPLICATION->SetPageProperty("title", "Работы специалистов клиник СТОМА");
+$APPLICATION->SetPageProperty("title", "Врачи стоматологических клиник СТОМА");
 $APPLICATION->SetPageProperty("keywords", "");
-$APPLICATION->SetPageProperty("description", "В данном разделе представлены результаты работы наших специалистов.");
+$APPLICATION->SetPageProperty("description", "Врачи-стоматологи клиник «СТОМА» - места работы и онлайн запись на прием.");
 ?>
 
 <?
