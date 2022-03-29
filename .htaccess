@@ -57,3 +57,5 @@ Redirect 301 /clinics/klinika-na-bolshoj-pr-petrogradskoj-storony /clinics/
 Redirect 301 /stomatology/ortodontija/lingvalnaya-breket-sistema /stomatology/ortodontija/
 
 Redirect 301 /stomatology/kids/plastika-uzdechki/plastika-uzdechki-yazyka /stomatology/kids/plastika-uzdechki-yazyka/
+
+RedirectMatch  301 "/reviews/show/(.*)" "/reviews/$1"
