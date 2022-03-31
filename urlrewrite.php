@@ -66,10 +66,10 @@ $arUrlRewrite = array(
         ),
     10 =>
         array(
-            'CONDITION' => '#^/akcii/#',
+            'CONDITION' => '#^/akcia/#',
             'RULE' => '',
             'ID' => 'bitrix:catalog',
-            'PATH' => '/akcii/index.php',
+            'PATH' => '/akcia/index.php',
             'SORT' => 100,
         ),
     11 =>

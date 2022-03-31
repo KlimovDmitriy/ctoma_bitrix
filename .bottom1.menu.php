@@ -23,7 +23,7 @@ $aMenuLinks = Array(
     ),
     Array(
         "Акции",
-        "/akcii/",
+        "/akcia/",
         Array(),
         Array(),
         ""
