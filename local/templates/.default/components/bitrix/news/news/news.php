@@ -21,7 +21,7 @@ $desc = 'Новости стоматологических клиник «СТО
 if ($_REQUEST['PAGEN_1'] > 0) {
 
     $title .= ' - страница ' . (int)$_REQUEST['PAGEN_1'];
-    $desc .= 'Страница ' . (int)$_REQUEST['PAGEN_1'] . '.';
+    $desc .= ' Страница ' . (int)$_REQUEST['PAGEN_1'] . '.';
 }
 
 $APPLICATION->SetTitle($title);
