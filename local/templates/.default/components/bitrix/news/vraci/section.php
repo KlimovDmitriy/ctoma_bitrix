@@ -124,7 +124,7 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
                 "PAGER_DESC_NUMBERING_CACHE_TIME" => $arParams["PAGER_DESC_NUMBERING_CACHE_TIME"],
                 "PAGER_SHOW_ALL" => $arParams["PAGER_SHOW_ALL"],
                 "PAGER_BASE_LINK_ENABLE" => $arParams["PAGER_BASE_LINK_ENABLE"],
-                "PAGER_BASE_LINK" => $arParams["PAGER_BASE_LINK"] . '',
+                "PAGER_BASE_LINK" => $arParams["PAGER_BASE_LINK"] . $url,
                 "PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
                 "DISPLAY_DATE" => $arParams["DISPLAY_DATE"],
                 "DISPLAY_NAME" => "Y",
