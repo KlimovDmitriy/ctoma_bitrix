@@ -175,7 +175,7 @@ global $worksFilter;
       "doctor_articles",
       Array(
         "IBLOCK_TYPE" => 'content',
-        "IBLOCK_ID" => \Realweb\Site\Site::getIblockId("articles"),
+        "IBLOCK_ID" => \Realweb\Site\Site::getIblockId("stati"),
         "NEWS_COUNT" => '',
         "SORT_BY1" => 'SORT',
         "SORT_ORDER1" => 'ASC',

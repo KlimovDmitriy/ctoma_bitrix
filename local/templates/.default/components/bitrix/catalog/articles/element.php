@@ -259,7 +259,7 @@ foreach ($arItems as $arI) {
                 ?>
                 <div class="articleDefault__body width_paddingStandart">
                 <?
-                $arFilter = Array("IBLOCK_ID"=>\Realweb\Site\Site::getIblockId('articles'), "ID"=>$arI['ID']);
+                $arFilter = Array("IBLOCK_ID"=>\Realweb\Site\Site::getIblockId('stati'), "ID"=>$arI['ID']);
                 $res = CIBlockElement::GetList(Array(), $arFilter);
                 if ($ob = $res->GetNextElement()) {
                     $arProps = $ob->GetProperties();
