@@ -55,7 +55,7 @@
     height: 120px;
 }
 .advantage__card_image {
-    margin-bottom: 13px;
+    margin-bottom: 0;
 }
 .advantage__card hr {
     border: none;
