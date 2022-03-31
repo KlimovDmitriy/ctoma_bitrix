@@ -1,9 +1,9 @@
 <?
 
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
-$APPLICATION->SetPageProperty("title", "Новости | Группа компаний «СТОМА»");
+
 $APPLICATION->SetPageProperty("keywords", "");
-$APPLICATION->SetPageProperty("description", "Новости стоматологических клиник «СТОМА». Узнать о жизни клиник.");
+
 ?>
 
 <?

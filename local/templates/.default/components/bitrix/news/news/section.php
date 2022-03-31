@@ -12,6 +12,18 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 global $arrFilter;
+$title = 'Новости | Группа компаний «СТОМА»';
+$desc = 'Новости стоматологических клиник «СТОМА». Узнать о жизни клиник.';
+if ($_REQUEST['PAGEN_1'] > 0) {
+
+    $title .= ' - страница ' . (int)$_REQUEST['PAGEN_1'];
+    $desc .= 'Страница ' . (int)$_REQUEST['PAGEN_1'] . '.';
+}
+
+$APPLICATION->SetTitle($title);
+$APPLICATION->SetPageProperty("title", $title);
+$APPLICATION->SetPageProperty("description", $desc);
+
 ?>
 <?php
 $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
