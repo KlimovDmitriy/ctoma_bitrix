@@ -3,8 +3,6 @@ require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 $APPLICATION->SetPageProperty("title", "Акции | Группа компаний «СТОМА»");
 $APPLICATION->SetPageProperty("keywords", "");
 $APPLICATION->SetPageProperty("description", "Действующие акции стоматологических клиник «СТОМА». Узнать о скидках и акциях. ✔Запись на прием");
-?><?
-
 
 $APPLICATION->IncludeComponent(
     "bitrix:catalog",
