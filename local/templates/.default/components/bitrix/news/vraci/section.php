@@ -1,4 +1,5 @@
 <?
+
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
@@ -31,15 +32,17 @@ $terms = [];
 while ($r = $rsData->Fetch()) {
     $arH1[$r['UF_XML_ID']] = $r['UF_NAME'];
 }
-
-$APPLICATION->SetPageProperty("title", $arH1[$url] . " в Санкт-Петербурге – отзывы и запись на прием онлайн");
-$APPLICATION->SetPageProperty("keywords", "");
-$APPLICATION->SetPageProperty(
-  "description",
-  "В разделе собраны " . mb_strtolower(
+$title = $arH1[$url] . " в Санкт-Петербурге – отзывы и запись на прием онлайн";
+$desc = "В разделе собраны " . mb_strtolower(
     $arH1[$url]
-  ) . " клиник СТОМА. Отзывы, примеры работ. Онлайн-запись на прием. Клиники во всех районах города."
-);
+  ) . " клиник СТОМА. Отзывы, примеры работ. Онлайн-запись на прием. Клиники во всех районах города.";
+if ($_REQUEST['PAGEN_1'] > 0) {
+    $title .= ' - страница ' . (int)$_REQUEST['PAGEN_1'];
+    $desc .= ' Страница ' . (int)$_REQUEST['PAGEN_1'] . '.';
+}
+$APPLICATION->SetPageProperty("title", $title);
+$APPLICATION->SetPageProperty("keywords", "");
+$APPLICATION->SetPageProperty("description", $desc);
 ?>
 <div class="views-element-container contextual-region">
     <?php
