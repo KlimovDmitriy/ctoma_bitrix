@@ -8,8 +8,9 @@
     font-family: "Myriad Pro", sans-serif;
 }
 .title__text_upper {
-    font-size: 48px;
-    line-height: 54px;
+    font-size: 55px;
+    line-height: 60px;
+    margin-bottom: 5px;
 }
 .title__text_bottom {
     font-size: 32px;
@@ -20,12 +21,13 @@
     flex-direction: row;
     flex-wrap: wrap;
     box-sizing: border-box;
-    margin: -141px 0 0;
+    margin: -141px 15% 50px;
     row-gap: 60px;
+    column-gap: 10px;
 }
 .advantage__card_wrapper {
-    flex: 0 0 auto;
-    width: 33.3333333333%;
+    flex: 1 0 auto;
+    width: 30%;
     box-sizing: border-box;
     padding :0 30px;
 }
@@ -38,22 +40,22 @@
 .advantage__card_body {
     font-family: "Myriad Pro", sans-serif;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 22px;
     max-width: 468px;
     margin: 23px auto 0 auto;
 }
 .advantage__card_title {
     text-transform: uppercase;
-    font-size: 22px;
-    line-height: 26px;
+    font-size: 20px;
+    line-height: 24px;
     font-weight: 700;
 }
 .advantage__card_header {
     height: 120px;
 }
 .advantage__card_image {
-    margin-bottom: 13px;
+    margin-bottom: 0;
 }
 .advantage__card hr {
     border: none;
@@ -65,7 +67,7 @@
 }
 @media (max-width: 1024px) {
     .advantage__card_wrapper {
-        flex: 0 0 auto;
+        flex: 1 0 auto;
         width: 50%;
         box-sizing: border-box;
         padding :0 10px;
@@ -112,7 +114,7 @@
     height: 65px;
 }
 .advantage__card:hover .advantage__card_title {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 800;
     color: #EB3223;
 }

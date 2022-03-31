@@ -12,6 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<?php if ($arResult['ITEMS']) :?>
 <div id="actionsHome" class="actions width width_full">
   <div class="actions__title title_home width width_norm width_paddingStandart">
     <span class="title__br"></span><span class="title__text">Акции</span><span class="title__br"></span>
@@ -23,9 +24,6 @@ $this->setFrameMode(true);
         <div class="swiper-wrapper">
 
           <? foreach ($arResult["ITEMS"] as $arItem): ?>
-<?
-             // var_dump($arItem);
-              ?>
             <div class="swiper-slide">
               <div class="actions__wrap">
                 <div class="actions__img">  
@@ -66,3 +64,4 @@ $this->setFrameMode(true);
     </div>
   </div>
 </div>
+<?php endif; ?>

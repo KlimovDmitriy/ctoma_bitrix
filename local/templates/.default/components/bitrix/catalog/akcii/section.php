@@ -36,7 +36,7 @@ $this->setFrameMode(true);
                     "CACHE_TIME" => "36000000",
                     "CACHE_TYPE" => "A",
                     "COUNT_ELEMENTS" => "N",
-                    "FILTER_NAME" => "sectionsFilter",
+                    "FILTER_NAME" => "",
                     "IBLOCK_ID" => $arParams["IBLOCK_ID"],
                     "IBLOCK_TYPE" => "content",
                     "SECTION_CODE" => $_REQUEST["SECTION_CODE"],
