@@ -11,14 +11,24 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+CModule::IncludeModule('highloadblock');
 global $arrFilter;
-$arH1 = [
-  'stomatologi-terapevty' => 'Стоматологи-терапевты',
-  'parodontologi' => 'Пародонтологи',
-  'stomatologi-ortopedy' => 'Стоматологи-ортопеды',
-  'ortodonty' => 'Ортодонты',
-  'stomatologi-hirurgi' => 'Стоматологи-хирурги',
-];
+const META_HL = 1;
+$hlblock = \Bitrix\Highloadblock\HighloadBlockTable::getById(META_HL)->fetch();
+$entity = \Bitrix\Highloadblock\HighloadBlockTable::compileEntity($hlblock);
+$entityClass = $entity->getDataClass();
+$rsData = $entityClass::getList(
+  array(
+    "select" => array("*"),
+    "order" => array("ID" => "ASC"),
+    "filter" => array()
+  )
+);
+$terms = [];
+while ($r = $rsData->Fetch()) {
+    $arH1[$r['UF_XML_ID']] = $r['UF_NAME'];
+}
+
 $APPLICATION->SetPageProperty("title", $arH1[$url] . " в Санкт-Петербурге – отзывы и запись на прием онлайн");
 $APPLICATION->SetPageProperty("keywords", "");
 $APPLICATION->SetPageProperty("description", "В разделе собраны " . mb_strtolower($arH1[$url]) . " клиник СТОМА. Отзывы, примеры работ. Онлайн-запись на прием. Клиники во всех районах города.");
