@@ -17,6 +17,17 @@ use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
 $this->setFrameMode(true);
 
+$title = 'Работы специалистов клиник СТОМА';
+$desc = 'В данном разделе представлены результаты работы наших специалистов.';
+if ($_REQUEST['PAGEN_1'] > 0) {
+
+    $title .= ' - страница ' . (int)$_REQUEST['PAGEN_1'];
+    $desc .= ' Страница ' . (int)$_REQUEST['PAGEN_1'] . '.';
+}
+
+$APPLICATION->SetTitle($title);
+$APPLICATION->SetPageProperty("title", $title);
+$APPLICATION->SetPageProperty("description", $desc);
 ?>
 
 <h1 class="faq__title title_grey width width_norm width_paddingStandart">
