@@ -1,9 +1,9 @@
 <?
 
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
-$APPLICATION->SetPageProperty("title", "Новости | Группа компаний «СТОМА»");
+
 $APPLICATION->SetPageProperty("keywords", "");
-$APPLICATION->SetPageProperty("description", "Новости стоматологических клиник «СТОМА». Узнать о жизни клиник.");
+
 ?>
 
 <?
@@ -43,8 +43,8 @@ $APPLICATION->IncludeComponent(
     "HIDE_LINK_WHEN_NO_DETAIL" => "Y",
     "DISPLAY_NAME" => "Y",
     "META_KEYWORDS" => "-",
-    "META_DESCRIPTION" => "Y",
-    "BROWSER_TITLE" => "Y",
+    "META_DESCRIPTION" => "-",
+    "BROWSER_TITLE" => "-",
     "DETAIL_SET_CANONICAL_URL" => "Y",
     "DETAIL_ACTIVE_DATE_FORMAT" => "d/m/Y",
     "DETAIL_FIELD_CODE" => array(

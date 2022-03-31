@@ -15,6 +15,19 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+
+$title = 'Новости | Группа компаний «СТОМА»';
+$desc = 'Новости стоматологических клиник «СТОМА». Узнать о жизни клиник.';
+if ($_REQUEST['PAGEN_1'] > 0) {
+
+    $title .= ' - страница ' . (int)$_REQUEST['PAGEN_1'];
+    $desc .= 'Страница ' . (int)$_REQUEST['PAGEN_1'] . '.';
+}
+
+$APPLICATION->SetTitle($title);
+$APPLICATION->SetPageProperty("title", $title);
+$APPLICATION->SetPageProperty("description", $desc);
+
 ?>
 <div class="newsAll">
     <?php
