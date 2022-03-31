@@ -12,6 +12,16 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 global $arrFilter;
+
+$title = 'Новости | Группа компаний «СТОМА»';
+$desc = 'Новости стоматологических клиник «СТОМА». Узнать о жизни клиник.';
+if ($_REQUEST['PAGEN_1'] > 0) {
+
+    $title .= ' - страница ' . (int)$_REQUEST['PAGEN_1'];
+    $desc .= 'Страница ' . (int)$_REQUEST['PAGEN_1'] . '.';
+}
+
+
 ?>
 <?php
 $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
