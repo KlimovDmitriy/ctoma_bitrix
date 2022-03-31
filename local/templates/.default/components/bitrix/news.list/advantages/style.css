@@ -21,12 +21,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     box-sizing: border-box;
-    margin: -141px 17% 50px;
+    margin: -141px 15% 50px;
     row-gap: 60px;
     column-gap: 10px;
 }
 .advantage__card_wrapper {
-    flex: 0 0 auto;
+    flex: 1 0 auto;
     width: 30%;
     box-sizing: border-box;
     padding :0 30px;
@@ -67,7 +67,7 @@
 }
 @media (max-width: 1024px) {
     .advantage__card_wrapper {
-        flex: 0 0 auto;
+        flex: 1 0 auto;
         width: 50%;
         box-sizing: border-box;
         padding :0 10px;
