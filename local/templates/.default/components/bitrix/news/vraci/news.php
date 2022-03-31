@@ -11,6 +11,14 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+$title = $APPLICATION->GetPageProperty("title");
+$desc = $APPLICATION->GetPageProperty("description");
+if ($_REQUEST['PAGEN_1'] > 0) {
+    $title .= ' - страница ' . (int)$_REQUEST['PAGEN_1'];
+    $desc .= ' Страница ' . (int)$_REQUEST['PAGEN_1'] . '.';
+}
+$APPLICATION->SetPageProperty("title", $title);
+$APPLICATION->SetPageProperty("description", $desc);
 ?>
 <div class="views-element-container contextual-region">
 <?php
