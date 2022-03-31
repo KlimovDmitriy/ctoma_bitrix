@@ -1,8 +1,7 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
-$APPLICATION->SetPageProperty("title", "Работы специалистов клиник СТОМА");
 $APPLICATION->SetPageProperty("keywords", "");
-$APPLICATION->SetPageProperty("description", "В данном разделе представлены результаты работы наших специалистов.");
+
 ?><? $APPLICATION->IncludeComponent(
     "bitrix:catalog",
     "portfolio",
