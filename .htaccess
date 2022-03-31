@@ -52,7 +52,7 @@ ErrorDocument 404 /404.php
 
 Redirect 301 /voprosy-i-otvety /questions/
 Redirect 301 /stati /articles/
-Redirect 301 /vrac /personal/
+
 Redirect 301 /form /
 Redirect 301 /reviews/add /add_review/
 Redirect 301 /otzyvy /reviews/
@@ -66,4 +66,3 @@ Redirect 301 /stomatology/kids/ortodontija/ispravlenie-prikusa /stomatology/kids
 RedirectMatch  301 "/reviews/show/otzyvy_o_vrachah/(.*)" "/reviews/$1"
 RedirectMatch  301 "/novosti/(.*)" "/news/$1"
 RedirectMatch  301 "/news/post/novosti_sajta/(.*)" "/news/$1"
-RedirectMatch  301 "/vrac/(.*)" "/$1"
