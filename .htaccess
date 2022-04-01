@@ -16,12 +16,15 @@ ErrorDocument 404 /404.php
 
 
 
-#	#Добавляем слеш в конце урл
-#	RewriteBase /
-#    RewriteCond %{REQUEST_FILENAME} !-f
-#    RewriteCond %{REQUEST_URI} !(.*)/$
-#    RewriteRule ^(.*[^/])$ $1/ [L,R=301]
-#    #Добавляем слеш в конце урл
+	#Добавляем слеш в конце урл
+	RewriteBase /
+    RewriteCond %{REQUEST_URI} !\?
+    RewriteCond %{REQUEST_URI} !\&
+    RewriteCond %{REQUEST_URI} !\=
+    RewriteCond %{REQUEST_URI} !\.
+    RewriteCond %{REQUEST_URI} ![^\/]$
+    RewriteRule ^(.*)\/(.*)\/$ /$1/$2 [R=301,L]
+    #Добавляем слеш в конце урл
     #Удаляем несколько слешей подряд
     RewriteCond %{THE_REQUEST} ([^\s]*)\/{2,}(\?[^\s]*)?
     RewriteRule (.*) %1 [R=301,L]
@@ -54,14 +57,14 @@ Redirect 301 /questions /voprosy-i-otvety/
 Redirect 301 /articles /stati/
 Redirect 301 /vrac /personal
 Redirect 301 /form /
-Redirect 301 /reviews/add /add_review/
+Redirect 301 /reviews/add /add_review
 Redirect 301 /otzyvy /reviews/
 Redirect 301 /akcii /akcia/
 Redirect 301 /clinics/klinika-na-bolshoj-pr-petrogradskoj-storony /clinics/
-Redirect 301 /stomatology/ortodontija/lingvalnaya-breket-sistema /stomatology/ortodontija/
+Redirect 301 /stomatology/ortodontija/lingvalnaya-breket-sistema /stomatology/ortodontija
 
-Redirect 301 /stomatology/kids/plastika-uzdechki/plastika-uzdechki-yazyka /stomatology/kids/plastika-uzdechki-yazyka/
-Redirect 301 /stomatology/kids/ortodontija/ispravlenie-prikusa /stomatology/kids/ortodontija/ispravlenie-prikusa-u-detej/
+Redirect 301 /stomatology/kids/plastika-uzdechki/plastika-uzdechki-yazyka /stomatology/kids/plastika-uzdechki-yazyka
+Redirect 301 /stomatology/kids/ortodontija/ispravlenie-prikusa /stomatology/kids/ortodontija/ispravlenie-prikusa-u-detej
 
 RedirectMatch  301 "/reviews/show/otzyvy_o_vrachah/(.*)" "/reviews/$1"
 RedirectMatch  301 "/novosti/(.*)" "/news/$1"
