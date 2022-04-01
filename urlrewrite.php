@@ -18,10 +18,10 @@ $arUrlRewrite = array(
         ),
     6 =>
         array(
-            'CONDITION' => '#^/questions/#',
+            'CONDITION' => '#^/voprosy-i-otvety/#',
             'RULE' => '',
             'ID' => 'bitrix:catalog',
-            'PATH' => '/questions/index.php',
+            'PATH' => '/voprosy-i-otvety/index.php',
             'SORT' => 100,
         ),
     8 =>

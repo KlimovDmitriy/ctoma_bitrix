@@ -41,7 +41,7 @@ $this->setFrameMode(true);
         </div>
         <? endforeach; ?>
         <div class="ask__bottom">
-            <a href="/questions" class="button_red">Смотреть остальные вопросы</a>
+            <a href="/voprosy-i-otvety" class="button_red">Смотреть остальные вопросы</a>
         </div>
     </div>
 
