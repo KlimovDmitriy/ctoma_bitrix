@@ -132,7 +132,7 @@ $APPLICATION->SetPageProperty("description", "Полезные статьи и �
         "SECTION_TOP_DEPTH" => "2",
         "SEF_FOLDER" => "/stati/",
         "SEF_MODE" => "Y",
-        "SEF_URL_TEMPLATES" => array("compare" => "", "element" => "#ELEMENT_CODE#/", "section" => "", "sections" => "/stati/", "smart_filter" => ""),
+        "SEF_URL_TEMPLATES" => array("compare" => "", "element" => "#ELEMENT_CODE#", "section" => "", "sections" => "index.php", "smart_filter" => ""),
         "SET_LAST_MODIFIED" => "N",
         "SET_STATUS_404" => "N",
         "SET_TITLE" => "Y",

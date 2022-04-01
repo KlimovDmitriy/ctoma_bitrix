@@ -142,9 +142,9 @@ $APPLICATION->IncludeComponent(
     ),
     "FILE_404" => "",
     "SEF_URL_TEMPLATES" => array(
-      "news" => "",
+      "news" => "index.php",
       "section" => "",
-      "detail" => "#ELEMENT_CODE#/",
+      "detail" => "#ELEMENT_CODE#",
       "search" => "",
       "rss" => "",
       "rss_section" => "",

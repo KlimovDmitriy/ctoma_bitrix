@@ -158,10 +158,10 @@ $APPLICATION->SetTitle("");
     "BIG_DATA_RCM_TYPE" => "bestsell",
     "DETAIL_SET_VIEWED_IN_COMPONENT" => "N",
     "SEF_URL_TEMPLATES" => array(
-        "sections" => "",
-        "section" => "#SECTION_CODE_PATH#/",
-        "element" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
-        "compare" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/#SMART_FILTER_PATH#/",
+        "sections" => "index.php",
+        "section" => "#SECTION_CODE_PATH#",
+        "element" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#",
+        "compare" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/#SMART_FILTER_PATH#",
         "smart_filter" => "",
     )
 ), false, array('HIDE_ICONS' => 'Y')

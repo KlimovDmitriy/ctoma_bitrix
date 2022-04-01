@@ -37,35 +37,35 @@ $aMenuLinks = Array(
   ),
     Array(
         "Терапевты",
-        "/personal/stomatologi-terapevty/",
+        "/personal/stomatologi-terapevty",
         Array(),
         Array("FROM_IBLOCK"=>"", "IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
         ""
     ),
     Array(
         "Пародонтологи",
-        "/personal/parodontologi/",
+        "/personal/parodontologi",
         Array(),
         Array("FROM_IBLOCK"=>"", "IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
         ""
     ),
     Array(
         "Ортопеды",
-        "/personal/stomatologi-ortopedy/",
+        "/personal/stomatologi-ortopedy",
         Array(),
         Array("FROM_IBLOCK"=>"", "IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
         ""
     ),
     Array(
         "Ортодонты",
-        "/personal/ortodonty/",
+        "/personal/ortodonty",
         Array(),
         Array("FROM_IBLOCK"=>"", "IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
         ""
     ),
     Array(
         "Хирурги",
-        "/personal/stomatologi-hirurgi/",
+        "/personal/stomatologi-hirurgi",
         Array(),
         Array("FROM_IBLOCK"=>"", "IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
         ""
