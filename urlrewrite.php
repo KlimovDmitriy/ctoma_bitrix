@@ -42,7 +42,7 @@ $arUrlRewrite = array(
         ),
     1 =>
         array(
-            'CONDITION' => '#^/clinics/#',
+            'CONDITION' => '#^/clinics#',
             'RULE' => '',
             'ID' => 'bitrix:catalog',
             'PATH' => '/clinics/index.php',
