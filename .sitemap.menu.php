@@ -2,98 +2,98 @@
 $aMenuLinks = Array(
 	Array(
 		"Услуги",
-		"/stomatology",
+		"/stomatology/",
 		Array(), 
 		Array(), 
 		"" 
 	),
   Array(
     "Клиники",
-    "/clinics",
+    "/clinics/",
     Array(),
     Array(),
     ""
   ),
   Array(
     "Цены",
-    "/price",
+    "/price/",
     Array(),
     Array(),
     ""
   ),
   Array(
     "Врачи",
-    "/personal",
+    "/personal/",
     Array(),
     Array(),
     ""
   ),
   Array(
     "Запись на прием",
-    "/make-an-appointment",
+    "/make-an-appointment/",
     Array(),
     Array(),
     ""
   ),
   Array(
     "О нас",
-    "/about",
+    "/about/",
     Array(),
     Array(),
     ""
   ),
   Array(
     "Акции",
-    "/akcii",
+    "/akcii/",
     Array(),
     Array(),
     ""
   ),
   Array(
     "Статьи",
-    "/articles",
+    "/articles/",
     Array(),
     Array(),
     ""
   ),
   Array(
     "Вакансии",
-    "/jobs",
+    "/jobs/",
     Array(),
     Array(),
     ""
   ),
   Array(
     "Стоматология в кредит",
-    "/lechenie-v-kredit",
+    "/lechenie-v-kredit/",
     Array(),
     Array(),
     ""
   ),
   Array(
     "Лицензии и сертификаты",
-    "/licenses",
+    "/licenses/",
     Array(),
     Array(),
     ""
   ),
   Array(
     "Новости",
-    "/news",
+    "/news/",
     Array(),
     Array(),
     ""
   ),
   Array(
     "Вопрос-ответ",
-    "/questions",
+    "/questions/",
     Array(),
     Array(),
     ""
   ),
   Array(
     "Отзывы",
-    "/reviews",
+    "/reviews/",
     Array(),
     Array(),
     ""

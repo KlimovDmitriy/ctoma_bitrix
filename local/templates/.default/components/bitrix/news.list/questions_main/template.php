@@ -53,7 +53,7 @@ $this->setFrameMode(true);
 
         </div>
         <div class="ask__bottom">
-            <a href="/voprosy-i-otvety" class="button_red">Все вопросы</a>
+            <a href="/voprosy-i-otvety/" class="button_red">Все вопросы</a>
 
             <a data-form="zadat-vopros" class="use-ajax button_blue modaler">Задать вопрос</a>
 
