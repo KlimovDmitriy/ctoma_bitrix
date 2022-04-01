@@ -2,42 +2,42 @@
 $aMenuLinks = Array(
     Array(
         "Клиники",
-        "/clinics/",
+        "/clinics",
         Array(),
         Array(),
         ""
     ),
     Array(
         "Услуги",
-        "/stomatology/",
+        "/stomatology",
         Array(),
         Array(),
         ""
     ),
     Array(
         "Врачи",
-        "/personal/",
+        "/personal",
         Array(),
         Array(),
         ""
     ),
     Array(
         "Акции",
-        "/akcia/",
+        "/akcia",
         Array(),
         Array(),
         ""
     ),
     Array(
         "Цены",
-        "/price/",
+        "/price",
         Array(),
         Array(),
         ""
     ),
     Array(
         "Новости",
-        "/news/",
+        "/news",
         Array(),
         Array(),
         ""

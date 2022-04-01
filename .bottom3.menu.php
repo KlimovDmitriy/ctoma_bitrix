@@ -2,49 +2,49 @@
 $aMenuLinks = Array(
     Array(
         "О СТОМЕ",
-        "/about/",
+        "/about",
         Array(),
         Array(),
         ""
     ),
     Array(
         "Лечение в рассрочку",
-        "/lechenie-v-kredit/",
+        "/lechenie-v-kredit",
         Array(),
         Array(),
         ""
     ),
     Array(
         "Вакансии",
-        "/jobs/",
+        "/jobs",
         Array(),
         Array(),
         ""
     ),
     Array(
         "Отзывы",
-        "/reviews/",
+        "/reviews",
         Array(),
         Array(),
         ""
     ),
     Array(
         "Карта сайта",
-        "/sitemap/",
+        "/sitemap",
         Array(),
         Array(),
         ""
     ),
     Array(
         "О нас",
-        "/about/",
+        "/about",
         Array(),
         Array(),
         ""
     ),
     Array(
         "FAQ",
-        "/faq/",
+        "/faq",
         Array(),
         Array(),
         ""

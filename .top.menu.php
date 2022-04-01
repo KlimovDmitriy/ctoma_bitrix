@@ -2,91 +2,91 @@
 $aMenuLinks = Array(
   Array(
     "Услуги",
-    "/stomatology/",
+    "/stomatology",
     Array(),
     Array(),
     ""
   ),
   Array(
     "Цены",
-    "/price/",
+    "/price",
     Array(),
     Array(),
     ""
   ),
   Array(
     "Акции",
-    "/akcia/",
+    "/akcia",
     Array(),
     Array(),
     ""
   ),
   Array(
     "Клиники",
-    "/clinics/",
+    "/clinics",
     Array(),
     Array(),
     ""
   ),
   Array(
     "Врачи",
-    "/personal/",
+    "/personal",
     Array(),
     Array("FROM_IBLOCK"=>"16", "IS_PARENT"=>"1", "DEPTH_LEVEL"=>"1"),
     ""
   ),
     Array(
         "Терапевты",
-        "/personal/stomatologi-terapevty/",
+        "/personal/stomatologi-terapevty",
         Array(),
         Array("FROM_IBLOCK"=>"", "IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
         ""
     ),
     Array(
         "Пародонтологи",
-        "/personal/parodontologi/",
+        "/personal/parodontologi",
         Array(),
         Array("FROM_IBLOCK"=>"", "IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
         ""
     ),
     Array(
         "Ортопеды",
-        "/personal/stomatologi-ortopedy/",
+        "/personal/stomatologi-ortopedy",
         Array(),
         Array("FROM_IBLOCK"=>"", "IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
         ""
     ),
     Array(
         "Ортодонты",
-        "/personal/ortodonty/",
+        "/personal/ortodonty",
         Array(),
         Array("FROM_IBLOCK"=>"", "IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
         ""
     ),
     Array(
         "Хирурги",
-        "/personal/stomatologi-hirurgi/",
+        "/personal/stomatologi-hirurgi",
         Array(),
         Array("FROM_IBLOCK"=>"", "IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
         ""
     ),
   Array(
     "Портфолио",
-    "/portfolio/",
+    "/portfolio",
     Array(),
     Array(),
     ""
   ),
   Array(
     "О компании",
-    "/about/",
+    "/about",
     Array(),
       Array("FROM_IBLOCK"=>"13", "IS_PARENT"=>"1", "DEPTH_LEVEL"=>"1"),
     ""
   ),
     Array(
         "Новости",
-        "/news/",
+        "/news",
         Array(),
         Array("FROM_IBLOCK"=>"", "IS_PARENT"=>"", "DEPTH_LEVEL"=>"2"),
         ""

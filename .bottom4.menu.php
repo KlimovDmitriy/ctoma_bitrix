@@ -2,14 +2,14 @@
 $aMenuLinks = Array(
     Array(
         "Статьи",
-        "/stati/",
+        "/stati",
         Array(),
         Array(),
         ""
     ),
     Array(
         "Указатель болезней",
-        "/bolezni/",
+        "/bolezni",
         Array(),
         Array(),
         ""
