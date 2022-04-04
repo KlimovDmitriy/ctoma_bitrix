@@ -34,7 +34,8 @@
     background-color: #F1F1F1;
     padding: 15px 30px;
     min-height: 300px;
-    text-align: center
+    text-align: center;
+    height: 100%;
 }
 .advantage__card_body {
     font-family: "Myriad Pro", sans-serif;
