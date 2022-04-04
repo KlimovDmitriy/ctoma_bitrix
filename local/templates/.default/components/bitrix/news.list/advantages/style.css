@@ -51,7 +51,7 @@
     font-weight: 700;
 }
 .advantage__card_header {
-    height: 105px;
+    min-height: 105px;
 }
 .advantage__card_image {
     margin-bottom: 0;
