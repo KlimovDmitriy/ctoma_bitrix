@@ -26,7 +26,8 @@ foreach ($elements as $el) {
         'PLACEHOLDER' => $el['PROPERTIES']['PLACEHOLDER']['VALUE'],
         'WRAP_CSS' => $el['PROPERTIES']['WRAP_CSS']['VALUE'],
         'FIELD_CSS' => $el['PROPERTIES']['FIELD_CSS']['VALUE'],
-        'HIDE_LABEL' => $el['PROPERTIES']['HIDE_LABEL']['VALUE']
+        'HIDE_LABEL' => $el['PROPERTIES']['HIDE_LABEL']['VALUE'],
+        'ON_SUBMIT' => $el['PROPERTIES']['ON_SUBMIT']['VALUE']
     ];
     if ($el['PROPERTIES']['REQUIED']['VALUE'] != '') {
 

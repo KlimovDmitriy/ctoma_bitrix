@@ -62,7 +62,7 @@ $this->setFrameMode(true);
 
                             <input type="hidden" name="captcha_sid" value="<?= htmlspecialchars($capCode) ?>">
 
-                            <button type="submit" class="<?= $field['FIELD_CSS']; ?>"><?= $field['TITLE'] ?></button>
+                            <button type="submit" class="<?= $field['FIELD_CSS']; ?>" <?= $field['ON_SUBMIT'] ? 'onsubmit="'.$field['ON_SUBMIT'].'"' : '' ?>><?= $field['TITLE'] ?></button>
 
                             <? break; ?>
                         <? case 'TEXT': ?>
