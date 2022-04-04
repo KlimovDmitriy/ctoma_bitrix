@@ -21,7 +21,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     box-sizing: border-box;
-    margin: -141px 15% 50px;
+    margin: -120px 15% 50px;
     row-gap: 60px;
     column-gap: 10px;
 }
