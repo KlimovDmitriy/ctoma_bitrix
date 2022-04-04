@@ -4,16 +4,16 @@
     height: 300px;
 }
 .advantages .title__text {
-    font-weight: 600;
+    font-weight: 400;
     font-family: "Myriad Pro", sans-serif;
 }
 .title__text_upper {
-    font-size: 55px;
+    font-size: 50px;
     line-height: 60px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 .title__text_bottom {
-    font-size: 32px;
+    font-size: 34px;
     line-height: 36px;
 }
 .advantage__list {
@@ -33,7 +33,7 @@
 }
 .advantage__card {
     background-color: #F1F1F1;
-    padding: 20px 30px;
+    padding: 15px 30px;
     min-height: 300px;
     text-align: center
 }
@@ -42,13 +42,13 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
-    max-width: 468px;
-    margin: 23px auto 0 auto;
+    max-width: 400px;
+    margin: 28px auto 0 auto;
 }
 .advantage__card_title {
     text-transform: uppercase;
     font-size: 20px;
-    line-height: 24px;
+    line-height: 23px;
     font-weight: 700;
 }
 .advantage__card_header {
