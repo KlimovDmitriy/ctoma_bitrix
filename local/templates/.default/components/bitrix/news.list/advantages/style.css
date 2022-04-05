@@ -109,10 +109,6 @@
     padding-left: 0;
     padding-right: 0;
 }
-.advantage__card:hover img {
-    width: 65px;
-    height: 65px;
-}
 .advantage__card:hover .advantage__card_title {
     font-size: 22px;
     font-weight: 800;
