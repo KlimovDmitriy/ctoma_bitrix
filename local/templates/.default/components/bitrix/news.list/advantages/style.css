@@ -50,7 +50,6 @@
     font-size: 20px;
     line-height: 23px;
     font-weight: 700;
-    transition: all 0.5s;
 }
 .advantage__card_header {
     min-height: 105px;
@@ -112,7 +111,7 @@
 }
 .advantage__card:hover .advantage__card_title {
     font-size: 22px;
-    font-weight: 600;
+    font-weight: 800;
     color: #EB3223;
 }
 .advantage__card:hover .advantage__card_body {
