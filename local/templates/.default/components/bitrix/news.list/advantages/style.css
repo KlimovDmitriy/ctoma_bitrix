@@ -112,7 +112,7 @@
 }
 .advantage__card:hover .advantage__card_title {
     font-size: 22px;
-    font-weight: 800;
+    font-weight: 600;
     color: #EB3223;
 }
 .advantage__card:hover .advantage__card_body {
