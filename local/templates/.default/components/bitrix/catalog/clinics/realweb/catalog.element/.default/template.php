@@ -112,3 +112,6 @@ $name = !empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'])
         </div>
     </div>
 </div>
+<h2 class="kliniki__title title_grey width width_norm width_paddingStandart"><span class="title__br"></span> <span
+            class="title__text">Клиника на карте</span> <span class="title__br"></span></h2>
+<?php $APPLICATION->IncludeComponent("realweb:blank", "clinic_map", array(), false, array('HIDE_ICONS' => 'Y')); ?>
