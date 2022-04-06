@@ -13,8 +13,10 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 /** @var string $componentPath */
 
 /** @var CBitrixComponent $component */
+
 use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
+
 $this->setFrameMode(true);
 $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
         "START_FROM" => "0",
@@ -36,240 +38,241 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
     }
     ?>
 <?php else: ?>
-<div class="<? if ($arResult['VARIABLES']['SECTION_ID'] == 94): ?>serviceChildren__container<?else:?>service__container<? endif; ?>">
-    <? if ($arResult['VARIABLES']['SECTION_ID'] == 94): ?><div class="serviceChildren__top"><? endif; ?>
-        <div class="width width_norm width_paddingStandart<? if ($arResult['VARIABLES']['SECTION_ID'] == 94): ?> serviceChildren__center<?else:?> service__center<? endif; ?>">
+    <div class="<? if ($arResult['VARIABLES']['SECTION_ID'] == 94): ?>serviceChildren__container<? else: ?>service__container<? endif; ?>">
+        <? if ($arResult['VARIABLES']['SECTION_ID'] == 94): ?>
+        <div class="serviceChildren__top"><? endif; ?>
+            <div class="width width_norm width_paddingStandart<? if ($arResult['VARIABLES']['SECTION_ID'] == 94): ?> serviceChildren__center<? else: ?> service__center<? endif; ?>">
 
-        <div class="service__leftSidebar">
+                <div class="service__leftSidebar">
 
-            <div class="serviceMenu">
+                    <div class="serviceMenu">
 
-                <?php
-                $APPLICATION->IncludeComponent(
-                    "bitrix:menu",
-                    "stomatology",
-                    array(
-                        "ALLOW_MULTI_SELECT" => "Y",
-                        "CHILD_MENU_TYPE" => "left",
-                        "COMPONENT_TEMPLATE" => ".default",
-                        "DELAY" => "N",
-                        "MAX_LEVEL" => "2",
-                        "MENU_CACHE_GET_VARS" => array(),
-                        "MENU_CACHE_TIME" => "3600",
-                        "MENU_CACHE_TYPE" => "A",
-                        "MENU_CACHE_USE_GROUPS" => "N",
-                        "MENU_THEME" => "site",
-                        "ROOT_MENU_TYPE" => "service",
-                        "USE_EXT" => "Y"
-                    ),
-                    false
-                ); ?>
-
-
-            </div>
+                        <?php
+                        $APPLICATION->IncludeComponent(
+                            "bitrix:menu",
+                            "stomatology",
+                            array(
+                                "ALLOW_MULTI_SELECT" => "Y",
+                                "CHILD_MENU_TYPE" => "left",
+                                "COMPONENT_TEMPLATE" => ".default",
+                                "DELAY" => "N",
+                                "MAX_LEVEL" => "2",
+                                "MENU_CACHE_GET_VARS" => array(),
+                                "MENU_CACHE_TIME" => "3600",
+                                "MENU_CACHE_TYPE" => "A",
+                                "MENU_CACHE_USE_GROUPS" => "N",
+                                "MENU_THEME" => "site",
+                                "ROOT_MENU_TYPE" => "service",
+                                "USE_EXT" => "Y"
+                            ),
+                            false
+                        ); ?>
 
 
-            <?php \Realweb\Site\Site::showIncludeText('LEFT_BANNER_STATIC'); ?>
+                    </div>
 
-            <? $APPLICATION->IncludeComponent("realweb:blank", "popup_map", array(), false, array('HIDE_ICONS' => 'Y')); ?>
 
-        </div>
+                    <?php \Realweb\Site\Site::showIncludeText('LEFT_BANNER_STATIC'); ?>
 
-        <div class="service__bottomMobile">
-            <p class="toggleH2"><a class="content_toggle" href="#">Услуги</a></p>
-            <div class="content_block_service" style="display: none;">
-                <div class="serviceMenu">
-                    <?php
-                    $APPLICATION->IncludeComponent(
-                        "bitrix:menu",
-                        "stomatology",
-                        array(
-                            "ALLOW_MULTI_SELECT" => "Y",
-                            "CHILD_MENU_TYPE" => "left",
-                            "COMPONENT_TEMPLATE" => ".default",
-                            "DELAY" => "N",
-                            "MAX_LEVEL" => "2",
-                            "MENU_CACHE_GET_VARS" => array(),
-                            "MENU_CACHE_TIME" => "3600",
-                            "MENU_CACHE_TYPE" => "A",
-                            "MENU_CACHE_USE_GROUPS" => "N",
-                            "MENU_THEME" => "site",
-                            "ROOT_MENU_TYPE" => "service",
-                            "USE_EXT" => "Y"
-                        ),
-                        false
-                    ); ?>
+                    <? $APPLICATION->IncludeComponent("realweb:blank", "popup_map", array(), false, array('HIDE_ICONS' => 'Y')); ?>
+
+                </div>
+
+                <div class="service__bottomMobile">
+                    <p class="toggleH2"><a class="content_toggle" href="#">Услуги</a></p>
+                    <div class="content_block_service" style="display: none;">
+                        <div class="serviceMenu">
+                            <?php
+                            $APPLICATION->IncludeComponent(
+                                "bitrix:menu",
+                                "stomatology",
+                                array(
+                                    "ALLOW_MULTI_SELECT" => "Y",
+                                    "CHILD_MENU_TYPE" => "left",
+                                    "COMPONENT_TEMPLATE" => ".default",
+                                    "DELAY" => "N",
+                                    "MAX_LEVEL" => "2",
+                                    "MENU_CACHE_GET_VARS" => array(),
+                                    "MENU_CACHE_TIME" => "3600",
+                                    "MENU_CACHE_TYPE" => "A",
+                                    "MENU_CACHE_USE_GROUPS" => "N",
+                                    "MENU_THEME" => "site",
+                                    "ROOT_MENU_TYPE" => "service",
+                                    "USE_EXT" => "Y"
+                                ),
+                                false
+                            ); ?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service__content">
+                    <div class="block-region-main">
+                        <div class="block">
+
+                            <?php
+                            $intSectionID = $APPLICATION->IncludeComponent(
+                                "bitrix:catalog.section", "", array(
+                                "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
+                                "IBLOCK_ID" => $arParams["IBLOCK_ID"],
+                                "ELEMENT_SORT_FIELD" => $arParams["ELEMENT_SORT_FIELD"],
+                                "ELEMENT_SORT_ORDER" => $arParams["ELEMENT_SORT_ORDER"],
+                                "ELEMENT_SORT_FIELD2" => $arParams["ELEMENT_SORT_FIELD2"],
+                                "ELEMENT_SORT_ORDER2" => $arParams["ELEMENT_SORT_ORDER2"],
+                                "PROPERTY_CODE" => $arParams["LIST_PROPERTY_CODE"],
+                                "META_KEYWORDS" => $arParams["LIST_META_KEYWORDS"],
+                                "META_DESCRIPTION" => $arParams["LIST_META_DESCRIPTION"],
+                                "BROWSER_TITLE" => $arParams["LIST_BROWSER_TITLE"],
+                                "SET_LAST_MODIFIED" => $arParams["SET_LAST_MODIFIED"],
+                                "INCLUDE_SUBSECTIONS" => $arParams["INCLUDE_SUBSECTIONS"],
+                                "BASKET_URL" => $arParams["BASKET_URL"],
+                                "ACTION_VARIABLE" => $arParams["ACTION_VARIABLE"],
+                                "PRODUCT_ID_VARIABLE" => $arParams["PRODUCT_ID_VARIABLE"],
+                                "SECTION_ID_VARIABLE" => $arParams["SECTION_ID_VARIABLE"],
+                                "PRODUCT_QUANTITY_VARIABLE" => $arParams["PRODUCT_QUANTITY_VARIABLE"],
+                                "PRODUCT_PROPS_VARIABLE" => $arParams["PRODUCT_PROPS_VARIABLE"],
+                                "FILTER_NAME" => $arParams["FILTER_NAME"],
+                                "CACHE_TYPE" => $arParams["CACHE_TYPE"],
+                                "CACHE_TIME" => $arParams["CACHE_TIME"],
+                                "CACHE_FILTER" => $arParams["CACHE_FILTER"],
+                                "CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
+                                "SET_TITLE" => $arParams["SET_TITLE"],
+                                "MESSAGE_404" => $arParams["MESSAGE_404"],
+                                "SET_STATUS_404" => "Y",
+                                "SHOW_404" => "Y",
+                                "FILE_404" => $arParams["FILE_404"],
+                                "DISPLAY_COMPARE" => $arParams["USE_COMPARE"],
+                                "PAGE_ELEMENT_COUNT" => $arParams["PAGE_ELEMENT_COUNT"],
+                                "LINE_ELEMENT_COUNT" => $arParams["LINE_ELEMENT_COUNT"],
+                                "PRICE_CODE" => $arParams["PRICE_CODE"],
+                                "USE_PRICE_COUNT" => $arParams["USE_PRICE_COUNT"],
+                                "SHOW_PRICE_COUNT" => $arParams["SHOW_PRICE_COUNT"],
+                                "PRICE_VAT_INCLUDE" => $arParams["PRICE_VAT_INCLUDE"],
+                                "USE_PRODUCT_QUANTITY" => $arParams['USE_PRODUCT_QUANTITY'],
+                                "ADD_PROPERTIES_TO_BASKET" => (isset($arParams["ADD_PROPERTIES_TO_BASKET"]) ? $arParams["ADD_PROPERTIES_TO_BASKET"] : ''),
+                                "PARTIAL_PRODUCT_PROPERTIES" => (isset($arParams["PARTIAL_PRODUCT_PROPERTIES"]) ? $arParams["PARTIAL_PRODUCT_PROPERTIES"] : ''),
+                                "PRODUCT_PROPERTIES" => $arParams["PRODUCT_PROPERTIES"],
+                                "DISPLAY_TOP_PAGER" => $arParams["DISPLAY_TOP_PAGER"],
+                                "DISPLAY_BOTTOM_PAGER" => $arParams["DISPLAY_BOTTOM_PAGER"],
+                                "PAGER_TITLE" => $arParams["PAGER_TITLE"],
+                                "PAGER_SHOW_ALWAYS" => $arParams["PAGER_SHOW_ALWAYS"],
+                                "PAGER_TEMPLATE" => $arParams["PAGER_TEMPLATE"],
+                                "PAGER_DESC_NUMBERING" => $arParams["PAGER_DESC_NUMBERING"],
+                                "PAGER_DESC_NUMBERING_CACHE_TIME" => $arParams["PAGER_DESC_NUMBERING_CACHE_TIME"],
+                                "PAGER_SHOW_ALL" => $arParams["PAGER_SHOW_ALL"],
+                                "PAGER_BASE_LINK_ENABLE" => $arParams["PAGER_BASE_LINK_ENABLE"],
+                                "PAGER_BASE_LINK" => $arParams["PAGER_BASE_LINK"],
+                                "PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
+                                "OFFERS_CART_PROPERTIES" => $arParams["OFFERS_CART_PROPERTIES"],
+                                "OFFERS_FIELD_CODE" => $arParams["LIST_OFFERS_FIELD_CODE"],
+                                "OFFERS_PROPERTY_CODE" => $arParams["LIST_OFFERS_PROPERTY_CODE"],
+                                "OFFERS_SORT_FIELD" => $arParams["OFFERS_SORT_FIELD"],
+                                "OFFERS_SORT_ORDER" => $arParams["OFFERS_SORT_ORDER"],
+                                "OFFERS_SORT_FIELD2" => $arParams["OFFERS_SORT_FIELD2"],
+                                "OFFERS_SORT_ORDER2" => $arParams["OFFERS_SORT_ORDER2"],
+                                "OFFERS_LIMIT" => $arParams["LIST_OFFERS_LIMIT"],
+                                "SECTION_ID" => $arResult["VARIABLES"]["SECTION_ID"],
+                                "SECTION_CODE" => $arResult["VARIABLES"]["SECTION_CODE"],
+                                "SECTION_URL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["section"],
+                                "DETAIL_URL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["element"],
+                                "USE_MAIN_ELEMENT_SECTION" => $arParams["USE_MAIN_ELEMENT_SECTION"],
+                                'CONVERT_CURRENCY' => $arParams['CONVERT_CURRENCY'],
+                                'CURRENCY_ID' => $arParams['CURRENCY_ID'],
+                                'HIDE_NOT_AVAILABLE' => $arParams["HIDE_NOT_AVAILABLE"],
+                                'LABEL_PROP' => $arParams['LABEL_PROP'],
+                                'ADD_PICT_PROP' => $arParams['ADD_PICT_PROP'],
+                                'PRODUCT_DISPLAY_MODE' => $arParams['PRODUCT_DISPLAY_MODE'],
+                                'OFFER_ADD_PICT_PROP' => $arParams['OFFER_ADD_PICT_PROP'],
+                                'OFFER_TREE_PROPS' => $arParams['OFFER_TREE_PROPS'],
+                                'PRODUCT_SUBSCRIPTION' => $arParams['PRODUCT_SUBSCRIPTION'],
+                                'SHOW_DISCOUNT_PERCENT' => $arParams['SHOW_DISCOUNT_PERCENT'],
+                                'SHOW_OLD_PRICE' => $arParams['SHOW_OLD_PRICE'],
+                                'MESS_BTN_BUY' => $arParams['MESS_BTN_BUY'],
+                                'MESS_BTN_ADD_TO_BASKET' => $arParams['MESS_BTN_ADD_TO_BASKET'],
+                                'MESS_BTN_SUBSCRIBE' => $arParams['MESS_BTN_SUBSCRIBE'],
+                                'MESS_BTN_DETAIL' => $arParams['MESS_BTN_DETAIL'],
+                                'MESS_NOT_AVAILABLE' => $arParams['MESS_NOT_AVAILABLE'],
+                                'TEMPLATE_THEME' => (isset($arParams['TEMPLATE_THEME']) ? $arParams['TEMPLATE_THEME'] : ''),
+                                "ADD_SECTIONS_CHAIN" => "Y",
+                                'ADD_TO_BASKET_ACTION' => $basketAction,
+                                'SHOW_CLOSE_POPUP' => isset($arParams['COMMON_SHOW_CLOSE_POPUP']) ? $arParams['COMMON_SHOW_CLOSE_POPUP'] : '',
+                                'COMPARE_PATH' => $arResult['FOLDER'] . $arResult['URL_TEMPLATES']['compare'],
+                                'BACKGROUND_IMAGE' => (isset($arParams['SECTION_BACKGROUND_IMAGE']) ? $arParams['SECTION_BACKGROUND_IMAGE'] : ''),
+                                'DISABLE_INIT_JS_IN_COMPONENT' => (isset($arParams['DISABLE_INIT_JS_IN_COMPONENT']) ? $arParams['DISABLE_INIT_JS_IN_COMPONENT'] : ''),
+                                'SECTION_USER_FIELDS' => array('UF_*'),
+                            ), $component
+                            );
+                            ?>
+
+                            <?php
+                            global $questionFilter;
+                            $questionFilter = ['PROPERTY_WHERE_SHOW_SECTION' => $arResult['VARIABLES']['SECTION_ID']];
+                            $APPLICATION->IncludeComponent(
+                                "bitrix:catalog.section",
+                                "question_answer",
+                                array(
+                                    "ADD_SECTIONS_CHAIN" => "Y",
+                                    "CACHE_FILTER" => "N",
+                                    "CACHE_GROUPS" => "Y",
+                                    "CACHE_TIME" => "36000000",
+                                    "CACHE_TYPE" => "A",
+                                    "COUNT_ELEMENTS" => "N",
+                                    "FILTER_NAME" => "questionFilter",
+                                    "IBLOCK_ID" => \Realweb\Site\Site::getIblockId('faq'),
+                                    "IBLOCK_TYPE" => "content",
+                                    "SECTION_CODE" => $_REQUEST["SECTION_CODE"],
+                                    "SECTION_FIELDS" => array("", ""),
+                                    "SECTION_ID" => "",
+                                    "SECTION_URL" => "",
+                                    "SECTION_USER_FIELDS" => array("", ""),
+                                    "SHOW_PARENT_NAME" => "Y",
+                                    "TOP_DEPTH" => "2",
+                                    "PAGE_ELEMENT_COUNT" => "100",
+                                    "VIEW_MODE" => "LINE"
+                                ),
+                                $component
+                            );
+                            ?>
+
+                            <?php
+                            global $portfFilter;
+                            $portfFilter = ['PROPERTY_WHERE_SHOW_SECTION' => $arResult['VARIABLES']['SECTION_ID']];
+                            $APPLICATION->IncludeComponent(
+                                "bitrix:catalog.section",
+                                "other",
+                                array(
+                                    "ADD_SECTIONS_CHAIN" => "Y",
+                                    "CACHE_FILTER" => "N",
+                                    "CACHE_GROUPS" => "Y",
+                                    "CACHE_TIME" => "36000000",
+                                    "CACHE_TYPE" => "A",
+                                    "COUNT_ELEMENTS" => "N",
+                                    "FILTER_NAME" => "portfFilter",
+                                    "IBLOCK_ID" => \Realweb\Site\Site::getIblockId('portfolio'),
+                                    "IBLOCK_TYPE" => "content",
+                                    "SECTION_CODE" => $_REQUEST["SECTION_CODE"],
+                                    "SECTION_FIELDS" => array("", ""),
+                                    "SECTION_ID" => "",
+                                    "SECTION_URL" => "",
+                                    "SECTION_USER_FIELDS" => array("", ""),
+                                    "SHOW_PARENT_NAME" => "Y",
+                                    "TOP_DEPTH" => "2",
+                                    "PAGE_ELEMENT_COUNT" => "100",
+                                    "VIEW_MODE" => "LINE"
+                                ),
+                                $component
+                            );
+                            ?>
+
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
-        </div>
-
-        <div class="service__content">
-            <div class="block-region-main">
-                <div class="block">
-
-        <?php
-        $intSectionID = $APPLICATION->IncludeComponent(
-                "bitrix:catalog.section", "", array(
-            "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
-            "IBLOCK_ID" => $arParams["IBLOCK_ID"],
-            "ELEMENT_SORT_FIELD" => $arParams["ELEMENT_SORT_FIELD"],
-            "ELEMENT_SORT_ORDER" => $arParams["ELEMENT_SORT_ORDER"],
-            "ELEMENT_SORT_FIELD2" => $arParams["ELEMENT_SORT_FIELD2"],
-            "ELEMENT_SORT_ORDER2" => $arParams["ELEMENT_SORT_ORDER2"],
-            "PROPERTY_CODE" => $arParams["LIST_PROPERTY_CODE"],
-            "META_KEYWORDS" => $arParams["LIST_META_KEYWORDS"],
-            "META_DESCRIPTION" => $arParams["LIST_META_DESCRIPTION"],
-            "BROWSER_TITLE" => $arParams["LIST_BROWSER_TITLE"],
-            "SET_LAST_MODIFIED" => $arParams["SET_LAST_MODIFIED"],
-            "INCLUDE_SUBSECTIONS" => $arParams["INCLUDE_SUBSECTIONS"],
-            "BASKET_URL" => $arParams["BASKET_URL"],
-            "ACTION_VARIABLE" => $arParams["ACTION_VARIABLE"],
-            "PRODUCT_ID_VARIABLE" => $arParams["PRODUCT_ID_VARIABLE"],
-            "SECTION_ID_VARIABLE" => $arParams["SECTION_ID_VARIABLE"],
-            "PRODUCT_QUANTITY_VARIABLE" => $arParams["PRODUCT_QUANTITY_VARIABLE"],
-            "PRODUCT_PROPS_VARIABLE" => $arParams["PRODUCT_PROPS_VARIABLE"],
-            "FILTER_NAME" => $arParams["FILTER_NAME"],
-            "CACHE_TYPE" => $arParams["CACHE_TYPE"],
-            "CACHE_TIME" => $arParams["CACHE_TIME"],
-            "CACHE_FILTER" => $arParams["CACHE_FILTER"],
-            "CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
-            "SET_TITLE" => $arParams["SET_TITLE"],
-            "MESSAGE_404" => $arParams["MESSAGE_404"],
-            "SET_STATUS_404" => "Y",
-            "SHOW_404" => "Y",
-            "FILE_404" => $arParams["FILE_404"],
-            "DISPLAY_COMPARE" => $arParams["USE_COMPARE"],
-            "PAGE_ELEMENT_COUNT" => $arParams["PAGE_ELEMENT_COUNT"],
-            "LINE_ELEMENT_COUNT" => $arParams["LINE_ELEMENT_COUNT"],
-            "PRICE_CODE" => $arParams["PRICE_CODE"],
-            "USE_PRICE_COUNT" => $arParams["USE_PRICE_COUNT"],
-            "SHOW_PRICE_COUNT" => $arParams["SHOW_PRICE_COUNT"],
-            "PRICE_VAT_INCLUDE" => $arParams["PRICE_VAT_INCLUDE"],
-            "USE_PRODUCT_QUANTITY" => $arParams['USE_PRODUCT_QUANTITY'],
-            "ADD_PROPERTIES_TO_BASKET" => (isset($arParams["ADD_PROPERTIES_TO_BASKET"]) ? $arParams["ADD_PROPERTIES_TO_BASKET"] : ''),
-            "PARTIAL_PRODUCT_PROPERTIES" => (isset($arParams["PARTIAL_PRODUCT_PROPERTIES"]) ? $arParams["PARTIAL_PRODUCT_PROPERTIES"] : ''),
-            "PRODUCT_PROPERTIES" => $arParams["PRODUCT_PROPERTIES"],
-            "DISPLAY_TOP_PAGER" => $arParams["DISPLAY_TOP_PAGER"],
-            "DISPLAY_BOTTOM_PAGER" => $arParams["DISPLAY_BOTTOM_PAGER"],
-            "PAGER_TITLE" => $arParams["PAGER_TITLE"],
-            "PAGER_SHOW_ALWAYS" => $arParams["PAGER_SHOW_ALWAYS"],
-            "PAGER_TEMPLATE" => $arParams["PAGER_TEMPLATE"],
-            "PAGER_DESC_NUMBERING" => $arParams["PAGER_DESC_NUMBERING"],
-            "PAGER_DESC_NUMBERING_CACHE_TIME" => $arParams["PAGER_DESC_NUMBERING_CACHE_TIME"],
-            "PAGER_SHOW_ALL" => $arParams["PAGER_SHOW_ALL"],
-            "PAGER_BASE_LINK_ENABLE" => $arParams["PAGER_BASE_LINK_ENABLE"],
-            "PAGER_BASE_LINK" => $arParams["PAGER_BASE_LINK"],
-            "PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
-            "OFFERS_CART_PROPERTIES" => $arParams["OFFERS_CART_PROPERTIES"],
-            "OFFERS_FIELD_CODE" => $arParams["LIST_OFFERS_FIELD_CODE"],
-            "OFFERS_PROPERTY_CODE" => $arParams["LIST_OFFERS_PROPERTY_CODE"],
-            "OFFERS_SORT_FIELD" => $arParams["OFFERS_SORT_FIELD"],
-            "OFFERS_SORT_ORDER" => $arParams["OFFERS_SORT_ORDER"],
-            "OFFERS_SORT_FIELD2" => $arParams["OFFERS_SORT_FIELD2"],
-            "OFFERS_SORT_ORDER2" => $arParams["OFFERS_SORT_ORDER2"],
-            "OFFERS_LIMIT" => $arParams["LIST_OFFERS_LIMIT"],
-            "SECTION_ID" => $arResult["VARIABLES"]["SECTION_ID"],
-            "SECTION_CODE" => $arResult["VARIABLES"]["SECTION_CODE"],
-            "SECTION_URL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["section"],
-            "DETAIL_URL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["element"],
-            "USE_MAIN_ELEMENT_SECTION" => $arParams["USE_MAIN_ELEMENT_SECTION"],
-            'CONVERT_CURRENCY' => $arParams['CONVERT_CURRENCY'],
-            'CURRENCY_ID' => $arParams['CURRENCY_ID'],
-            'HIDE_NOT_AVAILABLE' => $arParams["HIDE_NOT_AVAILABLE"],
-            'LABEL_PROP' => $arParams['LABEL_PROP'],
-            'ADD_PICT_PROP' => $arParams['ADD_PICT_PROP'],
-            'PRODUCT_DISPLAY_MODE' => $arParams['PRODUCT_DISPLAY_MODE'],
-            'OFFER_ADD_PICT_PROP' => $arParams['OFFER_ADD_PICT_PROP'],
-            'OFFER_TREE_PROPS' => $arParams['OFFER_TREE_PROPS'],
-            'PRODUCT_SUBSCRIPTION' => $arParams['PRODUCT_SUBSCRIPTION'],
-            'SHOW_DISCOUNT_PERCENT' => $arParams['SHOW_DISCOUNT_PERCENT'],
-            'SHOW_OLD_PRICE' => $arParams['SHOW_OLD_PRICE'],
-            'MESS_BTN_BUY' => $arParams['MESS_BTN_BUY'],
-            'MESS_BTN_ADD_TO_BASKET' => $arParams['MESS_BTN_ADD_TO_BASKET'],
-            'MESS_BTN_SUBSCRIBE' => $arParams['MESS_BTN_SUBSCRIBE'],
-            'MESS_BTN_DETAIL' => $arParams['MESS_BTN_DETAIL'],
-            'MESS_NOT_AVAILABLE' => $arParams['MESS_NOT_AVAILABLE'],
-            'TEMPLATE_THEME' => (isset($arParams['TEMPLATE_THEME']) ? $arParams['TEMPLATE_THEME'] : ''),
-            "ADD_SECTIONS_CHAIN" => "Y",
-            'ADD_TO_BASKET_ACTION' => $basketAction,
-            'SHOW_CLOSE_POPUP' => isset($arParams['COMMON_SHOW_CLOSE_POPUP']) ? $arParams['COMMON_SHOW_CLOSE_POPUP'] : '',
-            'COMPARE_PATH' => $arResult['FOLDER'] . $arResult['URL_TEMPLATES']['compare'],
-            'BACKGROUND_IMAGE' => (isset($arParams['SECTION_BACKGROUND_IMAGE']) ? $arParams['SECTION_BACKGROUND_IMAGE'] : ''),
-            'DISABLE_INIT_JS_IN_COMPONENT' => (isset($arParams['DISABLE_INIT_JS_IN_COMPONENT']) ? $arParams['DISABLE_INIT_JS_IN_COMPONENT'] : ''),
-            'SECTION_USER_FIELDS' => array('UF_*'),
-                ), $component
-        );
-        ?>
-
-        <?php
-        global $questionFilter;
-        $questionFilter = ['PROPERTY_WHERE_SHOW_SECTION' => $arResult['VARIABLES']['SECTION_ID']];
-        $APPLICATION->IncludeComponent(
-            "bitrix:catalog.section",
-            "question_answer",
-            array(
-                "ADD_SECTIONS_CHAIN" => "Y",
-                "CACHE_FILTER" => "N",
-                "CACHE_GROUPS" => "Y",
-                "CACHE_TIME" => "36000000",
-                "CACHE_TYPE" => "A",
-                "COUNT_ELEMENTS" => "N",
-                "FILTER_NAME" => "questionFilter",
-                "IBLOCK_ID" => \Realweb\Site\Site::getIblockId('faq'),
-                "IBLOCK_TYPE" => "content",
-                "SECTION_CODE" => $_REQUEST["SECTION_CODE"],
-                "SECTION_FIELDS" => array("", ""),
-                "SECTION_ID" => "",
-                "SECTION_URL" => "",
-                "SECTION_USER_FIELDS" => array("", ""),
-                "SHOW_PARENT_NAME" => "Y",
-                "TOP_DEPTH" => "2",
-                "PAGE_ELEMENT_COUNT" => "100",
-                "VIEW_MODE" => "LINE"
-            ),
-            $component
-        );
-        ?>
-
-        <?php
-        global $portfFilter;
-        $portfFilter = ['PROPERTY_WHERE_SHOW_SECTION' => $arResult['VARIABLES']['SECTION_ID']];
-        $APPLICATION->IncludeComponent(
-            "bitrix:catalog.section",
-            "other",
-            array(
-                "ADD_SECTIONS_CHAIN" => "Y",
-                "CACHE_FILTER" => "N",
-                "CACHE_GROUPS" => "Y",
-                "CACHE_TIME" => "36000000",
-                "CACHE_TYPE" => "A",
-                "COUNT_ELEMENTS" => "N",
-                "FILTER_NAME" => "portfFilter",
-                "IBLOCK_ID" => \Realweb\Site\Site::getIblockId('portfolio'),
-                "IBLOCK_TYPE" => "content",
-                "SECTION_CODE" => $_REQUEST["SECTION_CODE"],
-                "SECTION_FIELDS" => array("", ""),
-                "SECTION_ID" => "",
-                "SECTION_URL" => "",
-                "SECTION_USER_FIELDS" => array("", ""),
-                "SHOW_PARENT_NAME" => "Y",
-                "TOP_DEPTH" => "2",
-                "PAGE_ELEMENT_COUNT" => "100",
-                "VIEW_MODE" => "LINE"
-            ),
-            $component
-        );
-        ?>
-
+            <? if ($arResult['VARIABLES']['SECTION_ID'] == 94): ?></div><? endif; ?>
     </div>
-</div>
-
-
-    </div>
-    </div>
-        <? if ($arResult['VARIABLES']['SECTION_ID'] == 94): ?></div><? endif; ?>
-</div>
-    <?php endif; ?>
+<?php endif; ?>
 
 
 <?
@@ -335,13 +338,13 @@ $servFilter = ['PROPERTY_SERVICES_GROUPS' => $arResult['VARIABLES']['SECTION_ID'
     )
 ); ?>
 <!--/noindex-->
-    <? $APPLICATION->IncludeComponent("realweb:blank", "clinics_map", array(), false, array('HIDE_ICONS' => 'Y')); ?>
-    <? $APPLICATION->IncludeComponent("realweb:blank", "subscribe", array(), false, array('HIDE_ICONS' => 'Y')); ?>
+<? $APPLICATION->IncludeComponent("realweb:blank", "clinics_map", array(), false, array('HIDE_ICONS' => 'Y')); ?>
+<? $APPLICATION->IncludeComponent("realweb:blank", "subscribe", array(), false, array('HIDE_ICONS' => 'Y')); ?>
 <!--noindex-->
 <? $APPLICATION->IncludeComponent(
-      "bitrix:news.list",
-      "akcii",
-      array(
+    "bitrix:news.list",
+    "akcii",
+    array(
         "ACTIVE_DATE_FORMAT" => "d.m.Y",
         "ADD_SECTIONS_CHAIN" => "N",
         "AJAX_MODE" => "N",
@@ -393,13 +396,13 @@ $servFilter = ['PROPERTY_SERVICES_GROUPS' => $arResult['VARIABLES']['SECTION_ID'
         "SORT_ORDER1" => "ASC",
         "SORT_ORDER2" => "DESC",
         "STRICT_SECTION_CHECK" => "N"
-      )
-    ); ?>
+    )
+); ?>
 
-    <? $APPLICATION->IncludeComponent(
-      "bitrix:news.list",
-      "reviews_main",
-      array(
+<? $APPLICATION->IncludeComponent(
+    "bitrix:news.list",
+    "reviews_main",
+    array(
         "ACTIVE_DATE_FORMAT" => "d.m.Y",
         "ADD_SECTIONS_CHAIN" => "N",
         "AJAX_MODE" => "N",
@@ -419,7 +422,7 @@ $servFilter = ['PROPERTY_SERVICES_GROUPS' => $arResult['VARIABLES']['SECTION_ID'
         "DISPLAY_PICTURE" => "Y",
         "DISPLAY_PREVIEW_TEXT" => "Y",
         "DISPLAY_TOP_PAGER" => "N",
-        "FIELD_CODE" => array(0 => "NAME", 1 => "PREVIEW_TEXT", 2 => "PREVIEW_PICTURE", 3 => "ACTIVE_TO",),
+        "FIELD_CODE" => array(0 => "NAME", 1 => "PREVIEW_TEXT", 2 => "PREVIEW_PICTURE", 3 => "ACTIVE_TO", 4 => "DATE_ACTIVE_FROM"),
         "FILTER_NAME" => "",
         "HIDE_LINK_WHEN_NO_DETAIL" => "N",
         "IBLOCK_ID" => \Realweb\Site\Site::getIblockId('reviews'),
@@ -427,7 +430,7 @@ $servFilter = ['PROPERTY_SERVICES_GROUPS' => $arResult['VARIABLES']['SECTION_ID'
         "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
         "INCLUDE_SUBSECTIONS" => "N",
         "MESSAGE_404" => "",
-        "NEWS_COUNT" => "100",
+        "NEWS_COUNT" => "5",
         "PAGER_BASE_LINK_ENABLE" => "N",
         "PAGER_DESC_NUMBERING" => "N",
         "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
@@ -446,17 +449,17 @@ $servFilter = ['PROPERTY_SERVICES_GROUPS' => $arResult['VARIABLES']['SECTION_ID'
         "SET_STATUS_404" => "N",
         "SET_TITLE" => "N",
         "SHOW_404" => "N",
-        "SORT_BY1" => "SORT",
+        "SORT_BY1" => "DATE_ACTIVE_FROM",
         "SORT_BY2" => "TIMESTAMP_X",
-        "SORT_ORDER1" => "ASC",
+        "SORT_ORDER1" => "DESC",
         "SORT_ORDER2" => "DESC",
         "STRICT_SECTION_CHECK" => "N"
-      )
-    ); ?><!--/noindex-->
-    <? $APPLICATION->IncludeComponent(
-      "bitrix:news.list",
-      "questions_main",
-      array(
+    )
+); ?><!--/noindex-->
+<? $APPLICATION->IncludeComponent(
+    "bitrix:news.list",
+    "questions_main",
+    array(
         "ACTIVE_DATE_FORMAT" => "d.m.Y",
         "ADD_SECTIONS_CHAIN" => "N",
         "AJAX_MODE" => "N",
@@ -508,6 +511,6 @@ $servFilter = ['PROPERTY_SERVICES_GROUPS' => $arResult['VARIABLES']['SECTION_ID'
         "SORT_ORDER1" => "DESC",
         "SORT_ORDER2" => "DESC",
         "STRICT_SECTION_CHECK" => "N"
-      )
-    ); ?>
+    )
+); ?>
 
