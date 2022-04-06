@@ -276,6 +276,7 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
 global $servFilter;
 $servFilter = ['PROPERTY_SERVICES_GROUPS' => $arResult['VARIABLES']['SECTION_ID']];
 ?>
+<!--noindex-->
 <? $APPLICATION->IncludeComponent(
     "bitrix:news.list",
     "doctors_slider",
@@ -333,9 +334,11 @@ $servFilter = ['PROPERTY_SERVICES_GROUPS' => $arResult['VARIABLES']['SECTION_ID'
         "STRICT_SECTION_CHECK" => "N"
     )
 ); ?>
+<!--/noindex-->
     <? $APPLICATION->IncludeComponent("realweb:blank", "clinics_map", array(), false, array('HIDE_ICONS' => 'Y')); ?>
     <? $APPLICATION->IncludeComponent("realweb:blank", "subscribe", array(), false, array('HIDE_ICONS' => 'Y')); ?>
-    <? $APPLICATION->IncludeComponent(
+<!--noindex-->
+<? $APPLICATION->IncludeComponent(
       "bitrix:news.list",
       "akcii",
       array(
@@ -392,6 +395,7 @@ $servFilter = ['PROPERTY_SERVICES_GROUPS' => $arResult['VARIABLES']['SECTION_ID'
         "STRICT_SECTION_CHECK" => "N"
       )
     ); ?>
+
     <? $APPLICATION->IncludeComponent(
       "bitrix:news.list",
       "reviews_main",
@@ -448,7 +452,7 @@ $servFilter = ['PROPERTY_SERVICES_GROUPS' => $arResult['VARIABLES']['SECTION_ID'
         "SORT_ORDER2" => "DESC",
         "STRICT_SECTION_CHECK" => "N"
       )
-    ); ?>
+    ); ?><!--/noindex-->
     <? $APPLICATION->IncludeComponent(
       "bitrix:news.list",
       "questions_main",
