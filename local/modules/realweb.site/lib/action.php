@@ -199,23 +199,7 @@ class Action
         while ($ob = $res->GetNextElement()) {
             $errors[] = 'Этот адрес уже подписан на рассылку!';
         }
-        $sumbission_data = [];
-        $exclude = ['submit', 'pers_data'];
-        foreach ($datas as $form_field) {
-            $code = strtolower($form_field['FIELDS']['CODE']);
 
-            $sumbission_data[$code] = ['LABEL' => $form_field['FIELDS']['NAME'], 'VALUE' => $input[$code]];
-
-            if (in_array($code, $exclude)) {
-                unset($sumbission_data[$code]);
-            }
-        }
-        $html = '<h3>Данные формы</h3>';
-        foreach ($sumbission_data as $line) {
-
-            $html .= '<b>' . $line['LABEL'] . '</b> ' . $line['VALUE'] . '<br>';
-
-        }
         if (empty($errors)) {
 
             $PROPS = ['EMAIL' => $input['email']];

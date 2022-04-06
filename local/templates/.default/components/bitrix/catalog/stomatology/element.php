@@ -281,7 +281,9 @@ $el = CIBlockElement::GetList(array(), array('IBLOCK_ID'=>$arParams['IBLOCK_ID']
                 class="title__text map__caption">Клиники на карте</span><span class="title__br"></span></div>
     <?php
     $APPLICATION->IncludeComponent("realweb:blank", "clinics_map", array(), false, array('HIDE_ICONS' => 'Y'));
-
+?>
+    <!--noindex-->
+    <?
     global $servFilter;
     $servFilter = ['PROPERTY_SERVICES_ELEMENTS' => $el["ID"]];
 
@@ -341,8 +343,10 @@ $el = CIBlockElement::GetList(array(), array('IBLOCK_ID'=>$arParams['IBLOCK_ID']
             "SORT_ORDER2" => "DESC",
             "STRICT_SECTION_CHECK" => "N"
         )
-    );
-     $APPLICATION->IncludeComponent("realweb:blank", "subscribe", array(), false, array('HIDE_ICONS' => 'Y')); ?>
+    );?>
+    <!--/noindex-->
+    <? $APPLICATION->IncludeComponent("realweb:blank", "subscribe", array(), false, array('HIDE_ICONS' => 'Y')); ?>
+    <!--noindex-->
     <? $APPLICATION->IncludeComponent(
       "bitrix:news.list",
       "akcii",
@@ -456,7 +460,7 @@ $el = CIBlockElement::GetList(array(), array('IBLOCK_ID'=>$arParams['IBLOCK_ID']
         "SORT_ORDER2" => "DESC",
         "STRICT_SECTION_CHECK" => "N"
       )
-    ); ?>
+    ); ?><!--/noindex-->
     <? $APPLICATION->IncludeComponent(
       "bitrix:news.list",
       "questions_main",

@@ -166,7 +166,7 @@ $APPLICATION->SetTitle("Главная");
 
 </div>
     <!-- /Блок преимуществ -->
-
+    <!--noindex-->
 
     <? $APPLICATION->IncludeComponent(
         "bitrix:news.list",
@@ -225,11 +225,11 @@ $APPLICATION->SetTitle("Главная");
             "STRICT_SECTION_CHECK" => "N"
         )
     ); ?>
-
+    <!--/noindex-->
 
     <? $APPLICATION->IncludeComponent("realweb:blank", "subscribe", array(), false, array('HIDE_ICONS' => 'Y')); ?>
 
-
+    <!--noindex-->
     <? $APPLICATION->IncludeComponent(
     "bitrix:news.list",
     "doctors_slider",
@@ -287,11 +287,11 @@ $APPLICATION->SetTitle("Главная");
         "STRICT_SECTION_CHECK" => "N"
     )
 ); ?>
-
+    <!--/noindex-->
 
 </div>
     <? $APPLICATION->IncludeComponent("realweb:blank", "clinics_map", array(), false, array('HIDE_ICONS' => 'Y')); ?>
-
+    <!--noindex-->
 <? $APPLICATION->IncludeComponent(
     "bitrix:news.list",
     "reviews_main",
@@ -407,7 +407,7 @@ $APPLICATION->SetTitle("Главная");
         "SORT_ORDER2" => "DESC",
         "STRICT_SECTION_CHECK" => "N"
       )
-    ); ?>
+    ); ?><!--/noindex-->
     <!-- Вопрос-ответ на главной странице-->
 <? $APPLICATION->IncludeComponent(
     "bitrix:news.list",
