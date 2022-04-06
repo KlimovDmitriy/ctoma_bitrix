@@ -59,6 +59,7 @@ ErrorDocument 404 /404.php
 Redirect 301 /questions /voprosy-i-otvety/
 Redirect 301 /articles /stati/
 Redirect 301 /vrac /personal
+Redirect 301 /vrach /personal
 Redirect 301 /form /
 Redirect 301 /reviews/add /add_review
 Redirect 301 /otzyvy /reviews/
@@ -75,3 +76,4 @@ RedirectMatch  301 "/news/post/novosti_sajta/(.*)" "/news/$1"
 Redirect 301 /make-an-appointment/ /make-an-appointment
 Redirect 301 /lechenie-v-kredit/ /lechenie-v-kredit
 Redirect 301 /price/ /price
+RedirectMatch  301 "/personal/(.*)/(.*)" "/personal/$2"
