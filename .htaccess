@@ -14,7 +14,9 @@ ErrorDocument 404 /404.php
 
 	RewriteEngine On
 
-
+    RewriteCond %{THE_REQUEST} /(.*)index.php.*$
+    RewriteCond %{THE_REQUEST} !bitrix/admin/
+    RewriteRule .* /%1 [R=301,L]
 
 	#Добавляем слеш в конце урл
 	RewriteBase /
@@ -70,3 +72,6 @@ Redirect 301 /stomatology/kids/ortodontija/ispravlenie-prikusa /stomatology/kids
 RedirectMatch  301 "/reviews/show/otzyvy_o_vrachah/(.*)" "/reviews/$1"
 RedirectMatch  301 "/novosti/(.*)" "/news/$1"
 RedirectMatch  301 "/news/post/novosti_sajta/(.*)" "/news/$1"
+Redirect 301 /make-an-appointment/ /make-an-appointment
+Redirect 301 /lechenie-v-kredit/ /lechenie-v-kredit
+Redirect 301 /price/ /price
