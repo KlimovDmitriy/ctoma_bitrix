@@ -14,6 +14,9 @@ ErrorDocument 404 /404.php
 
 	RewriteEngine On
 
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$
+    RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
+
     RewriteCond %{THE_REQUEST} /(.*)index.php.*$
     RewriteCond %{THE_REQUEST} !bitrix/admin/
     RewriteRule .* /%1 [R=301,L]
