@@ -370,4 +370,22 @@ class Site
         }
         return $xmlIds;
     }
+    public static function isMobile()
+    {
+        $obMobileDetect = new MobileDetect();
+
+        return $obMobileDetect->isMobile() && !$obMobileDetect->isTablet();
+    }
+
+    public static function isMobileIOS()
+    {
+        if (self::isMobile()) {
+            $obMobileDetect = new MobileDetect();
+            if ((stripos($obMobileDetect->getUserAgent(), 'iPhone') !== false)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

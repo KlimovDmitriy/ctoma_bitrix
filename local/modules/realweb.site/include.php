@@ -4,7 +4,7 @@ use \Realweb\Site\Site;
 AddEventHandler("main", "OnPageStart", "onPageStart");
 AddEventHandler('iblock', 'OnIBlockPropertyBuildList', array('Realweb\Site\Property\PageType', 'GetUserTypeDescription'));
 AddEventHandler('iblock', 'OnIBlockPropertyBuildList', array('Realweb\Site\Property\YoutubeVideo', 'GetUserTypeDescription'));
-
+AddEventHandler("main", "OnEndBufferContent", array('\Realweb\Site\Webp', 'convertAllToWebp'));
 function onPageStart()
 {
     Site::definders();
