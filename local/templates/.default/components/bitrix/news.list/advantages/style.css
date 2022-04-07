@@ -55,7 +55,7 @@
     min-height: 105px;
 }
 .advantage__card_image {
-    margin-bottom: 0;
+    margin-bottom: 5px;
 }
 .advantage__card hr {
     border: none;
@@ -110,11 +110,12 @@
     padding-right: 0;
 }
 .advantage__card:hover .advantage__card_title {
-    font-size: 21px;
-    font-weight: 700;
+    font-size: 22px;
+    font-weight: 800;
     color: #EB3223;
+    line-height: 26px;
 }
 .advantage__card:hover .advantage__card_body {
-    font-size: 19px;
-    line-height: 22px;
+    font-size: 20px;
+    line-height: 24px;
 }
