@@ -3051,6 +3051,7 @@
 }
 
 @font-face {
+    font-display: swap;
     font-family: 'intro_regular','Arial';
     src: url(/local/templates/main/fonts/intro/8289-webfont.eot);
     src: url(/local/templates/main/fonts/intro/8289-webfont.eot#iefix) format("embedded-opentype"), url(/local/templates/main/fonts/intro/8289-webfont.woff2) format("woff2"), url(/local/templates/main/fonts/intro/8289-webfont.woff) format("woff"), url(/local/templates/main/fonts/intro/8289-webfont.ttf) format("truetype"), url(/local/templates/main/fonts/intro/8289-webfont.svg#intro_regular) format("svg");
