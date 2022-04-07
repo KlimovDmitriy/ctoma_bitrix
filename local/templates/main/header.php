@@ -62,7 +62,9 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/jquery.fancybox.min.css');
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/twentytwenty.css');
     ?>
+    <?php if (!Site::isCheckGooglePageSpeed()): ?>
     <?php \Realweb\Site\Site::showIncludeText('HEAD_AFTER'); ?>
+    <?php endif; ?>
 </head>
 
 <body class="html__body path-frontpage">
