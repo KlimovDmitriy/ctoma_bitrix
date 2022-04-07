@@ -93,7 +93,7 @@
     }
     .advantage__list {
         margin: -70px 0 0;
-        row-gap: 30px;
+        row-gap: 40px;
     }
     .advantage__card_title, .advantage__card_body {
         font-size: 18px;
