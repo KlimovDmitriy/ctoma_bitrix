@@ -48,7 +48,7 @@ $APPLICATION->SetPageProperty('description', 'Карта сайта');
                                 <li class="menuNormPage__element">
                                     <a
                                             class="menuNormPage__linck <? if ($el['CODE'] == $arResult['CODE']) {
-                                                ?>is-active<? }else{ ?>" href="/<?= $el['CODE'] ?>"<? } ?>"
+                                                ?>is-active<? }else{ ?>" href="/<?= $el['CODE'] ?>/"<? } ?>"
                                     ><?= $el['NAME'] ?></a>
                                 </li>
                             <? } ?>

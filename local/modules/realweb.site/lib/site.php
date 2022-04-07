@@ -370,6 +370,10 @@ class Site
         }
         return $xmlIds;
     }
+    public static function isCheckGooglePageSpeed()
+    {
+        return strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome-Lighthouse') !== false;
+    }
     public static function isMobile()
     {
         $obMobileDetect = new MobileDetect();

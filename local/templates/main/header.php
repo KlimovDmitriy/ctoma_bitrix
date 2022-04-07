@@ -13,6 +13,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
     <title><? $APPLICATION->ShowTitle(); ?></title>
+    <?php if (!Site::isCheckGooglePageSpeed()): ?>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -38,7 +39,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
     <!-- End Google Tag Manager -->
 
     <script type="text/javascript">!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?169",t.onload=function(){VK.Retargeting.Init("VK-RTRG-1223227-5FlYT"),VK.Retargeting.Hit()},document.head.appendChild(t)}();</script><noscript><img src="https://vk.com/rtrg?p=VK-RTRG-1223227-5FlYT" style="position:fixed; left:-999px;" alt=""/></noscript>
-
+    <?php endif; ?>
     <? $APPLICATION->ShowHead() ?>
     <?
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery-3.6.0.min.js');
@@ -65,6 +66,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 </head>
 
 <body class="html__body path-frontpage">
+<?php if (!Site::isCheckGooglePageSpeed()): ?>
 <!-- Rating Mail.ru counter -->
 <script type="text/javascript">
     var _tmr = window._tmr || (window._tmr = []);
@@ -87,7 +89,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
             height="0" width="0" style="display:none;visibility:hidden"></iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
-
+<?php endif; ?>
 <div id="panel"><? $APPLICATION->ShowPanel(); ?></div>
 <?php \Realweb\Site\Site::showIncludeText('BODY_BEFORE'); ?>
 <header class="header" role="banner">
