@@ -45,6 +45,10 @@
     max-width: 400px;
     margin: 28px auto 0 auto;
 }
+.advantage__card_body a {
+    font-weight: 600;
+    color: #000;
+}
 .advantage__card_title {
     text-transform: uppercase;
     font-size: 20px;
