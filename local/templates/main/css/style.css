@@ -3051,7 +3051,7 @@
 }
 
 @font-face {
-    font-family: 'intro_regular','Arial', sans-serif;
+    font-family: 'intro_regular','Arial';
     src: url(/local/templates/main/fonts/intro/8289-webfont.eot);
     src: url(/local/templates/main/fonts/intro/8289-webfont.eot#iefix) format("embedded-opentype"), url(/local/templates/main/fonts/intro/8289-webfont.woff2) format("woff2"), url(/local/templates/main/fonts/intro/8289-webfont.woff) format("woff"), url(/local/templates/main/fonts/intro/8289-webfont.ttf) format("truetype"), url(/local/templates/main/fonts/intro/8289-webfont.svg#intro_regular) format("svg");
     font-weight: normal;
@@ -3060,7 +3060,7 @@
 
 @font-face {
     font-display: swap;
-    font-family: 'pantonregular','Arial', sans-serif;
+    font-family: 'pantonregular','Arial';
     src: url(/local/templates/main/fonts/panton/panton-regular-webfont.eot);
     src: url(/local/templates/main/fonts/panton/panton-regular-webfont.eot#iefix) format("embedded-opentype"), url(/local/templates/main/fonts/panton/panton-regular-webfont.woff2) format("woff2"), url(/local/templates/main/fonts/panton/panton-regular-webfont.woff) format("woff"), url(/local/templates/main/fonts/panton/panton-regular-webfont.ttf) format("truetype"), url(/local/templates/main/fonts/panton/panton-regular-webfont.svg#pantonregular) format("svg");
     font-weight: normal;
@@ -3069,7 +3069,7 @@
 
 @font-face {
     font-display: swap;
-    font-family: 'ralewayregular','Arial', sans-serif;
+    font-family: 'ralewayregular','Arial';
     src: url(/local/templates/main/fonts/raleway/raleway-regular-webfont.eot);
     src: url(/local/templates/main/fonts/raleway/raleway-regular-webfont.eot#iefix) format("embedded-opentype"), url(/local/templates/main/fonts/raleway/raleway-regular-webfont.woff2) format("woff2"), url(/local/templates/main/fonts/raleway/raleway-regular-webfont.woff) format("woff"), url(/local/templates/main/fonts/raleway/raleway-regular-webfont.ttf) format("truetype"), url(/local/templates/main/fonts/raleway/raleway-regular-webfont.svg#ralewayregular) format("svg");
     font-weight: normal;
