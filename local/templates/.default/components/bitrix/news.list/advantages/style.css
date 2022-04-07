@@ -21,9 +21,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     box-sizing: border-box;
-    margin: -120px 15% 50px;
+    margin: -120px auto 50px;
     row-gap: 60px;
     column-gap: 10px;
+    width: 100%;
+    max-width: 1240px;
 }
 .advantage__card_wrapper {
     flex: 1 0 auto;
@@ -45,6 +47,10 @@
     max-width: 400px;
     margin: 28px auto 0 auto;
 }
+.advantage__card_body a {
+    font-weight: 600;
+    color: #000;
+}
 .advantage__card_title {
     text-transform: uppercase;
     font-size: 20px;
@@ -55,7 +61,7 @@
     min-height: 105px;
 }
 .advantage__card_image {
-    margin-bottom: 0;
+    margin-bottom: 5px;
 }
 .advantage__card hr {
     border: none;
@@ -110,11 +116,12 @@
     padding-right: 0;
 }
 .advantage__card:hover .advantage__card_title {
-    font-size: 21px;
-    font-weight: 700;
+    font-size: 22px;
+    font-weight: 800;
     color: #EB3223;
+    line-height: 26px;
 }
 .advantage__card:hover .advantage__card_body {
-    font-size: 19px;
-    line-height: 22px;
+    font-size: 20px;
+    line-height: 24px;
 }

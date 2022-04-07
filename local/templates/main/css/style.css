@@ -18346,3 +18346,19 @@ display:none;
 .textAlignCenter {
     text-align: center !important;
 }
+@media (max-width: 479px) and (min-width: 0px) {
+    .articlesPage__leftSidebar {
+        display: none;
+    }
+}
+@media only screen and (max-width: 992px) {
+.articlesPage__content, .articlesPage__bottomMobile {
+    padding: 0 15px !important;
+}
+}
+@media only screen and (max-width: 479px) and (min-width: 0px) {
+.articlesPage__center {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+}

@@ -74,7 +74,7 @@ $name = !empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'])
 
         </div>
         <div class="articlesPage__content articleDefault__body width_paddingStandart">
-            <div class="articleDefault__body width_paddingStandart" itemprop="articleBody" id="main_text">
+            <div class="articleDefault__body" itemprop="articleBody" id="main_text">
                 <? if ($arResult['content'] != '') { ?>
                     <div class="ContentH2">Содержание</div>
                     <ul>
