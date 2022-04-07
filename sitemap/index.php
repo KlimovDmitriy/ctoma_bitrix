@@ -38,7 +38,7 @@ $APPLICATION->SetPageProperty('description', 'Карта сайта');
 
                             <li class="menuNormPage__element">
                                 <a class="menuNormPage__linck <? if ($_SERVER['REQUEST_URI']=='/sitemap/') {
-                                    ?>is-active<? }else{ ?>" href="/sitemap/"<? } ?>"
+                                    ?>is-active<? }else{ ?>" href="/sitemap"<? } ?>"
                                 >Карта сайта</a></li>
                             <?
                             foreach ($elements as $el) {
@@ -48,7 +48,7 @@ $APPLICATION->SetPageProperty('description', 'Карта сайта');
                                 <li class="menuNormPage__element">
                                     <a
                                             class="menuNormPage__linck <? if ($el['CODE'] == $arResult['CODE']) {
-                                                ?>is-active<? }else{ ?>" href="/<?= $el['CODE'] ?>/"<? } ?>"
+                                                ?>is-active<? }else{ ?>" href="/<?= $el['CODE'] ?>"<? } ?>"
                                     ><?= $el['NAME'] ?></a>
                                 </li>
                             <? } ?>
