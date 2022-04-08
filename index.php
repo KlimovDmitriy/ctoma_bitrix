@@ -342,9 +342,9 @@ $APPLICATION->SetTitle("Главная");
         "SET_STATUS_404" => "N",
         "SET_TITLE" => "N",
         "SHOW_404" => "N",
-        "SORT_BY1" => "SORT",
+        "SORT_BY1" => "DATE_ACTIVE_FROM",
         "SORT_BY2" => "TIMESTAMP_X",
-        "SORT_ORDER1" => "ASC",
+        "SORT_ORDER1" => "DESC",
         "SORT_ORDER2" => "DESC",
         "STRICT_SECTION_CHECK" => "N"
     )
