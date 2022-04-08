@@ -89,7 +89,7 @@ class Action
             // $sumbission_data = array_merge($akc, $sumbission_data);
         }
 
-        $html = $mail = '<h3>Данные формы</h3>';
+        $html = $mail = '<div>Время отправки: ' . FormatDate('l, F j, Y - H:m') . '</div><h3>Данные формы</h3>';
         foreach ($sumbission_data as $line) {
             $html .= '<b>' . $line['LABEL'] . '</b> ' . $line['VALUE'] . '<br>';
         }
