@@ -49,7 +49,7 @@ var galleryTop = new Swiper('.stomatology__swiper', {
     }
 });
 
-$('.choosingClinic__info').on('click', function () {
+$('.choosingClinic__select').on('click', function () {
     $('.choosingClinic__list').toggle();
 })
 $(document).on('click', '.choosingClinic__clinic', function (e) {
