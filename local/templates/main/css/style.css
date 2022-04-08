@@ -9636,6 +9636,8 @@ blockquote {
 @media only screen and (min-width:0px) and (max-width:480px) {
     .footer__col2 {
         text-align: center;
+        -webkit-justify-content: center;
+                justify-content: center;
     }
 }
 .footer a {
