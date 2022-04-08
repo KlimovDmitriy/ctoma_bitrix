@@ -310,7 +310,7 @@ $APPLICATION->SetTitle("Главная");
         "CHECK_DATES" => "Y",
         "DETAIL_URL" => "",
         "DISPLAY_BOTTOM_PAGER" => "N",
-        "DISPLAY_DATE" => "N",
+        "DISPLAY_DATE" => "Y",
         "DISPLAY_NAME" => "Y",
         "DISPLAY_PICTURE" => "Y",
         "DISPLAY_PREVIEW_TEXT" => "Y",
