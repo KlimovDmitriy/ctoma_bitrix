@@ -58,10 +58,10 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
     }
 
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/jquery-ui/jquery-ui.css');
-    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/style.css');
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/ui.css');
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/fontawesome.css');
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/swiper.css');
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/style.css');
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/jquery.fancybox.min.css');
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/twentytwenty.css');
     ?>
