@@ -31,7 +31,7 @@ $name = !empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'])
 
 
 
-<div class="klinika__title">
+<div class="klinika__title width_paddingStandart">
     <h1 class="klinika__titleText title_norm width width_norm width_paddingStandart"><? echo $name; ?></h1>
 </div>
 <div class="klinika__mainContent width">
