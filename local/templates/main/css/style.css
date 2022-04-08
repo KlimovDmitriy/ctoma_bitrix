@@ -11299,3 +11299,6 @@ display:none;
     flex-direction: column;
 }
 }
+h1 {
+    font-weight: 400;
+}
