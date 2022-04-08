@@ -22,8 +22,8 @@
     flex-wrap: wrap;
     box-sizing: border-box;
     margin: -120px auto 50px;
-    row-gap: 60px;
-    column-gap: 10px;
+    /*row-gap: 60px;*/
+    /*column-gap: 10px;*/
     width: 100%;
     max-width: 1340px;
 }
