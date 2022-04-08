@@ -30,6 +30,7 @@
 .advantage__card_wrapper {
     flex: 1 0 auto;
     box-sizing: border-box;
+    width: 30%;
 }
 .advantage__card {
     background-color: #F1F1F1;
@@ -37,7 +38,7 @@
     min-height: 300px;
     text-align: center;
     height: 100%;
-    width: 30%;
+
 }
 .advantage__card_body {
     font-family: "Myriad Pro", sans-serif;
