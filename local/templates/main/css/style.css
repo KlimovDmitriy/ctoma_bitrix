@@ -5164,7 +5164,7 @@ blockquote {
     line-height: 32px;
     text-transform: uppercase;
     color: #d51e3f;
-    font-weight: bold;
+    font-weight: normal;
     text-decoration: none;
     margin-bottom: 10px;
 }
