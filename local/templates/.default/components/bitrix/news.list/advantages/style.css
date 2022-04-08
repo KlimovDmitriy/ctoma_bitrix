@@ -111,17 +111,17 @@
         row-gap: 25px;
     }
 }
-.advantage__card:hover {
+.advantage__card_wrapper:hover .advantage__card {
     padding-left: 10px;
     padding-right: 10px;
 }
-.advantage__card:hover .advantage__card_title {
+.advantage__card_wrapper:hover .advantage__card_title {
     font-size: 22px;
     font-weight: 800;
     color: #EB3223;
     line-height: 26px;
 }
-.advantage__card:hover .advantage__card_body {
+.advantage__card_wrapper:hover .advantage__card_body {
     font-size: 20px;
     line-height: 24px;
 }
