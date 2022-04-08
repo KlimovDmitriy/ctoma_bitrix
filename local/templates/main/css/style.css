@@ -62,10 +62,13 @@
 }
 
 @font-face {
-    font-display: swap;
-    font-family: 'ralewayregular','Arial';
-    src: url(/local/templates/main/fonts/raleway/raleway-regular-webfont.eot);
-    src: url(/local/templates/main/fonts/raleway/raleway-regular-webfont.eot#iefix) format("embedded-opentype"), url(/local/templates/main/fonts/raleway/raleway-regular-webfont.woff2) format("woff2"), url(/local/templates/main/fonts/raleway/raleway-regular-webfont.woff) format("woff"), url(/local/templates/main/fonts/raleway/raleway-regular-webfont.ttf) format("truetype"), url(/local/templates/main/fonts/raleway/raleway-regular-webfont.svg#ralewayregular) format("svg");
+    font-family: 'ralewayregular';
+    src: url('/local/templates/main/fonts/raleway/raleway-regular-webfont.eot');
+    src: url('/local/templates/main/fonts/raleway/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/local/templates/main/fonts/raleway/raleway-regular-webfont.woff2') format('woff2'),
+    url('/local/templates/main/fonts/raleway/raleway-regular-webfont.woff') format('woff'),
+    url('/local/templates/main/fonts/raleway/raleway-regular-webfont.ttf') format('truetype'),
+    url('/local/templates/main/fonts/raleway/raleway-regular-webfont.svg#ralewayregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
