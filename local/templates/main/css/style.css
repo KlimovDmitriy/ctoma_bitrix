@@ -293,7 +293,7 @@
     line-height: 55px;
     font-family: "ralewayregular", sans-serif;
     color: #c7cfd8;
-    font-weight: normal;
+    font-weight: bold;
     text-align: center;
     display: -webkit-flex;
     display: flex;
@@ -346,7 +346,7 @@
     font-size: 55px;
     font-family: "ralewayregular", sans-serif;
     color: #c7cfd8;
-    font-weight: normal;
+    font-weight: bold;
     line-height: 0.711;
     text-align: center;
     display: -webkit-flex;
@@ -882,7 +882,7 @@
     font-size: 55px;
     font-family: "ralewayregular", sans-serif;
     color: #d82043;
-    font-weight: normal;
+    font-weight: bold;
     text-align: center;
     display: -webkit-flex;
     display: flex;
@@ -11301,7 +11301,4 @@ display:none;
     -webkit-flex-direction: column;
     flex-direction: column;
 }
-}
-h1 {
-    font-weight: 400;
 }
