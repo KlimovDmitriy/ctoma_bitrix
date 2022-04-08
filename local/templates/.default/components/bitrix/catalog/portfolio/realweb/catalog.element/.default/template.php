@@ -16,7 +16,7 @@ $this->setFrameMode(true);
 ?>
 
 
-<div class="klinika__title width_paddingStandart">
+<div class="klinika__title">
     <h1 class="service__titleText title_norm width width_norm width_paddingStandart"><div><?=$arResult['NAME']?></div></h1>
 </div>
 
