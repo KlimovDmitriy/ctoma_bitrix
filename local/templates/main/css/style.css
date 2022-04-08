@@ -9633,6 +9633,11 @@ blockquote {
         justify-content: space-between;
     }
 }
+@media only screen and (min-width:0px) and (max-width:480px) {
+    .footer__col2 {
+        text-align: center;
+    }
+}
 .footer a {
     font-family: "pantonregular", sans-serif;
     color: white;
