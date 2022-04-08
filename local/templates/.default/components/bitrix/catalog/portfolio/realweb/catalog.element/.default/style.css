@@ -5,3 +5,6 @@
 .twentytwenty-container {
     height: 287px !important;
 }
+.klinika__title .width_paddingStandart {
+    padding: 10px 0 10px 15px;
+}
