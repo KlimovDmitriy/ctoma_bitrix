@@ -125,3 +125,6 @@
     font-size: 20px;
     line-height: 24px;
 }
+.advantage__card_wrapper:hover {
+    width: 430px !important;
+}
