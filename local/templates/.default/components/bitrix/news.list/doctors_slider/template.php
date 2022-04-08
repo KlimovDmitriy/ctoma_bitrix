@@ -82,5 +82,6 @@ $this->setFrameMode(true);
           <a href="/jobs/" class="stomatology__more">Вакансии</a>
       </div>
   </div>
+</div>
 
 <? } ?>
