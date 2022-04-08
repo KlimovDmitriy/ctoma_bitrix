@@ -4567,7 +4567,7 @@ blockquote {
 
 .swipe .swiper-button-prev {
     left: 110px;
-    background-image: url('local/templates/main/images/prev.png');
+    background-image: url('/local/templates/main/images/prev.png');
     opacity: 0.7;
     width: 40px;
     height: 42px;
@@ -4604,7 +4604,7 @@ blockquote {
     -o-background-size: cover;
     -webkit-background-size: cover;
     background-size: cover;
-    background-image: url('local/templates/main/images/next.png');
+    background-image: url('/local/templates/main/images/next.png');
     opacity: 0.7;
 }
 
