@@ -22,8 +22,8 @@
     flex-wrap: wrap;
     box-sizing: border-box;
     margin: -120px auto 50px;
-    /*row-gap: 60px;*/
-    /*column-gap: 10px;*/
+    row-gap: 60px;
+    column-gap: 10px;
     width: 100%;
     max-width: 1340px;
 }
@@ -31,9 +31,6 @@
     flex: 1 0 auto;
     box-sizing: border-box;
     width: 30%;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 60px;
 }
 .advantage__card {
     background-color: #F1F1F1;
@@ -127,8 +124,4 @@
 .advantage__card:hover .advantage__card_body {
     font-size: 20px;
     line-height: 24px;
-}
-.advantage__card_wrapper:hover {
-    margin-left: 5px;
-    margin-right: 5px;
 }
