@@ -86,7 +86,7 @@ $APPLICATION->SetTitle("Главная");
         "SECTION_FIELDS" => "",
       "SECTION_USER_FIELDS" => array("UF_SHOW_ON_MAIN", ""),
         "ADD_SECTIONS_CHAIN" => "Y",
-        "CACHE_TYPE" => "A",
+        "CACHE_TYPE" => "N",
         "CACHE_TIME" => "36000000",
         "CACHE_NOTES" => "",
         "CACHE_GROUPS" => "Y"
