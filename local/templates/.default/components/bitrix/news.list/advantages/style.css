@@ -112,8 +112,8 @@
     }
 }
 .advantage__card:hover {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .advantage__card:hover .advantage__card_title {
     font-size: 22px;
@@ -124,4 +124,7 @@
 .advantage__card:hover .advantage__card_body {
     font-size: 20px;
     line-height: 24px;
+}
+.advantage__card_wrapper:hover {
+    width: 33%;
 }
