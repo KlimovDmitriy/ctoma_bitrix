@@ -9668,6 +9668,7 @@ blockquote {
     .footer__menus .footer__menu:nth-child(5) {
         order: 5;
         text-align: center;
+        flex-basis: 100%;
     }
 }
 .footer a {
