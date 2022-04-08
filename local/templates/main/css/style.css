@@ -9639,6 +9639,9 @@ blockquote {
         -webkit-justify-content: center;
                 justify-content: center;
     }
+    .footer {
+    padding: 10px 15px;
+    }
 }
 .footer a {
     font-family: "pantonregular", sans-serif;
