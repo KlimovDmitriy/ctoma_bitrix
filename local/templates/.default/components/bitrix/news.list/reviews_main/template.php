@@ -64,8 +64,8 @@ $this->setFrameMode(true);
                                 <div class="otzyvDefault__info width_paddingStandart">
                                     <div class="otzyvDefault__ot">
                                         <label>ОТ:</label> <span class="otzyvDefault__otName"><?= $item['NAME']; ?></span>
-                                        <span class="otzyvDefault__otDate"><?
-                                            echo FormatDateFromDB($item["DATE_ACTIVE_FROM"], 'SHORT');
+                                        <span class="otzyvDefault__otDate"><?= $item["DATE_ACTIVE_FROM"]
+//                                            echo FormatDateFromDB($item["DATE_ACTIVE_FROM"], 'SHORT');
                                             ?></span>
                                     </div>
                                     <div class="otzyvDefault__body"><?= html_entity_decode($item['PREVIEW_TEXT']); ?></div>
