@@ -37,6 +37,7 @@
     min-height: 300px;
     text-align: center;
     height: 100%;
+    width: 30%;
 }
 .advantage__card_body {
     font-family: "Myriad Pro", sans-serif;
