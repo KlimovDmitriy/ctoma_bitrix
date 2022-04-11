@@ -256,6 +256,7 @@ class Action
     private static function sendMail($formData, $theme, $text) {
         $EVENT_TYPE = 'NEW_FORM_DATA';
         $sid = 's1';
+        $formData['clinic'] = trim($formData['clinic']);
         switch ($formData['form']) {
             case 'Резюме':
                 $emailTo = 'secretary@stoma-spb.ru , rek@stoma-spb.ru';
