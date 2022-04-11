@@ -18,12 +18,17 @@ $name = !empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'])
     : $arResult['NAME'];
 
 ?>
-
+<?php if ($arResult['CODE'] == 'price'): ?>
+    <div class="praise__title">
+        <h1 class="praise__titleText title_norm width width_norm width_paddingStandart"><?= $name; ?></h1>
+    </div>
+<?php else: ?>
 <h1 class="normPage__title title_grey width width_norm width_paddingStandart">
     <span class="title__br"></span><span class="title__text">
         <?= $name; ?>
     </span><span class="title__br"></span>
 </h1>
+<?php endif; ?>
 <div class="normPage__container ">
     <div class="normPage__center width width_norm width_paddingStandart">
         <div class="normPage__leftSidebar">
