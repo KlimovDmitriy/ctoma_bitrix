@@ -204,12 +204,12 @@
     );
     ?>
 </div>
-
-<!-- WEBICA code -->
-<script type="text/javascript">
-    (function(a,b,c){try{function f(){var g=document.createElement('script'),h=document.getElementsByTagName('script')[0];g.type='text/javascript',g.async=!0,g.src='//widget.webica.pro/code/loader.js?id='+c,h.parentNode.insertBefore(g,h)}'[object Opera]'==b.opera?a.addEventListener('DOMContentLoaded',f,!1):f()}catch(f){}})(document,window,'N6OyAcLPHxUKYYlo');
-</script>
-<!-- /WEBICA code -->
+<?php
+use \Realweb\Site\Site;
+?>
+<?php if (!Site::isCheckGooglePageSpeed()): ?>
+    <?php \Realweb\Site\Site::showIncludeText('BODY_AFTER'); ?>
+<?php endif; ?>
 
 </body>
 </html>
