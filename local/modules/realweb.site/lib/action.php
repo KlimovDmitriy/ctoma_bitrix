@@ -297,7 +297,7 @@ class Action
                 break;
         }
         $arFeedForm = array(
-          "MAIL_TO" => $emailTo,
+          "MAIL_TO" => $emailTo.', aleksenko@racurs.agency',
           "CONTENT" => $text,
           "THEME" => $theme
         );
