@@ -51,7 +51,7 @@ class Action
 
         if (!$GLOBALS["APPLICATION"]->CaptchaCheckCode($input['cap'], $input['captcha_sid'])) {
 
-            // $errors[] = 'Вы неверно ввели код с картинки';
+            $errors[] = 'Вы неверно ввели код с картинки';
 
         }
 
@@ -70,8 +70,12 @@ class Action
             $sumbission_data[$code] = $mail_data[$code] = ['LABEL' => $form_field['FIELDS']['NAME'], 'VALUE' => $input[$code]];
 
             if (in_array($code, $main_array)) {
-
-                $PROPS[$code] = $sumbission_data[$code]['VALUE'];
+                if ($code == 'clinic' && is_array($sumbission_data[$code]['VALUE'])) {
+                    $val = implode(';', $sumbission_data[$code]['VALUE']);
+                } else {
+                    $val = $sumbission_data[$code]['VALUE'];
+                }
+                $PROPS[$code] = $val;
                 unset($sumbission_data[$code]);
             }
             if (in_array($code, $exclude)) {
@@ -295,11 +299,12 @@ class Action
                             $emailTo .= ', nesterova@stoma-spb.ru';
                             break;
                     }
-                    break;
-                default:
-                    $emailTo = 'stoma@stoma-spb.ru, rek@stoma-spb.ru';
-                    break;
                 }
+                break;
+
+            default:
+                $emailTo = 'stoma@stoma-spb.ru, rek@stoma-spb.ru';
+                break;
         }
         $arFeedForm = array(
             "MAIL_TO" => $emailTo,
