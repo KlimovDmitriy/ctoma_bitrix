@@ -16,7 +16,7 @@ $aMenuLinks = Array(
   ),
   Array(
     "Цены",
-    "/price/",
+    "/price",
     Array(),
     Array(),
     ""
@@ -30,7 +30,7 @@ $aMenuLinks = Array(
   ),
   Array(
     "Запись на прием",
-    "/make-an-appointment/",
+    "/make-an-appointment",
     Array(),
     Array(),
     ""
@@ -44,14 +44,14 @@ $aMenuLinks = Array(
   ),
   Array(
     "Акции",
-    "/akcii/",
+    "/akcia/",
     Array(),
     Array(),
     ""
   ),
   Array(
     "Статьи",
-    "/articles/",
+    "/stati/",
     Array(),
     Array(),
     ""
@@ -65,7 +65,7 @@ $aMenuLinks = Array(
   ),
   Array(
     "Стоматология в кредит",
-    "/lechenie-v-kredit/",
+    "/lechenie-v-kredit",
     Array(),
     Array(),
     ""
@@ -86,7 +86,7 @@ $aMenuLinks = Array(
   ),
   Array(
     "Вопрос-ответ",
-    "/questions/",
+    "/voprosy-i-otvety/",
     Array(),
     Array(),
     ""
