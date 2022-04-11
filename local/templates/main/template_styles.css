@@ -578,3 +578,6 @@
 .cap_code{
     max-width:100%;
 }
+.select2-container{
+    min-width:398px;
+}

@@ -36,8 +36,8 @@ $this->setFrameMode(true);
                     <div id="vrac_text_<?= $arParams['CODE']; ?>" class="action_text"></div>
                     <div id="akc_text_<?= $arParams['CODE']; ?>" class="action_text"></div>
                 </div>
-              <input type="hidden" id="akc_name_<?= $arParams['CODE']; ?>" name="akc_name" value="">
-              <input type="hidden" id="vrac_name_<?= $arParams['CODE']; ?>" name="vrac_name" value="">
+                <input type="hidden" id="akc_name_<?= $arParams['CODE']; ?>" name="akc_name" value="">
+                <input type="hidden" id="vrac_name_<?= $arParams['CODE']; ?>" name="vrac_name" value="">
             </div>
             <? foreach ($arResult['FIELDS'] as $field) { ?>
 
@@ -62,7 +62,8 @@ $this->setFrameMode(true);
 
                             <input type="hidden" name="captcha_sid" value="<?= htmlspecialchars($capCode) ?>">
 
-                            <button type="submit" class="<?= $field['FIELD_CSS']; ?>" <?= $field['ON_SUBMIT'] ? 'onsubmit="'.$field['ON_SUBMIT'].'"' : '' ?>><?= $field['TITLE'] ?></button>
+                            <button type="submit"
+                                    class="<?= $field['FIELD_CSS']; ?>" <?= $field['ON_SUBMIT'] ? 'onsubmit="' . $field['ON_SUBMIT'] . '"' : '' ?>><?= $field['TITLE'] ?></button>
 
                             <? break; ?>
                         <? case 'TEXT': ?>
@@ -148,12 +149,19 @@ $this->setFrameMode(true);
                             //Достаем активные элементы из него
                             $select_elements = \Realweb\Site\Site::getIBlockElements(['IBLOCK_ID' => $SELECT_IBLOCK_ID, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y"]);
 
+
+                            $multiple = '';
+                            if ($field['NAME'] == 'clinic'&& $arParams['CODE']=='nalog') {
+                                $multiple = 'multiple="multiple"';
+                                $field['FIELD_CSS'].=' multiselect';
+
+                            }
                             ?>
                             <label for="edit-<?= $field['NAME'] ?>"><?= $field['TITLE'] ?></label>
 
-                            <select id="edit-<?= $field['NAME'] ?>" name="<?= $field['NAME'] ?>"
-                                    class="<?= $field['FIELD_CSS']; ?>" <?= $field['REQ']; ?>>
-                                <option value="" selected="selected"><?= $field['PLACEHOLDER'] ?></option>
+                            <select id="edit-<?= $field['NAME'] ?>" name="<?= $field['NAME'] ?><?if ($multiple!=''){?>[]<?}?>"
+                                    class="<?= $field['FIELD_CSS']; ?>" <?= $field['REQ']; ?> <?= $multiple; ?>>
+                                <?if ($multiple==''){?><option value="" selected="selected"><?= $field['PLACEHOLDER'] ?></option><?}?>
                                 <? foreach ($select_elements as $sel) { ?>
                                     <option value="<?= $sel['FIELDS']['NAME']; ?>"><?= $sel['FIELDS']['NAME']; ?></option>
                                 <? } ?>

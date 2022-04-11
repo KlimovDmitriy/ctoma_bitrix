@@ -49,7 +49,6 @@ class Action
 
         }
 
-
         if (!$GLOBALS["APPLICATION"]->CaptchaCheckCode($input['cap'], $input['captcha_sid'])) {
 
             $errors[] = 'Вы неверно ввели код с картинки';
@@ -71,8 +70,12 @@ class Action
             $sumbission_data[$code] = $mail_data[$code] = ['LABEL' => $form_field['FIELDS']['NAME'], 'VALUE' => $input[$code]];
 
             if (in_array($code, $main_array)) {
-
-                $PROPS[$code] = $sumbission_data[$code]['VALUE'];
+                if ($code == 'clinic' && is_array($sumbission_data[$code]['VALUE'])) {
+                    $val = implode(';', $sumbission_data[$code]['VALUE']);
+                } else {
+                    $val = $sumbission_data[$code]['VALUE'];
+                }
+                $PROPS[$code] = $val;
                 unset($sumbission_data[$code]);
             }
             if (in_array($code, $exclude)) {
@@ -133,7 +136,7 @@ class Action
                 "PROPERTY_VALUES" => $PROPS2, // Передаем массив значении для свойств
                 "PREVIEW_TEXT" => $sumbission_data['comment']['VALUE'],
                 "ACTIVE_FROM" => date('d.m.Y'),
-                "CODE" => $trans.'_'.time(),
+                "CODE" => $trans . '_' . time(),
                 "NAME" => $PROPS['fio'],
                 "ACTIVE" => "N", //поумолчанию делаем активным или ставим N для отключении поумолчанию
 
@@ -253,66 +256,72 @@ class Action
         return json_encode($places);
     }
 
-    private static function sendMail($formData, $theme, $text) {
+    private static function sendMail($formData, $theme, $text)
+    {
         $EVENT_TYPE = 'NEW_FORM_DATA';
         $sid = 's1';
-        $formData['clinic'] = trim($formData['clinic']);
+
         switch ($formData['form']) {
             case 'Резюме':
-                $emailTo = 'secretary@stoma-spb.ru , rek@stoma-spb.ru';
+                $emailTo = 'secretary@stoma-spb.ru, rek@stoma-spb.ru';
                 break;
             case 'Запрос документов для налогового вычета':
                 $emailTo = 'rek@stoma-spb.ru';
-                switch ($formData['clinic']) {
-                    case 'Клиника на Науки (м. Академическая)' :
-                        $emailTo .= ', stomagrand@stoma-spb.ru';
-                        break;
-                    case 'Клиника на Сикейроса (м. Озерки)':
-                        $emailTo .= ', stomaart@stoma-spb.ru';
-                        break;
-                    case 'Клиника на Савушкина (м. Беговая)':
-                        $emailTo .= ', stoma2@stoma-spb.ru';
-                        break;
-                    case 'Клиника на Коломяжском (м.Пионерская)':
-                        $emailTo .= ', stoma1@stoma-spb.ru';
-                        break;
-                    case 'Клиника на Невском (м. пл. Ал. Невского)':
-                        $emailTo .= ', stoma.siti@stoma-spb.ru';
-                        break;
-                    case 'Клиника на Московском (м. Московская)':
-                        $emailTo .= ', ecostom@stoma-spb.ru';
-                        break;
-                    case 'Клиника на Ленина (м. Петроградская)':
-                        $emailTo .= ', stoma.lenina@stoma-spb.ru';
-                        break;
-                    case 'Клиника на Кораблестроителей (м. Приморская)':
-                        $emailTo .= ', stoma@stoma-spb.ru';
-                        break;
-                    default:
-                        $emailTo .= ', nesterova@stoma-spb.ru';
-                        break;
+
+                foreach ($formData['clinic'] as $clinic) {
+                    $clinic = trim($clinic);
+                    switch ($clinic) {
+                        case 'Клиника на Науки (м. Академическая)' :
+                            $emailTo .= ', stomagrand@stoma-spb.ru';
+                            break;
+                        case 'Клиника на Сикейроса (м. Озерки)':
+                            $emailTo .= ', stomaart@stoma-spb.ru';
+                            break;
+                        case 'Клиника на Савушкина (м. Беговая)':
+                            $emailTo .= ', stoma2@stoma-spb.ru';
+                            break;
+                        case 'Клиника на Коломяжском (м.Пионерская)':
+                            $emailTo .= ', stoma1@stoma-spb.ru';
+                            break;
+                        case 'Клиника на Невском (м. пл. Ал. Невского)':
+                            $emailTo .= ', stoma.siti@stoma-spb.ru';
+                            break;
+                        case 'Клиника на Московском (м. Московская)':
+                            $emailTo .= ', ecostom@stoma-spb.ru';
+                            break;
+                        case 'Клиника на Ленина (м. Петроградская)':
+                            $emailTo .= ', stoma.lenina@stoma-spb.ru';
+                            break;
+                        case 'Клиника на Кораблестроителей (м. Приморская)':
+                            $emailTo .= ', stoma@stoma-spb.ru';
+                            break;
+                        default:
+                            $emailTo .= ', nesterova@stoma-spb.ru';
+                            break;
+                    }
                 }
                 break;
+
             default:
                 $emailTo = 'stoma@stoma-spb.ru, rek@stoma-spb.ru';
                 break;
         }
         $arFeedForm = array(
-          "MAIL_TO" => $emailTo.', aleksenko@racurs.agency',
-          "CONTENT" => $text,
-          "THEME" => $theme
+            "MAIL_TO" => $emailTo,
+            "CONTENT" => $text,
+            "THEME" => $theme
         );
         $arLocalFields = array(
-          "EVENT_NAME" => $EVENT_TYPE,
-          "C_FIELDS" => $arFeedForm,
-          "LID" => $sid,
-          "DUPLICATE" => "Y",
-          "MESSAGE_ID" => "",
-          "DATE_INSERT" => GetTime(time(), "FULL"),
-          "FILE" => array(),
-          "LANGUAGE_ID" => 'ru',
-          "ID" => "0",
-          "FILES_CONTENT" => [],
+            "EVENT_NAME" => $EVENT_TYPE,
+            "C_FIELDS" => $arFeedForm,
+            "LID" => $sid,
+            "DUPLICATE" => "Y",
+            "MESSAGE_ID" => "",
+            "DATE_INSERT" => GetTime(time(), "FULL"),
+            "FILE" => array(),
+            "LANGUAGE_ID" => 'ru',
+            "ID" => "0",
+            "FILES_CONTENT" => [],
         );
         \Bitrix\Main\Mail\Event::sendImmediate($arLocalFields);
     }

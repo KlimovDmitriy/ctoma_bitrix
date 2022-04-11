@@ -50,13 +50,14 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/validate.min.js');
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/jquery-ui/jquery-ui.js');
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/jquery-ui/rus.js');
+    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/multiselect/jquery.multi-select.js');
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/custom.js');
 
     if (CSite::InDir('/portfolio/')) {
         Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.twentytwenty.js');
         Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.event.move.js');
     }
-
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/multiselect/multi-select.css');
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/jquery-ui/jquery-ui.css');
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/ui.css');
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/fontawesome.css');

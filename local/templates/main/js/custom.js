@@ -1,3 +1,4 @@
+$('.multiselect').select2();
 var swiper = new Swiper('.swipe__slider', {
     navigation: {
         nextEl: '.swipe__ButtonNext',
