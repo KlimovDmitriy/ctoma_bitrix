@@ -17,7 +17,7 @@ $this->setFrameMode(true);
     <div class="swiper-wrapper">
         <? foreach ($arResult["ITEMS"] as $arItem): ?>
             <div class="swiper-slide">
-                <a href="<?if($arItem["PROPERTIES"]["URL"]["VALUE"]):?><?=$arItem["PROPERTIES"]["URL"]["VALUE"]?><?endif;?>/">
+                <a href="<?if($arItem["PROPERTIES"]["URL"]["VALUE"]):?><?=$arItem["PROPERTIES"]["URL"]["VALUE"]?><?endif;?>">
                     <img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>">
                 </a>
             </div>
