@@ -5,6 +5,7 @@ AddEventHandler("main", "OnPageStart", "onPageStart");
 AddEventHandler('iblock', 'OnIBlockPropertyBuildList', array('Realweb\Site\Property\PageType', 'GetUserTypeDescription'));
 AddEventHandler('iblock', 'OnIBlockPropertyBuildList', array('Realweb\Site\Property\YoutubeVideo', 'GetUserTypeDescription'));
 AddEventHandler("main", "OnEndBufferContent", array('\Realweb\Site\Webp', 'convertAllToWebp'));
+AddEventHandler("iblock", "OnAfterIBlockElementAdd", Array("\Realweb\Site\Handlers", "OnAfterIBlockElementAddHandler"));
 function onPageStart()
 {
     Site::definders();
