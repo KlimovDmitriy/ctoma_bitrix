@@ -45,13 +45,13 @@ if ($arResult['ITEMS']): ?>
                                                   BX_RESIZE_IMAGE_PROPORTIONAL,
                                                   true
                                                 ); ?>
-                                                <div><a href="/vrac/<?= $item['DOCTOR']['CODE'] ?>/'"><img
+                                                <div><a href="/personal/<?= $item['DOCTOR']['CODE'] ?>'"><img
                                                                 src="<?= $file['src'] ?>"
                                                                 width="320" height="320"
                                                                 alt="Отзыв о враче <?= $item['DOCTOR']['NAME'] ?>"
                                                                 typeof="foaf:Image"></a></div>
                                                 <div class="otzyvDefault__name">
-                                                    <a href="/vrac/<?= $item['DOCTOR']['CODE'] ?>/"><span><?= $item['DOCTOR']['NAME'] ?></span>
+                                                    <a href="/personal/<?= $item['DOCTOR']['CODE'] ?>"><span><?= $item['DOCTOR']['NAME'] ?></span>
                                                     </a>
                                                 </div>
                                                 <div class="otzyvDefault__dolznost">
@@ -63,7 +63,7 @@ if ($arResult['ITEMS']): ?>
                                                         <ul>
                                                             <?
                                                             foreach ($item['DOCTOR']['WP'] as $key => $clinic) { ?>
-                                                                <li><a href="/clinics/<?= $key ?>/"
+                                                                <li><a href="/clinics/<?= $key ?>"
                                                                        hreflang="ru"><?= $clinic ?></a></li>
                                                                 <?
                                                             } ?>
