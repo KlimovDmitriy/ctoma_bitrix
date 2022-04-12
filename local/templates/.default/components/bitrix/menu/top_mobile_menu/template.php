@@ -22,7 +22,7 @@ foreach($arResult as $arItem):?>
 
   <?if ($arItem["DEPTH_LEVEL"] == 1):?>
   <li class="menuHeader__li parentLink">
-            <?if ($arItem["SELECTED"]):?>
+    <?if($APPLICATION->GetCurPage()==$arItem["LINK"]):?>
             <div class="plusDoctorWr">
                         <span class="menuHeader__a"><?=$arItem["TEXT"]?></span>
                         <span class="plusDoctorN">+</span>
@@ -45,7 +45,7 @@ foreach($arResult as $arItem):?>
 
       <?if ($arItem["DEPTH_LEVEL"] == 1):?>
               <li class="menuHeader__li">
-              <?if ($arItem["SELECTED"]):?>
+                  <?if($APPLICATION->GetCurPage()==$arItem["LINK"]):?>
                   <span class="menuHeader__a"><?=$arItem["TEXT"]?></span>
               <?else:?>
                   <a href="<?=$arItem["LINK"]?>" class="menuHeader__a"><?=$arItem["TEXT"]?></a>
@@ -53,7 +53,7 @@ foreach($arResult as $arItem):?>
               </li>
       <?else:?>
               <li class="glavnoeMenu__li">
-                  <?if ($arItem["SELECTED"]):?>
+                  <?if($APPLICATION->GetCurPage()==$arItem["LINK"]):?>
                       <span class="glavnoeMenu__a glavnoeMenu__span"><?=$arItem["TEXT"]?></span>
                   <?else:?>
                       <a href="<?=$arItem["LINK"]?>" class="glavnoeMenu__a"><?=$arItem["TEXT"]?></a>
@@ -64,7 +64,7 @@ foreach($arResult as $arItem):?>
     <?else:?>
 
       <?if ($arItem["DEPTH_LEVEL"] == 1):?>
-        <li class="glavnoeMenu__li"><a href="" class="<?if ($arItem["SELECTED"]):?>active<?else:?>glavnoeMenu__a<?endif?>" title="<?=GetMessage("MENU_ITEM_ACCESS_DENIED")?>"><?=$arItem["TEXT"]?></a></li>
+        <li class="glavnoeMenu__li"><a href="" class="<?if($APPLICATION->GetCurPage()==$arItem["LINK"]):?>active<?else:?>glavnoeMenu__a<?endif?>" title="<?=GetMessage("MENU_ITEM_ACCESS_DENIED")?>"><?=$arItem["TEXT"]?></a></li>
       <?else:?>
         <li class="glavnoeMenu__li"><a href="" class="denied" title="<?=GetMessage("MENU_ITEM_ACCESS_DENIED")?>"><?=$arItem["TEXT"]?></a></li>
       <?endif?>
