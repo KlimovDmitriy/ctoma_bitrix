@@ -39,7 +39,7 @@ $this->setFrameMode(true);
             <?foreach($arResult["PROPERTIES"]["CLINICS"]["VALUE"] as $item_clinic):?>
                 <?$res = CIBlockElement::GetByID($item_clinic);?>
                 <?if($ar_res = $res->GetNext())?>
-                    <div><a href="/clinics/<?=$ar_res["CODE"];?>/"><?=$ar_res["NAME"];?></a></div>
+                    <div><a href="/clinics/<?=$ar_res["CODE"];?>"><?=$ar_res["NAME"];?></a></div>
             <?endforeach;?>
         </div>
     </div>
