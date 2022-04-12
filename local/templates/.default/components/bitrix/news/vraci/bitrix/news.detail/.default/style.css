@@ -11,6 +11,9 @@ div.news-detail img.detail_picture
 {
 	color:#486DAA;
 }
+.doctor__titleText.title_norm {
+    padding: 10px 15px !important;
+}
 /* line 7, ../bem/blocks/doctor/_default.scss */
 .doctor__content {
 	padding-bottom: 50px;
