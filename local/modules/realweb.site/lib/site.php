@@ -32,15 +32,25 @@ class Site
                 define($CONSTANT, $row['ID']);
             }
         }
-        Global $APPLICATION;
-        $current_url = $APPLICATION->GetCurDir();
+        /*301 редирект на нижний регистр*/
+        $pos = strpos($_SERVER['REQUEST_URI'], '/bitrix/');
+        if ($pos === false) {
+            $parts_url = explode("?", $_SERVER['REQUEST_URI']);
+            $parts_url_0 = $parts_url[0]; // кусок1
+            $parts_url_1 = $parts_url[1]; // кусок2
 
-        if ( $_SERVER['REQUEST_URI'] != strtolower( $_SERVER['REQUEST_URI']) && $current_url != strtolower( $current_url) ) {
-            $new_url = str_replace($current_url,'',$_SERVER['REQUEST_URI']);
-            header('Location: https://'.$_SERVER['HTTP_HOST'] .
-                strtolower($current_url) . $new_url, true, 301);
-            exit();
+            if ($parts_url_0 != strtolower($parts_url_0)) {
+                if (empty($parts_url_1)) {
+                    header('Location: https://' . $_SERVER['HTTP_HOST'] .
+                        strtolower($parts_url_0), true, 301);
+                } else {
+                    header('Location: https://' . $_SERVER['HTTP_HOST'] .
+                        strtolower($parts_url_0) . '?' . $parts_url_1, true, 301);
+                }
+                exit();
+            }
         }
+        /*301 редирект на нижний регистр*/
 
     }
 
@@ -352,7 +362,7 @@ class Site
     {
         if ($clinicId = Application::getInstance()->getContext()->getRequest()->getCookie('clinic')) {
             $this->_city = $this->_getClinic(array('ID' => $clinicId));
-        }else{
+        } else {
 
             $this->_city = $this->_getClinic(array('ID' => 335));
         }
@@ -371,7 +381,8 @@ class Site
         }
     }
 
-    public static function getXmlIds($arFilter) {
+    public static function getXmlIds($arFilter)
+    {
         $values = \Realweb\Site\Site::getPropEnumValues($arFilter);
         $xmlIds = [];
         foreach ($values as $value) {
@@ -379,10 +390,12 @@ class Site
         }
         return $xmlIds;
     }
+
     public static function isCheckGooglePageSpeed()
     {
         return strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome-Lighthouse') !== false;
     }
+
     public static function isMobile()
     {
         $obMobileDetect = new MobileDetect();
