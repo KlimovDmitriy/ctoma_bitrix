@@ -581,3 +581,18 @@
 .select2-container{
     min-width:398px;
 }
+/* search */
+.title-search-result .search_r_block {
+    background-color: #eeeded;
+    display: block;
+    padding: 10px;
+}
+.bx_smart_searche.theme-blue .bx_item_block_item_name b {
+    color: #dd425f !important;
+}
+.title-search-result .bx_smart_searche .bx_item_block_item_name {
+    height: inherit;
+}
+div.title-search-result {
+    min-width: 250px !important;
+}

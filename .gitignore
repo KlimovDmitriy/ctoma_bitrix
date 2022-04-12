@@ -30,3 +30,4 @@ node_modules
 *.json
 /testt
 /sites
+*.rss
