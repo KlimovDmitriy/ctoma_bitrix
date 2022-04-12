@@ -21,11 +21,7 @@
                 </div> <!---->
                 <div class="searchMap__active"><a href="/make-an-appointment" class="makeImg__button button_red">Записаться</a>
                 </div>
-                <div class="searchMap__callback"><a href="/form/callback" data-dialog-options="{
-                           &quot;width&quot;:&quot;450px&quot;,
-                           &quot;minHeight&quot;:&quot;500px&quot;,
-                           &quot;dialogClass&quot;:&quot;popupDialog&quot;
-                           }" data-dialog-type="modal" class="use-ajax">Заказать обратный звонок</a></div>
+                <div class="searchMap__callback"><a data-form="callback" class="modaler use-ajax">Заказать обратный звонок</a></div>
             </div>
             <div class="searchMap__map">
                 <div id="searchMap__mapYandex" class="searchMap__mapYandex" style="width: 100%; height: 450px;">
