@@ -66,10 +66,10 @@ class Action
         $PROPS = ['form' => $input['form_name']];
         foreach ($datas as $form_field) {
             $code = strtolower($form_field['FIELDS']['CODE']);
-            if ($code == 'clinic' && is_array($sumbission_data[$code]['VALUE'])) {
-                $val = implode(';', $sumbission_data[$code]['VALUE']);
+            if ($code == 'clinic' && is_array($input[$code])) {
+                $val = implode(';', $input[$code]);
             } else {
-                $val = $sumbission_data[$code]['VALUE'];
+                $val = $input[$code];
             }
             $sumbission_data[$code] = $mail_data[$code] = ['LABEL' => $form_field['FIELDS']['NAME'], 'VALUE' => $val];
 
