@@ -487,6 +487,7 @@
 
 @media only screen and (max-width:479px) and (min-width:0px) {
     .popupDialog {
+        position: absolute !important;
         top: 70px !important;
         padding: 20px;
     }
