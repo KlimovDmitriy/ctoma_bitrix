@@ -60,3 +60,4 @@ $this->setFrameMode(true);
         </div>
 
     </div>
+</div>
