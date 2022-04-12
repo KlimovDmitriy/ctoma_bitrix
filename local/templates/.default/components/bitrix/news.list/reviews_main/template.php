@@ -41,7 +41,7 @@ $this->setFrameMode(true);
                                                             alt="Отзыв о враче <?= $item['DOCTOR']['NAME'] ?>"
                                                             typeof="foaf:Image"></a></div>
                                             <div class="otzyvDefault__name">
-                                                <a href="/personal/<?= $item['DOCTOR']['CODE'] ?>/"><span><?= $item['DOCTOR']['NAME'] ?></span>
+                                                <a href="/personal/<?= $item['DOCTOR']['CODE'] ?>"><span><?= $item['DOCTOR']['NAME'] ?></span>
                                                 </a>
                                             </div>
                                             <div class="otzyvDefault__dolznost">
@@ -52,7 +52,7 @@ $this->setFrameMode(true);
                                                 <div>
                                                     <ul>
                                                         <? foreach ($item['DOCTOR']['WP'] as $key => $clinic) { ?>
-                                                            <li><a href="/clinics/<?= $key ?>/"
+                                                            <li><a href="/clinics/<?= $key ?>"
                                                                    hreflang="ru"><?= $clinic ?></a></li>
                                                         <? } ?>
                                                     </ul>
