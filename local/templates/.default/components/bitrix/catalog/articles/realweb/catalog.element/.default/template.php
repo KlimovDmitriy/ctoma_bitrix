@@ -60,7 +60,6 @@ $this->setFrameMode(true);
                 $component
             );
             ?>
-            <div>Рейтинг: <?=$arResult["PROPERTIES"]["rating"]["VALUE"];?> (Голосов: <?=$arResult["PROPERTIES"]["vote_count"]["VALUE"];?>)</div>
         </div>
     </div>
     <div class="articleDefault__body width_paddingStandart" itemprop="articleBody" id="main_text">

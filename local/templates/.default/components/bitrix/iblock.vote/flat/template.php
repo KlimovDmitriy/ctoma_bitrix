@@ -18,41 +18,50 @@ CJSCore::Init(array("ajax"));
 //Let's determine what value to display: rating or average ?
 if($arParams["DISPLAY_AS_RATING"] == "vote_avg")
 {
-	if($arResult["PROPERTIES"]["vote_count"]["VALUE"])
-		$DISPLAY_VALUE = round($arResult["PROPERTIES"]["vote_sum"]["VALUE"]/$arResult["PROPERTIES"]["vote_count"]["VALUE"], 2);
-	else
-		$DISPLAY_VALUE = $arResult["PROPERTIES"]["rating"]["VALUE"];
+    if($arResult["PROPERTIES"]["vote_count"]["VALUE"])
+        $DISPLAY_VALUE = round($arResult["PROPERTIES"]["vote_sum"]["VALUE"]/$arResult["PROPERTIES"]["vote_count"]["VALUE"], 2);
+    else
+        $DISPLAY_VALUE = $arResult["PROPERTIES"]["rating"]["VALUE"];
 }
 else
 {
-	$DISPLAY_VALUE = $arResult["PROPERTIES"]["rating"]["VALUE"];
+    $DISPLAY_VALUE = $arResult["PROPERTIES"]["rating"]["VALUE"];
 }
-$voteContainerId = 'vote_'.$arResult["ID"];
+$fta='';
+if ($arParams['IS_FT']=='Y'){
+    $fta='ft_';
+}
+$voteContainerId = 'vote_'.$fta.$arResult["ID"];
 ?>
-<div class="bx-rating" id="<?echo $voteContainerId?>">
-	<?
-	$onclick = "JCFlatVote.do_vote(this, '".$voteContainerId."', ".$arResult["AJAX_PARAMS"].")";
-	foreach ($arResult["VOTE_NAMES"] as $i => $name)
-	{
-		if ($DISPLAY_VALUE && round($DISPLAY_VALUE) > $i)
-			$className = "fa fa-star";
-		else
-			$className = "fa fa-star-o";
 
-		$itemContainerId = $voteContainerId.'_'.$i;
-		?><i
-			class="<?echo $className?>"
-			id="<?echo $itemContainerId?>"
-			title="<?echo $name?>"
-			<?if (!$arResult["VOTED"] && $arParams["READ_ONLY"]!=="Y"):?>
-				onmouseover="JCFlatVote.trace_vote(this, true);"
-				onmouseout="JCFlatVote.trace_vote(this, false)"
-				onclick="<?echo htmlspecialcharsbx($onclick);?>"
-			<?endif;?>
-		></i><?
-	}
-	if ($arParams["SHOW_RATING"] == "Y"):?>
-		(<?echo $DISPLAY_VALUE?>)
-	<?endif;
-?>
+<div>
+    <div class="bx-rating" id="<?echo $voteContainerId?>">
+        <div class="bxRatingWr">
+            <?
+            $onclick = "JCFlatVote.do_vote(this, '".$voteContainerId."', ".$arResult["AJAX_PARAMS"].")";
+            foreach ($arResult["VOTE_NAMES"] as $i => $name)
+            {
+                if ($DISPLAY_VALUE && round($DISPLAY_VALUE) > $i)
+                    $className = "fa fa-star";
+                else
+                    $className = "fa fa-star-o";
+
+                $itemContainerId = $voteContainerId.'_'.$i;
+                ?><i
+                class="<?echo $className?>"
+                id="<?echo $itemContainerId?>"
+                title="<?echo $name?>"
+                <?if (!$arResult["VOTED"] && $arParams["READ_ONLY"]!=="Y"):?>
+                onmouseover="JCFlatVote.trace_vote(this, true);"
+                onmouseout="JCFlatVote.trace_vote(this, false)"
+                onclick="<?echo htmlspecialcharsbx($onclick);?>"
+            <?endif;?>
+                ></i><?
+            }
+
+            ?>
+
+        </div>
+        <?echo '<div class="retingBlock content_norm">(Голосов: '.$arResult["PROPERTIES"]["vote_count"]["VALUE"].', Рейтинг: '.$DISPLAY_VALUE.')</div>';?>
+    </div>
 </div>
