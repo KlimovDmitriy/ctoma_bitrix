@@ -18,7 +18,7 @@
             <a href="/clinics/<?= $clinic['CODE'] ?>"><span
                         class="choosingClinic__listName"><?= $clinic['NAME'] ?></span>
                 <span class="choosingClinic__minAdress"><?= $clinic['PROPERTIES']['ADDRESS']['VALUE'] ?></span>
-                <span class="choosingClinic__phone call_phone_7_1"><?= $clinic['PROPERTIES']['PHONES']['VALUE'][0] ?></span></a></div>
+                <span class="choosingClinic__phone <?php if ($clinic['PROPERTIES']['CALLTOUCH']['VALUE']): ?><?= $clinic['PROPERTIES']['CALLTOUCH']['VALUE'] ?><?php endif; ?>"><?= $clinic['PROPERTIES']['PHONES']['VALUE'][0] ?></span></a></div>
 
 
         <? } ?>

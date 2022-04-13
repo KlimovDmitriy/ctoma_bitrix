@@ -15,7 +15,7 @@ foreach($arResult as $arItem):?>
 
   <?if ($arItem["DEPTH_LEVEL"] == 1):?>
   <li class="glavnoeMenu__li parentLink">
-            <?if ($arItem["SELECTED"]):?>
+    <?if($APPLICATION->GetCurPage()==$arItem["LINK"]):?>
                 <span class="glavnoeMenu__a"><?=$arItem["TEXT"]?></span>
             <?else:?>
                 <a href="<?=$arItem["LINK"]?>" class="glavnoeMenu__a"><?=$arItem["TEXT"]?></a>
@@ -32,7 +32,7 @@ foreach($arResult as $arItem):?>
 
       <?if ($arItem["DEPTH_LEVEL"] == 1):?>
               <li class="glavnoeMenu__li">
-              <?if ($arItem["SELECTED"]):?>
+                  <?if($APPLICATION->GetCurPage()==$arItem["LINK"]):?>
                   <span class="glavnoeMenu__a"><?=$arItem["TEXT"]?></span>
               <?else:?>
                   <a href="<?=$arItem["LINK"]?>" class="glavnoeMenu__a"><?=$arItem["TEXT"]?></a>
@@ -40,7 +40,7 @@ foreach($arResult as $arItem):?>
               </li>
       <?else:?>
               <li class="glavnoeMenu__li">
-                  <?if ($arItem["SELECTED"]):?>
+                  <?if($APPLICATION->GetCurPage()==$arItem["LINK"]):?>
                       <span class="glavnoeMenu__a"><?=$arItem["TEXT"]?></span>
                   <?else:?>
                       <a href="<?=$arItem["LINK"]?>" class="glavnoeMenu__a"><?=$arItem["TEXT"]?></a>

@@ -1,5 +1,5 @@
 .bx-rating {
-	color: #fcee2c;
+	color: #fcee2c !important;
 	font-size: 13px;
 	white-space: nowrap;
 }
@@ -7,10 +7,10 @@
 	cursor: pointer;
 }
 .fa.bx-star-active {
-	color: #fc8214;
+	color: #fc8214 !important;
 }
 .fa-star-o::before {
-	color: #dcdedc;
+	color: #dcdedc !important;
 	content: "\f005" !important;
 }
 .bx-star-active.fa-star-o::before {
