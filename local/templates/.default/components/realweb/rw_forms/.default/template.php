@@ -30,7 +30,7 @@ $this->setFrameMode(true);
 
         $onsubmit = '';
         if (trim($arResult['FORM']['UF_ONSUBMIT']) != '') {
-            $onsubmit = $arResult['FORM']['UF_ONSUBMIT']);
+            $onsubmit = $arResult['FORM']['UF_ONSUBMIT'];
         }
 
         ?>
