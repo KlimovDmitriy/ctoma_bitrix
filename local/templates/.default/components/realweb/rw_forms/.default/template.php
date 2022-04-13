@@ -34,7 +34,7 @@ $this->setFrameMode(true);
         }
 
         ?>
-        <form <?=$onsubmit;?> id="<?= $arParams['CODE']; ?>" method="post"
+        <form <?= $onsubmit ? 'onsubmit="' . $onsubmit . '"' : '' ?> id="<?= $arParams['CODE']; ?>" method="post"
               class="webform-submission-form webform-submission-add-form webform-submission-makeform-form webform-submission-makeform-add-form webform-submission-makeform-page_variant-make_appointment-panels_variant-0-form webform-submission-makeform-page_variant-make_appointment-panels_variant-0-add-form makeform js-webform-details-toggle webform-details-toggle">
             <input type="hidden" name="action" value="Action_formSubmit">
             <input type="hidden" name="form_name" value="<?= $arResult['FORM']['NAME']; ?>">
