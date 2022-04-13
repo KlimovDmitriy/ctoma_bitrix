@@ -8,7 +8,7 @@ $this->IncludeComponentTemplate();
 
 $arParams["IBLOCK_ID"] = \Realweb\Site\Site::getIblockId('FORMS');
 
-$res = CIBlockSection::GetList(array(), array('IBLOCK_ID' => $arParams["IBLOCK_ID"], 'SITE_ID' => "s1", "CODE" => $arParams['CODE']));
+$res = CIBlockSection::GetList(array(), array('IBLOCK_ID' => $arParams["IBLOCK_ID"], 'SITE_ID' => "s1", "CODE" => $arParams['CODE']), false, array('ID', 'NAME', 'CODE', 'UF_ONSUBMIT'));
 $section = $res->Fetch();
 
 $elements = \Realweb\Site\Site::getIBlockElements(['IBLOCK_ID' => $arParams["IBLOCK_ID"], 'SECTION_ID' => $section["ID"]]);
@@ -46,7 +46,7 @@ foreach ($elements as $el) {
 
         $FORM_F['IBLOCK'] = $el['PROPERTIES']['IBLOCK_CODE']['VALUE'];
     }
-    $arResult['FORM'] = ['ID' => $section['ID'], 'NAME' => $section['NAME']];
+    $arResult['FORM'] = $section;
     $arResult['FIELDS'][] = $FORM_F;
 
 }

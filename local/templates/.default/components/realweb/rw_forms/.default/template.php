@@ -26,7 +26,15 @@ $this->setFrameMode(true);
         <div id="error_<?= $arParams['CODE']; ?>" class="error_form">
             <i class="fa fa-times-circle"></i> <span class="error_main_text"> Произошла ошибка. Попробуйте повторить позже.</span>
         </div>
-        <form id="<?= $arParams['CODE']; ?>" method="post"
+        <?
+
+        $onsubmit = '';
+        if (trim($arResult['FORM']['UF_ONSUBMIT']) != '') {
+            $onsubmit = $arResult['FORM']['UF_ONSUBMIT']);
+        }
+
+        ?>
+        <form <?=$onsubmit;?> id="<?= $arParams['CODE']; ?>" method="post"
               class="webform-submission-form webform-submission-add-form webform-submission-makeform-form webform-submission-makeform-add-form webform-submission-makeform-page_variant-make_appointment-panels_variant-0-form webform-submission-makeform-page_variant-make_appointment-panels_variant-0-add-form makeform js-webform-details-toggle webform-details-toggle">
             <input type="hidden" name="action" value="Action_formSubmit">
             <input type="hidden" name="form_name" value="<?= $arResult['FORM']['NAME']; ?>">
@@ -62,8 +70,7 @@ $this->setFrameMode(true);
 
                             <input type="hidden" name="captcha_sid" value="<?= htmlspecialchars($capCode) ?>">
 
-                            <button type="submit"
-                                    class="<?= $field['FIELD_CSS']; ?>" <?= $field['ON_SUBMIT'] ? 'onsubmit="' . $field['ON_SUBMIT'] . '"' : '' ?>><?= $field['TITLE'] ?></button>
+                            <button type="submit" class="<?= $field['FIELD_CSS']; ?>"><?= $field['TITLE'] ?></button>
 
                             <? break; ?>
                         <? case 'TEXT': ?>
@@ -151,17 +158,19 @@ $this->setFrameMode(true);
 
 
                             $multiple = '';
-                            if ($field['NAME'] == 'clinic'&& $arParams['CODE']=='nalog') {
+                            if ($field['NAME'] == 'clinic' && $arParams['CODE'] == 'nalog') {
                                 $multiple = 'multiple="multiple"';
-                                $field['FIELD_CSS'].=' multiselect';
+                                $field['FIELD_CSS'] .= ' multiselect';
 
                             }
                             ?>
                             <label for="edit-<?= $field['NAME'] ?>"><?= $field['TITLE'] ?></label>
 
-                            <select id="edit-<?= $field['NAME'] ?>" name="<?= $field['NAME'] ?><?if ($multiple!=''){?>[]<?}?>"
+                            <select id="edit-<?= $field['NAME'] ?>"
+                                    name="<?= $field['NAME'] ?><? if ($multiple != '') { ?>[]<? } ?>"
                                     class="<?= $field['FIELD_CSS']; ?>" <?= $field['REQ']; ?> <?= $multiple; ?>>
-                                <?if ($multiple==''){?><option value="" selected="selected"><?= $field['PLACEHOLDER'] ?></option><?}?>
+                                <? if ($multiple == '') { ?>
+                                    <option value="" selected="selected"><?= $field['PLACEHOLDER'] ?></option><? } ?>
                                 <? foreach ($select_elements as $sel) { ?>
                                     <option value="<?= $sel['FIELDS']['NAME']; ?>"><?= $sel['FIELDS']['NAME']; ?></option>
                                 <? } ?>
