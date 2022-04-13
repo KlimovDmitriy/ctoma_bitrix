@@ -64,10 +64,12 @@ class Action
         $main_array = ['form', 'fio', 'phone', 'clinic'];
         $exclude = ['submit', 'pers_data'];
         $PROPS = ['form' => $input['form_name']];
+        $clinics_ar = [];
         foreach ($datas as $form_field) {
             $code = strtolower($form_field['FIELDS']['CODE']);
             if ($code == 'clinic' && is_array($input[$code])) {
                 $val = implode(';', $input[$code]);
+                $clinics_ar = $input[$code];
             } else {
                 $val = $input[$code];
             }
@@ -167,7 +169,7 @@ class Action
             //Результат в конце отработки
             if ($ID = $el->Add($fields)) {
                 $result = ['success' => 1];
-                Action::sendMail($PROPS, $fields['NAME'], $mail);
+                Action::sendMail($PROPS, $fields['NAME'], $mail, $clinics_ar);
             } else {
                 $result = ['error' => 1];
             }
@@ -257,7 +259,7 @@ class Action
         return json_encode($places);
     }
 
-    private static function sendMail($formData, $theme, $text)
+    private static function sendMail($formData, $theme, $text, $clinics_ar = [])
     {
         $EVENT_TYPE = 'NEW_FORM_DATA';
         $sid = 's1';
@@ -269,7 +271,7 @@ class Action
             case 'Запрос документов для налогового вычета':
                 $emailTo = 'rek@stoma-spb.ru';
 
-                foreach ($formData['clinic'] as $clinic) {
+                foreach ($clinics_ar as $clinic) {
                     $clinic = trim($clinic);
                     switch ($clinic) {
                         case 'Клиника на Науки (м. Академическая)' :
