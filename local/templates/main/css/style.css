@@ -7951,8 +7951,14 @@ blockquote {
     width: 100%;
     z-index: 3;
 }
+.header__fixedWrapIsAuthorized {
+    background: #f8f8f8;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+}
 @media only screen and (max-width:767px) and (min-width:0px) {
-    .header__fixedWrap {
+    .header__fixedWrap, .header__fixedWrapIsAuthorized {
         position: relative;
         z-index: 10;
     }
@@ -9326,7 +9332,7 @@ blockquote {
     .menuMobile__button {
         display: block;
     }
-    .header__fixedWrap {
+    .header__fixedWrap, .header__fixedWrapIsAuthorized {
         position: relative;
         z-index: 10;
     }

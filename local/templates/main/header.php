@@ -100,7 +100,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 <?php \Realweb\Site\Site::showIncludeText('BODY_BEFORE'); ?>
 <header class="header" role="banner">
     <div class="header__top">
-        <div class="header__fixedWrap">
+        <div class="<? global $USER; if ($USER->IsAuthorized()): ?>header__fixedWrapIsAuthorized<?else:?>header__fixedWrap<? endif; ?>">
             <div class="header__fixed width width_norm">
                 <div class="header__choosingClinic width_paddingLeftRight">
                     <? $APPLICATION->IncludeComponent("realweb:blank", "clinics", array(), false, array('HIDE_ICONS' => 'Y')); ?>
