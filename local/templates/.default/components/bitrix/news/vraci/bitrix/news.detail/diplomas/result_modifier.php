@@ -8,13 +8,13 @@ if (isset($arResult['PROPERTIES']['DIPLOMAS']['VALUE']) && is_array($arResult['P
             $arResult["DIPLOMAS"][$key]["LARGE"] = CFile::ResizeImageGet(
               $FILE,
               array('width' => 631, 'height' => 891),
-              BX_RESIZE_IMAGE_EXACT,
+                BX_RESIZE_IMAGE_PROPORTIONAL,
               true
             );;
             $arResult["DIPLOMAS"][$key]["PREVIEW"] = CFile::ResizeImageGet(
               $FILE,
               array('width' => 175, 'height' => 285),
-              BX_RESIZE_IMAGE_EXACT,
+                BX_RESIZE_IMAGE_PROPORTIONAL,
               true
             );
         }

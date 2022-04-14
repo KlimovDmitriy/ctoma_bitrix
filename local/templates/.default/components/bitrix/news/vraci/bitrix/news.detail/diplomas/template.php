@@ -9,9 +9,8 @@
                 <?php foreach ($arResult['DIPLOMAS'] as $diploma):?>
                 <div class="swiper-slide">
                     <div class="field-content">
-                        <a href="<?= $diploma['LARGE']['src'] ?>" title="<?= $arResult['NAME'] ?>" data-colorbox-gallery="gallery-doctor-921-DS56A2--JJs" class="colorbox cboxElement">
-                            <img src="<?= $diploma['PREVIEW']['src'] ?>" width="175" height="285" alt="" typeof="foaf:Image">
-
+                        <a href="<?= $diploma['LARGE']['src'] ?>" title="<?= $arResult['NAME'] ?>" data-fancybox="images" class="colorbox cboxElement">
+                            <img src="<?= $diploma['PREVIEW']['src'] ?>" alt="">
                         </a>
                     </div>
                 </div>
