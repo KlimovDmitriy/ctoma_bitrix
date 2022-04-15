@@ -8,7 +8,7 @@ $aMenuLinks = Array(
         ""
     ),
     Array(
-        "Лечение в рассрочку",
+        "Лечение в рассрочку и кредит",
         "/lechenie-v-kredit/",
         Array(),
         Array(),

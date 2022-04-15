@@ -289,7 +289,7 @@
     text-transform: uppercase;
     padding-top: 25px;
     padding-bottom: 10px;
-    font-size: 55px;
+    font-size: 45px;
     line-height: 55px;
     font-family: "ralewayregular", sans-serif;
     color: #c7cfd8;
@@ -11307,4 +11307,16 @@ display:none;
     -webkit-flex-direction: column;
     flex-direction: column;
 }
+}
+@media only screen and (max-width: 585px) {
+    .praiseTable__cena {
+        width: 165px !important;
+        flex: inherit;
+        padding: 8px 10px;
+    }
+    .praiseTable__name {
+        flex: inherit;
+        width: 100%;
+        padding: 8px 10px;
+    }
 }

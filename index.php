@@ -466,7 +466,7 @@ $APPLICATION->SetTitle("Главная");
         "STRICT_SECTION_CHECK" => "N"
     )
 ); ?>
-    <div class="content_norm width width_light">
+    <div class="content_norm width width_light width_paddingStandart">
 <!-- Текст на главной странице-->
         <?php \Realweb\Site\Site::showIncludeText('MAIN_PAGE'); ?>
 
