@@ -34,10 +34,10 @@ class Site
         }
         /*404 для страниц старой пагинации*/
         if (strpos($_SERVER['REQUEST_URI'], '?page') != false) {
-            CHTTP::SetStatus("404 Not Found");
+            \Bitrix\CHTTP::SetStatus("404 Not Found");
             @define("ERROR_404","Y");
 
-            $rsSites = CSite::GetByID(SITE_ID);
+            $rsSites = \Bitrix\CSite::GetByID(SITE_ID);
             $arSite = $rsSites->Fetch();
             include($arSite['DOC_ROOT']."/404.php");
             return;
