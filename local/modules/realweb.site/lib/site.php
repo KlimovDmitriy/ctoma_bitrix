@@ -34,10 +34,12 @@ class Site
         }
         /*404 для страниц старой пагинации*/
         if (strpos($_SERVER['REQUEST_URI'], '?page') != false) {
-            GLOBAL $APPLICATION;
-            $APPLICATION->RestartBuffer();
-            \Bitrix\Iblock\Component\Tools::process404("", true, true, true, "");
-            return;
+            Global $APPLICATION;
+            \CHTTP::setStatus("404 Not Found");
+            @define("ERROR_404","Y");
+            require(\Bitrix\Main\Application::getDocumentRoot() . "/404.php");
+            die();
+
         }
         /*404 для страниц старой пагинации*/
         /*301 редирект на нижний регистр*/
