@@ -39,7 +39,7 @@ class Site
             @define("ERROR_404","Y");
             if ($APPLICATION->RestartWorkarea(true))
             {
-                require(Application::getDocumentRoot() . "/404.php");
+                include(Application::getDocumentRoot() . "/404.php");
                 die();
             }
         }
