@@ -32,6 +32,18 @@ class Site
                 define($CONSTANT, $row['ID']);
             }
         }
+        /*404 для страниц старой пагинации*/
+        if (strpos($_SERVER['REQUEST_URI'], '?page') != false) {
+            Global $APPLICATION;
+            \CHTTP::setStatus("404 Not Found");
+            @define("ERROR_404","Y");
+            if ($APPLICATION->RestartWorkarea(true))
+            {
+                require(Application::getDocumentRoot() . "/404.php");
+                die();
+            }
+        }
+        /*404 для страниц старой пагинации*/
         /*301 редирект на нижний регистр*/
         $pos = strpos($_SERVER['REQUEST_URI'], '/bitrix/');
         if ($pos === false) {
