@@ -34,12 +34,9 @@ class Site
         }
         /*404 для страниц старой пагинации*/
         if (strpos($_SERVER['REQUEST_URI'], '?page') != false) {
-            \Bitrix\CHTTP::SetStatus("404 Not Found");
-            @define("ERROR_404","Y");
-
-            $rsSites = \Bitrix\CSite::GetByID(SITE_ID);
-            $arSite = $rsSites->Fetch();
-            include($arSite['DOC_ROOT']."/404.php");
+            GLOBAL $APPLICATION;
+            $APPLICATION->RestartBuffer();
+            \Bitrix\Iblock\Component\Tools::process404("", true, true, true, "");
             return;
         }
         /*404 для страниц старой пагинации*/
