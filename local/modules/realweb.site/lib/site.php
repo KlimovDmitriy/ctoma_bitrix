@@ -32,6 +32,11 @@ class Site
                 define($CONSTANT, $row['ID']);
             }
         }
+        /*404 для страниц старой пагинации*/
+        if (strpos($_SERVER['REQUEST_URI'], '?page') != false) {
+            \Bitrix\Iblock\Component\Tools::process404("", true, true, true, "");
+        }
+        /*404 для страниц старой пагинации*/
         /*301 редирект на нижний регистр*/
         $pos = strpos($_SERVER['REQUEST_URI'], '/bitrix/');
         if ($pos === false) {
