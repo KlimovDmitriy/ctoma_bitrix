@@ -268,6 +268,9 @@ class Action
             case 'Резюме':
                 $emailTo = 'secretary@stoma-spb.ru, rek@stoma-spb.ru';
                 break;
+            case 'Вакансии':
+                $emailTo = 'office@stoma-spb.ru';
+                break;
             case 'Запрос документов для налогового вычета':
                 $emailTo = 'rek@stoma-spb.ru';
 
