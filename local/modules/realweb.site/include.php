@@ -26,7 +26,6 @@ function OnEpilog()
 
         include($_SERVER["DOCUMENT_ROOT"].'/404.php');
 
-       exit;
     }
 
 }
