@@ -18,10 +18,8 @@ function onPageStart()
 
 function OnEpilog()
 {
-
-
     /*Показать 404 для всего где есть ?page*/
-    if (isset($_GET['page'])) {
+    if (strpos($_SERVER['REQUEST_URI'], '?page') != false) {
         global $APPLICATION;
         $APPLICATION->RestartBuffer();
         CHTTP::SetStatus("404 Not Found");
