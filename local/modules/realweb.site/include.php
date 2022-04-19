@@ -19,8 +19,7 @@ function onPageStart()
 function OnEpilog()
 {
 
-    echo $_SERVER['REQUEST_URI'];
-    exit;
+
     /*Показать 404 для всего где есть ?page*/
     if (isset($_GET['page'])) {
         global $APPLICATION;
