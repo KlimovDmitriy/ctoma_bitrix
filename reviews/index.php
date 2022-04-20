@@ -2,6 +2,25 @@
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 $APPLICATION->SetTitle("");
 $APPLICATION->SetPageProperty("keywords", "");
+
+
+
+
+/*Показать 404 для всего где есть ?page*/
+if (strpos($_SERVER['REQUEST_URI'], 'page') != false) {
+    define("ERROR_404", "Y");
+
+    \CHTTP::setStatus("404 Not Found");
+
+    if ($APPLICATION->RestartWorkarea()) {
+        require(\Bitrix\Main\Application::getDocumentRoot()."/404.php");
+        die();
+    }
+}
+
+
+
+
 ?>
 
 <? $APPLICATION->IncludeComponent(
