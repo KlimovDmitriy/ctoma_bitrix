@@ -16,7 +16,7 @@ $this->setFrameMode(true);
 <div class="rev__home_block">
     <div id="reviewsHome" class="reviews width width_full"><div class="reviews__title title_homeWhite width width_norm width_paddingStandart">
             <span class="title__br"></span>
-            <span class="title__text">Отзывы<?echo count($arResult['ITEMS']);?></span>
+            <span class="title__text">Отзывы</span>
             <span class="title__br"></span>
         </div>
 
