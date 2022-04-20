@@ -24,7 +24,7 @@ $this->setFrameMode(true);
             <div class="reviews__slider width width_full">
                 <div class="reviews__swiper swiper-container swiper-container-horizontal swiper-container-fade">
                     <div class="swiper-wrapper">
-
+<?echo count($arResult['ITEMS']);?>
             <? foreach ($arResult['ITEMS'] as $item) { ?>
                 <div class="swiper-slide">
                     <div class="otzyvDefault otzyvDefault_short width width_light">
