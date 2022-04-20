@@ -9,18 +9,17 @@ if ($_REQUEST['PAGEN_1'] > 0) {
     $desc .= ' - страница ' . (int)$_REQUEST['PAGEN_1'];
 }
 
-if ($_REQUEST['page'] > 0) {
 
-    /*Показать 404 для всего где есть ?page*/
-
+/*Показать 404 для всего где есть ?page*/
+if (strpos($_SERVER['REQUEST_URI'], 'page') != false) {
     global $APPLICATION;
     $APPLICATION->RestartBuffer();
     CHTTP::SetStatus("404 Not Found");
 
     include($_SERVER["DOCUMENT_ROOT"] . '/404.php');
-
-
+exit;
 }
+
 
 $APPLICATION->SetTitle($title);
 
