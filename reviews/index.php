@@ -27,6 +27,7 @@ echo '<main role="main">
 </div>
 </div>
 </main>';
+    require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php');
     return '';
 }
 
