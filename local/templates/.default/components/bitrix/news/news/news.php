@@ -16,6 +16,36 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 
+
+/*Показать 404 для всего где есть ?page*/
+if (strpos($_SERVER['REQUEST_URI'], 'page') != false) {
+    define("ERROR_404", "Y");
+
+    \CHTTP::setStatus("404 Not Found");
+    global $APPLICATION;
+    echo '<main role="main">
+<div class="content">
+<div class="page404">
+<div class="page404__layout">
+<div class="page404__text content_norm" style="    padding: 150px 0;">
+<h1>Страница не найдена</h1>
+<br>
+<p>
+Запрашиваемая Вами страница была удалена или перемещена.<br> Пожалуйста, воспользуйтесь
+поиском, меню или начните с главной страницы.
+</p>
+<a class="button_red" style="color: #fff;" href="/">Перейти на главную</a>
+</div>
+</div>
+</div>
+</div>
+</main>';
+    require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php');
+    return '';
+}
+
+
+
 $title = 'Новости | Группа компаний «СТОМА»';
 $desc = 'Новости стоматологических клиник «СТОМА». Узнать о жизни клиник.';
 if ($_REQUEST['PAGEN_1'] > 0) {
