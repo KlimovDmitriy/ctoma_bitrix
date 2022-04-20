@@ -14,7 +14,7 @@ if ($_REQUEST['PAGEN_1'] > 0) {
 if (strpos($_SERVER['REQUEST_URI'], 'page') != false) {
     CHTTP::SetStatus("404 Not Found");
     @define("ERROR_404", "Y");
-    include_once($_SERVER['DOCUMENT_ROOT'].'/404.php');
+    include_once('/404.php');
     //\Bitrix\Iblock\Component\Tools::process404("", true, true, true, "");
     return;
 }
