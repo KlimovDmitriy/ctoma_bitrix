@@ -1,10 +1,7 @@
-<?
-
-use \Bitrix\Main\Page\Asset,
+<? use \Bitrix\Main\Page\Asset,
     \Realweb\Site\Site;
 
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,40 +39,55 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/twentytwenty.css');
     ?>
     <?php if (!Site::isCheckGooglePageSpeed()): ?>
-    <?php \Realweb\Site\Site::showIncludeText('HEAD_AFTER'); ?>
+        <?php \Realweb\Site\Site::showIncludeText('HEAD_AFTER'); ?>
     <?php endif; ?>
 </head>
 
 <body class="html__body path-frontpage">
 <?php if (!Site::isCheckGooglePageSpeed()): ?>
-<!-- Rating Mail.ru counter -->
-<script type="text/javascript">
-    var _tmr = window._tmr || (window._tmr = []);
-    _tmr.push({id: "3239403", type: "pageView", start: (new Date()).getTime(), pid: "USER_ID"});
-    (function (d, w, id) {
-        if (d.getElementById(id)) return;
-        var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
-        ts.src = "https://top-fwz1.mail.ru/js/code.js";
-        var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
-        if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
-    })(document, window, "topmailru-code");
-</script><noscript><div>
-        <img src="https://top-fwz1.mail.ru/counter?id=3239403;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru" />
-    </div></noscript>
-<!-- //Rating Mail.ru counter -->
+    <!-- Rating Mail.ru counter -->
+    <script type="text/javascript">
+        var _tmr = window._tmr || (window._tmr = []);
+        _tmr.push({id: "3239403", type: "pageView", start: (new Date()).getTime(), pid: "USER_ID"});
+        (function (d, w, id) {
+            if (d.getElementById(id)) return;
+            var ts = d.createElement("script");
+            ts.type = "text/javascript";
+            ts.async = true;
+            ts.id = id;
+            ts.src = "https://top-fwz1.mail.ru/js/code.js";
+            var f = function () {
+                var s = d.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(ts, s);
+            };
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else {
+                f();
+            }
+        })(document, window, "topmailru-code");
+    </script>
+    <noscript>
+        <div>
+            <img src="https://top-fwz1.mail.ru/counter?id=3239403;js=na"
+                 style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru"/>
+        </div>
+    </noscript>
+    <!-- //Rating Mail.ru counter -->
 
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXWLCSM"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXWLCSM"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 <?php endif; ?>
 <div id="panel"><? $APPLICATION->ShowPanel(); ?></div>
 <?php \Realweb\Site\Site::showIncludeText('BODY_BEFORE'); ?>
 <header class="header" role="banner">
     <div class="header__top">
-        <div class="<? global $USER; if ($USER->IsAuthorized()): ?>header__fixedWrapIsAuthorized<?else:?>header__fixedWrap<? endif; ?>">
+        <div class="<? global $USER;
+        if ($USER->IsAuthorized()): ?>header__fixedWrapIsAuthorized<? else: ?>header__fixedWrap<? endif; ?>">
             <div class="header__fixed width width_norm">
                 <div class="header__choosingClinic width_paddingLeftRight">
                     <? $APPLICATION->IncludeComponent("realweb:blank", "clinics", array(), false, array('HIDE_ICONS' => 'Y')); ?>
@@ -112,12 +124,12 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 
             <div class="header__logoMobile logo_mobile">
                 <? if ($APPLICATION->GetCurPage(false) !== '/'): ?>
-                <a class="logo__linck" href="/">
-                    <img class="logo__img" src="/local/templates/main/images/logo.jpg"
-                         alt="Стоматология в СПб – зубные клиники «СТОМА»"
-                         title="«СТОМА» - Сеть стоматологических клиник Санкт-Петербурга">
-                </a>
-                <?else:?>
+                    <a class="logo__linck" href="/">
+                        <img class="logo__img" src="/local/templates/main/images/logo.jpg"
+                             alt="Стоматология в СПб – зубные клиники «СТОМА»"
+                             title="«СТОМА» - Сеть стоматологических клиник Санкт-Петербурга">
+                    </a>
+                <? else: ?>
                     <img class="logo__img" src="/local/templates/main/images/logo.jpg"
                          alt="Стоматология в СПб – зубные клиники «СТОМА»"
                          title="«СТОМА» - Сеть стоматологических клиник Санкт-Петербурга">
@@ -233,12 +245,12 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
             <div class="header__centerWrapper width width_norm width_paddingDisableMobileDevice">
                 <div class="header__logo width_paddingStandart">
                     <? if ($APPLICATION->GetCurPage(false) !== '/'): ?>
-                    <a href="/">
-                    <img src="/local/templates/main/images/logo.jpg" class="logo__img"
-                         alt="Стоматология в СПб – зубные клиники «СТОМА»"
-                         title="«СТОМА» - Сеть стоматологических клиник Санкт-Петербурга">
-                    </a>
-                    <?else:?>
+                        <a href="/">
+                            <img src="/local/templates/main/images/logo.jpg" class="logo__img"
+                                 alt="Стоматология в СПб – зубные клиники «СТОМА»"
+                                 title="«СТОМА» - Сеть стоматологических клиник Санкт-Петербурга">
+                        </a>
+                    <? else: ?>
                         <img src="/local/templates/main/images/logo.jpg" class="logo__img"
                              alt="Стоматология в СПб – зубные клиники «СТОМА»"
                              title="«СТОМА» - Сеть стоматологических клиник Санкт-Петербурга">

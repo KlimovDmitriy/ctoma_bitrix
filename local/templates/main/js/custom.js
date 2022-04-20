@@ -111,7 +111,7 @@ $('.plusDoctorWr .plusDoctorN').click(function () {
     $(this).prev().toggleClass('menuMobileDortor');
 });
 /*Кнопка наверх*/
-mybutton = document.getElementById("myBtn");
+var mybutton = $("#myBtn");
 window.onscroll = function () {
 
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
