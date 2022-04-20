@@ -15,7 +15,7 @@ if (strpos($_SERVER['REQUEST_URI'], 'page') != false) {
     CHTTP::SetStatus("404 Not Found");
     @define("ERROR_404", "Y");
 
-    \Bitrix\Iblock\Component\Tools::process404("", true, true, true, "");
+    //\Bitrix\Iblock\Component\Tools::process404("", true, true, true, "");
     return;
 }
 
