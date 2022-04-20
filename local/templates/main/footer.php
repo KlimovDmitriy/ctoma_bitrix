@@ -127,7 +127,7 @@
         <span class="footer__copy width_paddingStandart">18+, ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА</span>
     </div>
 </footer>
-<a onclick="topFunction()" id="myBtn" title="Наверх страницы"><img src="/local/templates/main/images/up.png" alt="Вверх"></a>
+<a id="myBtn" title="Наверх страницы"><img src="/local/templates/main/images/up.png" alt="Вверх"></a>
 <!--Модальные формы -->
 <div id="vrac" class="dialog zapis-action" title="Записаться к врачу">
     <?
