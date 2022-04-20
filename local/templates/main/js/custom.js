@@ -111,9 +111,9 @@ $('.plusDoctorWr .plusDoctorN').click(function () {
     $(this).prev().toggleClass('menuMobileDortor');
 });
 /*Кнопка наверх*/
-var mybutton = $("#myBtn");
-window.onscroll = function () {
 
+window.onscroll = function () {
+    var mybutton = $("#myBtn");
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         mybutton.style.display = "block";
     } else {
