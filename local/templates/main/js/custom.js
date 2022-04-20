@@ -1,4 +1,4 @@
-$('.multiselect').select2();
+
 var swiper = new Swiper('.swipe__slider', {
     navigation: {
         nextEl: '.swipe__ButtonNext',
@@ -121,7 +121,8 @@ $('.header__searchMobileButton').on('click', function () {
 
 $(document).ready(function () {
 
-
+    $('.multiselect').select2();
+    /*Кнопка наверх*/
     var button = $('#myBtn');
     $(window).scroll (function () {
         if ($(this).scrollTop () > 300) {
@@ -136,14 +137,7 @@ $(document).ready(function () {
         }, 800);
         return false;
     });
-
-
-
-
-
-
-
-
+    /*Кнопка наверх*/
 
     $(".fancybox").fancybox({
         maxWidth: 800,
