@@ -110,25 +110,9 @@ $('.plusDoctorWr .plusDoctorN').click(function () {
     $(this).parent().next().toggleClass('menuMobileDortorUl');
     $(this).prev().toggleClass('menuMobileDortor');
 });
-/*Кнопка наверх*/
-
-$(window).scroll(function () {
-    var mybutton = $("#myBtn");
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-    } else {
-        mybutton.style.display = "none";
-    }
-};
-)
 
 
-function topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
 
-/*Кнопка наверх*/
 /*Показать поиск в мобильной версии*/
 $('.header__searchMobileButton').on('click', function () {
     $('.header__searchMobile').toggle();
@@ -136,6 +120,31 @@ $('.header__searchMobileButton').on('click', function () {
 
 
 $(document).ready(function () {
+
+
+    var button = $('#myBtn');
+    $(window).scroll (function () {
+        if ($(this).scrollTop () > 300) {
+            button.fadeIn();
+        } else {
+            button.fadeOut();
+        }
+    });
+    button.on('click', function(){
+        $('body, html').animate({
+            scrollTop: 0
+        }, 800);
+        return false;
+    });
+
+
+
+
+
+
+
+
+
     $(".fancybox").fancybox({
         maxWidth: 800,
         maxHeight: 600,
