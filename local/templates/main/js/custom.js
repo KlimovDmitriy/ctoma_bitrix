@@ -112,7 +112,7 @@ $('.plusDoctorWr .plusDoctorN').click(function () {
 });
 /*Кнопка наверх*/
 
-window.onscroll = function () {
+$(window).on('scroll', function () {
     var mybutton = $("#myBtn");
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         mybutton.style.display = "block";
@@ -120,6 +120,7 @@ window.onscroll = function () {
         mybutton.style.display = "none";
     }
 };
+)
 
 
 function topFunction() {
@@ -129,22 +130,22 @@ function topFunction() {
 
 /*Кнопка наверх*/
 /*Показать поиск в мобильной версии*/
-$('.header__searchMobileButton').on('click',function(){
+$('.header__searchMobileButton').on('click', function () {
     $('.header__searchMobile').toggle();
 })
 
 
-$(document).ready(function() {
+$(document).ready(function () {
     $(".fancybox").fancybox({
-        maxWidth	: 800,
-        maxHeight	: 600,
-        fitToView	: false,
-        width		: '70%',
-        height		: '70%',
-        autoSize	: true,
-        closeClick	: false,
-        openEffect	: 'none',
-        closeEffect	: 'none'
+        maxWidth: 800,
+        maxHeight: 600,
+        fitToView: false,
+        width: '70%',
+        height: '70%',
+        autoSize: true,
+        closeClick: false,
+        openEffect: 'none',
+        closeEffect: 'none'
     });
     $('#image-map area').hover(
         function () {
@@ -152,7 +153,7 @@ $(document).ready(function() {
             var width = $('.image-map-container').width();
             var height = $('.image-map-container').height();
             $('.image-map-container .map-selector').addClass('hover').css({
-                'left': coords[0]+'px',
+                'left': coords[0] + 'px',
                 'top': coords[1] + 'px',
                 'right': width - coords[2],
                 'bottom': height - coords[3]
@@ -160,7 +161,7 @@ $(document).ready(function() {
         },
 
         function () {
-            $('.image-map-container .map-selector').removeClass('hover').attr('style','');
+            $('.image-map-container .map-selector').removeClass('hover').attr('style', '');
         }
     )
 });
