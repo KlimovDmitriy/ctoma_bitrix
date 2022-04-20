@@ -12,11 +12,14 @@ if ($_REQUEST['PAGEN_1'] > 0) {
 
 /*Показать 404 для всего где есть ?page*/
 if (strpos($_SERVER['REQUEST_URI'], 'page') != false) {
-    CHTTP::SetStatus("404 Not Found");
-    @define("ERROR_404", "Y");
-    include_once('/home/bitrix/www/404.php');
-    //\Bitrix\Iblock\Component\Tools::process404("", true, true, true, "");
-    return;
+    define("ERROR_404", "Y");
+
+    \CHTTP::setStatus("404 Not Found");
+
+    if ($APPLICATION->RestartWorkarea()) {
+        require(\Bitrix\Main\Application::getDocumentRoot()."/404.php");
+        die();
+    }
 }
 
 
