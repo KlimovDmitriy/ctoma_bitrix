@@ -112,7 +112,7 @@ $('.plusDoctorWr .plusDoctorN').click(function () {
 });
 /*Кнопка наверх*/
 
-$(window).on('scroll', function () {
+$(window).scroll(function () {
     var mybutton = $("#myBtn");
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         mybutton.style.display = "block";
