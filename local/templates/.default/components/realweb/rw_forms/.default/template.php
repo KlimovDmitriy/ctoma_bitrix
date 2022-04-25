@@ -154,7 +154,7 @@ $this->setFrameMode(true);
                             //Определяем инфоблок для SELECT
                             $SELECT_IBLOCK_ID = \Realweb\Site\Site::getIblockId($field['IBLOCK']);
                             //Достаем активные элементы из него
-                            $select_elements = \Realweb\Site\Site::getIBlockElements(['IBLOCK_ID' => $SELECT_IBLOCK_ID, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y"]);
+                            $select_elements = \Realweb\Site\Site::getIBlockElements(['IBLOCK_ID' => $SELECT_IBLOCK_ID, "ACTIVE_DATE" => "Y", "ACTIVE" => $arParams['CODE'] == 'nalog' ? '' : 'Y']);
 
 
                             $multiple = '';
