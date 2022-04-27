@@ -69,11 +69,12 @@ $name = !empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'])
                             <div class="clinic__phone">
                                 <meta itemprop="telephone" content="<?=$arResult["PROPERTIES"]["PHONES"]["VALUE"][0]?>">
                                 <label>Телефон:</label>
-                                <? foreach ($arResult["PROPERTIES"]["PHONES"]["VALUE"] as $number) { ?>
+                                <? foreach ($arResult["PROPERTIES"]["PHONES"]["VALUE"] as $key=>$number) { ?>
                                 <div>
                                     <a class="<?=$arResult["PROPERTIES"]["CALLTOUCH"]["VALUE"];?>" href="tel:<?=$number;?>">
                                         <?=$number;?>
                                     </a>
+                                    <?if (!empty($arResult['PROPERTIES']['ADDS']['VALUE'][$key])){?> (доб. <?= $arResult['PROPERTIES']['ADDS']['VALUE'][$key] ?>)<?}?>
                                 </div>
                                 <? } ?>
                             </div>
