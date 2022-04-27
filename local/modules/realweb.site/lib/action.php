@@ -115,7 +115,7 @@ $element_added=0;
 
         if ($PROPS['form'] == 'Задать вопрос') {
 
-            $PROPS2['phone'] = $sumbission_data['phone']['VALUE'];
+            $PROPS2 = ['phone'=>$PROPS['phone']];
 
             /*Задать вопрос*/
 
