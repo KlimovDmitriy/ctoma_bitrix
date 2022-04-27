@@ -21,6 +21,6 @@ foreach ($cls as $c) {
 
     $arResult['clinics'][$c['ID']] = $c;
 }
-$arResult['current'] =$arResult['clinics'][$arResult['currentID']];
+$arResult['current'] = $arResult['clinics'][$arResult['currentID']];
 
 ?>
