@@ -8,17 +8,17 @@ $name = !empty($arResult['IPROPERTY_VALUES']['SECTION_PAGE_TITLE'])
 
 <h1 class="kliniki__title title_grey width width_norm width_paddingStandart fs32">
     <span class="title__br"></span>
-    <span class="title__text" style="font-size:32px"><?=$name;?></span>
+    <span class="title__text" style="font-size:32px"><?= $name; ?></span>
     <span class="title__br"></span>
 </h1>
 <?php
-if ($arResult["ORIGINAL_PARAMETERS"]["SECTION_ID"]==0){
+if ($arResult["ORIGINAL_PARAMETERS"]["SECTION_ID"] == 0) {
     ?>
 
     <? $APPLICATION->IncludeComponent("realweb:blank", "clinics_map", array(), false, array('HIDE_ICONS' => 'Y')); ?>
 
     <div class="content_norm width width_norm">
-        <?=$arResult['DESCRIPTION'];?>
+        <?= $arResult['DESCRIPTION']; ?>
     </div>
     <?
 }
@@ -27,61 +27,61 @@ if ($arResult["ORIGINAL_PARAMETERS"]["SECTION_ID"]==0){
     <div class="views-element-container">
         <div class="klinikiView">
 
-            <?foreach($arResult["ITEMS"] as $cell=>$arElement):?>
+            <? foreach ($arResult["ITEMS"] as $cell => $arElement): ?>
                 <div class="klinikiView__row views-row">
                     <div class="views-field views-field-field-foto">
                         <div class="field-content">
-                            <a href="<?=$arElement["DETAIL_PAGE_URL"]?>" hreflang="ru">
-                                <img src="<?=$arElement["PREVIEW_PICTURE"]["SRC"]?>" alt="<?=$arElement["PREVIEW_PICTURE"]["ALT"]?>">
+                            <a href="<?= $arElement["DETAIL_PAGE_URL"] ?>" hreflang="ru">
+                                <img src="<?= $arElement["PREVIEW_PICTURE"]["SRC"] ?>"
+                                     alt="<?= $arElement["PREVIEW_PICTURE"]["ALT"] ?>">
 
                             </a>
                         </div>
                     </div>
                     <div class="views-field views-field-name">
             <span class="field-content">
-                <a href="<?=$arElement["DETAIL_PAGE_URL"]?>" hreflang="ru"><?=$arElement["NAME"]?></a>
+                <a href="<?= $arElement["DETAIL_PAGE_URL"] ?>" hreflang="ru"><?= $arElement["NAME"] ?></a>
             </span>
                     </div>
                     <div class="views-field views-field-field-adres">
                         <div class="field-content">
-                            <?=$arElement['ADDRESS'];?>
+                            <?= $arElement['ADDRESS']; ?>
                         </div>
                     </div>
                     <div class="views-field views-field-field-rezim-raboty">
                         <div class="field-content">
-                            <?=$arElement['SCHEDULE'];?>
+                            <?= $arElement['SCHEDULE']; ?>
                         </div>
-                    </div><div class="views-field views-field-field-phones">
+                    </div>
+                    <div class="views-field views-field-field-phones">
                         <div class="field-content">
-                <span class="call-phone-text <?=$arElement['CALLTOUCH'];?>">
-                    <?
-                    foreach ($arElement['PHONES'] as $number) {
-                        echo $number.'<br>';
-                    }
-                    ?>
-                </span>
+
+                            <? foreach ($arElement['PHONES'] as $key => $number) {?>
+                                <span class="call-phone-text <?= $arElement['CALLTOUCH']; ?>"><? echo $number; ?></span>
+                            <? } ?>
+                            <?if (!empty($arElement['ADDS'][$key])){?> (доб. <?= $arElement['ADDS'][$key] ?>)<?}?>
                         </div>
                     </div>
                 </div>
-            <?endforeach;?>
+            <? endforeach; ?>
 
         </div>
     </div>
 </div>
 
 <?php
-if ($arResult["ORIGINAL_PARAMETERS"]["SECTION_ID"]>0){
-?>
-<h2 class="kliniki__title title_grey width width_norm width_paddingStandart">
-    <span class="title__br"></span>
-    <span class="title__text" style="font-size:32px">Клиники в других районах</span>
-    <span class="title__br"></span>
-</h2>
-<? $APPLICATION->IncludeComponent("realweb:blank", "clinics_map", array(), false, array('HIDE_ICONS' => 'Y')); ?>
+if ($arResult["ORIGINAL_PARAMETERS"]["SECTION_ID"] > 0) {
+    ?>
+    <h2 class="kliniki__title title_grey width width_norm width_paddingStandart">
+        <span class="title__br"></span>
+        <span class="title__text" style="font-size:32px">Клиники в других районах</span>
+        <span class="title__br"></span>
+    </h2>
+    <? $APPLICATION->IncludeComponent("realweb:blank", "clinics_map", array(), false, array('HIDE_ICONS' => 'Y')); ?>
 
-<div class="content_norm width width_norm">
- <?=$arResult['DESCRIPTION'];?>
-</div>
-<?
+    <div class="content_norm width width_norm">
+        <?= $arResult['DESCRIPTION']; ?>
+    </div>
+    <?
 }
 ?>

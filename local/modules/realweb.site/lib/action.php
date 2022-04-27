@@ -109,6 +109,35 @@ class Action
 
         $el = new \CIBlockElement;
 
+        $element_added = 0;
+
+
+        if ($PROPS['form'] == 'Задать вопрос') {
+
+
+            /*Задать вопрос*/
+
+
+            $iblock_id = Site::getIblockId('voprosy-i-otvety');
+            $arParams = array("replace_space" => "_", "replace_other" => "");
+            $trans = \Cutil::translit($PROPS['fio'], "ru", $arParams);
+            $fields = array(
+                "DATE_CREATE" => date("d.m.Y H:i:s"), //Передаем дата создания
+                "CREATED_BY" => $GLOBALS['USER']->GetID(),    //Передаем ID пользователя кто добавляет
+                "IBLOCK_ID" => $iblock_id, //ID информационного блока
+
+                "PREVIEW_TEXT" => $sumbission_data['question']['VALUE'],
+                "ACTIVE_FROM" => date('d.m.Y'),
+                "CODE" => $trans . '_' . time(),
+                "NAME" => 'Вопрос-Ответ',
+                "ACTIVE" => "N", //поумолчанию делаем активным или ставим N для отключении поумолчанию
+
+            );
+            $element_added = 1;
+
+
+        }
+
 
         if ($PROPS['form'] == 'Оставить отзыв') {
 
@@ -144,9 +173,13 @@ class Action
                 "ACTIVE" => "N", //поумолчанию делаем активным или ставим N для отключении поумолчанию
 
             );
+            $element_added = 1;
 
 
-        } else {
+        }
+
+
+        if ($element_added == 0) {
             /*Остальные формы*/
 
             $iblock_id = Site::getIblockId('RESULTS');

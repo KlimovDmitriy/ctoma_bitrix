@@ -27,6 +27,7 @@ foreach ($arResult["ITEMS"] as $key => $arElement) {
         $arResult["ITEMS"][$key]['SCHEDULE'] = $arProps[$arElement['ID']]["SCHEDULE"]["VALUE"];
         $arResult["ITEMS"][$key]['CALLTOUCH'] = $arProps[$arElement['ID']]["CALLTOUCH"]["VALUE"];
         $arResult["ITEMS"][$key]['PHONES'] = $arProps[$arElement['ID']]["PHONES"]["VALUE"];
+        $arResult["ITEMS"][$key]['ADDS'] = $arProps[$arElement['ID']]["ADDS"]["VALUE"];
     }
 }
 
