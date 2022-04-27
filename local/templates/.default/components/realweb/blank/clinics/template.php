@@ -6,9 +6,6 @@
                                 <span class="choosingClinic__strl"></span></span>
 
     <span class="choosingClinic__list">
-
-
-
         <? foreach ($arResult['clinics'] as $clinic) { ?>
 
             <div class="choosingClinic__clinic" data-id="<?= $clinic['ID'] ?>"

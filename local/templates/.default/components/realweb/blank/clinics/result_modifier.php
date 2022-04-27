@@ -15,7 +15,7 @@ if (is_array($current)) {
 }
 
 
-$cls = \Realweb\Site\Site::getIBlockElements(['IBLOCK_ID' => \Realweb\Site\Site::getIblockId('clinics'), 'PROPERTY_SHOW_MENU_VALUE' => "да"]);
+$cls = \Realweb\Site\Site::getIBlockElements(['IBLOCK_ID' => \Realweb\Site\Site::getIblockId('clinics'), 'ACTIVE' => "Y"]);
 
 foreach ($cls as $c) {
 
