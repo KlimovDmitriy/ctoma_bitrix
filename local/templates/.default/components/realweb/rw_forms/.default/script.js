@@ -124,6 +124,12 @@ $("form").on('submit', function () {
                                 ym(10785961, 'reachGoal', 'make_appointment');
                                 console.log('Цель отправлена: make_appointment');
 
+                                _tmr.push({ id: '3239403', type: 'reachGoal', goal: 'make_appointment' });
+                                VK.Retargeting.Event('make_appointment');
+                                VK.Goal('schedule');
+
+                                console.log('Цели соцсетей отправлены');
+
                                 dataLayer.push({
                                     'event' : 'GAEvent',
                                     'eventCategory' : 'form',
@@ -135,6 +141,11 @@ $("form").on('submit', function () {
                             case 'callback':
                                 ym(10785961, 'reachGoal', 'request_call');
                                 console.log('Цель отправлена: request_call');
+
+                                _tmr.push({ id: '3239403', type: 'reachGoal', goal: 'request_call' });
+                                VK.Retargeting.Event('request_call');
+                                VK.Goal('lead');
+                                console.log('Цели соцсетей отправлены');
 
                                 dataLayer.push({
                                     'event' : 'GAEvent',
@@ -149,6 +160,11 @@ $("form").on('submit', function () {
                                 ym(10785961, 'reachGoal', 'ask_question');
                                 console.log('Цель отправлена: ask_question');
 
+                                _tmr.push({ id: '3239403', type: 'reachGoal', goal: 'ask_question' });
+                                VK.Retargeting.Event('ask_question');
+                                VK.Goal('contact');
+                                console.log('Цели соцсетей отправлены');
+
                                 dataLayer.push({
                                     'event' : 'GAEvent',
                                     'eventCategory' : 'form',
@@ -161,6 +177,11 @@ $("form").on('submit', function () {
                                 ym(10785961, 'reachGoal', 'quality_control');
                                 console.log('Цель отправлена: quality_control');
 
+                                _tmr.push({ id: '3239403', type: 'reachGoal', goal: 'quality_control' });
+                                VK.Retargeting.Event('quality_control');
+                                VK.Goal('customize_product');
+                                console.log('Цели соцсетей отправлены');
+
                                 dataLayer.push({
                                     'event' : 'GAEvent',
                                     'eventCategory' : 'form',
@@ -172,6 +193,11 @@ $("form").on('submit', function () {
                             case 'add_review':
                                 ym(10785961, 'reachGoal', 'give_feedback');
                                 console.log('Цель отправлена: give_feedback');
+
+                                _tmr.push({ id: '3239403', type: 'reachGoal', goal: 'give_feedback' });
+                                VK.Retargeting.Event('give_feedback');
+                                VK.Goal('conversion');
+                                console.log('Цели соцсетей отправлены');
 
                                 dataLayer.push({
                                     'event' : 'GAEvent',
@@ -186,6 +212,11 @@ $("form").on('submit', function () {
                                 ym(10785961, 'reachGoal', 'appointment_doctor');
                                 console.log('Цель отправлена: appointment_doctor');
 
+                                _tmr.push({ id: '3239403', type: 'reachGoal', goal: 'appointment_doctor' });
+                                VK.Retargeting.Event('appointment_doctor');
+                                VK.Goal('submit_application');
+                                console.log('Цели соцсетей отправлены');
+
                                 dataLayer.push({
                                     'event' : 'GAEvent',
                                     'eventCategory' : 'form',
@@ -198,6 +229,11 @@ $("form").on('submit', function () {
                             case 'akciya':
                                 ym(10785961, 'reachGoal', 'sign_up_promotion');
                                 console.log('Цель отправлена: sign_up_promotion');
+
+                                _tmr.push({ id: '3239403', type: 'reachGoal', goal: 'sign_up_promotion' });
+                                VK.Retargeting.Event('sign_up_promotion');
+                                VK.Goal('complete_registration');
+                                console.log('Цели соцсетей отправлены');
 
                                 dataLayer.push({
                                     'event' : 'GAEvent',

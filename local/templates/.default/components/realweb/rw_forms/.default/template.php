@@ -26,15 +26,7 @@ $this->setFrameMode(true);
         <div id="error_<?= $arParams['CODE']; ?>" class="error_form">
             <i class="fa fa-times-circle"></i> <span class="error_main_text"> Произошла ошибка. Попробуйте повторить позже.</span>
         </div>
-        <?
-
-        $onsubmit = '';
-        if (trim($arResult['FORM']['UF_ONSUBMIT']) != '') {
-            $onsubmit = $arResult['FORM']['UF_ONSUBMIT'];
-        }
-
-        ?>
-        <form <?= $onsubmit ? 'onsubmit="' . $onsubmit . '"' : '' ?> id="<?= $arParams['CODE']; ?>" method="post"
+        <form id="<?= $arParams['CODE']; ?>" method="post"
               class="webform-submission-form webform-submission-add-form webform-submission-makeform-form webform-submission-makeform-add-form webform-submission-makeform-page_variant-make_appointment-panels_variant-0-form webform-submission-makeform-page_variant-make_appointment-panels_variant-0-add-form makeform js-webform-details-toggle webform-details-toggle">
             <input type="hidden" name="action" value="Action_formSubmit">
             <input type="hidden" name="form_name" value="<?= $arResult['FORM']['NAME']; ?>">
