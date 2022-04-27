@@ -109,11 +109,13 @@ class Action
 
         $el = new \CIBlockElement;
 
-        $element_added = 0;
+$element_added=0;
+
 
 
         if ($PROPS['form'] == 'Задать вопрос') {
 
+            $PROPS2['phone'] = $sumbission_data['phone']['VALUE'];
 
             /*Задать вопрос*/
 
@@ -125,7 +127,7 @@ class Action
                 "DATE_CREATE" => date("d.m.Y H:i:s"), //Передаем дата создания
                 "CREATED_BY" => $GLOBALS['USER']->GetID(),    //Передаем ID пользователя кто добавляет
                 "IBLOCK_ID" => $iblock_id, //ID информационного блока
-
+                "PROPERTY_VALUES" => $PROPS2, // Передаем массив значении для свойств
                 "PREVIEW_TEXT" => $sumbission_data['question']['VALUE'],
                 "ACTIVE_FROM" => date('d.m.Y'),
                 "CODE" => $trans . '_' . time(),
@@ -133,10 +135,15 @@ class Action
                 "ACTIVE" => "N", //поумолчанию делаем активным или ставим N для отключении поумолчанию
 
             );
-            $element_added = 1;
+            $element_added=1;
 
 
         }
+
+
+
+
+
 
 
         if ($PROPS['form'] == 'Оставить отзыв') {
@@ -173,7 +180,7 @@ class Action
                 "ACTIVE" => "N", //поумолчанию делаем активным или ставим N для отключении поумолчанию
 
             );
-            $element_added = 1;
+            $element_added=1;
 
 
         }
