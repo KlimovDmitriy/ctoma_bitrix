@@ -70,6 +70,12 @@ $this->setFrameMode(true);
                 <?php
                 endif; ?>
 
+        <? if ($arItem['PROPERTIES']['DOCTOR_CATEGORY']['VALUE']): ?>
+        <span class="doctorsFilter__work">
+            <label>Категория врача:</label>
+            <span class="minLabel"><?=$arItem['PROPERTIES']['DOCTOR_CATEGORY']['VALUE'];?></span>
+        </span>
+        <?php endif; ?>
 
               <div class="doctorsFilter__action">
                 <a data-form="vrac" data-vrac="<?

@@ -69,6 +69,14 @@ $this->setFrameMode(true);
                             <?php
                             endif; ?>
                             <?php
+                            if ($arResult['PROPERTIES']['DOCTOR_CATEGORY']['VALUE']): ?>
+                                <div class="doctor__field content_norm">
+                                    <label>Категория врача:</label>
+                                    <div><?= $arResult['PROPERTIES']['DOCTOR_CATEGORY']['VALUE'] ?></div>
+                                </div>
+                            <?php
+                            endif; ?>
+                            <?php
                             if ($arResult['PROPERTIES']['EXPERIENCE']['VALUE']): ?>
                                 <div class="doctor__field content_norm">
                                     <label>Опыт и достижения:</label>
