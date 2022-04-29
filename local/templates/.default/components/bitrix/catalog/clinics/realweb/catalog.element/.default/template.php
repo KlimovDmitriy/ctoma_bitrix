@@ -74,8 +74,9 @@ $name = !empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'])
                                     <a class="<?=$arResult["PROPERTIES"]["CALLTOUCH"]["VALUE"];?>" href="tel:<?=$number;?>">
                                         <?=$number;?>
                                     </a>
+                               </div>
                                     <?if (!empty($arResult['PROPERTIES']['ADDS']['VALUE'][$key])){?> (доб. <?= $arResult['PROPERTIES']['ADDS']['VALUE'][$key] ?>)<?}?>
-                                </div>
+
                                 <? } ?>
                             </div>
                             <meta itemprop="email" content="info@ctoma.ru">
