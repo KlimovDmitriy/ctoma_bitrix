@@ -105,6 +105,11 @@ $name = !empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'])
 
                             <? } ?>
                         </div>
+                            <?if (!empty($arResult["PROPERTIES"]["VIDEO"]["VALUE"])){?>
+                            <div class="clinic__informacia content_norm">
+                                <?php echo $arResult["PROPERTIES"]["VIDEO"]["VALUE"]; ?>
+                            </div>
+                            <?}?>
                         <div class="clinic__description content_norm"></div>
                         </div>
                     </div><!-- /clinic__bottom -->
