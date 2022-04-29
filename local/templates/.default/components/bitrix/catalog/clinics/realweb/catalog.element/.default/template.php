@@ -71,12 +71,11 @@ $name = !empty($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE'])
                                 <label>Телефон:</label>
                                 <? foreach ($arResult["PROPERTIES"]["PHONES"]["VALUE"] as $key=>$number) { ?>
                                 <div>
-                                    <a class="<?=$arResult["PROPERTIES"]["CALLTOUCH"]["VALUE"];?>" href="tel:<?=$number;?>">
+                                    <a class="<?=$arResult["PROPERTIES"]["CALLTOUCH"]["VALUE"];?>" href="tel:<?=$link_number;?>">
                                         <?=$number;?>
                                     </a>
-                               </div>
                                     <?if (!empty($arResult['PROPERTIES']['ADDS']['VALUE'][$key])){?> (доб. <?= $arResult['PROPERTIES']['ADDS']['VALUE'][$key] ?>)<?}?>
-
+                                </div>
                                 <? } ?>
                             </div>
                             <meta itemprop="email" content="info@ctoma.ru">
