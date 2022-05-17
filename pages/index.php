@@ -33,7 +33,7 @@ $APPLICATION->SetTitle("");
     "DETAIL_PROPERTY_CODE" => array(
         0 => "NOTE",
     ),
-    "DETAIL_SET_CANONICAL_URL" => "N",
+    "DETAIL_SET_CANONICAL_URL" => "Y",
     "DETAIL_USE_COMMENTS" => "N",
     "DETAIL_USE_VOTE_RATING" => "N",
     "DISABLE_INIT_JS_IN_COMPONENT" => "N",
