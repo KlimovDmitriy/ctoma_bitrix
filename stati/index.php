@@ -136,7 +136,7 @@ $APPLICATION->SetPageProperty("description", "Полезные статьи и �
         "SET_LAST_MODIFIED" => "N",
         "SET_STATUS_404" => "N",
         "SET_TITLE" => "Y",
-        "SHOW_404" => "N",
+        "SHOW_404" => "Y",
         "SHOW_DEACTIVATED" => "N",
         "SHOW_DISCOUNT_PERCENT" => "N",
         "SHOW_OLD_PRICE" => "N",
