@@ -28,7 +28,26 @@ $this->setFrameMode(true);
     )
 ); ?>
 <?
+
 $arItems = \Realweb\Site\Site::getIBlockElements(array('CODE' => $arResult['VARIABLES']['ELEMENT_CODE'], 'IBLOCK_ID' => $arParams['IBLOCK_ID']));
+
+
+if (empty($arItems)){
+
+    if (!defined("ERROR_404"))
+        define("ERROR_404", "Y");
+
+    \CHTTP::setStatus("404 Not Found");
+
+    if ($APPLICATION->RestartWorkarea()) {
+        require(\Bitrix\Main\Application::getDocumentRoot()."/404.php");
+        die();
+    }
+
+}
+
+
+
 foreach ($arItems as $arI) {
     ?>
     <div class="articlesPage__container ">

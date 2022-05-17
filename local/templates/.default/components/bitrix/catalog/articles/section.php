@@ -59,8 +59,6 @@ $APPLICATION->SetPageProperty("description", $desc);
                     "SECTION_FIELDS" => array("", ""),
                     "SECTION_ID" => "",
                     "SECTION_URL" => "",
-                    "SET_STATUS_404" => "Y",
-                    "SHOW_404" => "Y",
                     "SECTION_USER_FIELDS" => array("", ""),
                     "SHOW_PARENT_NAME" => "Y",
                     "TOP_DEPTH" => "2",
