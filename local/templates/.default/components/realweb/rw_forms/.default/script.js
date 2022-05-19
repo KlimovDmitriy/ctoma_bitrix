@@ -26,7 +26,7 @@ $(document).ready(function () {
     $.datepicker.setDefaults($.datepicker.regional["ru"]);
 
     //Маска номера телефона
-    $(".js-phone").inputmask({"mask": "+9 (999) 999-9999", "clearIncomplete": true});
+    $(".js-phone").inputmask({"mask": "+7|8 (999) 999-9999", "clearIncomplete": true});
 
     //Выбор даты
     $(".js-date").datepicker({
