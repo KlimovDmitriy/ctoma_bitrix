@@ -13,9 +13,9 @@ $cnt = count($result);
 <?
 $previousLevel = 0;
 foreach($arResult as $arItem):?>
-<?php if(!stristr($arItem['LINK'], $arParams['SECTION_CODE'])): ?>
-        <?php continue;?>
-    <?php endif; ?>
+<?php //if(!stristr($arItem['LINK'], $arParams['SECTION_CODE'])): ?>
+<!--        --><?php //continue;?>
+<!--    --><?php //endif; ?>
 	<?if ($previousLevel && $arItem["DEPTH_LEVEL"] < $previousLevel):?>
 		<?=str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"]));?>
 	<?endif?>
