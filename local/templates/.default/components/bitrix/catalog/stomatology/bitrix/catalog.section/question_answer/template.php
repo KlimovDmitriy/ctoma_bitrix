@@ -10,8 +10,8 @@
                     <?foreach($arResult["ITEMS"] as $arElement):?>
                     <div class="views-row" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                         <div class="views-field views-field-field-vopros-faq">
-                            <div class="field-content" itemprop="name">
-                                <?=htmlspecialchars_decode($arElement["PREVIEW_TEXT"]);?>
+                            <div class="field-content">
+                                <div itemprop="name"><?=htmlspecialchars_decode($arElement["PREVIEW_TEXT"]);?></div>
                             </div>
                         </div>
                         <div class="views-field views-field-field-otvet-faq">
