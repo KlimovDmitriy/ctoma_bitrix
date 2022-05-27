@@ -65,7 +65,7 @@ $el = CIBlockElement::GetList(array(), array('IBLOCK_ID'=>$arParams['IBLOCK_ID']
         </div>
 
         <div class="service__bottomMobile">
-            <p class="toggleH2"><a class="content_toggle" href="#">Услуги</a></p>
+            <p class="toggleH2"><a class="content_toggle" href="#">Все услуги <span class="show"></span></a></p>
             <div class="content_block_service" style="display: none;">
                 <div class="serviceMenu">
                     <?php
