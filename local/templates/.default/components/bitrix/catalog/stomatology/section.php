@@ -84,23 +84,24 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
                         <div class="serviceMenu">
                             <?php
                             $APPLICATION->IncludeComponent(
-                                "bitrix:menu",
-                                "stomatology",
-                                array(
-                                    "ALLOW_MULTI_SELECT" => "Y",
-                                    "CHILD_MENU_TYPE" => "left",
-                                    "COMPONENT_TEMPLATE" => ".default",
-                                    "DELAY" => "N",
-                                    "MAX_LEVEL" => "2",
-                                    "MENU_CACHE_GET_VARS" => array(),
-                                    "MENU_CACHE_TIME" => "3600",
-                                    "MENU_CACHE_TYPE" => "A",
-                                    "MENU_CACHE_USE_GROUPS" => "N",
-                                    "MENU_THEME" => "site",
-                                    "ROOT_MENU_TYPE" => "service",
-                                    "USE_EXT" => "Y"
-                                ),
-                                false
+                              "bitrix:menu",
+                              "stomatology2",
+                              array(
+                                "ALLOW_MULTI_SELECT" => "Y",
+                                "CHILD_MENU_TYPE" => "left",
+                                "COMPONENT_TEMPLATE" => ".default",
+                                "DELAY" => "N",
+                                "MAX_LEVEL" => "2",
+                                "MENU_CACHE_GET_VARS" => array(),
+                                "MENU_CACHE_TIME" => "3600",
+                                "MENU_CACHE_TYPE" => "A",
+                                "MENU_CACHE_USE_GROUPS" => "N",
+                                "MENU_THEME" => "site",
+                                "ROOT_MENU_TYPE" => "service",
+                                "USE_EXT" => "Y",
+                                "SECTION_CODE" => $arResult["VARIABLES"]["SECTION_CODE_PATH"]
+                              ),
+                              false
                             ); ?>
                         </div>
                     </div>
