@@ -83,6 +83,7 @@ $('.menu_ml').on('click', function () {
 
 $('.service__bottomMobile .content_toggle').click(function () {
     $('.content_block_service').slideToggle(300);
+    $(this).toggleClass('open');
     return false;
 });
 

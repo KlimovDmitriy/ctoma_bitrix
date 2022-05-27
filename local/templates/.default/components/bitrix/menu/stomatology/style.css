@@ -19,3 +19,9 @@ div.service__bottomMobile {
 .service__bottomMobile .serviceMenu {
     margin: 0 auto 20px;
 }
+.content_toggle:after {
+    content: '+';
+}
+.content_toggle.open:after {
+    content: '-';
+}
