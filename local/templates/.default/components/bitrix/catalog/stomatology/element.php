@@ -92,7 +92,12 @@ $el = CIBlockElement::GetList(array(), array('IBLOCK_ID'=>$arParams['IBLOCK_ID']
                 </div>
             </div>
         </div>
-
+<div style="display: none">
+<pre>
+    <? print_r($arResult);?>
+    <? print_r($arParams); ?>
+</pre>
+</div>
         <div class="service__content">
             <div class="block-region-main">
                 <div class="block">
