@@ -85,7 +85,7 @@ $el = CIBlockElement::GetList(array(), array('IBLOCK_ID'=>$arParams['IBLOCK_ID']
                             "MENU_THEME" => "site",
                             "ROOT_MENU_TYPE" => "service",
                             "USE_EXT" => "Y",
-                            "SECTION_CODE" => $arResult["VARIABLES"]["SECTION_CODE"]
+                            "SECTION_CODE" => $arResult["VARIABLES"]["SECTION_CODE_PATH"]
                         ),
                         false
                     ); ?>
