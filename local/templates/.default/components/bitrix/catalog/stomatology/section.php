@@ -79,7 +79,7 @@ $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
                 </div>
 
                 <div class="service__bottomMobile">
-                    <p class="toggleH2"><a class="content_toggle" href="#">Услуги</a></p>
+                    <p class="toggleH2"><a class="content_toggle" href="#">Все услуги &nbsp;</a></p>
                     <div class="content_block_service" style="display: none;">
                         <div class="serviceMenu">
                             <?php
