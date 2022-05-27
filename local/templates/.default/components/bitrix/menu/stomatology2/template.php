@@ -5,6 +5,8 @@ $url = $APPLICATION->GetCurPage();
 $path= parse_url($url, PHP_URL_PATH);
 $result = explode("/", trim($path, "/"));
 $cnt = count($result);
+$sectionCode = explode("/", trim($arParams['SECTION_CODE'], "/"));
+$sectionCode = $sectionCode[0];
 ?>
 
 <?if (!empty($arResult)):?>
@@ -13,9 +15,9 @@ $cnt = count($result);
 <?
 $previousLevel = 0;
 foreach($arResult as $arItem):?>
-<?php //if(!stristr($arItem['LINK'], $arParams['SECTION_CODE'])): ?>
-<!--        --><?php //continue;?>
-<!--    --><?php //endif; ?>
+<?php if(!stristr($arItem['LINK'], $sectionCode)): ?>
+        <?php continue;?>
+    <?php endif; ?>
 	<?if ($previousLevel && $arItem["DEPTH_LEVEL"] < $previousLevel):?>
 		<?=str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"]));?>
 	<?endif?>
