@@ -1,0 +1,27 @@
+.fixUrlClass {
+    font-weight: bold !important;
+    color: #d82043 !important;
+}
+.toggleH2 a.content_toggle {
+    width: 100%;
+    display: block;
+    color: white;
+    background: #e14361;
+    border-radius: 5px;
+    font-size: 18px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-decoration: none;
+}
+div.service__bottomMobile {
+    margin: 0;
+}
+.service__bottomMobile .serviceMenu {
+    margin: 0 auto 20px;
+}
+.content_toggle:after {
+    content: '+';
+}
+.content_toggle.open:after {
+    content: '-';
+}

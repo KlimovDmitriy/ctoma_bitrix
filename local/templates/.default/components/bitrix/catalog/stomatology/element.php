@@ -71,7 +71,7 @@ $el = CIBlockElement::GetList(array(), array('IBLOCK_ID'=>$arParams['IBLOCK_ID']
                     <?php
                     $APPLICATION->IncludeComponent(
                         "bitrix:menu",
-                        "stomatology",
+                        "stomatology2",
                         array(
                             "ALLOW_MULTI_SELECT" => "Y",
                             "CHILD_MENU_TYPE" => "left",
@@ -84,7 +84,8 @@ $el = CIBlockElement::GetList(array(), array('IBLOCK_ID'=>$arParams['IBLOCK_ID']
                             "MENU_CACHE_USE_GROUPS" => "N",
                             "MENU_THEME" => "site",
                             "ROOT_MENU_TYPE" => "service",
-                            "USE_EXT" => "Y"
+                            "USE_EXT" => "Y",
+                            "SECTION_CODE" => $arResult["VARIABLES"]["SECTION_CODE"]
                         ),
                         false
                     ); ?>
