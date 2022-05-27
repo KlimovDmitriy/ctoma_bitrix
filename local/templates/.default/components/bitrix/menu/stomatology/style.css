@@ -2,7 +2,7 @@
     font-weight: bold !important;
     color: #d82043 !important;
 }
-.toggleH2 .content_toggle {
+.toggleH2 a.content_toggle {
     width: 100%;
     display: block;
     color: white;
@@ -12,4 +12,10 @@
     padding-top: 4px;
     padding-bottom: 4px;
     text-decoration: none;
+}
+div.service__bottomMobile {
+    margin: 0;
+}
+.service__bottomMobile .serviceMenu {
+    margin: 0 auto 20px;
 }
