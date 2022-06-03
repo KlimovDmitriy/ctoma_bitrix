@@ -17,7 +17,7 @@ while ($service = $serviceElements->GetNext()) {
 }
 
 /* Собираем клиники */
-$clinics = CIBlockElement::GetList(["SORT" => "ASC"], ['IBLOCK_CODE' => "clinics"], false, false, ['NAME', 'ID', 'IBLOCK_ID', 'DETAIL_PAGE_URL']);
+$clinics = CIBlockElement::GetList(["SORT" => "ASC"], ['IBLOCK_CODE' => "clinics", 'ACTIVE' => 'Y'], false, false, ['NAME', 'ID', 'IBLOCK_ID', 'DETAIL_PAGE_URL']);
 while ($clinic = $clinics->GetNext()) {
     $arResult['CLINICS'][$clinic['ID']] = [
       'NAME' => $clinic['NAME'],
@@ -26,7 +26,7 @@ while ($clinic = $clinics->GetNext()) {
 }
 
 /* Собираем врачей */
-$doctors = CIBlockElement::GetList(["SORT" => "ASC"], ['IBLOCK_CODE' => "doctors"], false, false, ['NAME', 'ID', 'IBLOCK_ID', 'DETAIL_PAGE_URL']);
+$doctors = CIBlockElement::GetList(["SORT" => "ASC"], ['IBLOCK_CODE' => "doctors", 'ACTIVE' => 'Y'], false, false, ['NAME', 'ID', 'IBLOCK_ID', 'DETAIL_PAGE_URL']);
 while ($doctor = $doctors->GetNext()) {
     $arResult['DOCTORS'][$doctor['ID']]= [
       'NAME' => $doctor['NAME'],
