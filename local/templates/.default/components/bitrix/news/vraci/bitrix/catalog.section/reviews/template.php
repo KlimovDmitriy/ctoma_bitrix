@@ -45,7 +45,7 @@ if ($arResult['ITEMS']): ?>
                                                   BX_RESIZE_IMAGE_PROPORTIONAL,
                                                   true
                                                 ); ?>
-                                                <div><a href="/personal/<?= $item['DOCTOR']['CODE'] ?>'"><img
+                                                <div><a href="/personal/<?= $item['DOCTOR']['CODE'] ?>"><img
                                                                 src="<?= $file['src'] ?>"
                                                                 width="320" height="320"
                                                                 alt="Отзыв о враче <?= $item['DOCTOR']['NAME'] ?>"
