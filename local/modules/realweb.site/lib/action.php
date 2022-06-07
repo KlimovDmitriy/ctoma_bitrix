@@ -109,13 +109,12 @@ class Action
 
         $el = new \CIBlockElement;
 
-$element_added=0;
-
+        $element_added = 0;
 
 
         if ($PROPS['form'] == 'Задать вопрос') {
 
-            $PROPS2 = ['PHONE'=>$PROPS['phone']];
+            $PROPS2 = ['PHONE' => $PROPS['phone']];
 
             /*Задать вопрос*/
 
@@ -135,15 +134,10 @@ $element_added=0;
                 "ACTIVE" => "N", //поумолчанию делаем активным или ставим N для отключении поумолчанию
 
             );
-            $element_added=1;
+            $element_added = 1;
 
 
         }
-
-
-
-
-
 
 
         if ($PROPS['form'] == 'Оставить отзыв') {
@@ -180,7 +174,7 @@ $element_added=0;
                 "ACTIVE" => "N", //поумолчанию делаем активным или ставим N для отключении поумолчанию
 
             );
-            $element_added=1;
+            $element_added = 1;
 
 
         }
@@ -335,7 +329,7 @@ $element_added=0;
                         case 'Клиника на Московском (м. Московская)':
                             $emailTo .= ', ecostom@stoma-spb.ru';
                             break;
-                        case 'Клиника на Ленина (м. Петроградская)':
+                        case 'Клиника на Ленина (м. Петроградская/ м. Чкаловская)':
                             $emailTo .= ', stoma.lenina@stoma-spb.ru';
                             break;
                         case 'Клиника на Кораблестроителей (м. Приморская)':
