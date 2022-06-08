@@ -364,7 +364,7 @@ class Site
             $this->_city = $this->_getClinic(array('ID' => $clinicId));
         } else {
 
-            $this->_city = $this->_getClinic(array('ID' => 335));
+            $this->_city = $this->_getClinic(array('ID' => 339));
         }
 
         return $this->_city;
