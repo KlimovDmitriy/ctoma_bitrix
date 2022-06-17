@@ -252,7 +252,7 @@
 .title_norm {
     margin-top: 50px;
     margin-bottom: 15px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     font-family: "ralewayregular", sans-serif;
     font-weight: bold;
     color: #d82043;
@@ -286,7 +286,7 @@
 }
 
 .title_grey {
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     padding-top: 25px;
     padding-bottom: 10px;
     font-size: 45px;
@@ -505,7 +505,7 @@
     display: block;
     width: 100%;
     font-size: 22px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     line-height: 28px;
     padding: 16px;
     box-sizing: border-box;
@@ -758,7 +758,7 @@
     -moz-border-radius: 30px;
     -webkit-border-radius: 30px;
     border-radius: 30px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     border: none;
     -moz-user-select: -moz-none;
     -ms-user-select: none;
@@ -789,7 +789,7 @@
     -moz-border-radius: 30px;
     -webkit-border-radius: 30px;
     border-radius: 30px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     border: none;
     -moz-user-select: -moz-none;
     -ms-user-select: none;
@@ -825,7 +825,7 @@
 }
 
 .title_homeWhite {
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     padding-top: 25px;
     padding-bottom: 10px;
     display: block;
@@ -877,7 +877,7 @@
 }
 
 .title_homeRed {
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     padding-top: 25px;
     padding-bottom: 10px;
     font-size: 55px;
@@ -4701,7 +4701,7 @@ blockquote {
     font-family: "ralewayregular", sans-serif;
     color: white;
     font-weight: bold;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     line-height: 55px;
     text-align: left;
 }
@@ -4725,7 +4725,7 @@ blockquote {
     font-family: "pantonregular", sans-serif;
     color: white;
     font-weight: bold;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     line-height: 1.2;
     text-align: center;
     -moz-border-radius: 30px;
@@ -5377,7 +5377,7 @@ blockquote {
     -moz-border-radius: 30px;
     -webkit-border-radius: 30px;
     border-radius: 30px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     -moz-user-select: -moz-none;
     -ms-user-select: none;
     -webkit-user-select: none;
@@ -5853,7 +5853,7 @@ blockquote {
     font-family: "pantonregular", sans-serif;
     font-size: 30px;
     line-height: 32px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     color: #d51e3f;
     font-weight: bold;
     text-decoration: none;
@@ -5897,7 +5897,7 @@ blockquote {
     -moz-border-radius: 30px;
     -webkit-border-radius: 30px;
     border-radius: 30px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 
 .stomatology__more:hover {
@@ -5924,7 +5924,7 @@ blockquote {
     -moz-border-radius: 30px;
     -webkit-border-radius: 30px;
     border-radius: 30px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 
 .stomatology__zapis:hover {
@@ -6627,7 +6627,7 @@ blockquote {
     margin: auto;
     color: #454545;
     font-size: 17px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     font-family: 'pantonregular', sans-serif;
     text-align: center;
     display: block;
@@ -6665,7 +6665,7 @@ blockquote {
     font-weight: bold;
     color: #1492b5;
     text-align: center;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     background: white;
     line-height: 32px;
     margin: 20px auto;
@@ -6682,7 +6682,7 @@ blockquote {
     margin: auto;
     color: white;
     font-size: 17px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     font-family: 'pantonregular', sans-serif;
     text-align: center;
     display: block;
@@ -9565,7 +9565,7 @@ blockquote {
     font-family: "ralewayregular", sans-serif;
     color: #d82043;
     font-weight: bold;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     line-height: 28px;
 }
 @media only screen and (min-width:768px) and (max-width:991px) {
@@ -10561,7 +10561,7 @@ html.js .js-webform-message--close-storage {
 	margin: auto;
 	color: #454545;
 	font-size: 17px;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 	font-family: 'pantonregular',sans-serif;
 	text-align: center;
 	display: block;
@@ -11094,7 +11094,7 @@ html.js .js-webform-message--close-storage {
     font-size: 17px;
     padding: 8px 15px;
     text-align: center;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 .praiseTable__list {
     background: white;

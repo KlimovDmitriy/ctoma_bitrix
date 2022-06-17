@@ -3,7 +3,7 @@ $this->setFrameMode(true);
 ?>
 
 <div class="subscription width width_full">
-    <span class="subscription__title width width_norm width_paddingStandart">ХОТИТЕ ПЕРВЫМИ УЗНАВАТЬ ОБ АКЦИЯХ?</span>
+    <span class="subscription__title width width_norm width_paddingStandart">Хотите первыми узнавать об акциях?</span>
     <div class="subscription__content width width_norm width_paddingStandart">
         <div id="block-podpiska" class="block block-podpiska">
             <div id="success_main_subscribe" class="success_form"

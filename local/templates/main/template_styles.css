@@ -527,7 +527,7 @@
     background-color: #FFBABA;
 }
 .subscription__content{
-    padding:35px 10px !important;
+    /*padding:35px 10px !important;*/
 }
 #main_subscribe > .subscription__agreement{
     top:4.3rem !important;

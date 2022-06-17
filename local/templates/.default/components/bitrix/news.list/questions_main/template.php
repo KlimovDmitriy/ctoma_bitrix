@@ -18,7 +18,7 @@ $this->setFrameMode(true);
 ?>
 <div id="newsHome" class="news width width_full">
     <h2 class="news__title title_homeRed width width_norm width_paddingStandart">
-        <span class="title__br"></span><span class="title__text">ЗАДАЙТЕ ВОПРОС</span><span class="title__br"></span>
+        <span class="title__br"></span><span class="title__text">Задайте вопрос</span><span class="title__br"></span>
     </h2>
     <div class="ask__content width width_light width_paddingStandart">
         <div class="ask__col1">
