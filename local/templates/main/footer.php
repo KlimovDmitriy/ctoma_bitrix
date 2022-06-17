@@ -91,7 +91,7 @@
             </div>
 
             <div class="footer__payment width_paddingStandart">
-                <img src="/local/templates/main/images/payment.png">
+
             </div>
 
         </div>

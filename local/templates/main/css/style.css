@@ -340,7 +340,7 @@
 }
 
 .title_home {
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     padding-top: 25px;
     padding-bottom: 10px;
     font-size: 55px;
@@ -3026,7 +3026,7 @@
     text-decoration: none;
     font-size: 15px;
     font-weight: bold;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     line-height: 20px;
 }
 
@@ -3156,7 +3156,7 @@
 }
 
 .menu-item--active-trail>a:first-child {
-    font-weight: bold !important;
+    /*font-weight: bold !important;*/
     color: #d82043 !important;
 }
 .serviceMenu {
@@ -3250,7 +3250,7 @@
     text-decoration: none;
     font-size: 14px;
     color: #727272;
-    font-weight: bold;
+    /*font-weight: bold;*/
     font-family: "ralewayregular",sans-serif;
     transition: all 0.3s ease;
 }
@@ -3775,6 +3775,7 @@ blockquote {
     border: 1px solid #c7cfd8;
     border-radius: 11px;
     margin-bottom: 10px;
+    color: #636363 !important;
 }
 
 .fastlink a:hover {
@@ -5165,7 +5166,7 @@ blockquote {
     font-family: "pantonregular", sans-serif;
     font-size: 30px;
     line-height: 32px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     color: #d51e3f;
     font-weight: bold;
     text-decoration: none;
@@ -5232,7 +5233,7 @@ blockquote {
     -moz-border-radius: 30px;
     -webkit-border-radius: 30px;
     border-radius: 30px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     margin-bottom: 5px;
 }
 
@@ -5266,7 +5267,7 @@ blockquote {
     -moz-border-radius: 30px;
     -webkit-border-radius: 30px;
     border-radius: 30px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 
 .actions__zapis:hover {
@@ -5306,7 +5307,7 @@ blockquote {
     background: white;
     border-radius: 30px;
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     height: 39px;
 }
 
@@ -5409,7 +5410,7 @@ blockquote {
     position: absolute;
     font-size: 11px;
     color: white;
-    bottom: -20px;
+    bottom: -30px;
     width: 100%;
     text-align: center;
 }
@@ -6631,7 +6632,7 @@ blockquote {
     font-family: 'pantonregular', sans-serif;
     text-align: center;
     display: block;
-    font-weight: bold;
+    /*font-weight: bold;*/
     padding: 0 10px;
     cursor: pointer;
     position: relative;
@@ -6662,7 +6663,7 @@ blockquote {
 .uslugiPrevu__moreHover {
     font-size: 14px;
     font-family: "pantonregular", sans-serif;
-    font-weight: bold;
+    /*font-weight: bold;*/
     color: #1492b5;
     text-align: center;
     /*text-transform: uppercase;*/
@@ -6686,7 +6687,7 @@ blockquote {
     font-family: 'pantonregular', sans-serif;
     text-align: center;
     display: block;
-    font-weight: bold;
+    /*font-weight: bold;*/
     padding: 0 10px;
     cursor: pointer;
     position: relative;
@@ -10595,7 +10596,7 @@ html.js .js-webform-message--close-storage {
 	font-family: 'pantonregular',sans-serif;
 	text-align: center;
 	display: block;
-	font-weight: bold;
+	/*font-weight: bold;*/
 	padding: 0 10px;
 	cursor: pointer;
 	position: relative;
@@ -10603,7 +10604,7 @@ html.js .js-webform-message--close-storage {
 .portfolioBlocks .uslugiPrevu__moreHover {
 	font-size: 14px;
 	font-family: "pantonregular",sans-serif;
-	font-weight: bold;
+	/*font-weight: bold;*/
 	color: #1492b5;
 	text-align: center;
 	text-transform: uppercase;
