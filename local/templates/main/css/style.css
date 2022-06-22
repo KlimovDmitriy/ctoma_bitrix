@@ -3486,15 +3486,22 @@ input#edit-captcha-response {
 }
 
 .views-field-field-vopros-faq .field-content {
-    height: 40px;
+    min-height: 40px;
     padding-right: 20px;
+    height:100%;
+    display: flex;
+    align-items: center;
+}
+
+.views-field-field-vopros-faq .field-content p {
+    margin: 0;
 }
 
 .views-field-field-vopros-faq:after {
     content: '+';
     display: block;
     float: right;
-    margin-top: -35px;
+    /*margin-top: -35px;*/
     font-size: 28px;
 }
 
@@ -4037,30 +4044,36 @@ blockquote {
 
 .faq-blk .views-field-field-vopros-faq {
     background: #f2f2f2;
-    line-height: 40px;
+    /*line-height: 40px;*/
     font-size: 15px;
     transition: 0.4s;
     padding: 18px;
     margin-bottom: 5px;
     color: #636363;
+    display: flex;
+    align-items: center;
+    align-content: space-around;
+    position: relative;
 }
 
 .faq-blk .views-field-field-vopros-faq:after {
     content: '\002B';
     display: block;
-    float: right;
-    margin-top: -37px;
+    /*float: right;*/
+    /*margin-top: -37px;*/
     font-size: 28px;
     font-weight: bold;
     color: #d82043;
     font-weight: bold;
+    position: absolute;
+    right: 20px;
 }
 
 .faq-blk .opened_faq:after {
     content: '-';
     display: block;
     float: right;
-    margin-top: -37px;
+    /*margin-top: -37px;*/
     font-size: 28px;
     font-weight: bold;
     color: #d82043;
@@ -7279,7 +7292,7 @@ blockquote {
     font-family: "ralewayregular", sans-serif;
     color: #d82043;
     font-weight: bold;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     line-height: 1.2;
     margin-bottom: 15px;
 }
@@ -7324,7 +7337,7 @@ blockquote {
     padding: 8px 35px;
     font-size: 15px;
     font-family: "ralewayregular", sans-serif;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     line-height: 20px;
     font-weight: bold;
     position: relative;
@@ -7355,7 +7368,7 @@ blockquote {
     padding: 8px 35px;
     font-size: 15px;
     font-family: "ralewayregular", sans-serif;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     line-height: 20px;
     font-weight: bold;
     position: relative;
