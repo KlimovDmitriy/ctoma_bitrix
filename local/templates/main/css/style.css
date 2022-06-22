@@ -11336,3 +11336,35 @@ display:none;
         padding: 8px 10px;
     }
 }
+
+.color_list {
+    list-style-type: none;
+    counter-reset: num;
+    margin: 0 0 0 45px;
+    padding: 15px 0 5px 38px !important;
+    font-size: 14px;
+}
+.color_list li {
+    position: relative;
+    margin: 0 0 0 0;
+    padding: 0 0 10px 0;
+    line-height: 1.4;
+}
+.color_list li:before {
+    content: counter(num);
+    counter-increment: num;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: -38px;
+    width: 28px;
+    height: 28px;
+    color: #fff;
+    text-align: center;
+    line-height: 28px;
+    font-size: 14px;
+    border-radius: 50%;
+    background-color: #1996ba;
+    font-family: "pantonregular", sans-serif;
+}
+}
