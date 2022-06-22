@@ -3202,7 +3202,7 @@
     font-family: "ralewayregular",sans-serif;
     color: #d82043;
     font-weight: bold;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     line-height: 1.2;
     margin-bottom: 6px;
 }
@@ -3212,7 +3212,7 @@
     font-family: "ralewayregular",sans-serif;
     color: #777777;
     font-weight: bold;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     line-height: 1.2;
 }
 .makeImg__actions {
@@ -5268,6 +5268,7 @@ blockquote {
     -webkit-border-radius: 30px;
     border-radius: 30px;
     /*text-transform: uppercase;*/
+    cursor: pointer;
 }
 
 .actions__zapis:hover {
@@ -5926,6 +5927,7 @@ blockquote {
     -webkit-border-radius: 30px;
     border-radius: 30px;
     /*text-transform: uppercase;*/
+    cursor: pointer;
 }
 
 .stomatology__zapis:hover {
