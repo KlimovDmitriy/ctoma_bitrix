@@ -8383,14 +8383,14 @@ blockquote {
     font-family: "pantonregular", sans-serif;
     color: #dd425f;
     display: block;
-    padding: 8px 15px 5px;
+    padding: 5px 15px 8px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
     text-align: center;
     text-decoration: none;
     border: 1px solid #dd425f;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
@@ -8426,7 +8426,7 @@ blockquote {
 
 @media only screen and (max-width:991px) and (min-width:0px) {
     .header__buttons a {
-        font-size: 12px;
+        font-size: 15px;
     }
 }
 .header__buttons a.header__make {
