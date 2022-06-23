@@ -4,7 +4,7 @@
 <div class="views-element-container">
     <h2 class="portfolioBlock__title">
         <span class="title__br"></span>
-        <span class="title__text">Другие работы</span>
+        <span class="title__text">Примеры работ</span>
         <span class="title__br"></span>
     </h2>
     <div class="uslugi_all width width_full width_paddingStandart">
