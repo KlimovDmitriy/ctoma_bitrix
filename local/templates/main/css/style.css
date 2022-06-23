@@ -11347,7 +11347,7 @@ display:none;
 .color_list li {
     position: relative;
     margin: 0 0 0 0;
-    padding: 0 0 10px 0;
+    padding: 3px 0 15px 0;
     line-height: 1.4;
 }
 .color_list li:before {
