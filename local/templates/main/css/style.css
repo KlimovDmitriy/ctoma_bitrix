@@ -3890,7 +3890,7 @@ blockquote {
 }
 
 .portfolioBlock__title {
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     padding-top: 25px;
     padding-bottom: 10px;
     font-size: 35px;
@@ -5120,6 +5120,10 @@ blockquote {
 @media only screen and (min-width:0px) and (max-width:991px) {
     .actions__img:before {
         display: none;
+    }
+    .serviceTextBlock h2::before {
+        height: 0 !important;
+        margin: 0 !important;
     }
 }
 .actions__img a {
