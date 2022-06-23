@@ -19,7 +19,7 @@ $name = !empty($arResult['IPROPERTY_VALUES']['SECTION_PAGE_TITLE'])
 ob_start();
 ?>
 <h1 class="service__titleText title_norm width width_norm width_paddingStandart"><? echo $name; ?></h1>
-<div class="serviceDefault content_norm">
+<div class="serviceDefault content_norm serviceTextBlock">
 <?php echo $arResult['DESCRIPTION']; ?>
     <?php if($arResult['PRICE_LIST']):
         $i = 0;?>

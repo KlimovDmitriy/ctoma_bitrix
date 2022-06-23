@@ -11380,3 +11380,9 @@ display:none;
     border-left: 3px solid #2ecc71;
     padding: 30px 20px 30px 80px;
 }
+.serviceTextBlock h2::before {
+    display: block;
+    content: "";
+    height: 55px;
+    margin: -55px 0 0;
+}
