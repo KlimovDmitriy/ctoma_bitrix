@@ -41,10 +41,10 @@ class Site
 
             if ($parts_url_0 != strtolower($parts_url_0)) {
                 if (empty($parts_url_1)) {
-                    header('Location: https://' . $_SERVER['HTTP_HOST'] .
+                    header('Location: https://ctoma.ru'  .
                         strtolower($parts_url_0), true, 301);
                 } else {
-                    header('Location: https://' . $_SERVER['HTTP_HOST'] .
+                    header('Location: https://ctoma.ru' .
                         strtolower($parts_url_0) . '?' . $parts_url_1, true, 301);
                 }
                 exit();
