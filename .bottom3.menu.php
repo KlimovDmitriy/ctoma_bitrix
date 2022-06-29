@@ -44,7 +44,7 @@ $aMenuLinks = Array(
     ),
     Array(
         "FAQ",
-        "/faq/",
+        "/voprosy-i-otvety/",
         Array(),
         Array(),
         ""
