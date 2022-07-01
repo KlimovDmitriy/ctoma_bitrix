@@ -25,9 +25,6 @@ if ($_REQUEST['PAGEN_1'] > 0) {
         <span class="title__br"></span><span class="title__text">Вопрос-ответ. Страница <?= $page; ?> </span><span
                 class="title__br"></span>
     </h1>
-    <div class="faq_link">
-        <a href="/faq/" class="button_red">Ответы на часто задаваемые вопросы</a>
-    </div>
     <div class="questions__content width width_norm width_paddingStandart">
         <div class="views-element-container">
             <div>
