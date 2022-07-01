@@ -37,7 +37,7 @@ $this->setFrameMode(true);
                                         <div>
                                             <div class="otzyvDefault__vrach width_paddingStandart">
                                                 <? $file = CFile::ResizeImageGet($item['DOCTOR']['PICTURE'], array('width' => 320, 'height' => 320), BX_RESIZE_IMAGE_PROPORTIONAL, true); ?>
-                                                <div><a href="/vrac/<?= $item['DOCTOR']['CODE'] ?>"><img
+                                                <div><a href="/personal/<?= $item['DOCTOR']['CODE'] ?>"><img
                                                                 src="<?= $file['src'] ?>"
                                                                 width="320" height="320"
                                                                 alt="Отзыв о враче <?= $item['DOCTOR']['NAME'] ?>"
