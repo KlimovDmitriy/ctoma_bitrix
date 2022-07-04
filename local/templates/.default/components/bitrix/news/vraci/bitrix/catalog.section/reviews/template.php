@@ -96,7 +96,7 @@ if ($arResult['ITEMS']): ?>
                                 </div>
 
                                 <div class="otzyvDefault__more"><a class="button_red"
-                                                                   href="<?= $item['DETAIL_PAGE_URL']; ?>/">Подробнее</a>
+                                                                   href="<?= $item['DETAIL_PAGE_URL']; ?>">Подробнее</a>
                                 </div>
 
                             </div>
