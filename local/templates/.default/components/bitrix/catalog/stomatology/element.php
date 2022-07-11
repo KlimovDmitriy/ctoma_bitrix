@@ -92,12 +92,6 @@ $el = CIBlockElement::GetList(array(), array('IBLOCK_ID'=>$arParams['IBLOCK_ID']
                 </div>
             </div>
         </div>
-<div style="display: none">
-<pre>
-    <? print_r($arResult);?>
-    <? print_r($arParams); ?>
-</pre>
-</div>
         <div class="service__content">
             <div class="block-region-main">
                 <div class="block">
@@ -270,7 +264,7 @@ $el = CIBlockElement::GetList(array(), array('IBLOCK_ID'=>$arParams['IBLOCK_ID']
                             "SECTION_USER_FIELDS" => array("", ""),
                             "SHOW_PARENT_NAME" => "Y",
                             "TOP_DEPTH" => "2",
-                            "PAGE_ELEMENT_COUNT" => "100",
+                            "PAGE_ELEMENT_COUNT" => "6",
                             "VIEW_MODE" => "LINE"
                         ),
                         $component
