@@ -137,7 +137,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
             </div>
 
             <div class="header__searchMobileButton width_paddingStandart">
-                <a href="tel:+78123250360"><i class="fa fa-phone" aria-hidden="true"></i></a> <i class="fa fa-search" aria-hidden="true"></i>
+                <a href="tel:+78123250360"><i class="fa fa-phone" aria-hidden="true"></i></a><i class="fa fa-search" aria-hidden="true"></i>
             </div>
 
         </div>
