@@ -115,7 +115,7 @@ $('.plusDoctorWr .plusDoctorN').click(function () {
 
 
 /*Показать поиск в мобильной версии*/
-$('.header__searchMobileButton').on('click', function () {
+$('.fa-search').on('click', function () {
     $('.header__searchMobile').toggle();
 })
 
