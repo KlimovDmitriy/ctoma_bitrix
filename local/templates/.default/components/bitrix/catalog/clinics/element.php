@@ -325,6 +325,14 @@ $APPLICATION->IncludeComponent(
     )
 ); ?>
 
+<? $metroStation = \Realweb\Site\Site::getPropValue('METRO_STATION', $arParams['IBLOCK_ID'], $ElementID); ?>
+<? if (!empty($metroStation)) { ?>
+    <h2 class="kliniki__title title_grey width width_norm width_paddingStandart">
+        <span class="title__br"></span>
+        <span class="title__text">Услуги стоматологии у метро <?=$metroStation[0]["VALUE"];?></span>
+        <span class="title__br"></span>
+    </h2>
+<? } ?>
 
 <? $APPLICATION->IncludeComponent("bitrix:catalog.section.list", "stomatology_main",
     array(
