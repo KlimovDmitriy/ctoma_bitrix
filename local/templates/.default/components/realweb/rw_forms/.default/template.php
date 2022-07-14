@@ -150,11 +150,17 @@ $this->setFrameMode(true);
 
 
                             $multiple = '';
+                            $selected = '';
+                            if ($_REQUEST['title'] > 0) {
+                                //Выбранная клиника
+                                $selected = $_REQUEST['title'];
+                            }
                             if ($field['NAME'] == 'clinic' && $arParams['CODE'] == 'nalog') {
                                 $multiple = 'multiple="multiple"';
                                 $field['FIELD_CSS'] .= ' multiselect';
 
                             }
+
                             ?>
                             <label for="edit-<?= $field['NAME'] ?>"><?= $field['TITLE'] ?></label>
 
@@ -162,9 +168,12 @@ $this->setFrameMode(true);
                                     name="<?= $field['NAME'] ?><? if ($multiple != '') { ?>[]<? } ?>"
                                     class="<?= $field['FIELD_CSS']; ?>" <?= $field['REQ']; ?> <?= $multiple; ?>>
                                 <? if ($multiple == '') { ?>
-                                    <option value="" selected="selected"><?= $field['PLACEHOLDER'] ?></option><? } ?>
+                                    <option
+                                    value="" <? if ($selected == ''){ ?>selected="selected"<? } ?>><?= $field['PLACEHOLDER'] ?></option><? } ?>
                                 <? foreach ($select_elements as $sel) { ?>
-                                    <option value="<?= $sel['FIELDS']['NAME']; ?>"><?= $sel['FIELDS']['NAME']; ?></option>
+
+                                    <option <? if ($selected == $sel['ID']){ ?>selected="selected"<? } ?>
+                                            value="<?= $sel['FIELDS']['NAME']; ?>"><?= $sel['FIELDS']['NAME']; ?></option>
                                 <? } ?>
                             </select>
                             <? break; ?>
