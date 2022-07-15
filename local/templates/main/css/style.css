@@ -9615,7 +9615,7 @@ blockquote {
     font-family: "ralewayregular", sans-serif;
     color: #d82043;
     font-weight: bold;
-    text-transform: uppercase;
+   /* text-transform: uppercase;*/
 }
 
 .content_norm img {
