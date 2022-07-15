@@ -8490,10 +8490,21 @@ blockquote {
         display: block;
     }
 }
+.header__searchMobileButton {
+    position: relative;
+}
 .header .fa-search {
     font-size: 26px;
     color: #d93c43;
     cursor: pointer;
+}
+.header .fa-phone {
+    font-size: 28px;
+    color: #d93c43;
+    cursor: pointer;
+    position: absolute;
+    right: 55px;
+    top: 10px;
 }
 
 .choosingClinic {
