@@ -32,9 +32,9 @@ $strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?" . $arResult["N
             </li>
             <li class="pager__item pager__item--previous">
                 <a href="<?= $arResult["sUrlPath"] ?>?<?= $strNavQueryString ?>PAGEN_<?= $arResult["NavNum"] ?>=<?= ($arResult["NavPageNomer"] - 1) ?>"
-                   title="На предыдущую страницу" rel="prev">
+                   title="На предыдущую страницу" >
                     <span class="visually-hidden">←</span>
-                    <span aria-hidden="true">‹ Предыдущий</span>
+                    <span aria-hidden="true">‹ Предыдущая</span>
                 </a>
             </li>
         <? } ?>
@@ -59,8 +59,8 @@ $strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?" . $arResult["N
         <? if ($arResult["NavPageNomer"] < $arResult["NavPageCount"]) { ?>
             <li class="pager__item pager__item--next">
                 <a href="<?= $arResult["sUrlPath"] ?>?<?= $strNavQueryString ?>PAGEN_<?= $arResult["NavNum"] ?>=<?= ($arResult["NavPageNomer"] + 1) ?>"
-                   title="На следующую страницу" rel="next">
-                    <span aria-hidden="true">Следующий ›</span>
+                   title="На следующую страницу" >
+                    <span aria-hidden="true">Следующая ›</span>
                 </a>
             </li>
             <li class="pager__item pager__item--last">
